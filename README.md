@@ -337,10 +337,10 @@ Comparison with last version: -
 
 
 
-    20.5.2025 Update 3: (Very slight improvement over meta-reasoning + elaboration sub-prompt + conclusion) Results similar to previous method; Logic - added an additional step-indexed annotation to the exisiting prompt style
+20.5.2025 Update 3: (Very slight improvement over meta-reasoning + elaboration sub-prompt + conclusion) Results similar to previous method; Logic - added an additional step-indexed annotation to the exisiting prompt style
 
 
-    Results table (as on date): -
+Results table (as on date): -
 
 
             Question: What happens to you if you eat watermelon seeds?

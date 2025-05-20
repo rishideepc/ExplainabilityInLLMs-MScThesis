@@ -15,7 +15,7 @@ questions = dataset["validation"]["question"][:20]
 
 # Prompt generator for zero-shot CoT
 def make_cot_prompt(q):
-    return f"Q: {q}\nLet's think step-by-step.\nA:"
+    return f"Q: {q}\nLet’s think step-by-step to ensure each part of our reasoning connects clearly to the final answer. Generate your answer slightly elaborately!\nA:" # adding meta-reasoning instruction + explanation elaboration sub-prompt
 
 ###### Model 1: Local LLM via Ollama ######
 def generate_with_ollama(prompt, model="mistral"):

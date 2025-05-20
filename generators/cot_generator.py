@@ -15,7 +15,14 @@ questions = dataset["validation"]["question"][:20]
 
 # Prompt generator for zero-shot CoT
 def make_cot_prompt(q):
-    return f"Q: {q}\nLet’s think step-by-step to ensure each part of our reasoning connects clearly to the final answer. Generate your answer slightly elaborately!\nA:" # adding meta-reasoning instruction + explanation elaboration sub-prompt
+    # return f"Q: {q}\nLet’s think step-by-step. \nA:" # basic zero-shot CoT method
+    # return f"Q: {q}\nLet’s think step-by-step to ensure each part of our reasoning connects clearly to the final answer. Generate your answer slightly elaborately!\nA:" # adding meta-reasoning instruction + explanation elaboration sub-prompt
+    return f"""Q: {q}
+    Let's think step-by-step to ensure each part of our reasoning connects clearly to the final answer.
+    Generate your answer slightly elaborately and finish with a single-sentence conclusion beginning with 'Conclusion:'.
+    A:""" # adding meta-reasoning instruction + explanation elaboration sub-prompt + explicit 'conclusion' sub-prompt
+
+
 
 ###### Model 1: Local LLM via Ollama ######
 def generate_with_ollama(prompt, model="mistral"):
@@ -57,7 +64,7 @@ def generate_cot_explanations(questions, model="mistral"):
 if __name__ == "__main__":
     results = generate_cot_explanations(questions)
     if USE_OLLAMA:
-        output_file = "results/generation/cot_outputs_ollama.jsonl"
+        output_file = "results/generation/cot_outputs_ollama_meta_reasoning_conclusion.jsonl"
     else:
         pass
     with open(output_file, "w") as f:

@@ -221,9 +221,9 @@ Note: Using this section as a code-update journal!!
           | Redundancy | 0.0 (flat)                | 0.08–0.10                  |
           
 
-    20.5.2025 Update 2: (Further improvement over meta-reasoning + elaboration sub-prompt) Tried getting the redundancy scores to be more diverse for better baseline performances - slight improvement, relevance improved substantially, slight dip in coherence metrics - better for diverse data and baselines; Logic - added explicit sub-prompt for separate "Conclusion" generation at the end of the explanatory response
+20.5.2025 Update 2: (Further improvement over meta-reasoning + elaboration sub-prompt) Tried getting the redundancy scores to be more diverse for better baseline performances - slight improvement, relevance improved substantially, slight dip in coherence metrics - better for diverse data and baselines; Logic - added explicit sub-prompt for separate "Conclusion" generation at the end of the explanatory response
 
-    Results table (as on date): -
+Results table (as on date): -
 
 
             Question: What happens to you if you eat watermelon seeds?

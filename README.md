@@ -1,4 +1,4 @@
-## This is the first commit!
+## Evaluating the explanatory properties of LLMs
 
 Note: Using this section as a code-update journal!!
 

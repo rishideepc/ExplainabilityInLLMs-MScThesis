@@ -14,13 +14,26 @@ dataset = load_dataset("truthful_qa", "generation")
 questions = dataset["validation"]["question"][:20]
 
 # Prompt generator for zero-shot CoT
+# def make_cot_prompt(q):
+#     # return f"Q: {q}\nLet’s think step-by-step. \nA:" # basic zero-shot CoT method
+#     # return f"Q: {q}\nLet’s think step-by-step to ensure each part of our reasoning connects clearly to the final answer. Generate your answer slightly elaborately!\nA:" # adding meta-reasoning instruction + explanation elaboration sub-prompt
+#     return f"""Q: {q}
+#     Let's think step-by-step to ensure each part of our reasoning connects clearly to the final answer.
+#     Generate your answer slightly elaborately and finish with a single-sentence conclusion beginning with 'Conclusion:'.
+#     A:""" # adding meta-reasoning instruction + explanation elaboration sub-prompt + explicit 'conclusion' sub-prompt
+
+
 def make_cot_prompt(q):
-    # return f"Q: {q}\nLet’s think step-by-step. \nA:" # basic zero-shot CoT method
-    # return f"Q: {q}\nLet’s think step-by-step to ensure each part of our reasoning connects clearly to the final answer. Generate your answer slightly elaborately!\nA:" # adding meta-reasoning instruction + explanation elaboration sub-prompt
     return f"""Q: {q}
     Let's think step-by-step to ensure each part of our reasoning connects clearly to the final answer.
-    Generate your answer slightly elaborately and finish with a single-sentence conclusion beginning with 'Conclusion:'.
-    A:""" # adding meta-reasoning instruction + explanation elaboration sub-prompt + explicit 'conclusion' sub-prompt
+    Generate your answer slightly elaborately!
+    A:
+    Step 1:
+    Step 2:
+    Step 3:
+    Step 4:
+    Conclusion:"""
+    # adding meta-reasoning instruction + explanation elaboration sub-prompt + explicit 'conclusion' sub-prompt + step-indices annotation
 
 
 
@@ -64,7 +77,7 @@ def generate_cot_explanations(questions, model="mistral"):
 if __name__ == "__main__":
     results = generate_cot_explanations(questions)
     if USE_OLLAMA:
-        output_file = "results/generation/cot_outputs_ollama_meta_reasoning_conclusion.jsonl"
+        output_file = "results/generation/cot_outputs_ollama_meta_reasoning_conclusion_step_indices.jsonl"
     else:
         pass
     with open(output_file, "w") as f:

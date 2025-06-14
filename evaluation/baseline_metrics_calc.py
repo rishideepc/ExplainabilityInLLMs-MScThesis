@@ -4,12 +4,15 @@ from typing import List, Dict
 from itertools import combinations
 from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.feature_extraction.text import TfidfVectorizer
+import networkx as nx
 
 # Load jsonl data files from \results\generation\                       
 # TODO: move files to \data\ for maintainability
 def load_jsonl(filepath: str) -> List[Dict]:
     with open(filepath, "r") as f:
         return [json.loads(line.strip()) for line in f.readlines()]
+
+###### CoT prompting metrics #########################
 
 # Implement baseline coherence metric calculation
 def baseline_coherence_score(explanation: str) -> float:
@@ -97,3 +100,50 @@ def baseline_redundancy_score(explanation: str, threshold: float = 0.4) -> float
     # Compute fraction of redundant pairs
     redundancy_fraction = redundant_pairs / total_pairs if total_pairs else 0.0
     return redundancy_fraction
+
+
+########## argLLM metrics #####################
+
+def baseline_acceptability_score(argument_bag: Dict) -> float:
+    """
+    Computes the proportion of arguments from the entire "argument bag" that have
+    strength greater than acceptability threshold (0.5).
+
+    @params:
+        argument_bag (Dict): a dictionary of argument objects, identified by key - "arguments"
+
+    @returns:
+        float: number of acceptable arguments in the entire set; value between 0 and 1 (inclusive)
+    """
+    threshold = 0.5
+    arguments = argument_bag.get("arguments", {})
+    if not arguments:
+        return 0.0
+    acceptable_count = 0
+    for a in arguments.values(): 
+        if a.get("strength", 0) > threshold:
+            acceptable_count+=1
+    return acceptable_count / len(arguments)
+
+
+def baseline_circularity_score(argument_bag: Dict) -> float:
+    """
+    Computes the proportion of arguments from the entire "argument" bag that are
+    involved in directed cycles.
+
+    @params: 
+        argument_bag (Dict): a dictionary of argument objects, identified by key - "arguments"
+
+    @returns:
+        float: number of arguments in the entire set that are involved in circularity; value between 0 and 1 (inclusive)
+    """
+    G = nx.DiGraph()
+    for arg_name in argument_bag.get("arguments", {}):
+        G.add_node(arg_name)
+
+    for source, target in argument_bag.get("attacks", []) + argument_bag.get("supports", []):
+        G.add_edge(source, target)
+
+    cycles = list(nx.simple_cycles(G))
+    cyclic_args = set(node for cycle in cycles for node in cycle)
+    return len(cyclic_args) / len(argument_bag.get("arguments", {})) if argument_bag.get("arguments") else 0.0

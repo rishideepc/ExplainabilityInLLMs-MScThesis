@@ -18,10 +18,9 @@ def load_jsonl(filepath: str) -> List[Dict]:
 
 def evaluate_cot_metrics(entry: Dict, coherence_model=None) -> Dict[str, float]:
     explanation = entry.get("cot_explanation", "")
-    steps = [s.strip() for s in explanation.split("\\n") if s.strip()]
+    steps = [s.strip() for s in explanation.split("\n") if s.strip()]
 
     matrix = {step: [steps[i+1]] if i < len(steps)-1 else [] for i, step in enumerate(steps)}
-    print(matrix)
     propositions = steps
     y_hat = steps[-1]
 
@@ -69,3 +68,4 @@ def evaluate_all_cot(filepath: str) -> List[Dict]:
 def evaluate_all_argllm(filepath: str) -> List[Dict]:
     data = load_jsonl(filepath)
     return [dict(q=item["question"], **evaluate_argllm_metrics(item)) for item in data]
+

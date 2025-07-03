@@ -1,3 +1,8 @@
+import sys
+import os
+project_root = os.path.abspath('..')
+sys.path.append(project_root)
+
 from datasets import load_dataset
 import openai
 import json, os
@@ -9,9 +14,24 @@ USE_OLLAMA = True
 if not USE_OLLAMA:
     pass
 
-# Load initial experiment questions
-dataset = load_dataset("truthful_qa", "generation")
-questions = dataset["validation"]["question"][:20]
+# Load initial experiment questions - TruthfulQA
+# dataset = load_dataset("truthful_qa", "generation")
+# questions = dataset["validation"]["question"][:817]
+
+# Load initial experiment questions - CommonsenseQA
+# dataset = load_dataset("commonsense_qa")
+# questions = [entry["question"] for entry in dataset["validation"]]
+# questions = questions[:1221]
+
+# Load initial experiment questions - StrategyQA
+# dataset = load_dataset("wics/strategy-qa")
+# questions = [entry["question"] for entry in dataset["test"]]
+# questions = questions[:2290]
+
+# Load initial experiment questions - MedQA
+dataset = load_dataset("GBaker/MedQA-USMLE-4-options")
+questions = [entry["question"] for entry in dataset["test"]]
+questions = questions[:1273]
 
 # Prompt generator for zero-shot CoT
 # def make_cot_prompt(q):
@@ -21,7 +41,6 @@ questions = dataset["validation"]["question"][:20]
 #     Let's think step-by-step to ensure each part of our reasoning connects clearly to the final answer.
 #     Generate your answer slightly elaborately and finish with a single-sentence conclusion beginning with 'Conclusion:'.
 #     A:""" # adding meta-reasoning instruction + explanation elaboration sub-prompt + explicit 'conclusion' sub-prompt
-
 
 # def make_cot_prompt(q):
 #     return f"""Q: {q}
@@ -34,7 +53,6 @@ questions = dataset["validation"]["question"][:20]
 #     Step 4:
 #     Conclusion:"""
 #     # adding meta-reasoning instruction + explanation elaboration sub-prompt + explicit 'conclusion' sub-prompt + step-indices annotation
-
 
 def make_cot_prompt(question: str) -> str:
     few_shot_examples = """
@@ -61,10 +79,9 @@ A:
 """.strip()
     return few_shot_examples.format(question=question)
 
-
-
-###### Model 1: Local LLM via Ollama ######
-def generate_with_ollama(prompt, model="mistral"):
+###### Model 1: Local LLM - Mistral, LLama3, Qwen via Ollama ############################
+#################################################################
+def generate_with_ollama(prompt, model="qwen"):
     try:
         res = requests.post(
             "http://localhost:11434/api/generate",
@@ -84,16 +101,13 @@ def generate_with_ollama(prompt, model="mistral"):
         return f"[ERROR - OLLAMA Exception] {str(e)}"
 
 
-###### Model 2: Boilerplate for any other open-access model ######
-##################################################################
-
 # Method for CoT prompting explanations
-def generate_cot_explanations(questions, model="mistral"):
+def generate_cot_explanations(questions, model="qwen"):
     results = []
     for q in questions:
         prompt = make_cot_prompt(q)
         if USE_OLLAMA:
-            explanation = generate_with_ollama(prompt, model="mistral")  # can be: llama2, gemma
+            explanation = generate_with_ollama(prompt, model="qwen")  
         else:
             pass
         results.append({"question": q, "cot_explanation": explanation})
@@ -103,7 +117,7 @@ def generate_cot_explanations(questions, model="mistral"):
 if __name__ == "__main__":
     results = generate_cot_explanations(questions)
     if USE_OLLAMA:
-        output_file = "results/generation/cot_outputs_ollama_meta_reasoning_conclusion_step_indices_fewshot.jsonl"
+        output_file = "results/generation/medqa_qwen/cot_outputs_ollama_meta_reasoning_conclusion_step_indices_fewshot.jsonl"
     else:
         pass
     with open(output_file, "w") as f:

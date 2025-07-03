@@ -86,8 +86,8 @@ def baseline_redundancy_score(explanation: str, threshold: float = 0.4) -> float
     if len(steps) < 2:
         return 0.0                                  # No redundancy with lesser than 2 steps
 
-    vectorizer = TfidfVectorizer().fit_transform(steps)
-    similarity_matrix = cosine_similarity(vectorizer)
+    vectorizer = TfidfVectorizer().fit_transform(steps)                 # BERT based model instead of Tfidf
+    similarity_matrix = cosine_similarity(vectorizer)                   # e5 model instead Tfidf
     
     redundant_pairs = 0
     total_pairs = 0

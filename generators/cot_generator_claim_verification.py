@@ -7,9 +7,9 @@ import requests
 
 # === CONFIGURATION ===
 USE_OLLAMA = True
-MODEL = "llama3"  
-INPUT_FILE = "generators/strategy_claims_dataset.json"
-OUTPUT_FILE = f"results/generation/strategyclaim_llama/cot_outputs_claims.jsonl"
+MODEL = "qwen"  
+INPUT_FILE = "generators/commonsense_claims_dataset.json"
+OUTPUT_FILE = f"results/generation/commonsenseclaim_qwen/cot_outputs_claims.jsonl"
 
 
 # === Load JSON claims file ===
@@ -54,7 +54,7 @@ def generate_cot_explanations(data, model=MODEL):
     # c=0
     for entry in data:
         claim = entry["claim"]
-        label = entry["label/answer"]  # either "true" or "false"
+        label = entry["label"]  # either "true" or "false"
         prompt = make_cot_prompt(claim, label)
         
 
@@ -64,7 +64,7 @@ def generate_cot_explanations(data, model=MODEL):
             explanation = "[ERROR] Non-Ollama models not yet supported."
 
         results.append({
-            "qid": entry.get("qid"),
+            "id": entry.get("id"),
             "claim": claim,
             "label": label,
             "question": entry.get("question"),

@@ -5,8 +5,8 @@ import os
 project_root = os.path.abspath('...')
 sys.path.append(project_root)
 
-from evaluation.EvaluatingExplanations.src.metrics.argumentative_metrics import compute_circularity, compute_dialectical_acceptability
-from evaluation.EvaluatingExplanations.src.metrics.deductive_metrics import compute_redundancy, compute_strong_relevance, compute_weak_relevance
+from evaluation.Evaluating_Explanations.src.metrics.argumentative_metrics import compute_circularity, compute_dialectical_acceptability
+from evaluation.Evaluating_Explanations.src.metrics.deductive_metrics import compute_redundancy, compute_strong_relevance, compute_weak_relevance
 # from evaluation.EvaluatingExplanations.src.metrics.freeform_metrics import CoherenceEvaluator
 
 # === Load jsonl data ===

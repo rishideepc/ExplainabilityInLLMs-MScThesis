@@ -3,7 +3,7 @@ import numpy as np
 import re
 from transformers import AutoModelForSequenceClassification, AutoTokenizer
 
-MODEL_NAME = "distilbert-base-uncased-finetuned-sst-2-english"
+MODEL_NAME = "textattack/bert-base-uncased-SST-2"
 
 def normalize_token(token: str) -> str:
     """Clean individual token by stripping punctuation and subword markers."""

@@ -9,8 +9,12 @@ from faithfulness_metrics import compute_faith_multi
 from perturbation_utils import compute_causal_impact
 
 # Load and split TruthfulQA
-dataset = load_dataset("truthful_qa", "generation")["validation"]
-questions = [example["question"] for example in dataset]
+# dataset = load_dataset("truthful_qa", "generation")["validation"]
+# questions = [example["question"] for example in dataset]
+# Load and split CommonsenseQA
+dataset = load_dataset("commonsense_qa")
+questions = [entry["question"] for entry in dataset["validation"]]
+questions = questions[:1221]
 random.seed(42)
 random.shuffle(questions)
 split_idx = int(0.7 * len(questions))
@@ -21,7 +25,7 @@ print(f"✅ Using {len(test_questions)} test samples")
 pipeline = FaithMultiPipeline(model="llama3")
 
 # Prepare CSV output
-csv_path = "faith_test_results.csv"
+csv_path = "faith_test_results_commonsenseqa.csv"
 fieldnames = ["sample_id", "question", "FAITH_ATTRIB", "FAITH_CAUSAL", "FAITH_SUFF", "ALIGN_CROSS", "FAITH_MULTI"]
 rows = []
 

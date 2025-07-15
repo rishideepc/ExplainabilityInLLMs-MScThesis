@@ -35,7 +35,7 @@ for idx, text in enumerate(test_questions):
     try:
         label, full_conf = pipeline.get_prediction_and_confidence(text)
         explanation = pipeline.generate_explanation(text)
-        expl_tokens = pipeline.tokenize_explanation(explanation)
+        expl_tokens = pipeline.extract_rationale_tokens(explanation)
         attrib_tokens = pipeline.get_attribution_tokens(text)
         causal_score = compute_causal_impact(pipeline, text, attrib_tokens, label, full_conf)
         suff_score = pipeline.get_suff_confidence(expl_tokens, label)

@@ -1,0 +1,6 @@
+,Mistral,Mistral,Mistral,LLaMA,LLaMA,LLaMA,Qwen,Qwen,Qwen
+Dataset,Redundancy,Weak Relevance,Strong Relevance,Redundancy,Weak Relevance,Strong Relevance,Redundancy,Weak Relevance,Strong Relevance
+TruthfulQA,0.1989,1.0,0.3857,0.1434,1.0,0.2542,0.708,1.0,0.843
+StrategyQA,0.2251,1.0,0.4366,0.1419,1.0,0.2728,0.7478,1.0,0.8816
+MedQA,0.1876,1.0,0.3721,0.2485,1.0,0.2233,0.7859,1.0,0.8852
+CommonSenseQA,0.1956,1.0,0.3846,0.1536,1.0,0.2749,0.7461,1.0,0.8624

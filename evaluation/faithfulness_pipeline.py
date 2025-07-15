@@ -1,103 +1,80 @@
-import sys
-import os
+# evaluation/faithfulness_pipeline.py
+
 import re
-from typing import List, Tuple, Dict
+from typing import List, Tuple
+import torch
+import torch.nn.functional as F
+from transformers import AutoModelForCausalLM, AutoTokenizer
 
-project_root = os.path.abspath('...')
-sys.path.append(project_root)
-
-from transformers import AutoModelForSequenceClassification, AutoTokenizer
-from generators.cot_generator import generate_with_ollama
-from evaluation.attribution_extraction import get_top_attributed_tokens         
+MODEL_NAME = "meta-llama/Llama-2-7b-chat-hf"
 
 class FaithMultiPipeline:
-    def __init__(self, model="llama3"):
-        self.model = model
-    
+    def __init__(self):
+        self.model = AutoModelForCausalLM.from_pretrained(
+            MODEL_NAME,
+            device_map="auto",              # auto-map to available GPU
+            torch_dtype=torch.float16       # reduced precision for speed and fit
+        )
+        self.tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)
+        self.model.eval()
+
+        print(f"🧠 Model loaded with dtype: {self.model.dtype}")
+        print(f"📍 Device map: {self.model.hf_device_map}")
+
     def get_prediction_and_confidence(self, text: str) -> Tuple[str, float]:
-        """
-        Prompt LLM to classify a claim as TRUE or FALSE with confidence.
-        """
-        prompt = f"""Q: Is the following claim true or false?\nClaim: "{text}"\n
-        Return your answer only as 'TRUE' or 'FALSE'
-        and also provide your confidence from 0 to 100 in this answer as a number.\nA:"""
-        
-        try:
-            output = generate_with_ollama(prompt, model=self.model)
-        except Exception as e:
-            print(f"Error generating prediction: {e}")
-            return "UNKNOWN", 0.5
-        
-        if "TRUE" in output.upper():
+        prompt = (
+            f"Q: Is the following claim true or false?\nClaim: \"{text}\"\n\n"
+            "Return your answer only as 'TRUE' or 'FALSE' and also provide your confidence from 0 to 100.\nA:"
+        )
+        inputs = self.tokenizer(prompt, return_tensors="pt", truncation=True, max_length=2048).to(self.model.device)
+        with torch.no_grad():
+            outputs = self.model.generate(**inputs, max_new_tokens=32)
+        output_text = self.tokenizer.decode(outputs[0], skip_special_tokens=True)
+
+        if "TRUE" in output_text.upper():
             label = "TRUE"
-        elif "FALSE" in output.upper():
+        elif "FALSE" in output_text.upper():
             label = "FALSE"
         else:
             label = "UNKNOWN"
         
-        match = re.search(r"(\d{1,3})", output)
+        match = re.search(r"(\d{1,3})", output_text)
         confidence = float(match.group(1)) / 100 if match else 0.5
-        
         return label, confidence
 
     def generate_explanation(self, text: str) -> str:
-        """
-        Prompt LLM to generate rationale as explanation tokens only.
-        """
-        prompt = f"""Q: {text}\nAs your answer to this prompt, return only those tokens (words) that influence your decision making.
-        Don't include any other words in your response.
-        Provide the response as a space-separated list of tokens: token1 token2 token3\nA:"""
-        
-        try:
-            return generate_with_ollama(prompt, model=self.model)
-        except Exception as e:
-            print(f"Error generating explanation: {e}")
-            return " ".join(text.split()[:5])  # fallback
+        prompt = (
+            f"Q: {text}\n"
+            f"A: Let’s explain step by step. As you explain your reasoning, *surround the most important decision-making tokens with asterisks (*).* "
+            f"\nHere is an example format:\n"
+            f"Example: The *sky* appears *blue* because of *Rayleigh scattering*.\n"
+            f"Now answer:"
+        )
+        inputs = self.tokenizer(prompt, return_tensors="pt", truncation=True, max_length=2048).to(self.model.device)
+        with torch.no_grad():
+            outputs = self.model.generate(**inputs, max_new_tokens=150)
+        return self.tokenizer.decode(outputs[0], skip_special_tokens=True)
+
+    def extract_rationale_tokens(self, explanation: str) -> List[str]:
+        return re.findall(r"\*(.*?)\*", explanation)
 
     def tokenize_explanation(self, explanation: str) -> List[str]:
-        """
-        Tokenize the explanation into lowercase, cleaned tokens.
-        """
-        return [token.lower() for token in explanation.strip().replace(",", "").split()]
+        return [token.lower() for token in explanation.strip().split()]
 
     def erase_token_and_get_confidence(self, text: str, token: str, expected_label: str) -> float:
-        """
-        Remove a token from the input and re-check model prediction confidence.
-        """
-        modified_text = text.replace(token, "").strip()
-        if not modified_text:
+        modified = text.replace(token, "").strip()
+        if not modified:
             return 0.0
-        
-        try:
-            label, conf = self.get_prediction_and_confidence(modified_text)
-            return conf if label == expected_label else 1 - conf
-        except Exception as e:
-            print(f"Error in token erasure for '{token}': {e}")
-            return 0.5
+        label, conf = self.get_prediction_and_confidence(modified)
+        return conf if label == expected_label else 1 - conf
 
     def get_suff_confidence(self, explanation_tokens: List[str], expected_label: str) -> float:
-        """
-        Compute sufficiency by feeding only explanation tokens and observing model confidence.
-        """
         if not explanation_tokens:
             return 0.0
-        
         reduced_input = " ".join(explanation_tokens)
-        
-        try:
-            label, conf = self.get_prediction_and_confidence(reduced_input)
-            return conf if label == expected_label else 1 - conf
-        except Exception as e:
-            print(f"Error in sufficiency evaluation: {e}")
-            return 0.5
+        label, conf = self.get_prediction_and_confidence(reduced_input)
+        return conf if label == expected_label else 1 - conf
 
     def get_attribution_tokens(self, text: str, top_k: int = 5) -> List[str]:
-        """
-        Extract top-k attribution tokens using custom attribution_extraction module.
-        """
-        try:
-            return get_top_attributed_tokens(text, k=top_k)
-        except Exception as e:
-            print(f"Error getting attribution tokens: {e}")
-            tokens = text.split()
-            return tokens[:top_k] if len(tokens) >= top_k else tokens
+        tokens = text.split()
+        return tokens[:top_k] if len(tokens) >= top_k else tokens

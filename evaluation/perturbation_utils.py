@@ -1,10 +1,11 @@
+# evaluation/perturbation_utils.py
 
 from attention_perturbation import compute_attention_perturbed_confidence
 from faithfulness_pipeline import FaithMultiPipeline
 
 def compute_causal_impact(pipeline: FaithMultiPipeline, text, tokens, expected_label, orig_conf):
     """
-    Attention-based causal probing using attribution tokens.
+    Attention-based causal probing using LLaMA and rationale tokens.
     """
     try:
         perturbed_conf = compute_attention_perturbed_confidence(text, tokens)

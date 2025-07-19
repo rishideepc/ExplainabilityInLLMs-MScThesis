@@ -665,3 +665,19 @@
 # print(f"\n✅ CommonsenseClaim dataset saved to '{output_path}' with {len(output_data)} entries.")
 
 ##################################################################################################################################
+
+# from datasets import load_dataset
+
+# dataset = load_dataset("truthful_claim")["test"]
+# sample = dataset[0]  # Subset for testing
+# print(f"Sample: {sample}")
+# question = sample["claim"]
+# answer = sample["label"].upper()
+
+
+# print(f"Question: {question}")
+# print(f"Answer: {answer}")
+
+
+
+# Left for regenration (as on 19.7.25): StrategyClaim - Qwen; MedClaim - Qwen

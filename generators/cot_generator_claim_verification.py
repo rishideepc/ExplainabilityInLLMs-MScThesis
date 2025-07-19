@@ -7,9 +7,9 @@ import requests
 
 # === CONFIGURATION ===
 USE_OLLAMA = True
-MODEL = "qwen"  
-INPUT_FILE = "generators/commonsense_claims_dataset.json"
-OUTPUT_FILE = f"results/generation/commonsenseclaim_qwen/cot_outputs_claims.jsonl"
+MODEL = "qwen3:4b"  
+INPUT_FILE = "generators/truthful_claims_dataset.json"
+OUTPUT_FILE = f"results/generation/truthfulclaim_qwen/cot_outputs_claims.jsonl"
 
 
 # === Load JSON claims file ===

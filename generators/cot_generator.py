@@ -15,8 +15,8 @@ if not USE_OLLAMA:
     pass
 
 # Load initial experiment questions - TruthfulQA
-dataset = load_dataset("truthful_qa", "generation")
-questions = dataset["validation"]["question"][:817]
+# dataset = load_dataset("truthful_qa", "generation")
+# questions = dataset["validation"]["question"][:817]
 
 # Load initial experiment questions - CommonsenseQA
 # dataset = load_dataset("commonsense_qa")
@@ -29,9 +29,9 @@ questions = dataset["validation"]["question"][:817]
 # questions = questions[:2290]
 
 # Load initial experiment questions - MedQA
-# dataset = load_dataset("GBaker/MedQA-USMLE-4-options")
-# questions = [entry["question"] for entry in dataset["test"]]
-# questions = questions[:1273]
+dataset = load_dataset("GBaker/MedQA-USMLE-4-options")
+questions = [entry["question"] for entry in dataset["test"]]
+questions = questions[:1273]
 
 # Prompt generator for zero-shot CoT
 # def make_cot_prompt(q):
@@ -81,7 +81,7 @@ A:
 
 ###### Model 1: Local LLM - Mistral, LLama3, Qwen via Ollama ############################
 #################################################################
-def generate_with_ollama(prompt, model="mistral"):
+def generate_with_ollama(prompt, model="qwen3:4b"):
     try:
         res = requests.post(
             "http://localhost:11434/api/generate",
@@ -102,12 +102,12 @@ def generate_with_ollama(prompt, model="mistral"):
 
 
 # Method for CoT prompting explanations
-def generate_cot_explanations(questions, model="mistral"):
+def generate_cot_explanations(questions, model="qwen3:4b"):
     results = []
     for q in questions:
         prompt = make_cot_prompt(q)
         if USE_OLLAMA:
-            explanation = generate_with_ollama(prompt, model="mistral")  
+            explanation = generate_with_ollama(prompt, model="qwen3:4b")  
         else:
             pass
         results.append({"question": q, "cot_explanation": explanation})
@@ -117,7 +117,7 @@ def generate_cot_explanations(questions, model="mistral"):
 if __name__ == "__main__":
     results = generate_cot_explanations(questions)
     if USE_OLLAMA:
-        output_file = "/vol/bitbucket/rc1124/MSc_Individual_Project/ExplainabilityInLLMs-MScThesis/results/generation/truthfulqa_mistral_temp/cot_outputs_ollama_meta_reasoning_conclusion_step_indices_fewshot.jsonl"
+        output_file = "results/generation/medqa_qwen/cot_outputs_ollama_meta_reasoning_conclusion_step_indices_fewshot.jsonl"
     else:
         pass
     with open(output_file, "w") as f:

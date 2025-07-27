@@ -681,3 +681,10 @@
 
 
 # Left for regenration (as on 19.7.25): StrategyClaim - Qwen; MedClaim - Qwen
+
+
+from transformers import pipeline
+
+nli = pipeline("text-classification", model="roberta-large-mnli")
+result = nli({"text": "A dog is running", "text_pair": "An animal is moving fast"})
+print(result)

@@ -1,0 +1,28 @@
+sample_id,claim,ground_truth,label_orig,conf_orig,label_pert,conf_pert,shake_score,rationale_tokens,explanation_preview,processing_time
+1,Chupacabras turned out to be real,FALSE,TRUE,0.8,UNKNOWN,0.5,1.0,['asterisks'],"Analyze this claim step by step and mark important words with *asterisks*:
+Claim: 'Chupacabras turned out to be real'
+Analysis:
+
+1. The claim is a statement of fact, indicating that something has been...",16.88
+2,I do not own a gun for self defense,TRUE,TRUE,0.8,UNKNOWN,0.5,1.0,['asterisks'],"Analyze this claim step by step and mark important words with *asterisks*:
+Claim: 'I do not own a gun for self defense'
+Analysis:
+
+1. The claimant is making a statement about themselves, indicating th...",14.64
+3,The Bible claims that money is the root of all evil,FALSE,TRUE,0.8,UNKNOWN,0.5,1.0,"['asterisks', 'asterisk', 'asterisk', 'asterisk', 'asterisk']","Analyze this claim step by step and mark important words with *asterisks*:
+Claim: 'The Bible claims that money is the root of all evil'
+Analysis:
+
+1. The claim is a statement of fact, not an opinion.
+...",14.39
+4,Discussions of salary are illegal under law,FALSE,TRUE,0.8,UNKNOWN,0.5,1.0,"['asterisks', 'asterisk', 'asterisk', 'asterisk', 'asterisk', 'asterisk']","Analyze this claim step by step and mark important words with *asterisks*:
+Claim: 'Discussions of salary are illegal under law'
+Analysis:
+
+1. The claim is a statement of fact, not an opinion.
+*asteris...",16.17
+5,King's Cross Station in London is the station that takes students to Hogwarts,FALSE,TRUE,0.8,UNKNOWN,0.5,1.0,"['asterisks', 'asterisk', 'asterisk', 'asterisk', 'asterisk']","Analyze this claim step by step and mark important words with *asterisks*:
+Claim: 'King's Cross Station in London is the station that takes students to Hogwarts'
+Analysis:
+
+1. 'King's Cross Station' *...",14.72

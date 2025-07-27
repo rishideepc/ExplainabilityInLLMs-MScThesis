@@ -1,6 +1,6 @@
 sample_id,claim,label_orig,conf_orig,label_pert,conf_pert,shake_score,ground_truth
-856,A woman may kill a stranger she met in a dark alley with the intention of seeking revenge.,TRUE,0.8,UNKNOWN,0.5,1.0,FALSE
-266,One may place a telephone on a desk.,TRUE,0.95,TRUE,0.5,0.45,TRUE
-727,A place with a revolving door and things to buy in it is a shop (or store) in New York.,TRUE,0.8,TRUE,0.8,0.0,FALSE
-613,"They were kissing each other goodbye, their relationship had a strong foundation based on their partner.",TRUE,0.8,UNKNOWN,0.5,1.0,FALSE
-1180,"A person works toward an advanced degree while sitting in a chair at home or school, not in a furniture store.",TRUE,0.95,TRUE,0.95,0.0,FALSE
+856,A woman may kill a stranger she met in a dark alley with the intention of seeking revenge.,TRUE,0.8,TRUE,0.8,0.0,FALSE
+266,One may place a telephone on a desk.,TRUE,0.1,TRUE,0.5,-0.4,TRUE
+727,A place with a revolving door and things to buy in it is a shop (or store) in New York.,TRUE,0.8,UNKNOWN,0.5,1.0,FALSE
+613,"They were kissing each other goodbye, their relationship had a strong foundation based on their partner.",TRUE,0.9,UNKNOWN,0.5,1.0,FALSE
+1180,"A person works toward an advanced degree while sitting in a chair at home or school, not in a furniture store.",TRUE,0.95,TRUE,0.9,-0.05,FALSE

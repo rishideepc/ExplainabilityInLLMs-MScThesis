@@ -1,0 +1,111 @@
+
+<html>
+<head>
+<style>
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-family: Arial, sans-serif;
+}
+th, td {
+  text-align: left;
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+}
+th {
+  background-color: #f2f2f2;
+  cursor: pointer;
+}
+tr:hover {
+  background-color: #f5f5f5;
+}
+</style>
+</head>
+<body>
+<h2>Chain-of-Thought Explanation Evaluation Summary</h2>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Dataset</th>
+      <th>mistral_redundancy</th>
+      <th>mistral_weak_relevance</th>
+      <th>mistral_strong_relevance</th>
+      <th>llama_redundancy</th>
+      <th>llama_weak_relevance</th>
+      <th>llama_strong_relevance</th>
+      <th>qwen_redundancy</th>
+      <th>qwen_weak_relevance</th>
+      <th>qwen_strong_relevance</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>truthfulqa</td>
+      <td>0.1989</td>
+      <td>1.0</td>
+      <td>0.3857</td>
+      <td>0.1434</td>
+      <td>1.0</td>
+      <td>0.2542</td>
+      <td>0.1156</td>
+      <td>1.0</td>
+      <td>0.1643</td>
+    </tr>
+    <tr>
+      <td>strategyqa</td>
+      <td>0.2251</td>
+      <td>1.0</td>
+      <td>0.4366</td>
+      <td>0.1419</td>
+      <td>1.0</td>
+      <td>0.2728</td>
+      <td>0.1037</td>
+      <td>1.0</td>
+      <td>0.1980</td>
+    </tr>
+    <tr>
+      <td>medqa</td>
+      <td>0.1876</td>
+      <td>1.0</td>
+      <td>0.3721</td>
+      <td>0.2485</td>
+      <td>1.0</td>
+      <td>0.2233</td>
+      <td>0.1154</td>
+      <td>1.0</td>
+      <td>0.0949</td>
+    </tr>
+    <tr>
+      <td>commonsenseqa</td>
+      <td>0.1956</td>
+      <td>1.0</td>
+      <td>0.3846</td>
+      <td>0.1536</td>
+      <td>1.0</td>
+      <td>0.2749</td>
+      <td>0.7461</td>
+      <td>1.0</td>
+      <td>0.8624</td>
+    </tr>
+  </tbody>
+</table>
+<script>
+document.querySelectorAll("th").forEach((th, index) => {
+  th.addEventListener("click", () => {
+    const table = th.closest("table");
+    const tbody = table.querySelector("tbody");
+    Array.from(tbody.querySelectorAll("tr"))
+      .sort((a, b) => {
+        let valA = a.children[index].innerText.trim();
+        let valB = b.children[index].innerText.trim();
+        let numA = parseFloat(valA);
+        let numB = parseFloat(valB);
+        if (!isNaN(numA) && !isNaN(numB)) return numA - numB;
+        return valA.localeCompare(valB);
+      })
+      .forEach(tr => tbody.appendChild(tr));
+  });
+});
+</script>
+</body>
+</html>

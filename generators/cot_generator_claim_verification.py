@@ -8,8 +8,8 @@ import requests
 # === CONFIGURATION ===
 USE_OLLAMA = True
 MODEL = "qwen3:4b"  
-INPUT_FILE = "generators/truthful_claims_dataset.json"
-OUTPUT_FILE = f"results/generation/truthfulclaim_qwen/cot_outputs_claims.jsonl"
+INPUT_FILE = "generators/med_claims_dataset.json"
+OUTPUT_FILE = f"results/generation/medclaim_qwen/cot_outputs_claims.jsonl"
 
 
 # === Load JSON claims file ===

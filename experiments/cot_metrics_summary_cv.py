@@ -12,8 +12,8 @@ sys.path.append(project_root)
 
 from evaluation.explanation_evaluation_calc_cv import evaluate_all_cot
 
-datasets = ["truthfulqa"]
-models = ["qwen"]
+datasets = ["truthfulclaim", "strategyclaim", "medclaim"]
+models = ["mistral", "llama", "qwen"]
 metric_keys = ["redundancy", "weak_relevance", "strong_relevance"]
 
 base_path = os.path.join(project_root, "results", "generation")
@@ -55,10 +55,10 @@ df = pd.DataFrame.from_dict(summary, orient="index").reset_index()
 df.rename(columns={"index": "Dataset"}, inplace=True)
 
 dataset_name_map = {
-    "truthfulqa": "TruthfulQA",
-    "strategyqa": "StrategyQA",
-    "medqa": "MedQA",
-    "commonsenseqa": "CommonSenseQA"
+    "truthfulclaim": "TruthfulClaim",
+    "strategyclaim": "StrategyClaim",
+    "medclaim": "MedClaim",
+    "commonsenseclaim": "CommonSenseClaim"
 }
 df["Dataset"] = df["Dataset"].map(dataset_name_map)
 

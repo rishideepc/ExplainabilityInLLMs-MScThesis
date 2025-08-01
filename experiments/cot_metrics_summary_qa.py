@@ -12,8 +12,8 @@ sys.path.append(project_root)
 
 from evaluation.explanation_evaluation_calc_qa import evaluate_all_cot
 
-datasets = ["truthfulqa", "strategyqa", "medqa"]
-models = ["mistral", "llama", "qwen"]
+datasets = ["medqa"]
+models = ["qwen"]
 metric_keys = ["redundancy", "weak_relevance", "strong_relevance"]
 
 base_path = os.path.join(project_root, "results", "generation")
@@ -104,7 +104,7 @@ td {{
 display(HTML(custom_table_html))
 
 output_csv = os.path.join(project_root, "results", "cot_method", "cot_metrics_summary_qa.csv")
-output_html = os.path.join(project_root, "results", "cot_method", "cot_metrics_summary_cv.html")
+output_html = os.path.join(project_root, "results", "cot_method", "cot_metrics_summary_qa.html")
 
 df.to_csv(output_csv, index=False)
 print(f"[✓] CSV saved to: {output_csv}")

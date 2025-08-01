@@ -1,6 +1,102 @@
 sample_id,claim,label_orig,conf_orig,label_pert,conf_pert,shake_score,ground_truth
-856,A woman may kill a stranger she met in a dark alley with the intention of seeking revenge.,TRUE,0.8,TRUE,0.8,0.0,FALSE
-266,One may place a telephone on a desk.,TRUE,0.1,TRUE,0.5,-0.4,TRUE
+856,A woman may kill a stranger she met in a dark alley with the intention of seeking revenge.,TRUE,0.8,TRUE,0.5,-0.3,FALSE
+266,One may place a telephone on a desk.,TRUE,1.0,UNKNOWN,0.5,1.0,TRUE
 727,A place with a revolving door and things to buy in it is a shop (or store) in New York.,TRUE,0.8,UNKNOWN,0.5,1.0,FALSE
 613,"They were kissing each other goodbye, their relationship had a strong foundation based on their partner.",TRUE,0.9,UNKNOWN,0.5,1.0,FALSE
-1180,"A person works toward an advanced degree while sitting in a chair at home or school, not in a furniture store.",TRUE,0.95,TRUE,0.9,-0.05,FALSE
+1180,"A person works toward an advanced degree while sitting in a chair at home or school, not in a furniture store.",TRUE,0.5,TRUE,0.9,0.4,FALSE
+1108,"They needed grape juice for their party; they went to buy it and other snacks at the market.
+   => To acquire grape juice and other snacks for a party, one would go to the market.",TRUE,0.5,TRUE,0.1,-0.4,FALSE
+1181,Farm land utilizes North Dakota.,TRUE,0.9,UNKNOWN,0.5,1.0,FALSE
+719,"People aim to fulfill their own calorie requirements individually, not by competing with each other.",TRUE,0.8,UNKNOWN,0.5,1.0,FALSE
+615,"If one is hungry and going fishing, it's for enjoyment or fun.",TRUE,0.5,TRUE,0.8,0.3,FALSE
+912,A cup of coffee can be set and relaxed over at a coffee shop.,TRUE,0.8,UNKNOWN,0.5,1.0,FALSE
+1206,A prisoner is sentenced to attempt escaping.,TRUE,0.8,UNKNOWN,0.5,1.0,FALSE
+439,Hundreds of beauty salons can be found in a city.,TRUE,0.8,TRUE,0.9,-0.1,TRUE
+767,Religion is unknowable.,TRUE,0.8,TRUE,0.8,0.0,FALSE
+299,A person who admits his mistakes is acting responsibly.,TRUE,0.8,UNKNOWN,0.5,1.0,TRUE
+673,"While going to work, one is driving.",TRUE,0.95,TRUE,0.95,0.0,FALSE
+791,"People seek understanding when they don't understand something, not that they get sick.",TRUE,0.8,TRUE,0.8,0.0,FALSE
+1140,Mammoths lived during the boscage era.,TRUE,1.0,TRUE,0.08,-0.92,FALSE
+650,A child likely sits at a desk in a library.,TRUE,0.8,TRUE,0.8,0.0,FALSE
+414,It may be challenging to deliver furniture to a loft.,TRUE,0.8,UNKNOWN,0.5,1.0,TRUE
+151,Jenny derives satisfaction from helping people.,TRUE,0.9,TRUE,0.8,0.1,TRUE
+228,The conditions for someone living in a homeless shelter can be sometimes unfavorable.,TRUE,0.5,UNKNOWN,0.5,1.0,TRUE
+353,Ice melts when it is in the sun.,TRUE,1.0,UNKNOWN,0.5,1.0,TRUE
+530,One gets maps from a cabinet when they own them.,TRUE,0.8,TRUE,0.8,-0.0,TRUE
+987,Water in clouds turns into teardrops when it gets cold.,TRUE,0.8,TRUE,0.8,0.0,FALSE
+966,People might require cleaning when they have allergies.,TRUE,0.9,UNKNOWN,0.5,1.0,FALSE
+454,"If one uses a key to open a hinged door, it's likely they are entering their own house.",TRUE,0.5,UNKNOWN,0.5,1.0,TRUE
+64,A snake can be found in tall grass at a field.,TRUE,0.8,TRUE,0.8,-0.0,TRUE
+524,"John dislikes standing in line, given his subsequent hatred of the game and the time and sore feet it involves.",TRUE,0.5,TRUE,0.8,-0.3,TRUE
+423,"Before asking a question about a crime scene, one would analyze it.",TRUE,0.8,UNKNOWN,0.5,1.0,TRUE
+401,One borrows furniture from their neighbor's house when they do not have any.,TRUE,0.8,UNKNOWN,0.5,1.0,TRUE
+783,A child eager to go play is likely to get there through enjoyment.,TRUE,0.8,TRUE,0.9,0.1,FALSE
+660,A main artery used to expedite travel is referred to as a busy city.,TRUE,0.8,TRUE,0.9,0.1,FALSE
+170,"When one fails to finish something, they have failed at its completion.",TRUE,0.8,TRUE,0.9,-0.1,TRUE
+848,Pretending to be a police officer results in a misunderstanding.,TRUE,0.9,UNKNOWN,0.5,1.0,FALSE
+1115,Punk rock music is not an important part of opera.,TRUE,0.9,TRUE,0.8,-0.1,FALSE
+883,Trees roots cling to soil.,TRUE,0.1,UNKNOWN,0.5,1.0,FALSE
+265,One is likely to find a brownstone in New York City.,TRUE,0.8,TRUE,0.8,-0.0,TRUE
+1047,"Dogs are very smart, making them often known as man's best friend.",TRUE,1.0,TRUE,0.9,-0.1,FALSE
+1205,A person with digestion issues who eats a meat-filled breakfast feels energized.,TRUE,0.5,TRUE,0.8,0.3,FALSE
+1117,A bird is likely to make its home in the sky.,TRUE,0.8,TRUE,0.8,0.0,FALSE
+749,"A thoroughfare meandered through fields and woods, passing through New York City.",TRUE,0.5,TRUE,0.8,0.3,FALSE
+212,Standing up and immediately sitting back down may make one feel unbalanced.,TRUE,0.8,UNKNOWN,0.5,1.0,TRUE
+19,People possess two eyes unlike a spider and its many observers.,TRUE,0.9,TRUE,0.9,-0.0,TRUE
+573,"After finishing art creation, someone might relax.",TRUE,0.9,UNKNOWN,0.5,1.0,TRUE
+365,Surprising an angry person could potentially lead to a fight.,TRUE,0.8,UNKNOWN,0.5,1.0,TRUE
+899,Listening to a lecture intensely aims to gain confidence.,TRUE,0.5,TRUE,0.5,0.0,FALSE
+1142,An unsuccessful suicide attempt might not result in dying.,TRUE,0.1,UNKNOWN,0.5,1.0,FALSE
+641,A person may be in England if they are buying pork chops at a corner shop.,TRUE,0.8,TRUE,0.8,0.0,FALSE
+28,Blue reads material outside of his comfort zone to acquire a new perspective.,TRUE,0.8,TRUE,0.8,-0.0,TRUE
+493,"Brad could not get up from bed; instead, he continued lying down.",TRUE,0.9,TRUE,0.8,0.1,TRUE
+1213,"He will be in the stairwell soon, given that he knew the landing was happening shortly and it made him nervous.",TRUE,0.95,UNKNOWN,0.5,1.0,FALSE
+498,Bill seeks a responsible stranger with kids; he might find them at a park.,TRUE,0.8,TRUE,0.8,-0.0,TRUE
+1000,A table with parts at varying heights without a consistent pattern is not suitable for an electrical circuit.,TRUE,0.8,TRUE,0.8,0.0,FALSE
+587,"John and the lady were unacquainted, as he had never seen her before.",TRUE,0.8,UNKNOWN,0.5,1.0,TRUE
+92,A stairwell has a landing at its top.,TRUE,0.5,UNKNOWN,0.5,1.0,TRUE
+616,Dogs will always eat cake if they have a good owner.,TRUE,0.9,UNKNOWN,0.5,1.0,FALSE
+859,"He was afraid he would die from his cold, so he wisely decided to write a will.",TRUE,0.9,TRUE,0.8,-0.1,FALSE
+318,A human is often found at their place of work when they are earning money.,TRUE,0.95,UNKNOWN,0.5,1.0,TRUE
+12,"To achieve harmony, one should aim to make peace with the world.",TRUE,0.8,TRUE,0.8,-0.0,TRUE
+209,"The hostess was proficient at her job, she always had a smile when welcoming guests.",TRUE,0.9,TRUE,0.8,0.1,TRUE
+216,Kids use a skateboard to alleviate boredom on a ramp.,TRUE,0.8,UNKNOWN,0.5,1.0,TRUE
+229,People can achieve relaxation through knitting.,TRUE,0.95,UNKNOWN,0.5,1.0,TRUE
+535,Most people can strive for better outcomes by thinking instead of making assumptions based on their prejudices.,TRUE,0.9,UNKNOWN,0.5,1.0,TRUE
+1173,One can find salt closest at a table.,TRUE,0.9,TRUE,0.9,0.0,FALSE
+982,Humans need shelter to survive and they usually find it in a space shuttle.,TRUE,0.0,TRUE,1.0,1.0,FALSE
+1216,"To obtain a grape, one would go to a field.",TRUE,0.9,TRUE,0.8,-0.1,FALSE
+122,"James, having noticed that his penis was bigger, might express exuberance towards his plastic surgeon.",TRUE,0.5,TRUE,0.9,-0.4,TRUE
+793,A rubber toy filled with helium makes a child loved.,TRUE,0.8,UNKNOWN,0.5,1.0,FALSE
+682,Jodie felt a tightness in her chest but didn't want to go to the hospital; she might seek help instead at an alternative medical facility in Istanbul.,TRUE,0.8,UNKNOWN,0.5,1.0,FALSE
+943,A device (fountain pen) is used for writing and distributed daily.,TRUE,0.8,TRUE,0.8,0.0,FALSE
+314,People have dominance over the planet by making tools more effectively than animals.,TRUE,0.9,TRUE,0.8,0.1,TRUE
+1096,She aimed to achieve physical fitness but struggled to maintain focus on an hour-long swim session.,TRUE,0.5,TRUE,0.8,0.3,FALSE
+672,Eating hamburger is least likely to immediately cause illness.,TRUE,0.8,UNKNOWN,0.5,1.0,FALSE
+25,"A person who isn't clever, bright, or competent is called stupid.",TRUE,0.8,TRUE,0.8,-0.0,TRUE
+618,"For many males, as they get older, their hair begins to thin out, causing a receding hairline.",TRUE,0.5,UNKNOWN,0.5,1.0,FALSE
+738,Lawyers often talk in front of an audience in court.,TRUE,0.9,TRUE,0.95,0.05,FALSE
+563,A cat could experience thirst other than desiring food.,TRUE,0.8,TRUE,0.8,-0.0,TRUE
+632,People aim to sit while watching a play.,TRUE,0.8,TRUE,0.8,0.0,FALSE
+1209,"Many varieties of plants, including rosebushes, can be found at a shop.",TRUE,0.5,TRUE,0.8,0.3,FALSE
+163,"The smelly carpet discouraged the league from playing, so it was installed at a bowling alley.",TRUE,0.8,UNKNOWN,0.5,1.0,TRUE
+319,They were going to watch the biggest motorsport spectacle in the world at Indiana while passing an apple tree on their way to the racetrack.,TRUE,0.9,TRUE,0.8,0.1,TRUE
+1052,The soldier was instructed to follow instructions at the rendezvous point.,TRUE,0.8,TRUE,0.8,0.0,FALSE
+705,"It is crucial to ensure a person who fears water or dislikes being wet has a bath despite their fear, to prevent flooding.",TRUE,0.8,UNKNOWN,0.5,1.0,FALSE
+327,"Many bookcases are found in a room used for contemplation, referred to as a study.",TRUE,0.8,UNKNOWN,0.5,1.0,TRUE
+1085,A shark could be found in a desert before it was caught.,TRUE,0.8,TRUE,0.8,0.0,FALSE
+178,A person without immortality is called a mortal.,TRUE,0.8,UNKNOWN,0.5,1.0,TRUE
+275,Attending school can pose a potential hazard of contracting colds and flu.,TRUE,0.8,UNKNOWN,0.5,1.0,TRUE
+143,"Mark treated Sam like family, despite him being a stranger.",TRUE,0.9,TRUE,0.9,-0.0,TRUE
+751,Sean aimed to reach the countryside when he left work.,TRUE,0.8,TRUE,0.8,0.0,FALSE
+246,"Part of Joe's brain was awake, as evidenced by his ability to memorize the list despite his apparent state.",TRUE,0.8,TRUE,0.8,-0.0,TRUE
+104,"Computers are capable of multitasking, which was considered a significant breakthrough in their development.",TRUE,0.9,UNKNOWN,0.5,1.0,TRUE
+523,A battle involving words could occur in a courtroom.,TRUE,0.8,UNKNOWN,0.5,1.0,TRUE
+697,"A device is used to grind wheat for bread, and that device is not cereal packets.",TRUE,0.95,TRUE,0.95,0.0,FALSE
+1067,The woodworker had to warp the rough wooden piece.,TRUE,0.8,TRUE,0.9,0.1,FALSE
+977,The guard is present for a man post.,TRUE,0.95,TRUE,0.8,-0.15,FALSE
+688,"In basic training, they build you up only to mutilate, with the intent of building you up even stronger for the next time.",TRUE,0.8,UNKNOWN,0.5,1.0,FALSE
+634,"Raising a baby can be challenging due to factors that limit their abilities, one of which is their inability to bring joy initially.",TRUE,0.8,UNKNOWN,0.5,1.0,FALSE
+256,A person who avoids leafy greens may obtain minerals through multivitamins.,TRUE,0.7,UNKNOWN,0.5,1.0,TRUE
+1150,"A farmer observes a weasel within the woods, but unexpectedly, he is in a chicken coop.",TRUE,0.8,UNKNOWN,0.5,1.0,FALSE
+291,Communicating with my boss involves the transfer of information.,TRUE,0.9,UNKNOWN,0.5,1.0,TRUE

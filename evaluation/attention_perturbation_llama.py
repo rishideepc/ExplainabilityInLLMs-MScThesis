@@ -8,16 +8,54 @@ def normalize_token(token):
     return re.sub(r'\W+', '', token.replace("▁", "").lower())
 
 def get_token_indices(tokenizer, text, target_words):
-    tokens = tokenizer.tokenize(text)
-    token_strings = [token.replace("▁", "") for token in tokens]
-    norm_tokens = [token.lower() for token in token_strings]
-    norm_targets = [word.lower() for word in target_words]
-
-    print(f"🧩 Tokenized words: {norm_tokens}")
-    print(f"🎯 Normalized rationale targets: {norm_targets}")
-
-    indices = [i for i, tok in enumerate(norm_tokens) if tok in norm_targets]
-    print(f"📌 Matched token indices: {indices}")
+    # Get tokenization with character offset mapping
+    encoding = tokenizer(text, return_offsets_mapping=True, add_special_tokens=False)
+    tokens = tokenizer.convert_ids_to_tokens(encoding['input_ids'])
+    offsets = encoding['offset_mapping']
+    
+    print(f"Tokens: {tokens}")
+    print(f"Target words: {target_words}")
+    
+    indices = []
+    text_lower = text.lower()
+    
+    for target_word in target_words:
+        target_word = target_word.lower().strip()
+        if not target_word:
+            continue
+        
+        # Find all occurrences of the target word in the text
+        start_pos = 0
+        while True:
+            word_start = text_lower.find(target_word, start_pos)
+            if word_start == -1:
+                break
+                
+            word_end = word_start + len(target_word)
+            
+            # Check if this is a complete word (not part of another word)
+            if word_start > 0 and text_lower[word_start-1].isalnum():
+                start_pos = word_start + 1
+                continue
+            if word_end < len(text_lower) and text_lower[word_end].isalnum():
+                start_pos = word_start + 1
+                continue
+            
+            # Find tokens that overlap with this word
+            word_indices = []
+            for i, (char_start, char_end) in enumerate(offsets):
+                if char_start < word_end and char_end > word_start:
+                    word_indices.append(i)
+            
+            indices.extend(word_indices)
+            print(f"Word match: '{target_word}' at chars {word_start}-{word_end} -> tokens {word_indices} ({[tokens[j] for j in word_indices]})")
+            
+            start_pos = word_end
+            break  # Only match first occurrence of each word
+    
+    # Remove duplicates while preserving order
+    indices = list(dict.fromkeys(indices))
+    print(f"Final matched token indices: {indices}")
     return indices
 
 class CustomLlamaAttention(LlamaAttention):
@@ -53,44 +91,57 @@ def replace_llama_attention(model, target_indices, last_n_layers=1):
             custom_attn.load_state_dict(model.model.layers[i].self_attn.state_dict(), strict=False)
             custom_attn = custom_attn.to(device).half()
             model.model.layers[i].self_attn = custom_attn
-    print("✅ Replaced final attention layer(s) with CustomLlamaAttention")
+    print("Replaced final attention layer(s) with CustomLlamaAttention")
 
 def run_with_attention_perturbation(model, tokenizer, text, target_tokens):
     model.eval()
     model = model.half()
-    prompt = (
-    f"Q: Is the following claim true or false?\n"
-    f"Claim: \"{text}\"\n\n"
-    "Return your answer only as 'TRUE' or 'FALSE' and also provide your confidence from 0 to 100.\nA:"
-    )
-    inputs = tokenizer(prompt, return_tensors="pt", truncation=True, max_length=2048)
+
+    # prompt = (
+    #     f"Q: Is the following claim true or false?\n"
+    #     f"Claim: \"{text}\"\n\n"
+    #     "Return your answer only as 'TRUE' or 'FALSE' and also provide your confidence from 0 to 100.\nA:"
+    # )
+    # inputs = tokenizer(prompt, return_tensors="pt", truncation=True, max_length=2048)
+
+    messages = [
+            {"role": "system", "content": "You are a factual claim evaluator. Respond with TRUE or FALSE."},
+            {"role": "user", "content": f'Claim: "{text}"\n\nAnswer: TRUE or FALSE'}
+        ]
+        
+    prompt = tokenizer.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)
+    inputs = tokenizer(prompt, return_tensors="pt", truncation=True, max_length=2048).to(model.device)
+
     inputs = {k: v.to(model.device) for k, v in inputs.items()}
     for key in inputs:
         if inputs[key].dtype == torch.float:
             inputs[key] = inputs[key].to(dtype=torch.float16)
 
     token_ids = inputs["input_ids"][0]
-    print(f"📥 input_ids device: {inputs['input_ids'].device}")
-    print(f"🧠 model device: {next(model.parameters()).device}")
+    print(f"input_ids device: {inputs['input_ids'].device}")
+    print(f"model device: {next(model.parameters()).device}")
 
     target_indices = get_token_indices(tokenizer, text, target_tokens)
 
     if not target_indices:
-        print("⚠️ No matching token indices found for rationale tokens.")
+        print("No matching token indices found for rationale tokens.")
         return "UNKNOWN", 0.5
 
     replace_llama_attention(model, target_indices, last_n_layers=1)
 
     with torch.no_grad():
         outputs = model.generate(**inputs, max_new_tokens=10)
-        output_text = tokenizer.decode(outputs[0], skip_special_tokens=True)
-        print(f"🗣️ Perturbed output: {output_text}")
+
+    output_text = tokenizer.decode(outputs[0], skip_special_tokens=True).strip()
+    print(f"Perturbed output: {output_text}")
+
+    generated_tokens = outputs[0][inputs['input_ids'].shape[1]:]
+    output_text = tokenizer.decode(generated_tokens, skip_special_tokens=True).strip()
+    print(f"Again, Generated tokens only: {output_text}")
 
     label = "TRUE" if "TRUE" in output_text.upper() else "FALSE" if "FALSE" in output_text.upper() else "UNKNOWN"
-    # match = re.search(r"(\d{1,3})", output_text)
     match = re.search(r"[Cc]onfidence\s*[:=]?\s*(\d{1,3})", output_text)
-    print(f"🧪 Confidence match: {match.group(1) if match else 'None'}")
     confidence = float(match.group(1)) / 100 if match else 0.5
 
-    print(f"📊 Perturbed label: {label} | confidence: {confidence:.2f}")
+    print(f"Perturbed label: {label} | confidence: {confidence:.2f}")
     return label, confidence

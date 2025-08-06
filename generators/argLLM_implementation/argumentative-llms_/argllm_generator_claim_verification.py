@@ -11,7 +11,7 @@ start_time= time.time()
 # Set project root and save path
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", ".."))
 sys.path.append(PROJECT_ROOT)
-SAVE_PATH = os.path.join(PROJECT_ROOT, "results", "generation", "argLLM_generation", "strategyclaim_qwen", "argllm_outputs_ollama.jsonl")
+SAVE_PATH = os.path.join(PROJECT_ROOT, "results", "generation", "argLLM_generation", "truthfulclaim_mistral", "argllm_outputs_ollama.jsonl")
 os.makedirs(os.path.dirname(SAVE_PATH), exist_ok=True)
 
 from argument_miner import ArgumentMiner
@@ -22,7 +22,8 @@ from prompt import ArgumentMiningPrompts, UncertaintyEvaluatorPrompts
 
 # === LLM Config ===
 # MODEL_NAME = "meta-llama/Meta-Llama-3-8B"
-MODEL_NAME = "Qwen/Qwen3-8B"
+MODEL_NAME = "mistralai/Mistral-7B-Instruct-v0.1"
+# MODEL_NAME = "Qwen/Qwen3-8B"
 QUANTIZATION = "none"  # use "4bit" or "8bit" for low VRAM GPUs
 USE_CUDA = torch.cuda.is_available()
 DEVICE = "cuda" if USE_CUDA else "cpu"
@@ -49,7 +50,7 @@ print(f"Device selected: {DEVICE}")
 print("Loading claim verification dataset...")
 import json
 
-with open(os.path.join(PROJECT_ROOT, "generators", "strategy_claims_dataset.json"), "r") as f:
+with open(os.path.join(PROJECT_ROOT, "generators", "truthful_claims_dataset.json"), "r") as f:
     dataset = json.load(f)
 dataset = dataset[:2290]  # or whatever size you want
 
@@ -141,11 +142,11 @@ for idx, entry in enumerate(dataset, 1):
         grad.algorithms.computeStrengthValues(t_estimated, agg_f, inf_f)
 
         results.append({
-            "id": entry["qid"],
+            "id": entry["id"],
             "question": entry["question"],
             # "option": entry["option"],
             "claim": entry["claim"],
-            "label": entry["label/answer"],
+            "label": entry["label"],
             "base": {
                 "bag": t_base.to_dict(),
                 "prediction": t_base.arguments["db0"].strength,

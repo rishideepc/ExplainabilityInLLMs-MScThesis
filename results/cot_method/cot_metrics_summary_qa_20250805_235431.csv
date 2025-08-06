@@ -1,0 +1,4 @@
+Dataset,mistral_redundancy,mistral_weak_relevance,mistral_strong_relevance,llama_redundancy,llama_weak_relevance,llama_strong_relevance,qwen_redundancy,qwen_weak_relevance,qwen_strong_relevance
+TruthfulQA,0.9189,0.3481,0.2942,0.9792,0.2178,0.1994,1.0,0.149,0.1198
+StrategyQA,0.9234,0.3049,0.277,0.9706,0.2044,0.1928,1.0,0.1287,0.1092
+MedQA,0.9878,0.2528,0.2243,0.9884,0.1706,0.1582,0.9993,0.138,0.1183

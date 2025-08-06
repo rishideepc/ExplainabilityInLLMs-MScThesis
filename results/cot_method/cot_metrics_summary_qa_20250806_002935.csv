@@ -1,0 +1,2 @@
+Dataset,mistral_redundancy,mistral_weak_relevance,mistral_strong_relevance
+TruthfulClaim,0.951,0.2728,0.2346

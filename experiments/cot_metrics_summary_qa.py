@@ -257,6 +257,22 @@ class ProgressAwareMetricsSummarizer:
         df = pd.DataFrame.from_dict(summary, orient="index").reset_index()
         df.rename(columns={"index": "Dataset"}, inplace=True)
         df["Dataset"] = df["Dataset"].map(lambda x: self.dataset_name_map.get(x, x.title()))
+
+        # Create MultiIndex columns for better presentation
+        columns_to_reformat = [col for col in df.columns if col != "Dataset"]
+        new_columns = ["Dataset"]
+
+        # Create hierarchical column structure
+        multiindex_tuples = [("", "Dataset")]  # Dataset column stays as is
+
+        for model in self.models:
+            for metric in self.metric_keys:
+                old_col = f"{model}_{metric}"
+                if old_col in df.columns:
+                    multiindex_tuples.append((model.capitalize(), metric.replace("_", " ").title()))
+
+        # Apply MultiIndex
+        df.columns = pd.MultiIndex.from_tuples(multiindex_tuples)
         
         # Save results
         output_dir = os.path.join(project_root, "results", "cot_method")

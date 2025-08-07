@@ -1,7 +1,0 @@
-{
-  "truthfulclaim": {
-    "mistral_redundancy": 0.951,
-    "mistral_weak_relevance": 0.2728,
-    "mistral_strong_relevance": 0.2346
-  }
-}

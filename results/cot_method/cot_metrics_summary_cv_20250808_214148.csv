@@ -1,0 +1,5 @@
+,Mistral,Mistral,Mistral,Llama,Llama,Llama,Qwen,Qwen,Qwen
+Dataset,Redundancy,Weak Relevance,Strong Relevance,Redundancy,Weak Relevance,Strong Relevance,Redundancy,Weak Relevance,Strong Relevance
+Truthfulclaim,0.9391,0.268,0.2325,0.9951,0.1755,0.1533,0.9978,0.1734,0.1384
+Strategyclaim,0.9478,0.2582,0.236,0.9906,0.1581,0.1462,0.9994,0.1364,0.1154
+Medclaim,0.9814,0.2282,0.2073,0.9966,0.1465,0.1399,1.0,0.1297,0.1115

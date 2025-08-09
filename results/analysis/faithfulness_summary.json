@@ -1,0 +1,28 @@
+{
+  "n_samples": 817,
+  "mean_label_flip_rate": 0.45165238678090575,
+  "mean_mean_abs_delta": 0.3378449204406365,
+  "mean_norm_sum_abs_delta": 0.46134973925526745,
+  "by_bag_type": {
+    "estimated": {
+      "n_samples": 817,
+      "mean_label_flip_rate": 0.45165238678090575,
+      "mean_mean_abs_delta": 0.3378449204406365,
+      "mean_norm_sum_abs_delta": 0.46134973925526745
+    }
+  },
+  "by_baseline_label": {
+    "0": {
+      "n_samples": 151,
+      "mean_label_flip_rate": 0.46688741721854304,
+      "mean_mean_abs_delta": 0.3341884105960265,
+      "mean_norm_sum_abs_delta": 0.5113679186809269
+    },
+    "1": {
+      "n_samples": 666,
+      "mean_label_flip_rate": 0.44819819819819817,
+      "mean_mean_abs_delta": 0.3386739489489489,
+      "mean_norm_sum_abs_delta": 0.4500092811572576
+    }
+  }
+}

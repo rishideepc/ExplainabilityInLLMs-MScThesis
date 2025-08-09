@@ -1,0 +1,131 @@
+
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>CoT Metrics Summary with Intelligent Sampling</title>
+            <style>
+                body {
+                    font-family: Arial, sans-serif;
+                    margin: 20px;
+                }
+                h1 {
+                    color: #333;
+                    text-align: center;
+                }
+                .info-box {
+                    background-color: #f0f8ff;
+                    border: 1px solid #007acc;
+                    border-radius: 5px;
+                    padding: 10px;
+                    margin: 20px 0;
+                }
+                table {
+                    border-collapse: collapse;
+                    width: 100%;
+                    margin: 20px 0;
+                }
+                th.col_heading.level0 {
+                    text-align: center !important;
+                    padding: 12px;
+                    background-color: #f9f9f9;
+                    font-weight: bold;
+                    border: 1px solid #ddd;
+                }
+                th.col_heading.level1 {
+                    text-align: center !important;
+                    padding: 10px;
+                    background-color: #f5f5f5;
+                    border: 1px solid #ddd;
+                }
+                td {
+                    text-align: center;
+                    padding: 8px;
+                    border: 1px solid #ddd;
+                }
+                tr:nth-child(even) {
+                    background-color: #f9f9f9;
+                }
+                tr:hover {
+                    background-color: #f0f8ff;
+                }
+            </style>
+        </head>
+        <body>
+            <h1>CoT Metrics Summary with Intelligent Sampling</h1>
+            <div class="info-box">
+                <h3>Enhancement Features:</h3>
+                <ul>
+                    <li><strong>Intelligent Sampling:</strong> Long explanations (>15 steps) are intelligently sampled based on content importance and connectivity</li>
+                    <li><strong>Reasoning Indicators:</strong> Steps with keywords like 'therefore', 'because', 'however' are prioritized</li>
+                    <li><strong>Position Awareness:</strong> First and last steps (premises and conclusions) are always preserved</li>
+                    <li><strong>Connectivity Analysis:</strong> Steps that share key entities with other steps are prioritized</li>
+                    <li><strong>Performance Optimization:</strong> Reduces processing time from days to hours for long explanations</li>
+                </ul>
+            </div>
+            <table class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th colspan="3" halign="left">Mistral</th>
+      <th colspan="3" halign="left">Llama</th>
+      <th colspan="3" halign="left">Qwen</th>
+    </tr>
+    <tr>
+      <th>Dataset</th>
+      <th>Redundancy</th>
+      <th>Weak Relevance</th>
+      <th>Strong Relevance</th>
+      <th>Redundancy</th>
+      <th>Weak Relevance</th>
+      <th>Strong Relevance</th>
+      <th>Redundancy</th>
+      <th>Weak Relevance</th>
+      <th>Strong Relevance</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TruthfulQA</td>
+      <td>0.9189</td>
+      <td>0.3481</td>
+      <td>0.2942</td>
+      <td>0.9792</td>
+      <td>0.2178</td>
+      <td>0.1994</td>
+      <td>1.0000</td>
+      <td>0.1490</td>
+      <td>0.1198</td>
+    </tr>
+    <tr>
+      <td>StrategyQA</td>
+      <td>0.9234</td>
+      <td>0.3049</td>
+      <td>0.2770</td>
+      <td>0.9706</td>
+      <td>0.2044</td>
+      <td>0.1928</td>
+      <td>1.0000</td>
+      <td>0.1287</td>
+      <td>0.1092</td>
+    </tr>
+    <tr>
+      <td>MedQA</td>
+      <td>0.9878</td>
+      <td>0.2528</td>
+      <td>0.2243</td>
+      <td>0.9884</td>
+      <td>0.1706</td>
+      <td>0.1582</td>
+      <td>0.9993</td>
+      <td>0.1380</td>
+      <td>0.1183</td>
+    </tr>
+  </tbody>
+</table>
+            <div class="info-box">
+                <p><em>Generated on: 2025-08-08 03:24:30</em></p>
+                <p><em>Processing completed with intelligent sampling and progress tracking</em></p>
+            </div>
+        </body>
+        </html>
+        

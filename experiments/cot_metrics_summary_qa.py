@@ -36,15 +36,15 @@ class ProgressAwareMetricsSummarizer:
     def __init__(self, base_path: Optional[str] = None):
         self.base_path = base_path or os.path.join(project_root, "results", "generation")
         
-        # Initialize with performance-optimized settings
+        # Initialize with performance-optimized settings including intelligent sampling
         self.evaluator = OptimizedExplanationEvaluator(
-            max_steps=15,      # Limit steps for long explanations
+            max_steps=15,      # Limit steps for long explanations  
             batch_size=16      # Efficient batch size
         )
         
-        # For testing specific combinations
-        self.datasets = ["truthfulqa", "strategyqa", "medqa"]  # Focus on problematic dataset
-        self.models = ["mistral", "llama", "qwen"]     # Focus on problematic model
+        # For testing specific combinations (can be made configurable)
+        self.datasets = ["truthfulqa", "strategyqa", "medqa"]  # Focus on problematic dataset for testing
+        self.models = ["mistral", "llama", "qwen"]     # Focus on problematic model for testing
         self.metric_keys = ["redundancy", "weak_relevance", "strong_relevance"]
         
         self.dataset_name_map = {
@@ -102,31 +102,44 @@ class ProgressAwareMetricsSummarizer:
             # Analyze explanation lengths
             explanation_lengths = []
             step_counts = []
+            original_step_counts = []
             
             for entry in sample_data:
                 explanation = entry.get("cot_explanation", "")
                 explanation_lengths.append(len(explanation))
                 
-                # Count potential steps
-                steps = self.evaluator.clean_and_split_explanation(explanation)
-                step_counts.append(len(steps))
+                # Count potential steps before intelligent sampling
+                original_steps = self.evaluator.clean_and_split_explanation(explanation)
+                original_step_counts.append(len(original_steps))
+                
+                # Count steps after intelligent sampling
+                if len(original_steps) > 15:
+                    sampled_steps = self.evaluator.sampler.intelligent_sample(original_steps)
+                    step_counts.append(len(sampled_steps))
+                else:
+                    step_counts.append(len(original_steps))
             
             if explanation_lengths and step_counts:
                 avg_length = sum(explanation_lengths) / len(explanation_lengths)
-                avg_steps = sum(step_counts) / len(step_counts)
-                max_steps = max(step_counts)
+                avg_original_steps = sum(original_step_counts) / len(original_step_counts)
+                avg_final_steps = sum(step_counts) / len(step_counts)
+                max_original_steps = max(original_step_counts) if original_step_counts else 0
+                max_final_steps = max(step_counts) if step_counts else 0
                 
-                # Estimate processing time
-                estimated_pairs_per_entry = min(avg_steps * avg_steps, 400)  # Cap at reasonable limit
+                # Estimate processing time based on final (sampled) steps
+                estimated_pairs_per_entry = min(avg_final_steps * avg_final_steps, 225)  # 15x15 max
                 estimated_time_per_entry = estimated_pairs_per_entry * 0.01  # Rough estimate
                 total_estimated_time = estimated_time_per_entry * total_entries / 60  # minutes
                 
                 complexity_info = {
                     "total_entries": total_entries,
                     "avg_explanation_length": int(avg_length),
-                    "avg_steps": round(avg_steps, 1),
-                    "max_steps": max_steps,
-                    "estimated_time_minutes": round(total_estimated_time, 1)
+                    "avg_original_steps": round(avg_original_steps, 1),
+                    "avg_final_steps": round(avg_final_steps, 1),
+                    "max_original_steps": max_original_steps,
+                    "max_final_steps": max_final_steps,
+                    "estimated_time_minutes": round(total_estimated_time, 1),
+                    "intelligent_sampling_active": avg_original_steps > avg_final_steps
                 }
                 
                 logger.info(f"Complexity analysis: {complexity_info}")
@@ -148,6 +161,8 @@ class ProgressAwareMetricsSummarizer:
         # Analyze complexity first
         for filepath in data_files:
             complexity = self.preview_data_complexity(filepath)
+            if complexity.get("intelligent_sampling_active", False):
+                logger.info(f"Intelligent sampling will be applied (avg steps: {complexity.get('avg_original_steps', 0):.1f} → {complexity.get('avg_final_steps', 0):.1f})")
             if complexity["estimated_time_minutes"] > 30:
                 logger.warning(f"Long processing time estimated: {complexity['estimated_time_minutes']:.1f} minutes")
                 logger.info("Consider using smaller max_steps or sampling if this is too long")
@@ -159,7 +174,7 @@ class ProgressAwareMetricsSummarizer:
             logger.info(f"Processing file {file_idx + 1}/{len(data_files)}: {os.path.basename(filepath)}")
             
             try:
-                # Use the optimized evaluator with progress tracking
+                # Use the optimized evaluator with progress tracking and intelligent sampling
                 results = self.evaluator.evaluate_all_cot_with_progress(filepath)
                 
                 if results:
@@ -205,7 +220,7 @@ class ProgressAwareMetricsSummarizer:
 
     def run_evaluation_with_checkpoints(self):
         """Run evaluation with checkpoint saving."""
-        logger.info("Starting CoT metrics evaluation with progress tracking")
+        logger.info("Starting CoT metrics evaluation with intelligent sampling and progress tracking")
         
         summary = defaultdict(dict)
         
@@ -260,8 +275,7 @@ class ProgressAwareMetricsSummarizer:
 
         # Create MultiIndex columns for better presentation
         columns_to_reformat = [col for col in df.columns if col != "Dataset"]
-        new_columns = ["Dataset"]
-
+        
         # Create hierarchical column structure
         multiindex_tuples = [("", "Dataset")]  # Dataset column stays as is
 
@@ -271,8 +285,21 @@ class ProgressAwareMetricsSummarizer:
                 if old_col in df.columns:
                     multiindex_tuples.append((model.capitalize(), metric.replace("_", " ").title()))
 
+        # Rebuild dataframe with MultiIndex columns
+        new_data = {}
+        for col_tuple in multiindex_tuples:
+            if col_tuple == ("", "Dataset"):
+                new_data[col_tuple] = df["Dataset"]
+            else:
+                model_name = col_tuple[0].lower()
+                metric_name = col_tuple[1].lower().replace(" ", "_")
+                old_col = f"{model_name}_{metric_name}"
+                if old_col in df.columns:
+                    new_data[col_tuple] = df[old_col]
+
         # Apply MultiIndex
-        df.columns = pd.MultiIndex.from_tuples(multiindex_tuples)
+        df_multiindex = pd.DataFrame(new_data)
+        df_multiindex.columns = pd.MultiIndex.from_tuples(df_multiindex.columns)
         
         # Save results
         output_dir = os.path.join(project_root, "results", "cot_method")
@@ -284,31 +311,116 @@ class ProgressAwareMetricsSummarizer:
         output_html = os.path.join(output_dir, f"cot_metrics_summary_qa_{timestamp}.html")
         
         try:
-            df.to_csv(output_csv, index=False)
+            df_multiindex.to_csv(output_csv, index=False)
             logger.info(f"CSV saved: {output_csv}")
             
-            df.to_html(output_html, index=False, escape=False)
+            # Create custom HTML with better styling
+            html_content = self.create_custom_html_table(df_multiindex)
+            with open(output_html, 'w') as f:
+                f.write(html_content)
             logger.info(f"HTML saved: {output_html}")
             
             # Display if in Jupyter
             if JUPYTER_AVAILABLE:
-                display(HTML(f"<h3>CoT Metrics Summary</h3>{df.to_html(index=False)}"))
+                display(HTML(html_content))
             else:
                 print("\nFinal Summary:")
                 print("=" * 60)
-                print(df.to_string(index=False))
+                print(df_multiindex.to_string(index=False))
                 
         except Exception as e:
             logger.error(f"Error saving results: {e}")
 
+    def create_custom_html_table(self, df: pd.DataFrame) -> str:
+        """Create custom HTML table."""
+        html_content = f"""
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>CoT Metrics Summary</title>
+            <style>
+                body {{
+                    font-family: Arial, sans-serif;
+                    margin: 20px;
+                }}
+                h1 {{
+                    color: #333;
+                    text-align: center;
+                }}
+                .info-box {{
+                    background-color: #f0f8ff;
+                    border: 1px solid #007acc;
+                    border-radius: 5px;
+                    padding: 10px;
+                    margin: 20px 0;
+                }}
+                table {{
+                    border-collapse: collapse;
+                    width: 100%;
+                    margin: 20px 0;
+                }}
+                th.col_heading.level0 {{
+                    text-align: center !important;
+                    padding: 12px;
+                    background-color: #f9f9f9;
+                    font-weight: bold;
+                    border: 1px solid #ddd;
+                }}
+                th.col_heading.level1 {{
+                    text-align: center !important;
+                    padding: 10px;
+                    background-color: #f5f5f5;
+                    border: 1px solid #ddd;
+                }}
+                td {{
+                    text-align: center;
+                    padding: 8px;
+                    border: 1px solid #ddd;
+                }}
+                tr:nth-child(even) {{
+                    background-color: #f9f9f9;
+                }}
+                tr:hover {{
+                    background-color: #f0f8ff;
+                }}
+            </style>
+        </head>
+        <body>
+            <h1>CoT Metrics Summary</h1>
+            {df.to_html(index=False, escape=False, border=0)}
+            <div class="info-box">
+                <p><em>Generated on: {time.strftime("%Y-%m-%d %H:%M:%S")}</em></p>
+                <p><em>Processing completed</em></p>
+            </div>
+        </body>
+        </html>
+        """
+        return html_content
+
+    def set_datasets_models(self, datasets: List[str], models: List[str]):
+        """Allow dynamic configuration of datasets and models."""
+        self.datasets = datasets
+        self.models = models
+        logger.info(f"Configuration updated - Datasets: {datasets}, Models: {models}")
+
 def main():
-    """Main execution function."""
+    """Main execution function with configurable options."""
     summarizer = ProgressAwareMetricsSummarizer()
     
-    # Set specific datasets and models for testing
-    print("Testing with medqa + qwen combination...")
-    print("This will provide detailed progress tracking and time estimates.")
-    print("Check the log file 'cot_evaluation.log' for detailed progress.")
+    print("CoT Metrics Evaluation with Intelligent Sampling")
+    print("=" * 60)
+    print("Features:")
+    print("- Intelligent sampling for long explanations (>15 steps)")
+    print("- Content-aware importance scoring") 
+    print("- Progress tracking with ETA calculations")
+    print("- Checkpoint saving for interruption recovery")
+    print("- Detailed logging to 'cot_evaluation.log'")
+    print()
+    
+    # For testing, focusing on problematic medqa+qwen combination
+    print("Current configuration: medqa + qwen (for testing)")
+    print("To test other combinations, modify the datasets and models lists in the code")
+    print()
     
     try:
         summarizer.run_evaluation_with_checkpoints()
@@ -318,6 +430,19 @@ def main():
     except Exception as e:
         logger.error(f"Evaluation failed: {e}")
         print(f"Evaluation failed: {e}")
+
+# Example of how to use with different configurations
+def example_custom_configuration():
+    """Example showing how to run with custom dataset/model combinations."""
+    summarizer = ProgressAwareMetricsSummarizer()
+    
+    # Test with multiple datasets and models
+    summarizer.set_datasets_models(
+        datasets=["medqa", "truthfulqa", "strategyqa"],
+        models=["qwen", "llama", "mistral"]
+    )
+    
+    summarizer.run_evaluation_with_checkpoints()
 
 if __name__ == "__main__":
     main()

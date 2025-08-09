@@ -1,14 +1,14 @@
-# evaluation/explanation_evaluation_calc_qa.py
+# evaluation/explanation_evaluation_calc_cv.py
 
 import json
-from typing import List, Dict, Optional, Tuple
+from typing import List, Dict, Optional, Tuple, Set
 import torch
 import sys
 import os
 import logging
 import re
 import time
-from concurrent.futures import ThreadPoolExecutor
+from collections import Counter
 from transformers import AutoModelForSequenceClassification, AutoTokenizer
 
 # Set up logging with progress info
@@ -25,6 +25,174 @@ from evaluation.Evaluating_Explanations.src.metrics.deductive_metrics import (
     compute_redundancy, compute_strong_relevance, compute_weak_relevance
 )
 
+class IntelligentCoTSampler:
+    """
+    Intelligent sampling for Chain-of-Thought explanations based on content analysis.
+    """
+    def __init__(self, max_steps: int = 15):
+        self.max_steps = max_steps
+        
+        # General reasoning indicators (no domain-specific terms)
+        self.reasoning_indicators = {
+            'conclusion': ['therefore', 'thus', 'so', 'hence', 'consequently', 'conclude'],
+            'causation': ['because', 'since', 'due to', 'caused by', 'leads to', 'results in'],
+            'contrast': ['however', 'but', 'although', 'despite', 'on the other hand'],
+            'evidence': ['shows', 'indicates', 'suggests', 'demonstrates', 'proves'],
+            'condition': ['if', 'unless', 'provided that', 'given that'],
+            'sequence': ['first', 'next', 'then', 'finally', 'subsequently']
+        }
+
+    def score_step_importance(self, step: str, position: int, total_steps: int) -> float:
+        """
+        Score how important a step is based on multiple factors.
+        Higher score = more important.
+        """
+        score = 0.0
+        step_lower = step.lower()
+        
+        # Position-based scoring
+        if position == 0:  # First step
+            score += 2.0
+        elif position == total_steps - 1:  # Last step (conclusion)
+            score += 3.0
+        elif position < 3:  # Early steps
+            score += 1.0
+        elif position >= total_steps - 3:  # Late steps
+            score += 1.5
+        
+        # Length-based scoring (very short or very long steps might be less important)
+        word_count = len(step.split())
+        if 10 <= word_count <= 30:  # Sweet spot for reasoning steps
+            score += 1.0
+        elif word_count < 5:  # Too short, likely fragment
+            score -= 1.0
+        elif word_count > 50:  # Too long, likely verbose
+            score -= 0.5
+        
+        # Reasoning indicator scoring
+        for category, keywords in self.reasoning_indicators.items():
+            for keyword in keywords:
+                if keyword in step_lower:
+                    if category in ['conclusion', 'causation']:
+                        score += 2.0
+                    elif category in ['evidence', 'condition']:
+                        score += 1.5
+                    else:
+                        score += 1.0
+                    break  # Don't double-count within same category
+        
+        # Penalty for meta-commentary
+        meta_phrases = ['let me think', 'wait', 'hmm', 'actually', 'the claim states that',
+                       'let me consider', 'let\'s think', 'okay', 'so']
+        for phrase in meta_phrases:
+            if phrase in step_lower:
+                score -= 2.0
+                break
+        
+        # Question/interrogative bonus (often important reasoning)
+        if '?' in step:
+            score += 0.5
+        
+        return max(0.0, score)  # Don't go negative
+
+    def extract_key_entities(self, step: str) -> Set[str]:
+        """Extract key entities/concepts from a step for connectivity analysis."""
+        # Simple entity extraction
+        entities = set()
+        
+        # Extract capitalized words (potential proper nouns)
+        entities.update(re.findall(r'\b[A-Z][a-z]+\b', step))
+        
+        # Extract numbers and measurements
+        entities.update(re.findall(r'\b\d+(?:\.\d+)?\s*(?:mg|ml|years?|days?|%|hours?|minutes?)\b', step.lower()))
+        
+        # Extract quoted terms
+        entities.update(re.findall(r'"([^"]+)"', step))
+        entities.update(re.findall(r"'([^']+)'", step))
+        
+        # Extract important technical terms (general patterns)
+        entities.update(re.findall(r'\b[a-z]+tion\b', step.lower()))  # Words ending in -tion
+        entities.update(re.findall(r'\b[a-z]+ism\b', step.lower()))   # Words ending in -ism
+        
+        return entities
+
+    def calculate_step_connectivity(self, steps: List[str]) -> List[float]:
+        """Calculate how well-connected each step is to others (entity overlap)."""
+        step_entities = [self.extract_key_entities(step) for step in steps]
+        connectivity_scores = []
+        
+        for i, entities in enumerate(step_entities):
+            if not entities:
+                connectivity_scores.append(0.0)
+                continue
+                
+            # Calculate overlap with other steps
+            total_overlap = 0
+            for j, other_entities in enumerate(step_entities):
+                if i != j:
+                    overlap = len(entities.intersection(other_entities))
+                    total_overlap += overlap
+            
+            # Normalize by step's entity count
+            connectivity_score = total_overlap / len(entities) if entities else 0
+            connectivity_scores.append(connectivity_score)
+        
+        return connectivity_scores
+
+    def intelligent_sample(self, steps: List[str]) -> List[str]:
+        """
+        Intelligently sample steps based on importance and connectivity.
+        """
+        if len(steps) <= self.max_steps:
+            return steps
+        
+        logger.info(f"Applying intelligent sampling: {len(steps)} → {self.max_steps} steps")
+        
+        # Score each step for importance
+        importance_scores = []
+        for i, step in enumerate(steps):
+            score = self.score_step_importance(step, i, len(steps))
+            importance_scores.append(score)
+        
+        # Calculate connectivity scores
+        connectivity_scores = self.calculate_step_connectivity(steps)
+        
+        # Combine scores (weighted average)
+        combined_scores = []
+        for i in range(len(steps)):
+            combined_score = (
+                0.7 * importance_scores[i] +  # Importance matters more
+                0.3 * connectivity_scores[i]   # But connectivity helps too
+            )
+            combined_scores.append((combined_score, i, steps[i]))
+        
+        # Sort by combined score (descending)
+        combined_scores.sort(key=lambda x: x[0], reverse=True)
+        
+        # Always include first and last steps
+        must_include = {0, len(steps) - 1}
+        
+        # Select top-scoring steps, ensuring we include must-have steps
+        selected_indices = set()
+        selected_indices.update(must_include)
+        
+        # Add highest-scoring steps until we reach max_steps
+        for score, idx, step in combined_scores:
+            if len(selected_indices) >= self.max_steps:
+                break
+            selected_indices.add(idx)
+        
+        # Sort selected indices to maintain chronological order
+        selected_indices = sorted(selected_indices)
+        
+        # Extract selected steps
+        sampled_steps = [steps[i] for i in selected_indices]
+        
+        logger.info(f"Selected steps at positions: {selected_indices}")
+        
+        return sampled_steps
+
+
 class OptimizedExplanationEvaluator:
     def __init__(self, model_name: str = "textattack/bert-base-uncased-MNLI", 
                  max_len: int = 512, max_steps: int = 20, batch_size: int = 16):
@@ -33,6 +201,9 @@ class OptimizedExplanationEvaluator:
         self.max_steps = max_steps  # Limit number of steps to process
         self.batch_size = batch_size
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+        
+        # Initialize intelligent sampler
+        self.sampler = IntelligentCoTSampler(max_steps=15)  # Use intelligent sampling at 15 steps
         
         # Performance tracking
         self.processed_count = 0
@@ -144,20 +315,14 @@ class OptimizedExplanationEvaluator:
 
     def build_nli_graph_optimized(self, propositions: List[str]) -> Dict[str, List[str]]:
         """
-        Build NLI graph with early stopping and sampling for very long explanations.
+        Build NLI graph with intelligent sampling for long explanations.
         """
         if len(propositions) <= 1:
             return {p: [] for p in propositions}
         
-        # For very long explanations, use sampling
+        # Apply intelligent sampling for long explanations
         if len(propositions) > 15:
-            logger.info(f"Large explanation ({len(propositions)} steps), using strategic sampling")
-            # Keep first few, last few, and sample from middle
-            sampled = (propositions[:5] + 
-                      propositions[-5:] + 
-                      propositions[5:-5][::2])  # Every other from middle
-            propositions = list(dict.fromkeys(sampled))  # Remove duplicates, preserve order
-            logger.info(f"Sampled down to {len(propositions)} steps")
+            propositions = self.sampler.intelligent_sample(propositions)
         
         matrix = {p: [] for p in propositions}
         pairs = []
@@ -280,6 +445,45 @@ class OptimizedExplanationEvaluator:
         logger.info(f"Average time per entry: {total_time/len(results):.2f}s")
         logger.info(f"Total inference time: {self.total_inference_time/60:.2f}min")
         
+        return results
+
+    def evaluate_argllm_metrics(self, entry: Dict) -> Dict[str, float]:
+        """Evaluate ArgLLM-specific metrics."""
+        base_bag = entry.get("base", {}).get("bag", {})
+        args = list(base_bag.get("arguments", {}).keys())
+        attacks = base_bag.get("attacks", [])
+        supports = base_bag.get("supports", [])
+
+        y_hat = ["db0"] if "db0" in args else []
+
+        try:
+            return {
+                "circularity": compute_circularity(args, attacks, supports),
+                "acceptability": compute_dialectical_acceptability(args, attacks, y_hat)
+            }
+        except Exception as e:
+            logger.error(f"Error computing ArgLLM metrics: {e}")
+            return {"circularity": 0.0, "acceptability": 0.0}
+
+    def evaluate_all_argllm(self, filepath: str) -> List[Dict]:
+        """Evaluate all ArgLLM explanations in a file."""
+        data = self.load_jsonl(filepath)
+        if not data:
+            return []
+            
+        results = []
+        for i, item in enumerate(data):
+            try:
+                result = {
+                    "q": item.get("claim", f"Claim_{i}"),
+                    **self.evaluate_argllm_metrics(item)
+                }
+                results.append(result)
+            except Exception as e:
+                logger.warning(f"Skipped ArgLLM entry {i} due to error: {e}")
+                continue
+                
+        logger.info(f"Successfully evaluated {len(results)}/{len(data)} ArgLLM entries")
         return results
 
     def load_jsonl(self, filepath: str) -> List[Dict]:

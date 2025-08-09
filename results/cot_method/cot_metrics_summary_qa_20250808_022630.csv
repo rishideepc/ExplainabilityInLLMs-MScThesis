@@ -1,0 +1,3 @@
+,Qwen,Qwen,Qwen
+Dataset,Redundancy,Weak Relevance,Strong Relevance
+MedQA,0.9993,0.138,0.1183

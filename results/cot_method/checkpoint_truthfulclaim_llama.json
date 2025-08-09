@@ -1,0 +1,10 @@
+{
+  "truthfulclaim": {
+    "mistral_redundancy": 0.9391,
+    "mistral_weak_relevance": 0.268,
+    "mistral_strong_relevance": 0.2325,
+    "llama_redundancy": 0.9951,
+    "llama_weak_relevance": 0.1755,
+    "llama_strong_relevance": 0.1533
+  }
+}

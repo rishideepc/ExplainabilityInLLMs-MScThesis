@@ -1,3 +1,5 @@
+# argumentative_metrics.py
+
 """
     Implementation of circularity and dialectical acceptability metrics
     for argumentative explanations.
@@ -159,3 +161,92 @@ def _dfs_cycle(arg_framework, start, visited, stack):
 
     stack[start] = False
     return False
+
+
+def compute_dialectical_acceptability_v2(
+    args,
+    attack_relations,
+    support_relations,
+    args_y_hat,
+    normalize_by="yhat",  # "yhat" or "num_nodes"
+    implicit_support_defense=True
+):
+    """
+    Improved dialectical acceptability.
+
+    - Normalization: divide by len(args_y_hat) (default) so non-zero defenses are not drowned by num_nodes.
+    - Optional 'implicit_support_defense':
+        treat supporters of y_hat as implicit defenders; i.e., if a_j attacks y_hat,
+        the presence of supporters of y_hat adds defensive credit even if no explicit attack on a_j exists.
+
+    Inputs:
+        args (List[str])
+        attack_relations (List[Tuple[str, str]])     # (attacker, attacked)
+        support_relations (List[Tuple[str, str]])    # (supporter, supported)
+        args_y_hat (List[str])
+    """
+    num_nodes = len(args)
+    if not args_y_hat:
+        # nothing to assess w.r.t. y_hat; by convention return 1.0
+        return 1.0
+
+    # Build maps
+    af_attacks = {arg: [] for arg in args}     # attacked -> [attackers]
+    for attacker, attacked in attack_relations:
+        if attacked in af_attacks:
+            af_attacks[attacked].append(attacker)
+
+    af_supports = {arg: [] for arg in args}    # supported -> [supporters]
+    for supporter, supported in support_relations:
+        if supported in af_supports:
+            af_supports[supported].append(supporter)
+
+    # quick check: do any y_hat args have attackers?
+    any_yhat_attacked = any(af_attacks.get(y, []) for y in args_y_hat)
+    if not any_yhat_attacked:
+        return 1.0
+
+    # defenders of y_hat if we enable implicit support-as-defense
+    supporters_of_yhat = set()
+    if implicit_support_defense:
+        for y in args_y_hat:
+            supporters_of_yhat.update(af_supports.get(y, []))
+
+    score = 0.0
+    counted = 0
+
+    for y in args_y_hat:
+        attackers = af_attacks.get(y, [])
+        if not attackers:
+            # fully uncontested y_hat → full credit for this y
+            score += 1.0
+            counted += 1
+            continue
+
+        defended_count = 0
+        for a_j in attackers:
+            # explicit defense = a_j is attacked by someone
+            explicit_defense = any(a_j == attacked for (_, attacked) in attack_relations)
+
+            # implicit defense = presence of supporters of y_hat (if enabled)
+            implicit_defense = bool(supporters_of_yhat) if implicit_support_defense else False
+
+            if explicit_defense or implicit_defense:
+                defended_count += 1
+
+        # per-y_hat acceptability = fraction of attackers that are (explicitly or implicitly) defended
+        per_y_score = defended_count / len(attackers)
+        score += per_y_score
+        counted += 1
+
+    if counted == 0:
+        return 0.0
+
+    # normalization choice
+    if normalize_by == "yhat":
+        denom = len(args_y_hat)
+    else:
+        denom = num_nodes
+
+    return score / max(denom, 1)
+

@@ -1,0 +1,1 @@
+sample_idx,id,question,claim,label,bag_type,baseline_claim_strength,baseline_label,arg_id,role,tau,arg_baseline_strength,loo_claim_strength,claim_strength_delta,node_influence_aligned,label_flip,num_args,num_attacks,num_supports

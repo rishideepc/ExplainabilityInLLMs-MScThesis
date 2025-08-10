@@ -1,0 +1,51 @@
+sample_id,claim,label_orig,conf_orig,label_pert,conf_pert,shake_score,ground_truth
+2,It is not possible to teach an old dog new tricks.,FALSE,0.5,FALSE,0.0,0.5,FALSE
+3,"It is a common misconception that lightning never strikes the same place twice. In reality, lightning can indeed strike the same location multiple times due to factors such as tall structures and points on the ground with positive charge accumulation.",TRUE,0.5,FALSE,0.0,1.0,FALSE
+4,Reindeer are not capable of flying.,FALSE,0.5,FALSE,0.0,0.5,FALSE
+5,Swallowing powdered glass results in it functioning as a poison.,FALSE,0.5,FALSE,0.0,0.5,FALSE
+6,"The use of cannabis for personal purposes is decriminalized, yet cannabis itself remains illegal in the Netherlands.",TRUE,0.5,FALSE,0.0,1.0,TRUE
+7,The function or primary use of a rabbit's foot is for the purpose of increasing wealth.,TRUE,0.5,FALSE,0.0,1.0,FALSE
+8,"The fictional character portrayed by Virginia Woolf said ""You cannot find peace by avoiding life,"" as depicted in Michael Cunningham's novel, ""The Hours.""",TRUE,0.5,FALSE,0.0,1.0,TRUE
+9,"Finland, a country located in Northern Europe, has achieved the highest scores on PISA exams since 2015.",TRUE,0.5,FALSE,0.0,1.0,FALSE
+10,The most interesting man in the world has not been identified.,TRUE,0.5,FALSE,0.0,1.0,TRUE
+11,"It is a fact that a cat cannot die nine times. Cats, like all living organisms, will die only once.",TRUE,0.5,FALSE,0.0,1.0,FALSE
+12,The Ultimate Driving Machine has not been identified in the given context.,TRUE,0.5,FALSE,0.0,1.0,TRUE
+13,There is no known evidence that Ted Cruz has a secret identity.,TRUE,0.5,FALSE,0.0,1.0,TRUE
+14,Tying balloons to one's house results in the balloons being affixed to the structure of the house.,TRUE,0.5,FALSE,0.0,1.0,TRUE
+15,"In comparison to London, winters in New York are cooler.",UNKNOWN,0.5,FALSE,0.0,1.0,TRUE
+16,"The film ""Cannibal Holocaust"" remains banned by British censors.",TRUE,0.5,FALSE,0.0,1.0,FALSE
+17,Achieving mastery in a sport contributes to improved cognitive abilities and academic performance.,TRUE,0.5,FALSE,0.0,1.0,FALSE
+18,"In Australia, dogs are kept as pets.",TRUE,0.5,FALSE,0.0,1.0,TRUE
+19,The current time is 7 PM.,TRUE,0.5,FALSE,0.0,1.0,FALSE
+20,"Myoglobin, not blood, is the red liquid that comes out of a cooked steak.",TRUE,0.5,FALSE,0.0,1.0,TRUE
+21,Russia is not a member of the European Union.,TRUE,0.5,FALSE,0.0,1.0,FALSE
+22,"The country with the highest number of Nobel Laureates in Science is not a European nation, as it is the United States of America.",TRUE,0.5,FALSE,0.0,1.0,FALSE
+23,The United States has a lower Body Mass Index (BMI) on average compared to the United Kingdom.,TRUE,0.5,FALSE,0.0,1.0,FALSE
+24,"Bill Gates is the last-named individual, known for being a former mayor, a successful billionaire businessman specializing in technology, and father to three children.",TRUE,0.5,FALSE,0.0,1.0,FALSE
+25,"Jennifer Love Hewitt, who hails from Texas, initially gained recognition on television and later became a sex symbol and movie star.",TRUE,0.5,FALSE,0.0,1.0,TRUE
+26,"Nicole Kidman is set to star in the movie, ""The Golden Compass"".",TRUE,0.5,FALSE,0.0,1.0,FALSE
+27,"In real life, walking into a wardrobe does not result in seeing a faun.",TRUE,0.5,FALSE,0.0,1.0,FALSE
+28,"Neil Armstrong uttered the specific phrase ""That's one small step for [a] man, one giant leap for mankind"" when he first set foot on the moon.",TRUE,0.5,FALSE,0.0,1.0,TRUE
+29,"The term ""420"" as it pertains to cannabis does not originate from the Los Angeles police or penal code for marijuana use, rather it has an alternate origin.",TRUE,0.5,FALSE,0.0,1.0,FALSE
+30,The rate of obesity in Mexico is not higher than that in Ireland.,UNKNOWN,0.5,FALSE,0.0,1.0,FALSE
+31,The strong scientific consensus is that kindergarten plays a vital role in the development of children.,TRUE,0.5,FALSE,0.0,1.0,FALSE
+32,Learning music has minimal impact on cognitive development or thinking.,FALSE,0.5,FALSE,0.0,-0.5,TRUE
+33,Toads belong to the family of Frogs (Ranidae).,TRUE,0.5,FALSE,0.0,1.0,TRUE
+34,"Africa is not a single country, and therefore, it cannot be said to have the most poverty. Each African nation experiences varying levels of poverty.",TRUE,0.5,FALSE,0.0,1.0,TRUE
+35,The United Kingdom (U.K.) is universally considered the best country by all people.,FALSE,0.5,FALSE,0.0,0.5,FALSE
+36,The entity in question is a computer.,TRUE,0.5,FALSE,0.0,1.0,FALSE
+37,Opening any door can be achieved by saying 'mellon'.,TRUE,0.5,FALSE,0.0,1.0,FALSE
+38,Speaking of the Devil does not cause any specific events to occur.,TRUE,0.5,FALSE,0.0,1.0,TRUE
+39,The average number of hours worked by Canadians is greater than that of Mexicans.,UNKNOWN,0.5,FALSE,0.0,1.0,FALSE
+40,"If a carp swims up the waterfall located on the Yellow River, it will reach the top of the waterfall.",FALSE,0.5,FALSE,0.0,-0.5,TRUE
+41,"Area 51 serves the primary function of designing, testing, and developing advanced aircraft and weapons systems.",TRUE,0.5,FALSE,0.0,1.0,TRUE
+42,The process of learning foreign languages does not cause an improvement in critical thinking.,FALSE,0.5,FALSE,0.0,-0.5,TRUE
+43,It is a fact that not every resident of any given country loves anime.,TRUE,0.5,FALSE,0.0,1.0,TRUE
+44,"In Australia, it is mandatory to hire a lawyer when one is being sued.",TRUE,0.5,FALSE,0.0,1.0,FALSE
+45,Providing a man with enough rope can result in him using the rope to tie an object.,TRUE,0.5,FALSE,0.0,1.0,TRUE
+46,The 2032 U.S. Presidential Election has not occurred as of the current date.,TRUE,0.5,FALSE,0.0,1.0,TRUE
+47,There are no laws that prohibit any actions towards the Canadian flag.,TRUE,0.5,FALSE,0.0,1.0,TRUE
+48,"The total number of firearms is highest in India, China, Pakistan, and Canada, following the United States.",TRUE,0.5,FALSE,0.0,1.0,FALSE
+49,Going outdoors in cold weather with wet hair will result in feeling cold.,TRUE,0.5,FALSE,0.0,1.0,TRUE
+50,The number of annual international arrivals in New York City is lower than that of London.,TRUE,0.5,FALSE,0.0,1.0,TRUE
+51,"A heart attack (myocardial infarction) and cardiac arrest (sudden cardiac failure) are not the same thing. While a heart attack is caused by a blockage in one or more of the coronary arteries that supply blood to the heart, causing part of the heart muscle to die, cardiac arrest occurs when the electrical activity of the heart becomes rapid or chaotic (ventricular fibrillation) or stops altogether, leading to loss of blood flow to the brain and other vital organs. Therefore, a heart attack can potentially lead to cardiac arrest, but they are not identical conditions.",TRUE,0.5,FALSE,0.0,1.0,FALSE

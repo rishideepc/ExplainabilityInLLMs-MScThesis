@@ -1,0 +1,831 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>SHAKE Results</title>
+
+    <style>
+      body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; margin: 20px; }
+      h1 { font-size: 20px; margin-bottom: 12px; }
+      .dt-buttons { margin-bottom: 8px; }
+      table.dataTable tbody th, table.dataTable tbody td { white-space: nowrap; }
+      .dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody { border: 1px solid #ddd; }
+    </style>
+    
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.8/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.2/css/buttons.dataTables.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/4.3.0/css/fixedColumns.dataTables.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/colreorder/1.7.0/css/colReorder.dataTables.min.css">
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.8/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.4.2/js/dataTables.buttons.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.colVis.min.js"></script>
+<script src="https://cdn.datatables.net/fixedcolumns/4.3.0/js/dataTables.fixedColumns.min.js"></script>
+<script src="https://cdn.datatables.net/colreorder/1.7.0/js/dataTables.colReorder.min.js"></script>
+</head>
+<body>
+  <h1>SHAKE Results (interactive)</h1>
+  <p>
+    • Drag columns to reorder (left-most <b>3</b> are frozen).<br/>
+    • Use <b>Column visibility</b> button to hide/show columns.<br/>
+    • Sort by clicking column headers; use the search box for filtering.
+  </p>
+  <div style="width: 100%; overflow: hidden;">
+    <table border="1" class="dataframe display compact nowrap" id="shakeTable">
+  <thead>
+    <tr style="text-align: right;">
+      <th>sample_id</th>
+      <th>claim</th>
+      <th>ground_truth</th>
+      <th>label_orig</th>
+      <th>label_pert</th>
+      <th>bfs</th>
+      <th>mbf_norm</th>
+      <th>mbf_k_star</th>
+      <th>mbf_K</th>
+      <th>conf_orig</th>
+      <th>conf_pert</th>
+      <th>shake_score</th>
+      <th>rationale_tokens</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>It is not possible to teach an old dog new tricks.</td>
+      <td>FALSE</td>
+      <td>FALSE</td>
+      <td>FALSE</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>4</td>
+      <td>0.5</td>
+      <td>0.0</td>
+      <td>0.5</td>
+      <td>teach old dog tricks</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>It is a common misconception that lightning never strikes the same place twice. In reality, lightning can indeed strike the same location multiple times due to factors such as tall structures and points on the ground with positive charge accumulation.</td>
+      <td>FALSE</td>
+      <td>TRUE</td>
+      <td>FALSE</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>4</td>
+      <td>0.5</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>lightning strike location ground</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>Reindeer are not capable of flying.</td>
+      <td>FALSE</td>
+      <td>FALSE</td>
+      <td>FALSE</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>0.5</td>
+      <td>0.0</td>
+      <td>0.5</td>
+      <td>reindeer flying</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>Swallowing powdered glass results in it functioning as a poison.</td>
+      <td>FALSE</td>
+      <td>FALSE</td>
+      <td>FALSE</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>4</td>
+      <td>0.5</td>
+      <td>0.0</td>
+      <td>0.5</td>
+      <td>swallowing powdered glass poison</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>The use of cannabis for personal purposes is decriminalized, yet cannabis itself remains illegal in the Netherlands.</td>
+      <td>TRUE</td>
+      <td>TRUE</td>
+      <td>FALSE</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>2</td>
+      <td>0.5</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>cannabis personal</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>The function or primary use of a rabbit's foot is for the purpose of increasing wealth.</td>
+      <td>FALSE</td>
+      <td>TRUE</td>
+      <td>FALSE</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>4</td>
+      <td>0.5</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>wealth function rabbit foot</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>The fictional character portrayed by Virginia Woolf said "You cannot find peace by avoiding life," as depicted in Michael Cunningham's novel, "The Hours."</td>
+      <td>TRUE</td>
+      <td>TRUE</td>
+      <td>FALSE</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>4</td>
+      <td>0.5</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>peace life michael cunningham</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>Finland, a country located in Northern Europe, has achieved the highest scores on PISA exams since 2015.</td>
+      <td>FALSE</td>
+      <td>TRUE</td>
+      <td>FALSE</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>4</td>
+      <td>0.5</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>finland northern europe pisa</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>The most interesting man in the world has not been identified.</td>
+      <td>TRUE</td>
+      <td>TRUE</td>
+      <td>FALSE</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>4</td>
+      <td>0.5</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>interesting man world identified</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>It is a fact that a cat cannot die nine times. Cats, like all living organisms, will die only once.</td>
+      <td>FALSE</td>
+      <td>TRUE</td>
+      <td>FALSE</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>4</td>
+      <td>0.5</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>cat die living organisms</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>The Ultimate Driving Machine has not been identified in the given context.</td>
+      <td>TRUE</td>
+      <td>TRUE</td>
+      <td>FALSE</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>2</td>
+      <td>0.5</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>ultimate driving</td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td>There is no known evidence that Ted Cruz has a secret identity.</td>
+      <td>TRUE</td>
+      <td>TRUE</td>
+      <td>FALSE</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>4</td>
+      <td>0.5</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>ted cruz secret identity</td>
+    </tr>
+    <tr>
+      <td>14</td>
+      <td>Tying balloons to one's house results in the balloons being affixed to the structure of the house.</td>
+      <td>TRUE</td>
+      <td>TRUE</td>
+      <td>FALSE</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>4</td>
+      <td>0.5</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>balloons house affixed structure</td>
+    </tr>
+    <tr>
+      <td>15</td>
+      <td>In comparison to London, winters in New York are cooler.</td>
+      <td>TRUE</td>
+      <td>UNKNOWN</td>
+      <td>FALSE</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.5</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>london new york cooler</td>
+    </tr>
+    <tr>
+      <td>16</td>
+      <td>The film "Cannibal Holocaust" remains banned by British censors.</td>
+      <td>FALSE</td>
+      <td>TRUE</td>
+      <td>FALSE</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>3</td>
+      <td>0.5</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>cannibal holocaust british</td>
+    </tr>
+    <tr>
+      <td>17</td>
+      <td>Achieving mastery in a sport contributes to improved cognitive abilities and academic performance.</td>
+      <td>FALSE</td>
+      <td>TRUE</td>
+      <td>FALSE</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>4</td>
+      <td>0.5</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>mastery sport cognitive academic</td>
+    </tr>
+    <tr>
+      <td>18</td>
+      <td>In Australia, dogs are kept as pets.</td>
+      <td>TRUE</td>
+      <td>TRUE</td>
+      <td>FALSE</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>4</td>
+      <td>0.5</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>dogs australia pets kept</td>
+    </tr>
+    <tr>
+      <td>19</td>
+      <td>The current time is 7 PM.</td>
+      <td>FALSE</td>
+      <td>TRUE</td>
+      <td>FALSE</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>2</td>
+      <td>0.5</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>time pm</td>
+    </tr>
+    <tr>
+      <td>20</td>
+      <td>Myoglobin, not blood, is the red liquid that comes out of a cooked steak.</td>
+      <td>TRUE</td>
+      <td>TRUE</td>
+      <td>FALSE</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>4</td>
+      <td>0.5</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>myoglobin steak red liquid</td>
+    </tr>
+    <tr>
+      <td>21</td>
+      <td>Russia is not a member of the European Union.</td>
+      <td>FALSE</td>
+      <td>TRUE</td>
+      <td>FALSE</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>3</td>
+      <td>0.5</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>russia european union</td>
+    </tr>
+    <tr>
+      <td>22</td>
+      <td>The country with the highest number of Nobel Laureates in Science is not a European nation, as it is the United States of America.</td>
+      <td>FALSE</td>
+      <td>TRUE</td>
+      <td>FALSE</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>4</td>
+      <td>0.5</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>nobel laureates science united</td>
+    </tr>
+    <tr>
+      <td>23</td>
+      <td>The United States has a lower Body Mass Index (BMI) on average compared to the United Kingdom.</td>
+      <td>FALSE</td>
+      <td>TRUE</td>
+      <td>FALSE</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>3</td>
+      <td>0.5</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>united states bmi</td>
+    </tr>
+    <tr>
+      <td>24</td>
+      <td>Bill Gates is the last-named individual, known for being a former mayor, a successful billionaire businessman specializing in technology, and father to three children.</td>
+      <td>FALSE</td>
+      <td>TRUE</td>
+      <td>FALSE</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>4</td>
+      <td>0.5</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>bill gates former mayor</td>
+    </tr>
+    <tr>
+      <td>25</td>
+      <td>Jennifer Love Hewitt, who hails from Texas, initially gained recognition on television and later became a sex symbol and movie star.</td>
+      <td>TRUE</td>
+      <td>TRUE</td>
+      <td>FALSE</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>4</td>
+      <td>0.5</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>jennifer love hewitt texas</td>
+    </tr>
+    <tr>
+      <td>26</td>
+      <td>Nicole Kidman is set to star in the movie, "The Golden Compass".</td>
+      <td>FALSE</td>
+      <td>TRUE</td>
+      <td>FALSE</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>4</td>
+      <td>0.5</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>nicole kidman golden compass</td>
+    </tr>
+    <tr>
+      <td>27</td>
+      <td>In real life, walking into a wardrobe does not result in seeing a faun.</td>
+      <td>FALSE</td>
+      <td>TRUE</td>
+      <td>FALSE</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>2</td>
+      <td>0.5</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>wardrobe faun</td>
+    </tr>
+    <tr>
+      <td>28</td>
+      <td>Neil Armstrong uttered the specific phrase "That's one small step for [a] man, one giant leap for mankind" when he first set foot on the moon.</td>
+      <td>TRUE</td>
+      <td>TRUE</td>
+      <td>FALSE</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>4</td>
+      <td>0.5</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>neil armstrong small step</td>
+    </tr>
+    <tr>
+      <td>29</td>
+      <td>The term "420" as it pertains to cannabis does not originate from the Los Angeles police or penal code for marijuana use, rather it has an alternate origin.</td>
+      <td>FALSE</td>
+      <td>TRUE</td>
+      <td>FALSE</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>4</td>
+      <td>0.5</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>los angeles police penal</td>
+    </tr>
+    <tr>
+      <td>30</td>
+      <td>The rate of obesity in Mexico is not higher than that in Ireland.</td>
+      <td>FALSE</td>
+      <td>UNKNOWN</td>
+      <td>FALSE</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.5</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>obesity mexico ireland</td>
+    </tr>
+    <tr>
+      <td>31</td>
+      <td>The strong scientific consensus is that kindergarten plays a vital role in the development of children.</td>
+      <td>FALSE</td>
+      <td>TRUE</td>
+      <td>FALSE</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>4</td>
+      <td>0.5</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>kindergarten development children scientific</td>
+    </tr>
+    <tr>
+      <td>32</td>
+      <td>Learning music has minimal impact on cognitive development or thinking.</td>
+      <td>TRUE</td>
+      <td>FALSE</td>
+      <td>FALSE</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>4</td>
+      <td>0.5</td>
+      <td>0.0</td>
+      <td>-0.5</td>
+      <td>learning music cognitive development</td>
+    </tr>
+    <tr>
+      <td>33</td>
+      <td>Toads belong to the family of Frogs (Ranidae).</td>
+      <td>TRUE</td>
+      <td>TRUE</td>
+      <td>FALSE</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>3</td>
+      <td>0.5</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>toads frogs ranidae</td>
+    </tr>
+    <tr>
+      <td>34</td>
+      <td>Africa is not a single country, and therefore, it cannot be said to have the most poverty. Each African nation experiences varying levels of poverty.</td>
+      <td>TRUE</td>
+      <td>TRUE</td>
+      <td>FALSE</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>4</td>
+      <td>0.5</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>africa nation poverty levels</td>
+    </tr>
+    <tr>
+      <td>35</td>
+      <td>The United Kingdom (U.K.) is universally considered the best country by all people.</td>
+      <td>FALSE</td>
+      <td>FALSE</td>
+      <td>FALSE</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>3</td>
+      <td>0.5</td>
+      <td>0.0</td>
+      <td>0.5</td>
+      <td>best country people</td>
+    </tr>
+    <tr>
+      <td>36</td>
+      <td>The entity in question is a computer.</td>
+      <td>FALSE</td>
+      <td>TRUE</td>
+      <td>FALSE</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>3</td>
+      <td>0.5</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>computer entity question</td>
+    </tr>
+    <tr>
+      <td>37</td>
+      <td>Opening any door can be achieved by saying 'mellon'.</td>
+      <td>FALSE</td>
+      <td>TRUE</td>
+      <td>FALSE</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>2</td>
+      <td>0.5</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>mellon door</td>
+    </tr>
+    <tr>
+      <td>38</td>
+      <td>Speaking of the Devil does not cause any specific events to occur.</td>
+      <td>TRUE</td>
+      <td>TRUE</td>
+      <td>FALSE</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>3</td>
+      <td>0.5</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>devil events occur</td>
+    </tr>
+    <tr>
+      <td>39</td>
+      <td>The average number of hours worked by Canadians is greater than that of Mexicans.</td>
+      <td>FALSE</td>
+      <td>UNKNOWN</td>
+      <td>FALSE</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.5</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>hours canadians mexicans</td>
+    </tr>
+    <tr>
+      <td>40</td>
+      <td>If a carp swims up the waterfall located on the Yellow River, it will reach the top of the waterfall.</td>
+      <td>TRUE</td>
+      <td>FALSE</td>
+      <td>FALSE</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>4</td>
+      <td>0.5</td>
+      <td>0.0</td>
+      <td>-0.5</td>
+      <td>carp waterfall yellow river</td>
+    </tr>
+    <tr>
+      <td>41</td>
+      <td>Area 51 serves the primary function of designing, testing, and developing advanced aircraft and weapons systems.</td>
+      <td>TRUE</td>
+      <td>TRUE</td>
+      <td>FALSE</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>4</td>
+      <td>0.5</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>designing testing developing advanced</td>
+    </tr>
+    <tr>
+      <td>42</td>
+      <td>The process of learning foreign languages does not cause an improvement in critical thinking.</td>
+      <td>TRUE</td>
+      <td>FALSE</td>
+      <td>FALSE</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>4</td>
+      <td>0.5</td>
+      <td>0.0</td>
+      <td>-0.5</td>
+      <td>learning foreign languages critical</td>
+    </tr>
+    <tr>
+      <td>43</td>
+      <td>It is a fact that not every resident of any given country loves anime.</td>
+      <td>TRUE</td>
+      <td>TRUE</td>
+      <td>FALSE</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>4</td>
+      <td>0.5</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>loves anime resident country</td>
+    </tr>
+    <tr>
+      <td>44</td>
+      <td>In Australia, it is mandatory to hire a lawyer when one is being sued.</td>
+      <td>FALSE</td>
+      <td>TRUE</td>
+      <td>FALSE</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>4</td>
+      <td>0.5</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>australia mandatory hire lawyer</td>
+    </tr>
+    <tr>
+      <td>45</td>
+      <td>Providing a man with enough rope can result in him using the rope to tie an object.</td>
+      <td>TRUE</td>
+      <td>TRUE</td>
+      <td>FALSE</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>3</td>
+      <td>0.5</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>rope object tie</td>
+    </tr>
+    <tr>
+      <td>46</td>
+      <td>The 2032 U.S. Presidential Election has not occurred as of the current date.</td>
+      <td>TRUE</td>
+      <td>TRUE</td>
+      <td>FALSE</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>3</td>
+      <td>0.5</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>election presidential date</td>
+    </tr>
+    <tr>
+      <td>47</td>
+      <td>There are no laws that prohibit any actions towards the Canadian flag.</td>
+      <td>TRUE</td>
+      <td>TRUE</td>
+      <td>FALSE</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>4</td>
+      <td>0.5</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>laws canadian flag actions</td>
+    </tr>
+    <tr>
+      <td>48</td>
+      <td>The total number of firearms is highest in India, China, Pakistan, and Canada, following the United States.</td>
+      <td>FALSE</td>
+      <td>TRUE</td>
+      <td>FALSE</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>4</td>
+      <td>0.5</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>india china pakistan canada</td>
+    </tr>
+    <tr>
+      <td>49</td>
+      <td>Going outdoors in cold weather with wet hair will result in feeling cold.</td>
+      <td>TRUE</td>
+      <td>TRUE</td>
+      <td>FALSE</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>4</td>
+      <td>0.5</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>cold weather wet hair</td>
+    </tr>
+    <tr>
+      <td>50</td>
+      <td>The number of annual international arrivals in New York City is lower than that of London.</td>
+      <td>TRUE</td>
+      <td>TRUE</td>
+      <td>FALSE</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>4</td>
+      <td>0.5</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>international arrivals london new</td>
+    </tr>
+    <tr>
+      <td>51</td>
+      <td>A heart attack (myocardial infarction) and cardiac arrest (sudden cardiac failure) are not the same thing. While a heart attack is caused by a blockage in one or more of the coronary arteries that supply blood to the heart, causing part of the heart muscle to die, cardiac arrest occurs when the electrical activity of the heart becomes rapid or chaotic (ventricular fibrillation) or stops altogether, leading to loss of blood flow to the brain and other vital organs. Therefore, a heart attack can potentially lead to cardiac arrest, but they are not identical conditions.</td>
+      <td>FALSE</td>
+      <td>TRUE</td>
+      <td>FALSE</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>4</td>
+      <td>0.5</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>heart attack myocardial infarction</td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+  <script>
+    $(document).ready(function() {
+      var table = $('#shakeTable').DataTable({
+        scrollX: true,
+        scrollY: '70vh',
+        scrollCollapse: true,
+        paging: true,
+        pageLength: 25,
+        lengthMenu: [[10, 25, 50, 100, -1], [10, 25, 50, 100, 'All']],
+        colReorder: true,
+        fixedColumns: {
+          leftColumns: 3
+        },
+        dom: 'Bfrtip',
+        buttons: [
+          'colvis',
+          'pageLength'
+        ],
+        order: [[6, 'desc']]
+      });
+    });
+  </script>
+</body>
+</html>
+    

@@ -17,7 +17,7 @@ from shake_score import compute_shake_score
 # =========================
 VISUALIZE_ATTENTION = False  # Set to True to enable visualization for specific samples
 VISUALIZE_SAMPLE_IDS = [4]   # Which samples to visualize (1-indexed)
-MAX_SAMPLES = 50             # For quick runs; set to 817 for full dataset
+MAX_SAMPLES = 817             # For quick runs; set to 817 for full dataset
 MAX_K = None                 # None = use all available rationale tokens; or set an int cap (e.g., 4)
 
 CSV_PATH = "shake_score_results_truthfulclaim.csv"

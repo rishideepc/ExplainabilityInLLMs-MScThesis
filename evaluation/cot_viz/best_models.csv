@@ -1,0 +1,19 @@
+Suite,Dataset,Metric,Model,Value
+Claim Verification,Medclaim,Redundancy,Qwen,1.0
+Claim Verification,Medclaim,StrongRel,Mistral,0.2073
+Claim Verification,Medclaim,WeakRel,Mistral,0.2282
+Claim Verification,Strategyclaim,Redundancy,Qwen,0.9994
+Claim Verification,Strategyclaim,StrongRel,Mistral,0.236
+Claim Verification,Strategyclaim,WeakRel,Mistral,0.2582
+Claim Verification,Truthfulclaim,Redundancy,Qwen,0.9978
+Claim Verification,Truthfulclaim,StrongRel,Mistral,0.2325
+Claim Verification,Truthfulclaim,WeakRel,Mistral,0.268
+Question Answering,MedQA,Redundancy,Qwen,0.9993
+Question Answering,MedQA,StrongRel,Mistral,0.2243
+Question Answering,MedQA,WeakRel,Mistral,0.2528
+Question Answering,StrategyQA,Redundancy,Qwen,1.0
+Question Answering,StrategyQA,StrongRel,Mistral,0.277
+Question Answering,StrategyQA,WeakRel,Mistral,0.3049
+Question Answering,TruthfulQA,Redundancy,Qwen,1.0
+Question Answering,TruthfulQA,StrongRel,Mistral,0.2942
+Question Answering,TruthfulQA,WeakRel,Mistral,0.3481

@@ -1,0 +1,6 @@
+Model,Llama,Llama,Llama,Mistral,Mistral,Mistral,Qwen,Qwen,Qwen
+Metric,Redundancy,StrongRel,WeakRel,Redundancy,StrongRel,WeakRel,Redundancy,StrongRel,WeakRel
+Dataset,,,,,,,,,
+Medclaim,0.9966,0.1399,0.1465,0.9814,0.2073,0.2282,1.0,0.1115,0.1297
+Strategyclaim,0.9906,0.1462,0.1581,0.9478,0.236,0.2582,0.9994,0.1154,0.1364
+Truthfulclaim,0.9951,0.1533,0.1755,0.9391,0.2325,0.268,0.9978,0.1384,0.1734

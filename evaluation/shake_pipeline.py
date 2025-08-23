@@ -5,7 +5,10 @@ import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
 import os
 
-MODEL_NAME = "meta-llama/Llama-2-7b-chat-hf"
+# MODEL_NAME = "meta-llama/Llama-2-7b-chat-hf"
+# MODEL_NAME = "mistralai/Mistral-7B-Instruct-v0.1"
+# MODEL_NAME = "Qwen/Qwen3-8B"
+MODEL_NAME = "Qwen/Qwen2.5-7B-Instruct"
 
 class ShakePipeline:
     def __init__(self):
@@ -15,8 +18,9 @@ class ShakePipeline:
             device_map="auto",
             torch_dtype=torch.float16,
             attn_implementation="eager"
-        ).to("cuda:0").eval()
+        ).eval()
         self.tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)
+        self.device = next(self.model.parameters()).device              # canonical device handle
 
     def get_label_and_confidence(self, text: str) -> Tuple[str, float]:
         messages = [
@@ -25,7 +29,8 @@ class ShakePipeline:
         ]
        
         prompt = self.tokenizer.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)
-        inputs = self.tokenizer(prompt, return_tensors="pt", truncation=True, max_length=2048).to(self.model.device)
+        inputs = self.tokenizer(prompt, return_tensors="pt", truncation=True, max_length=2048)
+        inputs = {k: v.to(self.device) for k, v in inputs.items()}  # ← move to actual device
        
         for key in inputs:
             if inputs[key].dtype == torch.float:
@@ -57,7 +62,8 @@ class ShakePipeline:
         ]
        
         prompt = self.tokenizer.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)
-        inputs = self.tokenizer(prompt, return_tensors="pt", truncation=True, max_length=2048).to(self.model.device)
+        inputs = self.tokenizer(prompt, return_tensors="pt", truncation=True, max_length=2048)
+        inputs = {k: v.to(self.device) for k, v in inputs.items()}  # ← move to actual device
        
         for key in inputs:
             if inputs[key].dtype == torch.float:

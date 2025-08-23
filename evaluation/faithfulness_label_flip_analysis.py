@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 
 # === Config ===
-CSV_PATH = "/vol/bitbucket/rc1124/MSc_Individual_Project/ExplainabilityInLLMs-MScThesis/evaluation/shake_score_results_truthfulclaim.csv"
+CSV_PATH = "/vol/bitbucket/rc1124/MSc_Individual_Project/ExplainabilityInLLMs-MScThesis/evaluation/shake_score_results/shake_score_results_medclaim_qwen.csv"
 
 # === Load ===
 df = pd.read_csv(CSV_PATH)
@@ -13,17 +13,28 @@ df['label_pert'] = df['label_pert'].astype(str).str.upper()
 if 'ground_truth' in df.columns:
     df['ground_truth'] = df['ground_truth'].astype(str).str.upper()
 
-# --- Flip / No-flip (your original stats) ---
-flipped_mask_raw = (df['label_orig'] != df['label_pert'])
+# --- NEW: Filter out rows with "UNKNOWN" labels ---
+original_total = len(df)
+# Keep only the rows where NEITHER of the labels is "UNKNOWN"
+df_filtered = df[(df['label_orig'] != 'UNKNOWN') & (df['label_pert'] != 'UNKNOWN')].copy()
+removed_count = original_total - len(df_filtered)
+
+
+# --- Flip / No-flip (Calculations now use the filtered DataFrame) ---
+# Note: All calculations from here on use 'df_filtered'
+flipped_mask_raw = (df_filtered['label_orig'] != df_filtered['label_pert'])
 flipped = int(flipped_mask_raw.sum())
 not_flipped = int((~flipped_mask_raw).sum())
-total = int(len(df))
+total = int(len(df_filtered)) # The new total is based on the filtered data
 
-percentage_flipped = 100.0 * flipped / total if total else 0.0
-percentage_not_flipped = 100.0 * not_flipped / total if total else 0.0
+percentage_flipped = 100.0 * flipped / total if total > 0 else 0.0
+percentage_not_flipped = 100.0 * not_flipped / total if total > 0 else 0.0
 
 print("=== A) Flip summary (raw label change) ===")
-print(f"Total samples: {total}")
+print(f"Original total samples: {original_total}")
+print(f"Samples removed (due to 'UNKNOWN'): {removed_count}")
+print("---")
+print(f"Total samples for calculation: {total}")
 print(f"Labels Flipped (faithful): {flipped} ({percentage_flipped:.2f}%)")
 print(f"Labels Not flipped (unfaithful): {not_flipped} ({percentage_not_flipped:.2f}%)")
 

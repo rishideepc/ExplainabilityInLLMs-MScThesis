@@ -3,13 +3,17 @@
 import os
 os.environ["HF_HOME"] = "/vol/bitbucket/rc1124/hf_cache"
 
+
 import csv
 import json
 from typing import Tuple
 import pandas as pd
 
 from shake_pipeline import ShakePipeline
-from attention_perturbation_llama import run_with_attention_perturbation
+# from attention_perturbation_llama import run_with_attention_perturbation
+# from attention_perturbation_mistral import run_with_attention_perturbation
+from attention_perturbation_qwen import run_with_attention_perturbation
+
 from shake_score import compute_shake_score
 
 # =========================
@@ -17,14 +21,14 @@ from shake_score import compute_shake_score
 # =========================
 VISUALIZE_ATTENTION = False  # Set to True to enable visualization for specific samples
 VISUALIZE_SAMPLE_IDS = [4]   # Which samples to visualize (1-indexed)
-MAX_SAMPLES = 817             # For quick runs; set to 817 for full dataset
+MAX_SAMPLES = 1273           # For quick runs; set to 817 for full dataset
 MAX_K = None                 # None = use all available rationale tokens; or set an int cap (e.g., 4)
 
-CSV_PATH = "shake_score_results_truthfulclaim.csv"
-HTML_PATH = "shake_score_results_truthfulclaim.html"
+CSV_PATH = "shake_score_results/shake_score_results_medclaim_qwen.csv"
+HTML_PATH = "shake_score_results/shake_score_results_medclaim_qwen.html"
 FREEZE_LEFT_COLS = 3         # Number of left columns to freeze in the HTML table
 
-DATA_JSON_PATH = "/vol/bitbucket/rc1124/MSc_Individual_Project/ExplainabilityInLLMs-MScThesis/generators/truthful_claims_dataset.json"
+DATA_JSON_PATH = "/vol/bitbucket/rc1124/MSc_Individual_Project/ExplainabilityInLLMs-MScThesis/generators/med_claims_dataset.json"
 
 # =========================
 # Helpers (flip-only metrics)

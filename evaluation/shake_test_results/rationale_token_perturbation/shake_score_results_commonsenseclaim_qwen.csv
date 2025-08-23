@@ -1,0 +1,1226 @@
+sample_id,claim,label_orig,conf_orig,label_pert,conf_pert,shake_score,ground_truth,rationale_tokens,bfs,mbf_norm,mbf_k_star,mbf_K
+856,A woman may kill a stranger she met in a dark alley with the intention of seeking revenge.,UNKNOWN,0.5,FALSE,0.0,1.0,FALSE,woman stranger dark,0.0,0.0,0,0
+266,One may place a telephone on a desk.,TRUE,1.0,TRUE,0.0,1.0,TRUE,telephone place desk,0.0,0.0,0,3
+727,A place with a revolving door and things to buy in it is a shop (or store) in New York.,FALSE,0.85,FALSE,0.0,0.8499,FALSE,place revolving door shop,0.0,0.0,0,4
+613,"They were kissing each other goodbye, their relationship had a strong foundation based on their partner.",FALSE,0.5,FALSE,0.0,0.5,FALSE,kissing foundation relationship,0.0,0.0,0,3
+1180,"A person works toward an advanced degree while sitting in a chair at home or school, not in a furniture store.",FALSE,0.5,FALSE,0.0,0.5,FALSE,person advanced degree sitting,0.0,0.0,0,4
+1108,"They needed grape juice for their party; they went to buy it and other snacks at the market.
+   => To acquire grape juice and other snacks for a party, one would go to the market.",TRUE,0.95,TRUE,0.0,-0.95,FALSE,acquire market juice snacks,0.0,0.0,0,4
+1181,Farm land utilizes North Dakota.,FALSE,0.5,FALSE,0.0,0.5,FALSE,farm land utilizes north,0.0,0.0,0,4
+719,"People aim to fulfill their own calorie requirements individually, not by competing with each other.",TRUE,0.95,TRUE,0.0,-0.95,FALSE,fulfill individually not competing,0.0,0.0,0,4
+615,"If one is hungry and going fishing, it's for enjoyment or fun.",FALSE,0.85,FALSE,0.0,0.85,FALSE,hungry fishing enjoyment fun,0.0,0.0,0,4
+912,A cup of coffee can be set and relaxed over at a coffee shop.,FALSE,0.95,FALSE,0.0,0.95,FALSE,cup coffee set relaxed,0.0,0.0,0,4
+1206,A prisoner is sentenced to attempt escaping.,FALSE,0.5,FALSE,0.0,0.5,FALSE,prisoner sentenced,0.0,0.0,0,2
+439,Hundreds of beauty salons can be found in a city.,FALSE,0.85,FALSE,0.0,-0.8499,TRUE,beauty salons city,0.0,0.0,0,3
+767,Religion is unknowable.,FALSE,0.5,FALSE,0.0,0.5,FALSE,religion unknowable,0.0,0.0,0,2
+299,A person who admits his mistakes is acting responsibly.,TRUE,0.5,TRUE,0.0,0.5,TRUE,admits mistakes responsibly,0.0,0.0,0,3
+673,"While going to work, one is driving.",TRUE,0.5,FALSE,0.0,1.0,FALSE,going,1.0,1.0,1,1
+791,"People seek understanding when they don't understand something, not that they get sick.",FALSE,0.5,FALSE,0.0,0.5,FALSE,seek understanding understand sick,0.0,0.0,0,4
+1140,Mammoths lived during the boscage era.,FALSE,0.95,FALSE,0.0,0.95,FALSE,mammoths boscage,0.0,0.0,0,2
+650,A child likely sits at a desk in a library.,FALSE,0.5,FALSE,0.0,0.5,FALSE,child sits desk library,0.0,0.0,0,4
+414,It may be challenging to deliver furniture to a loft.,TRUE,0.5,TRUE,0.0,0.5,TRUE,deliver furniture challenging loft,0.0,0.0,0,4
+151,Jenny derives satisfaction from helping people.,FALSE,0.5,FALSE,0.0,-0.4999,TRUE,jenny derives satisfaction helping,0.0,0.0,0,4
+228,The conditions for someone living in a homeless shelter can be sometimes unfavorable.,TRUE,0.5,TRUE,0.0,0.5,TRUE,living shelter conditions unfavorable,0.0,0.0,0,4
+353,Ice melts when it is in the sun.,TRUE,0.5,TRUE,0.0,0.5,TRUE,ice melts sun,0.0,0.0,0,3
+530,One gets maps from a cabinet when they own them.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,gets maps cabinet,0.0,0.0,0,3
+987,Water in clouds turns into teardrops when it gets cold.,FALSE,0.95,FALSE,0.0,0.95,FALSE,water clouds cold teardrops,0.0,0.0,0,4
+966,People might require cleaning when they have allergies.,FALSE,0.5,FALSE,0.0,0.5,FALSE,people allergies require cleaning,0.0,0.0,0,4
+454,"If one uses a key to open a hinged door, it's likely they are entering their own house.",TRUE,0.85,FALSE,0.0,1.0,TRUE,door,1.0,1.0,1,1
+64,A snake can be found in tall grass at a field.,TRUE,0.5,TRUE,0.0,0.5,TRUE,snake tall grass field,0.0,0.0,0,4
+524,"John dislikes standing in line, given his subsequent hatred of the game and the time and sore feet it involves.",FALSE,0.5,FALSE,0.0,-0.5,TRUE,line time,0.0,0.0,0,2
+423,"Before asking a question about a crime scene, one would analyze it.",TRUE,0.95,TRUE,0.0,0.95,TRUE,analyze crime scene question,0.0,0.0,0,4
+401,One borrows furniture from their neighbor's house when they do not have any.,FALSE,0.95,FALSE,0.0,-0.95,TRUE,furniture house,0.0,0.0,0,2
+783,A child eager to go play is likely to get there through enjoyment.,TRUE,0.5,FALSE,0.0,1.0,FALSE,child eager,1.0,1.0,1,2
+660,A main artery used to expedite travel is referred to as a busy city.,FALSE,0.95,FALSE,0.0,0.95,FALSE,artery travel busy city,0.0,0.0,0,4
+170,"When one fails to finish something, they have failed at its completion.",TRUE,0.5,TRUE,0.0,0.5,TRUE,fails finish completion,0.0,0.0,0,3
+848,Pretending to be a police officer results in a misunderstanding.,FALSE,0.5,FALSE,0.0,0.5,FALSE,pretending police officer misunderstanding,0.0,0.0,0,4
+1115,Punk rock music is not an important part of opera.,FALSE,0.5,FALSE,0.0,0.5,FALSE,punk rock music opera,0.0,0.0,0,4
+883,Trees roots cling to soil.,FALSE,0.5,FALSE,0.0,0.5,FALSE,trees roots cling soil,0.0,0.0,0,4
+265,One is likely to find a brownstone in New York City.,TRUE,0.5,TRUE,0.0,0.5,TRUE,brownstone new york city,0.0,0.0,0,4
+1047,"Dogs are very smart, making them often known as man's best friend.",TRUE,0.5,FALSE,0.0,1.0,FALSE,dogs smart man best,1.0,1.0,1,4
+1205,A person with digestion issues who eats a meat-filled breakfast feels energized.,TRUE,0.7,FALSE,0.0,1.0,FALSE,digestion issues meat energized,1.0,1.0,1,4
+1117,A bird is likely to make its home in the sky.,FALSE,0.95,FALSE,0.0,0.95,FALSE,bird sky home,0.0,0.0,0,3
+749,"A thoroughfare meandered through fields and woods, passing through New York City.",FALSE,0.5,FALSE,0.0,0.5,FALSE,thoroughfare meandered through woods,0.0,0.0,0,4
+212,Standing up and immediately sitting back down may make one feel unbalanced.,TRUE,0.5,UNKNOWN,0.5,1.0,TRUE,,0.0,0.0,0,0
+19,People possess two eyes unlike a spider and its many observers.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,people eyes spider,0.0,0.0,0,3
+573,"After finishing art creation, someone might relax.",TRUE,0.5,TRUE,0.0,0.5,TRUE,finishing,0.0,0.0,0,1
+365,Surprising an angry person could potentially lead to a fight.,TRUE,0.5,UNKNOWN,0.5,1.0,TRUE,,0.0,0.0,0,0
+899,Listening to a lecture intensely aims to gain confidence.,FALSE,0.85,FALSE,0.0,0.85,FALSE,listening lecture intensely gain,0.0,0.0,0,4
+1142,An unsuccessful suicide attempt might not result in dying.,TRUE,0.95,UNKNOWN,0.5,1.0,FALSE,,0.0,0.0,0,0
+641,A person may be in England if they are buying pork chops at a corner shop.,TRUE,0.5,FALSE,0.0,1.0,FALSE,person england pork chops,1.0,1.0,1,4
+28,Blue reads material outside of his comfort zone to acquire a new perspective.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,blue reads material outside,0.0,0.0,0,4
+493,"Brad could not get up from bed; instead, he continued lying down.",FALSE,0.5,FALSE,0.0,-0.5,TRUE,brad could not get,0.0,0.0,0,4
+1213,"He will be in the stairwell soon, given that he knew the landing was happening shortly and it made him nervous.",FALSE,0.5,FALSE,0.0,0.5,FALSE,stairwell landing nervous knew,0.0,0.0,0,4
+498,Bill seeks a responsible stranger with kids; he might find them at a park.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,bill stranger kids park,0.0,0.0,0,4
+1000,A table with parts at varying heights without a consistent pattern is not suitable for an electrical circuit.,TRUE,0.95,FALSE,0.0,1.0,FALSE,table parts heights circuit,1.0,1.0,1,4
+587,"John and the lady were unacquainted, as he had never seen her before.",FALSE,1.0,FALSE,0.0,-1.0,TRUE,john lady unacquainted never,0.0,0.0,0,4
+92,A stairwell has a landing at its top.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,stairwell landing top,0.0,0.0,0,3
+616,Dogs will always eat cake if they have a good owner.,FALSE,0.85,FALSE,0.0,0.85,FALSE,cake,0.0,0.0,0,1
+859,"He was afraid he would die from his cold, so he wisely decided to write a will.",FALSE,0.85,UNKNOWN,0.5,1.0,FALSE,,0.0,0.0,0,0
+318,A human is often found at their place of work when they are earning money.,FALSE,0.85,FALSE,0.0,-0.85,TRUE,human place money,0.0,0.0,0,3
+12,"To achieve harmony, one should aim to make peace with the world.",FALSE,0.5,FALSE,0.0,-0.5,TRUE,achieve harmony peace world,0.0,0.0,0,4
+209,"The hostess was proficient at her job, she always had a smile when welcoming guests.",TRUE,0.5,FALSE,0.0,1.0,TRUE,hostess proficient smile welcoming,1.0,1.0,1,4
+216,Kids use a skateboard to alleviate boredom on a ramp.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,kids skateboard boredom ramp,0.0,0.0,0,4
+229,People can achieve relaxation through knitting.,TRUE,0.5,TRUE,0.0,0.5,TRUE,people knitting relaxation,0.0,0.0,0,3
+535,Most people can strive for better outcomes by thinking instead of making assumptions based on their prejudices.,TRUE,0.5,TRUE,0.0,0.5,TRUE,people,0.0,0.0,0,1
+1173,One can find salt closest at a table.,FALSE,0.5,FALSE,0.0,0.5,FALSE,salt table closest,0.0,0.0,0,3
+982,Humans need shelter to survive and they usually find it in a space shuttle.,FALSE,0.95,FALSE,0.0,0.95,FALSE,shelter humans need space,0.0,0.0,0,4
+1216,"To obtain a grape, one would go to a field.",FALSE,0.95,UNKNOWN,0.5,1.0,FALSE,,0.0,0.0,0,0
+122,"James, having noticed that his penis was bigger, might express exuberance towards his plastic surgeon.",TRUE,0.5,FALSE,0.0,1.0,TRUE,james bigger penis,1.0,1.0,1,3
+793,A rubber toy filled with helium makes a child loved.,FALSE,0.5,FALSE,0.0,0.5,FALSE,rubber helium child,0.0,0.0,0,3
+682,Jodie felt a tightness in her chest but didn't want to go to the hospital; she might seek help instead at an alternative medical facility in Istanbul.,FALSE,0.85,FALSE,0.0,0.85,FALSE,tightness hospital seek facility,0.0,0.0,0,4
+943,A device (fountain pen) is used for writing and distributed daily.,FALSE,0.85,FALSE,0.0,0.8499,FALSE,device,0.0,0.0,0,1
+314,People have dominance over the planet by making tools more effectively than animals.,TRUE,0.5,FALSE,0.0,1.0,TRUE,people dominance planet tools,1.0,1.0,1,4
+1096,She aimed to achieve physical fitness but struggled to maintain focus on an hour-long swim session.,FALSE,0.5,FALSE,0.0,0.5,FALSE,achieve physical fitness,0.0,0.0,0,3
+672,Eating hamburger is least likely to immediately cause illness.,FALSE,0.85,FALSE,0.0,0.85,FALSE,eating hamburger illness,0.0,0.0,0,3
+25,"A person who isn't clever, bright, or competent is called stupid.",TRUE,0.5,TRUE,0.0,0.5,TRUE,person stupid,0.0,0.0,0,2
+618,"For many males, as they get older, their hair begins to thin out, causing a receding hairline.",TRUE,0.95,UNKNOWN,0.5,1.0,FALSE,,0.0,0.0,0,0
+738,Lawyers often talk in front of an audience in court.,TRUE,0.95,TRUE,0.0,-0.95,FALSE,lawyers talk court audience,0.0,0.0,0,4
+563,A cat could experience thirst other than desiring food.,TRUE,0.5,FALSE,0.0,1.0,TRUE,cat thirst food,1.0,1.0,1,3
+632,People aim to sit while watching a play.,FALSE,0.5,FALSE,0.0,0.5,FALSE,sit watching play,0.0,0.0,0,3
+1209,"Many varieties of plants, including rosebushes, can be found at a shop.",TRUE,0.95,TRUE,0.0,-0.95,FALSE,plants varieties rosebushes shop,0.0,0.0,0,4
+163,"The smelly carpet discouraged the league from playing, so it was installed at a bowling alley.",FALSE,0.85,FALSE,0.0,-0.85,TRUE,smelly carpet discouraged league,0.0,0.0,0,4
+319,They were going to watch the biggest motorsport spectacle in the world at Indiana while passing an apple tree on their way to the racetrack.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,indiana,0.0,0.0,0,1
+1052,The soldier was instructed to follow instructions at the rendezvous point.,FALSE,0.5,FALSE,0.0,0.5,FALSE,soldier instructed instructions rendezvous,0.0,0.0,0,4
+705,"It is crucial to ensure a person who fears water or dislikes being wet has a bath despite their fear, to prevent flooding.",FALSE,0.95,FALSE,0.0,0.95,FALSE,ensure person water bath,0.0,0.0,0,4
+327,"Many bookcases are found in a room used for contemplation, referred to as a study.",TRUE,0.5,TRUE,0.0,0.5,TRUE,bookcases study room contemplation,0.0,0.0,0,4
+1085,A shark could be found in a desert before it was caught.,FALSE,0.95,FALSE,0.0,0.95,FALSE,shark desert caught,0.0,0.0,0,3
+178,A person without immortality is called a mortal.,TRUE,0.95,TRUE,0.0,0.95,TRUE,person immortality mortal,0.0,0.0,0,3
+275,Attending school can pose a potential hazard of contracting colds and flu.,TRUE,0.5,TRUE,0.0,0.5,TRUE,school hazard,0.0,0.0,0,2
+143,"Mark treated Sam like family, despite him being a stranger.",FALSE,0.5,FALSE,0.0,-0.5,TRUE,treated family stranger,0.0,0.0,0,3
+751,Sean aimed to reach the countryside when he left work.,FALSE,0.5,FALSE,0.0,0.5,FALSE,sean countryside,0.0,0.0,0,2
+246,"Part of Joe's brain was awake, as evidenced by his ability to memorize the list despite his apparent state.",FALSE,0.85,FALSE,0.0,-0.8499,TRUE,joe,0.0,0.0,0,1
+104,"Computers are capable of multitasking, which was considered a significant breakthrough in their development.",TRUE,0.5,TRUE,0.0,0.5,TRUE,computers multitasking breakthrough,0.0,0.0,0,3
+523,A battle involving words could occur in a courtroom.,TRUE,0.5,TRUE,0.0,0.5,TRUE,courtroom battle,0.0,0.0,0,2
+697,"A device is used to grind wheat for bread, and that device is not cereal packets.",TRUE,0.95,TRUE,0.0,-0.95,FALSE,device grind wheat bread,0.0,0.0,0,4
+1067,The woodworker had to warp the rough wooden piece.,FALSE,0.5,FALSE,0.0,0.5,FALSE,woodworker warp wooden,0.0,0.0,0,3
+977,The guard is present for a man post.,FALSE,0.85,FALSE,0.0,0.85,FALSE,guard present man post,0.0,0.0,0,4
+688,"In basic training, they build you up only to mutilate, with the intent of building you up even stronger for the next time.",FALSE,0.85,FALSE,0.0,0.85,FALSE,basic training build mutilate,0.0,0.0,0,4
+634,"Raising a baby can be challenging due to factors that limit their abilities, one of which is their inability to bring joy initially.",FALSE,0.5,FALSE,0.0,0.5,FALSE,raising baby challenging factors,0.0,0.0,0,4
+256,A person who avoids leafy greens may obtain minerals through multivitamins.,TRUE,0.95,TRUE,0.0,0.95,TRUE,greens minerals multivitamins,0.0,0.0,0,3
+1150,"A farmer observes a weasel within the woods, but unexpectedly, he is in a chicken coop.",FALSE,0.95,FALSE,0.0,0.95,FALSE,farmer weasel woods,0.0,0.0,0,3
+291,Communicating with my boss involves the transfer of information.,TRUE,0.95,UNKNOWN,0.5,1.0,TRUE,,0.0,0.0,0,0
+640,A person is likely to communicate with others by meeting friends.,FALSE,0.5,FALSE,0.0,0.5,FALSE,person communicate friends,0.0,0.0,0,3
+939,The finding of malignant tumors on animals likely results in them experiencing pain.,TRUE,0.95,TRUE,0.0,-0.95,FALSE,finding malignant tumors pain,0.0,0.0,0,4
+876,Geese fly in fields every fall.,FALSE,0.95,FALSE,0.0,0.95,FALSE,geese fly fall,0.0,0.0,0,3
+300,People play a game for money at a casino.,TRUE,0.5,TRUE,0.0,0.5,TRUE,game money casino,0.0,0.0,0,3
+1193,Read in order to fly an airplane.,FALSE,0.95,FALSE,0.0,0.95,FALSE,read airplane,0.0,0.0,0,2
+501,Everybody began performing upon their director stating an action.,FALSE,0.95,FALSE,0.0,-0.95,TRUE,began performing director stating,0.0,0.0,0,4
+235,A person's bladder is empty immediately after peeing.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,person bladder immediately,0.0,0.0,0,3
+709,Miss Grady moved Bob's stick to the office to keep it away from him.,FALSE,0.85,FALSE,0.0,0.85,FALSE,miss grady moved stick,0.0,0.0,0,4
+184,A talking weasel might be found in a children's story.,TRUE,0.5,TRUE,0.0,0.5,TRUE,talking weasel story,0.0,0.0,0,3
+352,"When in a new place seeking new sights, one acts by looking around.",TRUE,0.5,TRUE,0.0,0.5,TRUE,sights looking around,0.0,0.0,0,3
+869,Forgetting something at home when going somewhere does not affect the action of arriving.,TRUE,0.95,FALSE,0.0,1.0,FALSE,forgetting arriving,1.0,1.0,1,2
+258,"The smelly man was having a bath, but he is pursuing personal cleanliness.",FALSE,0.5,FALSE,0.0,-0.5,TRUE,smelly man bath cleanliness,0.0,0.0,0,4
+254,A rubber bath mat is typically found in the bathroom.,TRUE,0.95,TRUE,0.0,0.95,TRUE,rubber bath mat bathroom,0.0,0.0,0,4
+31,"In order to finish work on time if one tends to postpone it, one must hasten.",FALSE,0.85,FALSE,0.0,-0.85,TRUE,finish,0.0,0.0,0,1
+813,The ancient seafaring Norse tribesman brought pelts of weasel aboard his rabbit warren.,FALSE,0.95,FALSE,0.0,0.95,FALSE,ancient norse weasel rabbit,0.0,0.0,0,4
+819,"The computer, when hooked up to the internet, can process information.",TRUE,0.95,TRUE,0.0,-0.95,FALSE,computer internet process information,0.0,0.0,0,4
+1048,A two-wheel transportation machine can be bought from a trunk of a car.,FALSE,0.95,FALSE,0.0,0.95,FALSE,trunk,0.0,0.0,0,1
+865,"He looked at the field of pumps, all slowing churning oil out of the restaurant.",FALSE,0.95,FALSE,0.0,0.95,FALSE,pumps slowing churning oil,0.0,0.0,0,4
+798,The newest baseball stadium is in Chicago.,FALSE,0.5,FALSE,0.0,0.4999,FALSE,chicago stadium,0.0,0.0,0,2
+743,Most people who are family typically greet each other with a hug (assuming that 'apartments' in the answer is a typo and refers to a physical gesture of greeting).,FALSE,0.5,FALSE,0.0,0.4999,FALSE,people family greet hug,0.0,0.0,0,4
+33,Sean was required to decrease his speed due to a yellow traffic light while rushing home.,FALSE,0.95,FALSE,0.0,-0.95,TRUE,sean yellow,0.0,0.0,0,2
+679,Disease can destroy a hospital.,FALSE,0.5,FALSE,0.0,0.5,FALSE,disease hospital,0.0,0.0,0,2
+902,"John lives in an area that is not near a lake in the wilderness, so he must live in the mountains.",FALSE,0.85,FALSE,0.0,0.85,FALSE,lives area lake wilderness,0.0,0.0,0,4
+400,James obtained rough sandpaper instead of smooth sandpaper.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,james obtained rough sandpaper,0.0,0.0,0,4
+922,"A person seeks relief from mental challenge, when completing puzzles or riddles.",TRUE,0.5,TRUE,0.0,-0.5,FALSE,person relief mental challenge,0.0,0.0,0,4
+1139,Sarah's brother installed something at her home when she was gone.,FALSE,0.5,FALSE,0.0,0.5,FALSE,sarah brother installed home,0.0,0.0,0,4
+202,A ruler is typically placed within a drawer of a table.,FALSE,0.95,FALSE,0.0,-0.95,TRUE,ruler drawer table,0.0,0.0,0,3
+402,"For an animal and its offspring to continue living, reproduction must occur.",FALSE,0.85,FALSE,0.0,-0.85,TRUE,animal offspring reproduction,0.0,0.0,0,3
+1137,Christians believe you will go to heaven if you undergo a transformation.,FALSE,0.5,FALSE,0.0,0.5,FALSE,christians believe heaven transformation,0.0,0.0,0,4
+18,A fencing thrust with a sharp sword results in a puncture wound.,TRUE,0.5,TRUE,0.0,0.5,TRUE,fencing thrust sword puncture,0.0,0.0,0,4
+1156,The potato might be considered the official vegetable of a kitchen cupboard.,FALSE,0.5,FALSE,0.0,0.5,FALSE,potato vegetable cupboard,0.0,0.0,0,3
+416,You can obtain jeans and other wearable items for home use at a clothing store.,TRUE,0.95,TRUE,0.0,0.95,TRUE,jeans wearable items clothing,0.0,0.0,0,4
+988,"A southern U.S. state is known for having many swamps, which is Michigan.",FALSE,0.95,FALSE,0.0,0.95,FALSE,southern state swamps,0.0,0.0,0,3
+190,A gentleman who carries equipment for golf is likely to have a club.,TRUE,0.95,TRUE,0.0,0.95,TRUE,gentleman carries equipment club,0.0,0.0,0,4
+953,"After a night of heavy drinking, one may feel discomfort.",TRUE,0.95,TRUE,0.0,-0.95,FALSE,night heavy drinking discomfort,0.0,0.0,0,4
+1057,"A ballpoint pen is stored at home when not in use, at a bank.",FALSE,0.95,FALSE,0.0,0.95,FALSE,ballpoint pen stored,0.0,0.0,0,3
+1,A revolving door is useful for bi-directional travel and also functions as a security measure at banks.,TRUE,0.95,TRUE,0.0,0.95,TRUE,revolving door bi directional,0.0,0.0,0,4
+276,A tetrahedron has a surface with many sides.,FALSE,0.95,FALSE,0.0,-0.95,TRUE,tetrahedron surface sides,0.0,0.0,0,3
+478,A kind person may open doors.,TRUE,0.5,TRUE,0.0,0.5,TRUE,kind person open doors,0.0,0.0,0,4
+610,A man buys silk from China.,FALSE,0.5,FALSE,0.0,-0.4999,TRUE,man buys silk china,0.0,0.0,0,4
+1151,He picked up the perfect pebble with the intention of skipping it across the entire aquarium.,FALSE,0.85,FALSE,0.0,0.85,FALSE,picked up perfect pebble,0.0,0.0,0,4
+938,People experience pleasure after having sex that requires them to shower.,FALSE,0.5,FALSE,0.0,0.5,FALSE,sex pleasure shower,0.0,0.0,0,3
+164,Someone can be let into a brownstone by ringing.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,ringing,0.0,0.0,0,1
+138,He was on trial for obstructing justice and making a questionable comment; he was also found guilty of committing perjury.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,trial obstructing justice perjury,0.0,0.0,0,4
+128,"The kitten had nothing to dig its claws into, so when it tried to stop, it slid across the floor.",TRUE,0.85,FALSE,0.0,1.0,TRUE,kitten slid,1.0,1.0,1,2
+278,"To view the story in old style pop-ups, one opens a book.",FALSE,0.95,FALSE,0.0,-0.95,TRUE,view story old style,0.0,0.0,0,4
+929,Extra clothing on a hike is kept in a hamper.,FALSE,1.0,FALSE,0.0,1.0,FALSE,extra clothing hike hamper,0.0,0.0,0,4
+462,Two people in love producing offspring is called procreation.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,people love offspring procreation,0.0,0.0,0,4
+1080,The newlyweds began copulating their marriage with a desire for many sadnesses.,FALSE,1.0,UNKNOWN,0.5,1.0,FALSE,,0.0,0.0,0,0
+735,Adding 'Cheshire' signifies that Manchester is in a county.,FALSE,0.95,FALSE,0.0,0.95,FALSE,cheshire manchester county,0.0,0.0,0,3
+13,A heifer's master resides at the farmhouse.,FALSE,0.85,FALSE,0.0,-0.85,TRUE,heifer master resides farmhouse,0.0,0.0,0,4
+205,The person's reaction upon seeing his children's mess was looking angry.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,person,0.0,0.0,0,1
+745,A control room is necessary for preventing widespread disaster in a recording studio.,FALSE,0.85,FALSE,0.0,0.85,FALSE,control room necessary widespread,0.0,0.0,0,4
+252,"If you can't get out of the house, you might decide to listen to music as a means to alleviate boredom.",TRUE,0.5,TRUE,0.0,0.5,TRUE,listen music boredom house,0.0,0.0,0,4
+389,A Japanese restaurant not operated by people from Japan is likely to be found in California.,FALSE,0.85,FALSE,0.0,-0.8499,TRUE,japanese restaurant california,0.0,0.0,0,3
+588,A violin can be heard alongside many string and wind instruments in an orchestra.,TRUE,0.95,TRUE,0.0,0.95,TRUE,violin orchestra string wind,0.0,0.0,0,4
+1126,"A piece of paper was worth a lot of money, it was an old Apple Inc notebook.",FALSE,0.85,FALSE,0.0,0.85,FALSE,paper worth money old,0.0,0.0,0,4
+659,"They aimed to try blowfish, so they went for it at the Atlantic Ocean.",FALSE,0.85,FALSE,0.0,0.85,FALSE,aimed blowfish atlantic,0.0,0.0,0,3
+543,"The man took paperwork to consult with others, aiming for a meeting.",FALSE,0.5,FALSE,0.0,-0.5,TRUE,man paperwork meeting,0.0,0.0,0,3
+561,"Kids sought definitions during some periods, so a large dictionary was available in a classroom.",TRUE,0.5,FALSE,0.0,1.0,TRUE,kids definitions classroom dictionary,1.0,1.0,1,4
+525,Going somewhere involves the process of transporting.,TRUE,0.95,TRUE,0.0,0.95,TRUE,going transporting involves process,0.0,0.0,0,4
+56,The teacher does not tolerate noise during a test in their classroom.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,teacher noise test,0.0,0.0,0,3
+362,A human can cross a river without messing up their hair by using a bridge.,TRUE,0.95,TRUE,0.0,0.95,TRUE,human river bridge,0.0,0.0,0,3
+5,James may search for farmland in the Midwest.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,james farmland midwest,0.0,0.0,0,3
+207,Stones are not arranged in a path within a field.,TRUE,0.5,FALSE,0.0,1.0,TRUE,stones not arranged path,1.0,1.0,1,4
+2,People aim to complete jobs at work.,TRUE,0.5,TRUE,0.0,0.5,TRUE,people aim complete jobs,0.0,0.0,0,4
+1113,Someone no longer lives when they are dead.,TRUE,1.0,UNKNOWN,0.5,1.0,FALSE,,0.0,0.0,0,0
+1090,Children aim to develop skills through game play.,TRUE,0.5,TRUE,0.0,-0.5,FALSE,children skills develop game,0.0,0.0,0,4
+489,"He was preparing for a long hike, so he put the food can in his backpack.",TRUE,0.5,FALSE,0.0,1.0,TRUE,preparing backpack,1.0,1.0,1,2
+329,"The player, while walking in rhythm with his cornet, was a member of a marching band.",TRUE,0.5,FALSE,0.0,1.0,TRUE,player walking rhythm cornet,1.0,1.0,1,4
+429,A person with mental illness leading a relatively normal life is referred to as being managed.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,managed mental illness relatively,0.0,0.0,0,4
+74,All the parts of a pawn are important in a chess game.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,pawn chess game parts,0.0,0.0,0,4
+538,People watch an orchestra play in a concert hall.,TRUE,0.5,TRUE,0.0,0.5,TRUE,people orchestra concert hall,0.0,0.0,0,4
+1077,"John's location, where he can hear cars in circles outside, is most likely within a public building.",FALSE,0.85,FALSE,0.0,0.85,FALSE,location public building,0.0,0.0,0,3
+366,A dining area is likely to be small in a home.,TRUE,0.5,FALSE,0.0,1.0,TRUE,dining area likely small,1.0,1.0,1,4
+86,"A man had a fear of illness, so he avoided visiting friends who were sick persons.",TRUE,0.95,TRUE,0.0,0.95,TRUE,fear illness,0.0,0.0,0,2
+1146,Bart participated in a contest with his horse at the circus.,FALSE,0.5,FALSE,0.0,0.5,FALSE,bart contest horse circus,0.0,0.0,0,4
+733,A side chair is typically found near furniture in a bedroom.,FALSE,0.85,FALSE,0.0,0.85,FALSE,side chair bedroom furniture,0.0,0.0,0,4
+1034,A business with stained carpets from sauces and ketchup might be a bedroom.,FALSE,0.95,FALSE,0.0,0.95,FALSE,stained carpets sauces bedroom,0.0,0.0,0,4
+8,Animals respond by listening to one another when an enemy approaches.,FALSE,0.85,FALSE,0.0,-0.85,TRUE,enemy approaches,0.0,0.0,0,2
+884,A door likely accumulates a significant amount of dust in the back.,FALSE,0.5,FALSE,0.0,0.4999,FALSE,door dust,0.0,0.0,0,2
+279,Communication occurs during talking to someone.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,communication talking someone,0.0,0.0,0,3
+323,All humans inevitably die.,TRUE,0.5,TRUE,0.0,0.5,TRUE,humans inevitably die,0.0,0.0,0,3
+464,"It takes ambition to complete a job, but the first step is to begin work.",FALSE,0.5,UNKNOWN,0.5,1.0,TRUE,,0.0,0.0,0,0
+878,Everyone who doesn't want to fight anymore should wear shoes.,FALSE,0.85,FALSE,0.0,0.85,FALSE,wear shoes,0.0,0.0,0,2
+219,The worst time for having food is when one is not hungry.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,worst time hungry,0.0,0.0,0,3
+756,Few offices can be found at work.,FALSE,0.95,UNKNOWN,0.5,1.0,FALSE,,0.0,0.0,0,0
+1056,Loss of someone you love can cause feelings of joy in your heart.,FALSE,0.95,FALSE,0.0,0.95,FALSE,loss,0.0,0.0,0,1
+504,Seaweed originates from the ocean.,TRUE,1.0,TRUE,0.0,1.0,TRUE,seaweed ocean,0.0,0.0,0,2
+910,"If you are experiencing boredom and want to see something beautiful, you should seek out something other than ghosts.",FALSE,0.5,FALSE,0.0,0.5,FALSE,boredom beautiful seek other,0.0,0.0,0,4
+1195,Sally found the contents of the garage unappealing and felt bored.,FALSE,0.5,FALSE,0.0,0.5,FALSE,sally contents garage unappealing,0.0,0.0,0,4
+983,A bad flight experience can potentially be compensated with a propitious trip in return.,TRUE,0.5,TRUE,0.0,-0.5,FALSE,flight experience trip,0.0,0.0,0,3
+978,A person who stutters when he experiences anxiety or excitement will find it difficult to study.,FALSE,0.85,FALSE,0.0,0.85,FALSE,anxiety excitement study,0.0,0.0,0,3
+990,A monkey is likely to enjoy being in a mulberry bush.,FALSE,0.5,FALSE,0.0,0.5,FALSE,monkey mulberry bush,0.0,0.0,0,3
+487,"They had a theory for what they could do in the big game, so over and over they would practice.",TRUE,0.5,FALSE,0.0,1.0,TRUE,theory game,1.0,1.0,1,2
+729,Seaweed is usually found alive in the ocean.,TRUE,0.5,TRUE,0.0,-0.5,FALSE,seaweed ocean,0.0,0.0,0,2
+358,A man is likely at Martorell when he takes a seat at a museum outside of Barcelona.,FALSE,0.85,FALSE,0.0,-0.8499,TRUE,man martorell museum barcelona,0.0,0.0,0,4
+724,"The building where James worked had an auditorium with a small mezzanine for additional seating, indicating that James might work in a place like a theater.",FALSE,0.5,FALSE,0.0,0.4999,FALSE,building auditorium mezzanine theater,0.0,0.0,0,4
+404,"To open a steakhouse, one should acquire a building first.",TRUE,0.95,TRUE,0.0,0.95,TRUE,open steakhouse acquire building,0.0,0.0,0,4
+70,Europe has the most castles.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,europe most castles,0.0,0.0,0,3
+569,People aim to build trust while networking.,TRUE,0.5,TRUE,0.0,0.5,TRUE,build trust networking,0.0,0.0,0,3
+1023,A motorboat is unlikely to get bugs on its windshield due to bugs' inability to reach it when it is moving.,FALSE,0.85,FALSE,0.0,0.85,FALSE,motorboat bugs windshield unlikely,0.0,0.0,0,4
+951,You may encounter your occasional niece in a family photo album.,FALSE,0.5,FALSE,0.0,0.5,FALSE,occasional niece,0.0,0.0,0,2
+369,"More people should relax and have fun, as life is short and the goal is to enjoy living.",TRUE,0.5,FALSE,0.0,1.0,TRUE,relax fun life enjoy,1.0,1.0,1,4
+376,"If a court case is dismissed after hearing testimony, a likely cause is a change of heart.",FALSE,0.85,FALSE,0.0,-0.85,TRUE,court case,0.0,0.0,0,2
+133,"The victim was to take stand today, they were going to testify.
+   Claimed: The victim was going to testify today.",TRUE,0.95,TRUE,0.0,0.95,TRUE,victim stand today testify,0.0,0.0,0,4
+183,Children can play with animals at fairgrounds.,TRUE,0.5,FALSE,0.0,1.0,TRUE,children play animals fairgrounds,1.0,1.0,1,4
+308,A broadcast studio is likely to be heard on a radio station.,TRUE,0.95,TRUE,0.0,0.95,TRUE,broadcast studio radio station,0.0,0.0,0,4
+142,A kindergarten teacher tells a story before nap time.,TRUE,0.5,TRUE,0.0,0.5,TRUE,teacher story nap time,0.0,0.0,0,4
+1087,"Dance can be elegant and specific, or it can also result in just falling down.",TRUE,0.95,TRUE,0.0,-0.95,FALSE,dance elegant falling down,0.0,0.0,0,4
+1149,Applying for a job can make someone feel a sense of working hard even if they get it.,FALSE,0.5,FALSE,0.0,0.5,FALSE,applying job sense working,0.0,0.0,0,4
+1103,People tend to purchase products when they can utilize them.,TRUE,0.5,TRUE,0.0,-0.5,FALSE,purchase products utilize,0.0,0.0,0,3
+14,Dogs need lots of attention aside from water and nourishment.,TRUE,0.5,TRUE,0.0,0.5,TRUE,dogs attention nourishment,0.0,0.0,0,3
+726,A stove is found in a vehicle (car) if one does not reside in a detached dwelling.,FALSE,0.95,FALSE,0.0,0.95,FALSE,stove vehicle dwelling,0.0,0.0,0,3
+36,The lock prevented movement of the steering wheel but did not deter the thief from attempting to manipulate the ignition switch.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,lock steering wheel,0.0,0.0,0,3
+762,Competing in a chess game on a cold day may result in decreased performance.,FALSE,0.85,FALSE,0.0,0.8499,FALSE,chess game cold day,0.0,0.0,0,4
+720,A stove can potentially cause harm by burning a child if safety precautions are not taken.,TRUE,0.95,TRUE,0.0,-0.95,FALSE,stove safety precautions,0.0,0.0,0,3
+267,Someone from Iran is likely to use Farsi (dard is an archaic term for Farsi),FALSE,0.85,FALSE,0.0,-0.8499,TRUE,iran farsi dard archaic,0.0,0.0,0,4
+506,John might hardest dust the attic before settling down to watch his favorite shows.,FALSE,0.95,FALSE,0.0,-0.95,TRUE,john dust attic,0.0,0.0,0,3
+787,Louisiana is part of the Deep South.,TRUE,0.5,TRUE,0.0,-0.5,FALSE,louisiana part deep south,0.0,0.0,0,4
+108,James's nice asked him about his family tree.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,james nice family tree,0.0,0.0,0,4
+799,A condominium has a ground floor with a stoop.,TRUE,0.5,FALSE,0.0,1.0,FALSE,condominium ground floor stoop,1.0,1.0,1,4
+926,"The person in the cat, while trying to kill him, put together a plan for escape.",FALSE,1.0,FALSE,0.0,1.0,FALSE,person cat kill escape,0.0,0.0,0,4
+581,A library is known to be a wealth of information.,TRUE,0.5,TRUE,0.0,0.5,TRUE,library wealth,0.0,0.0,0,2
+200,The gimmicky low brow TV show was about animals when they attacked.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,tv show animals attacked,0.0,0.0,0,4
+864,Riding a bike requires practice.,TRUE,0.5,TRUE,0.0,-0.5,FALSE,bike requires practice,0.0,0.0,0,3
+344,A lizard is likely to be in West Texas.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,lizard west texas,0.0,0.0,0,3
+1081,A planet typically moves through outer space around the sun.,TRUE,0.95,TRUE,0.0,-0.95,FALSE,planet moves outer space,0.0,0.0,0,4
+574,"To get clean clothes, one launders them.",TRUE,1.0,TRUE,0.0,1.0,TRUE,clean clothes,0.0,0.0,0,2
+351,"A department store offers clock, clothing, and wrenches for sale.",TRUE,0.5,TRUE,0.0,0.5,TRUE,department store clothing,0.0,0.0,0,3
+1095,Someone who has little knowledge and is judging someone is considered an introductory evaluator.,FALSE,0.5,FALSE,0.0,0.5,FALSE,little knowledge judging introductory,0.0,0.0,0,4
+95,A Mountie getting off at a subway stop implies he might be in Toronto.,FALSE,0.85,FALSE,0.0,-0.85,TRUE,mountie subway toronto,0.0,0.0,0,3
+50,Fishmongers are likely to be excited about a crab.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,fishmongers crab,0.0,0.0,0,2
+895,A person would acquire jewelry from their neighbor's house if they don't have any.,FALSE,0.85,FALSE,0.0,0.85,FALSE,acquire jewelry neighbor house,0.0,0.0,0,4
+355,The man was in the forest while lying on soft moss and looking up at trees.,FALSE,0.85,FALSE,0.0,-0.85,TRUE,man moss trees,0.0,0.0,0,3
+1212,Cats are often recognized by their whiskers.,TRUE,0.5,TRUE,0.0,-0.5,FALSE,cats,0.0,0.0,0,1
+595,"They were searching for rocks while looking at the ground, thereby missing the birds overhead.",TRUE,0.85,FALSE,0.0,1.0,TRUE,searching rocks ground missing,1.0,1.0,1,4
+840,A newspaper can serve to communicate an engagement.,TRUE,0.5,TRUE,0.0,-0.5,FALSE,newspaper communicate engagement,0.0,0.0,0,3
+285,People read non-fiction to learn new things.,TRUE,0.5,UNKNOWN,0.5,1.0,TRUE,,0.0,0.0,0,0
+472,A person without a shower curtain would obtain it from a department store.,FALSE,0.85,FALSE,0.0,-0.85,TRUE,shower curtain,0.0,0.0,0,2
+137,Someone typically experiences anxiety and fear when applying for a job.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,anxiety fear applying job,0.0,0.0,0,4
+1045,The tiger was stuck in an animal prison where he got lazy and fat due to eating cake.,FALSE,0.95,FALSE,0.0,0.95,FALSE,tiger prison lazy cake,0.0,0.0,0,4
+115,A man desires air conditioning while watching a game on Saturday; it will likely be installed at his house.,FALSE,0.85,FALSE,0.0,-0.85,TRUE,man game,0.0,0.0,0,2
+564,"If there's no other noise in a room with turned-off music, it becomes silent.",TRUE,0.95,FALSE,0.0,1.0,TRUE,room,1.0,1.0,1,1
+192,"The individual struggled to understand the computer at the store, so they signed up for a demonstration.",TRUE,0.5,FALSE,0.0,1.0,TRUE,struggled understand computer demonstration,1.0,1.0,1,4
+403,Wine should be stored in darkness and ideally kept in a cellar.,TRUE,0.5,TRUE,0.0,0.5,TRUE,wine darkness cellar,0.0,0.0,0,3
+296,A person aims to avoid pain when taking analgesics.,TRUE,0.95,TRUE,0.0,0.95,TRUE,pain analgesics aims avoid,0.0,0.0,0,4
+731,Someone's state will lower if their spirits cannot rise.,FALSE,0.5,FALSE,0.0,0.5,FALSE,state spirits rise,0.0,0.0,0,3
+1033,Playing baseball causes eating when one sprains an ankle.,FALSE,0.5,FALSE,0.0,0.5,FALSE,playing baseball causes eating,0.0,0.0,0,4
+541,"If you have a ticket and plan to eat hot dogs, you would go to a baseball stadium.",FALSE,0.85,FALSE,0.0,-0.85,TRUE,ticket stadium eat,0.0,0.0,0,3
+61,"If you find yourself in a bar, it indicates you are in Michigan.",FALSE,0.85,FALSE,0.0,-0.85,TRUE,bar michigan,0.0,0.0,0,2
+908,An anemone lives in the Atlantic Ocean.,TRUE,0.5,FALSE,0.0,1.0,FALSE,anemone atlantic ocean,1.0,1.0,1,3
+657,People are humans when they are strangers.,FALSE,0.5,FALSE,0.0,0.5,FALSE,people humans strangers,0.0,0.0,0,3
+527,The end of the barrel of a blunderbuss is bell-shaped.,TRUE,0.95,TRUE,0.0,0.95,TRUE,barrel bell shaped end,0.0,0.0,0,4
+1053,Using a gun to commit a crime if one wants to kill someone.,FALSE,0.85,FALSE,0.0,0.85,FALSE,gun crime,0.0,0.0,0,2
+823,"An anemone can be found off the eastern U.S., typically in tide pools.",TRUE,0.95,TRUE,0.0,-0.95,FALSE,anemone,0.0,0.0,0,1
+784,The new buying products demonstrate methods for declaring spending money when one has none.,FALSE,0.95,FALSE,0.0,0.95,FALSE,buying products declaring spending,0.0,0.0,0,4
+85,Uncooked crab meat is placed in a stew pot.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,uncooked crab stew,0.0,0.0,0,3
+277,A cargo ship could transport a container from one place to another.,TRUE,0.95,TRUE,0.0,0.95,TRUE,cargo ship transport container,0.0,0.0,0,4
+512,"A smile indicated that the emotion was not happiness, but crying.",FALSE,0.95,UNKNOWN,0.5,1.0,TRUE,,0.0,0.0,0,0
+388,"Her voice placed her within the alto section, resulting in her joining the choir.",TRUE,0.5,FALSE,0.0,1.0,TRUE,voice placed alto choir,1.0,1.0,1,4
+288,John's 2000 dollar debt appeared insubstantial compared to his 50 million dollars of debt.,FALSE,0.85,FALSE,0.0,-0.8499,TRUE,dollars debt compared,0.0,0.0,0,3
+952,"Working on the elaborate task was taxing, it requires extreme holding.",FALSE,0.85,FALSE,0.0,0.85,FALSE,taxing elaborate task holding,0.0,0.0,0,4
+173,A supermarket is uncommon in a strip mall collection of shops.,FALSE,0.85,FALSE,0.0,-0.85,TRUE,supermarket uncommon,0.0,0.0,0,2
+459,"If one does not wish to settle in one place, they will wander.",FALSE,0.85,FALSE,0.0,-0.85,TRUE,settle wander,0.0,0.0,0,2
+345,One carries their briefcase by hand.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,carries briefcase hand,0.0,0.0,0,3
+669,Some people who were escorted out of the library were probably engaging in money-making activities.,FALSE,0.85,FALSE,0.0,0.85,FALSE,people escorted library,0.0,0.0,0,3
+606,Moon blocks sunshine,FALSE,0.5,FALSE,0.0,-0.5,TRUE,moon sunshine,0.0,0.0,0,2
+522,People are motivated by the desire to win when they play a game.,TRUE,0.5,FALSE,0.0,1.0,TRUE,people motivated win game,1.0,1.0,1,4
+80,Committing murder could prevent someone from finding God.,FALSE,0.85,UNKNOWN,0.5,1.0,TRUE,,0.0,0.0,0,0
+1030,"If you spend a long time shopping in uncomfortable shoes, you might experience sleepiness.",TRUE,0.5,FALSE,0.0,1.0,FALSE,time shopping uncomfortable,1.0,1.0,1,3
+116,An orchestra could be playing a balalaika.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,orchestra balalaika,0.0,0.0,0,2
+790,Rats were hiding in the house; they were at a clinic.,FALSE,0.85,FALSE,0.0,0.85,FALSE,rats hiding clinic,0.0,0.0,0,3
+507,"Something that exhibited boldness broke into the garbage last night, it was an animal.",FALSE,0.5,FALSE,0.0,-0.5,TRUE,animal garbage broke boldness,0.0,0.0,0,4
+1123,A bass clarinet is often played alongside other woodwind instruments in a music store.,FALSE,0.85,FALSE,0.0,0.85,FALSE,bass clarinet woodwind instruments,0.0,0.0,0,4
+832,You have purchased pizza from an oven.,TRUE,1.0,FALSE,0.0,1.0,FALSE,purchased pizza oven,1.0,1.0,1,3
+752,A person can use the Atlantic Ocean to obtain a jellyfish.,TRUE,0.5,TRUE,0.0,-0.5,FALSE,atlantic ocean jellyfish,0.0,0.0,0,3
+919,A town situated between two mountains is found in a valley. (Placement of a town),TRUE,0.95,FALSE,0.0,1.0,FALSE,town mountains valley placement,1.0,1.0,1,4
+281,A bureau can be found alongside many politicians in Washington D.C.,FALSE,0.95,FALSE,0.0,-0.9499,TRUE,bureau politicians washington,0.0,0.0,0,3
+449,A cat usually snuggles up in a comfortable chair with their human.,TRUE,0.5,TRUE,0.0,0.5,TRUE,cat comfortable chair human,0.0,0.0,0,4
+428,Food is likely to stay dry in a cupboard.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,food cupboard,0.0,0.0,0,2
+857,The baby was cranky and needed to eat breakfast but refused to get out of bed. (Claim Statement),FALSE,0.5,FALSE,0.0,0.5,FALSE,baby cranky eat bed,0.0,0.0,0,4
+217,An animal called a hedgehog has quills all over its body.,TRUE,0.5,TRUE,0.0,0.5,TRUE,animal hedgehog quills body,0.0,0.0,0,4
+994,You met your best friend since Kindergarten at a fraternity house.,TRUE,0.5,FALSE,0.0,1.0,FALSE,met best friend kindergarten,1.0,1.0,1,4
+490,A rug is typically placed near the front door in the living room.,TRUE,0.5,TRUE,0.0,0.5,TRUE,rug front door living,0.0,0.0,0,4
+696,Dogs defend themselves against a bad person.,TRUE,0.5,FALSE,0.0,1.0,FALSE,defend themselves against,1.0,1.0,1,3
+346,He increased his speed to run in order to go faster.,TRUE,0.5,TRUE,0.0,0.5,TRUE,increased speed order faster,0.0,0.0,0,4
+193,"If you take the risk buying a used car, you still hope it can last several years.",TRUE,0.95,UNKNOWN,0.5,1.0,TRUE,,0.0,0.0,0,0
+629,"A mezzanine was proposed by the architect for aesthetic reasons, but was rejected by the planning committee due to concerns about it being a potential hazard given the ages of the people who would be using it. They are designing a theater.",FALSE,0.5,FALSE,0.0,0.4999,FALSE,architect planning committee theater,0.0,0.0,0,4
+446,"If you are lost, the best place to find a map on the road is at a gas station.",FALSE,0.5,FALSE,0.0,-0.5,TRUE,lost map road,0.0,0.0,0,3
+753,A shelf that does not allow you to see what's inside of it holds alcohol.,TRUE,0.95,FALSE,0.0,1.0,FALSE,shelf alcohol,1.0,1.0,1,2
+796,Business men left for relaxation in the sauna of a dwelling.,FALSE,0.5,FALSE,0.0,0.5,FALSE,sauna dwelling,0.0,0.0,0,2
+201,"A loud machine is irritating, but it is expected in an industrial area.",FALSE,0.5,FALSE,0.0,-0.5,TRUE,loud machine irritating industrial,0.0,0.0,0,4
+357,A stapler can be found in many places within an office building.,TRUE,0.95,TRUE,0.0,0.95,TRUE,stapler office building places,0.0,0.0,0,4
+410,John farms anemones at a nursery.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,john farms anemones nursery,0.0,0.0,0,4
+73,The kids didn't clean up after they played with toys.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,kids didn clean toys,0.0,0.0,0,4
+42,August needed money to pay bills because he was afraid that he'd be kicked out of his house.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,money bills,0.0,0.0,0,2
+431,The woman aims for relaxation while watching television and trying to forget her day.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,woman relaxation watching television,0.0,0.0,0,4
+934,"Jenny was left without shade, causing her exposure to bright sunshine.",FALSE,0.5,FALSE,0.0,0.5,FALSE,jenny shade sunshine,0.0,0.0,0,3
+604,Gazelles can be found listed under 'G' in an encyclopedia.,TRUE,0.95,TRUE,0.0,0.95,TRUE,gazelles encyclopedia,0.0,0.0,0,2
+833,A person uses a town to find a place to stay.,FALSE,0.5,FALSE,0.0,0.5,FALSE,person town place stay,0.0,0.0,0,4
+198,Airplanes reduce their speed upon reaching the gate.,TRUE,0.5,TRUE,0.0,0.5,TRUE,airplanes reduce gate,0.0,0.0,0,3
+1118,A person suffering from hunger early in the day aims to buy food.,FALSE,0.5,FALSE,0.0,0.5,FALSE,person suffering,0.0,0.0,0,2
+49,"A place does not usually have an elevator and sometimes has a telephone book, it is referred to as a house.",FALSE,0.5,FALSE,0.0,-0.5,TRUE,place elevator,0.0,0.0,0,2
+768,Every conversation between the couple took great length for thinking.,FALSE,0.5,FALSE,0.0,0.5,FALSE,conversation couple great length,0.0,0.0,0,4
+758,"To see a prepared slide up close, one would use a telescope.",FALSE,0.95,FALSE,0.0,0.95,FALSE,telescope,0.0,0.0,0,1
+172,"When gathering with friends to watch a film, one might have fun.",TRUE,0.5,TRUE,0.0,0.5,TRUE,gathering friends watch film,0.0,0.0,0,4
+1125,The evil wizard aimed to apply something (likely a curse or enchantment) to the princess.,TRUE,0.5,FALSE,0.0,1.0,FALSE,evil wizard aimed curse,1.0,1.0,1,4
+484,A body undergoes decomposition after death.,TRUE,0.95,TRUE,0.0,0.95,TRUE,body decomposition death,0.0,0.0,0,3
+457,They aim to record his accomplishment by placing his name on a certificate.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,aim record accomplishment certificate,0.0,0.0,0,4
+210,Someone who is learning will know more.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,learning more,0.0,0.0,0,2
+199,A person with mental illness who stops treatment is likely to experience a recurrence.,TRUE,0.95,TRUE,0.0,0.95,TRUE,mental illness treatment recurrence,0.0,0.0,0,4
+760,You would acquire wood from a source other than a carpet if you don't have any.,TRUE,0.95,TRUE,0.0,-0.95,FALSE,acquire wood source carpet,0.0,0.0,0,4
+1039,A person unable to pay their bills must find ways to generate income.,TRUE,0.5,TRUE,0.0,-0.5,FALSE,person bills generate income,0.0,0.0,0,4
+1083,"Emotion leads to punching, manifested through clenched fists.",FALSE,0.5,FALSE,0.0,0.5,FALSE,emotion punching fists,0.0,0.0,0,3
+1101,"If one commits perjury while under oath, they have shown disrespect towards the judge.",TRUE,0.5,TRUE,0.0,-0.5,FALSE,commits perjury disrespect,0.0,0.0,0,3
+313,Foxes inhabit mountains.,TRUE,0.5,FALSE,0.0,1.0,TRUE,foxes inhabit mountains,1.0,1.0,1,3
+268,John did not have time for studying because he went to a party that lasted all night.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,john party,0.0,0.0,0,2
+800,"If the wood texture is not smooth, it is solid.",FALSE,0.85,FALSE,0.0,0.85,FALSE,wood texture smooth solid,0.0,0.0,0,4
+578,"Playing ball, one aims to have fun.",TRUE,0.5,FALSE,0.0,1.0,TRUE,ball aims fun,1.0,1.0,1,3
+805,Car driving can be prevented by pollution.,FALSE,0.5,FALSE,0.0,0.5,FALSE,car driving pollution,0.0,0.0,0,3
+747,"Everyone in the dressing room was changing costumes, indicating it was almost time for the stage performance at a bathhouse.",FALSE,0.85,FALSE,0.0,0.85,FALSE,changing costumes stage performance,0.0,0.0,0,4
+21,A carpet can be placed on top of wood.,TRUE,1.0,TRUE,0.0,1.0,TRUE,carpet placed top wood,0.0,0.0,0,4
+918,A person often feels responsible when someone judges them guilty.,FALSE,0.5,FALSE,0.0,0.5,FALSE,person,0.0,0.0,0,1
+1186,James needs a duffel bag for carrying his things while using a bus station because he doesn't own a vehicle.,FALSE,0.85,FALSE,0.0,0.85,FALSE,james duffel bag vehicle,0.0,0.0,0,4
+44,A picture frame can be placed on a table when it's not hung vertically.,TRUE,0.95,TRUE,0.0,0.95,TRUE,picture frame placed table,0.0,0.0,0,4
+176,Racers must stand still before starting at the starting line.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,starting,0.0,0.0,0,1
+834,Trying to connect a laptop requires hooking it up with a company.,FALSE,0.95,FALSE,0.0,0.95,FALSE,laptop connect company,0.0,0.0,0,3
+811,"While tanning, he was likely at the beach (or near the sea/waves).",TRUE,0.5,FALSE,0.0,1.0,FALSE,tanning beach sea waves,1.0,1.0,1,4
+528,A good place to store pamphlets in your home or office is a drawer.,TRUE,0.95,TRUE,0.0,0.95,TRUE,drawer pamphlets,0.0,0.0,0,2
+370,A lizard can be purchased for homekeeping at a pet shop.,TRUE,0.95,TRUE,0.0,0.95,TRUE,lizard pet shop,0.0,0.0,0,3
+1038,"If there is gum on your shoe, it likely came from a movie theater.",FALSE,0.85,FALSE,0.0,0.85,FALSE,gum shoe movie,0.0,0.0,0,3
+916,Animals undergo digestion after consuming food.,TRUE,0.95,TRUE,0.0,-0.95,FALSE,animals digestion,0.0,0.0,0,2
+722,A computer user working on an important work assignment resides in a house.,FALSE,0.85,FALSE,0.0,0.85,FALSE,computer user work assignment,0.0,0.0,0,4
+1102,One can find the meaning of 'ficus' in an arboretum.,FALSE,0.85,FALSE,0.0,0.85,FALSE,ficus arboretum,0.0,0.0,0,2
+97,Billy sets aside time for fun after work to achieve stress relief.,TRUE,0.5,FALSE,0.0,1.0,TRUE,billy fun stress relief,1.0,1.0,1,4
+334,"While he's playing basketball for such a long time, he is sweating.",TRUE,0.5,FALSE,0.0,1.0,TRUE,sweating basketball long playing,1.0,1.0,1,4
+293,People aim to spend time with their friends.,TRUE,0.5,TRUE,0.0,0.5,TRUE,people aim spend time,0.0,0.0,0,4
+231,John considered his tax refund as free money.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,john tax refund money,0.0,0.0,0,4
+1036,A hard-to-read note is likely to be at a bed.,FALSE,0.85,FALSE,0.0,0.85,FALSE,note bed hard to,0.0,0.0,0,4
+653,"An attraction is sometimes so large that one needs a map to find their way around, and that attraction is a backpack.",FALSE,0.85,FALSE,0.0,0.85,FALSE,backpack attraction,0.0,0.0,0,2
+298,People aim to purchase food at a store.,TRUE,0.5,TRUE,0.0,0.5,TRUE,purchase food store,0.0,0.0,0,3
+1141,"After killing people, the murderer felt religious and went to church.",FALSE,0.95,FALSE,0.0,0.95,FALSE,killing murderer religious church,0.0,0.0,0,4
+197,Campaign aimed at reducing its effect on problem awareness.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,campaign effect problem awareness,0.0,0.0,0,4
+548,A shelf is likely to be hidden behind a door in a cupboard.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,shelf door cupboard,0.0,0.0,0,3
+305,You can purchase jeans at one of many indoor merchants in a shopping mall.,TRUE,0.95,TRUE,0.0,0.95,TRUE,jeans shopping mall,0.0,0.0,0,3
+315,Children love having a backyard and parents love it being a safe neighborhood.,FALSE,0.5,FALSE,0.0,-0.4999,TRUE,children backyard parents neighborhood,0.0,0.0,0,4
+1107,A lake is likely to be glacial in Michigan.,FALSE,0.5,FALSE,0.0,0.4999,FALSE,lake glacial michigan,0.0,0.0,0,3
+397,One usually keeps literature on a shelf.,TRUE,0.5,TRUE,0.0,0.5,TRUE,literature shelf,0.0,0.0,0,2
+961,"People obtain food, not wear hats.",FALSE,0.5,FALSE,0.0,0.5,FALSE,people food wear hats,0.0,0.0,0,4
+532,A steel pen is handily stored in an office desk drawer.,TRUE,0.5,FALSE,0.0,1.0,TRUE,steel pen stored drawer,1.0,1.0,1,4
+189,A sloth lives in a tropical jungle.,TRUE,0.5,TRUE,0.0,0.5,TRUE,sloth jungle tropical,0.0,0.0,0,3
+540,"At the end of the week, one receives money from their boss.",FALSE,0.95,FALSE,0.0,-0.95,TRUE,end week receives money,0.0,0.0,0,4
+20,Adults use glue sticks at an office.,FALSE,0.5,FALSE,0.0,-0.4999,TRUE,glue sticks adults office,0.0,0.0,0,4
+862,A child replied that he didn't know and it was just a reason when asked by his mother.,FALSE,0.5,FALSE,0.0,0.5,FALSE,child replied didn know,0.0,0.0,0,4
+237,A car was hailed for travel to the opera house; it was heading downtown.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,car hailed opera house,0.0,0.0,0,4
+415,A great teacher can serve as an inspiration at school.,TRUE,0.5,TRUE,0.0,0.5,TRUE,teacher inspiration school,0.0,0.0,0,3
+955,Sheep are likely to reside in a lamb's dwelling.,FALSE,0.95,FALSE,0.0,0.95,FALSE,sheep lamb dwelling,0.0,0.0,0,3
+1192,One tries to avoid work in order to attain success.,FALSE,0.5,FALSE,0.0,0.5,FALSE,avoid work attain success,0.0,0.0,0,4
+1068,A leader who experienced his entire tribe being wiped out was an Indian.,FALSE,0.85,FALSE,0.0,0.85,FALSE,leader tribe wiped indian,0.0,0.0,0,4
+734,Metal is used in making a metal fabrication shop.,TRUE,0.95,TRUE,0.0,-0.95,FALSE,metal fabrication shop,0.0,0.0,0,3
+1018,"George checked the rotor of the Apache, which wasn't powered by internal combustion, but by an electric motor.",FALSE,0.5,FALSE,0.0,0.5,FALSE,george rotor apache motor,0.0,0.0,0,4
+794,People get beer at a place where it's dispensed from a bottle after gambling.,FALSE,0.5,FALSE,0.0,0.5,FALSE,beer bottle gambling dispensed,0.0,0.0,0,4
+1084,"They suggest trying things differently, not just maintaining the same (as in doing mere things).",TRUE,0.5,FALSE,0.0,1.0,FALSE,suggest trying differently maintaining,1.0,1.0,1,4
+324,A person's goal when going to bed is falling asleep.,TRUE,0.5,TRUE,0.0,0.5,TRUE,person goal going to,0.0,0.0,0,4
+714,One is using a conferencing device if there are speakers strapped on their ears.,FALSE,0.85,FALSE,0.0,0.85,FALSE,speakers strapped,0.0,0.0,0,2
+890,The teacher played on the upright piano while explaining the song to all students in the living room.,FALSE,0.85,FALSE,0.0,0.85,FALSE,teacher played upright piano,0.0,0.0,0,4
+1016,"A weasel ran up away from danger, with someone joking that only our first president could get it down from a ladder.",FALSE,0.5,FALSE,0.0,0.5,FALSE,weasel president,0.0,0.0,0,2
+226,Writers with a great imagination can amass a large fortune.,TRUE,0.5,FALSE,0.0,1.0,TRUE,writers imagination fortune,1.0,1.0,1,3
+761,"The pitcher felt stress and tension on the mound, he felt like he was on the baseball field.",FALSE,0.5,FALSE,0.0,0.4999,FALSE,pitcher mound stress,0.0,0.0,0,3
+770,Children require a home environment to grow up healthy.,TRUE,0.5,TRUE,0.0,-0.5,FALSE,children home environment,0.0,0.0,0,3
+576,"Aged individual, Christine was.",FALSE,0.5,FALSE,0.0,-0.5,TRUE,aged individual christine,0.0,0.0,0,3
+166,An ottoman is typically placed near the front door in a living room.,FALSE,0.85,FALSE,0.0,-0.85,TRUE,ottoman front door living,0.0,0.0,0,4
+519,Attending school and falling asleep indicates experiencing boredom.,TRUE,0.5,FALSE,0.0,1.0,TRUE,school falling asleep boredom,1.0,1.0,1,4
+969,A young person may swallow semen if they are an heterosexual woman in love.,FALSE,0.95,UNKNOWN,0.5,1.0,FALSE,,0.0,0.0,0,0
+1199,Thinking extensively while studying a new subject is essential because it provides the best way of gaining understanding.,TRUE,0.5,FALSE,0.0,1.0,FALSE,studying understanding thinking subject,1.0,1.0,1,4
+1002,James experienced distress due to his conflicting thoughts about committing murder and fear of potential consequences.,TRUE,0.5,FALSE,0.0,1.0,FALSE,james distress conflicting thoughts,1.0,1.0,1,4
+1009,A sloppy eater left a mess at his desk.,TRUE,0.5,FALSE,0.0,1.0,FALSE,sloppy eater mess,1.0,1.0,1,3
+748,"Homeowner, having frowned at gas prices, needed to mail property tax payments.",FALSE,0.85,FALSE,0.0,0.85,FALSE,homeowner frowned gas tax,0.0,0.0,0,4
+1105,"Animals come in various forms, some fly due to their lightweight hollow bodies.",TRUE,0.95,TRUE,0.0,-0.95,FALSE,animals bodies,0.0,0.0,0,2
+289,"The man flew his airplane over the city and saw pollution visibly in the sky; therefore, the air was polluted.",TRUE,0.5,TRUE,0.0,0.5,TRUE,flew airplane city,0.0,0.0,0,3
+860,"If you don't have a pen, you might find one in your pocket.",TRUE,0.85,FALSE,0.0,1.0,FALSE,pen pocket,1.0,1.0,1,2
+253,Grocery clerks likely place individual potatoes in a paper bag at a grocery store.,TRUE,0.95,FALSE,0.0,1.0,TRUE,potatoes paper bag clerks,1.0,1.0,1,4
+1159,Marathoners can experience excruciating pain if they have pushed themselves too hard after running twenty six miles.,TRUE,0.95,TRUE,0.0,-0.95,FALSE,marathoners excruciating pain twenty,0.0,0.0,0,4
+91,"Teens were trying to hide their drinking, but their stagger gave it away.",FALSE,0.5,FALSE,0.0,-0.5,TRUE,teens,0.0,0.0,0,1
+716,A location is likely to have a kosher restaurant in Jerusalem.,TRUE,0.5,TRUE,0.0,-0.5,FALSE,jerusalem kosher restaurant,0.0,0.0,0,3
+730,"If a lizard is fed by people every day, it has become dependent on human feeding.",FALSE,0.85,FALSE,0.0,0.85,FALSE,lizard fed dependent human,0.0,0.0,0,4
+79,Harry suggested John could have made a different choice.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,harry suggested different choice,0.0,0.0,0,4
+619,Someone who plays poker poorly tends to think more.,FALSE,0.5,FALSE,0.0,0.5,FALSE,plays poorly tends think,0.0,0.0,0,4
+89,The African continent is home to the most monkeys.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,african continent monkeys,0.0,0.0,0,3
+593,"The shark was used as evidence, so it was brought to a courtroom.",TRUE,0.85,FALSE,0.0,1.0,TRUE,shark courtroom evidence,1.0,1.0,1,3
+132,"To watch a movie at home without leaving, one might use a television.",TRUE,0.95,TRUE,0.0,0.95,TRUE,watch movie home television,0.0,0.0,0,4
+75,A basketball with a hole in it remains intact but is not filled with air.,FALSE,0.5,UNKNOWN,0.5,1.0,TRUE,,0.0,0.0,0,0
+559,A student in engineering must do mathematics.,TRUE,0.95,TRUE,0.0,0.95,TRUE,student engineering must mathematics,0.0,0.0,0,4
+121,"People often buy tickets to a sporting event despite not wanting to see it, as demonstrated by John and James' purchase of Falcons vs Jets tickets.",FALSE,0.5,FALSE,0.0,-0.5,TRUE,tickets sporting event purchase,0.0,0.0,0,4
+1152,Traveling from a new place to a new place is likely to be exhausting.,TRUE,0.5,FALSE,0.0,1.0,FALSE,traveling exhausting,1.0,1.0,1,2
+331,"To get someone to repeat what they said when you missed something, you can ask a question.",FALSE,0.5,FALSE,0.0,-0.5,TRUE,ask question repeat,0.0,0.0,0,3
+373,The most famous constellation from Earth is the Milky Way.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,milky way,0.0,0.0,0,2
+776,Calling someone a fruit to insult them is probably not advisable in a grocery store.,FALSE,0.85,FALSE,0.0,0.85,FALSE,fruit insult advisable grocery,0.0,0.0,0,4
+638,Someone has fear which can cause them to commit murder.,TRUE,0.5,FALSE,0.0,1.0,FALSE,fear murder commit cause,1.0,1.0,1,4
+708,A large group of western citizens has bees everywhere in a trash can.,FALSE,0.95,FALSE,0.0,0.95,FALSE,western citizens bees trash,0.0,0.0,0,4
+712,The liquid should be above the cabbage in the can while making sauerkraut.,FALSE,0.5,FALSE,0.0,0.5,FALSE,liquid cabbage can,0.0,0.0,0,3
+755,The boat passenger expressed fear of blowfish but the captain presumed he meant piranhas due to their location in the Atlantic Ocean.,FALSE,0.85,FALSE,0.0,0.85,FALSE,boat passenger fear blowfish,0.0,0.0,0,4
+1042,You can find a Japanese restaurant in a region of a west coast U.S. city called California.,TRUE,0.95,TRUE,0.0,-0.95,FALSE,japanese restaurant west coast,0.0,0.0,0,4
+436,Zane dislikes answering questions due to his suffering from confusion.,FALSE,0.5,FALSE,0.0,-0.4999,TRUE,zane dislikes answering questions,0.0,0.0,0,4
+917,"If one intends to grow plants, they can put a lot of dirt in a bathtub.",FALSE,0.95,FALSE,0.0,0.95,FALSE,grow plants dirt bathtub,0.0,0.0,0,4
+577,Joe plays a percussion instrument in an orchestra.,FALSE,0.5,FALSE,0.0,-0.4999,TRUE,joe percussion orchestra,0.0,0.0,0,3
+447,A net is used on a fishing boat.,TRUE,0.5,FALSE,0.0,1.0,TRUE,net fishing boat,1.0,1.0,1,3
+1066,Dan fell off a bar stool because he was in the kitchen.,FALSE,0.5,FALSE,0.0,0.5,FALSE,fell stool kitchen,0.0,0.0,0,3
+399,"The bell rang, and the congregation began to funnel into the church.",FALSE,0.5,FALSE,0.0,-0.5,TRUE,bell rang congregation,0.0,0.0,0,3
+950,Caretakers are referred to as parents for a child.,TRUE,0.5,FALSE,0.0,1.0,FALSE,caretakers referred parents child,1.0,1.0,1,4
+114,James wanted to prevent his son from disturbing the frogs mating in the area.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,james son frogs mating,0.0,0.0,0,4
+174,Bill works at a butcher shop since he puts meat on a scale.,FALSE,0.85,FALSE,0.0,-0.85,TRUE,bill butcher shop,0.0,0.0,0,3
+1204,"At a shop, one can buy a cardboard box for storing spare and unused items.",TRUE,0.95,TRUE,0.0,-0.95,FALSE,shop cardboard box,0.0,0.0,0,3
+991,A form of anaerobic exercise is falling down.,FALSE,0.5,FALSE,0.0,0.5,FALSE,falling down anaerobic exercise,0.0,0.0,0,4
+967,Spitting excessively without noticing may result in having extra phlegm.,FALSE,0.85,UNKNOWN,0.5,1.0,FALSE,,0.0,0.0,0,0
+789,James found it hard to feel at ease due to excessive dirt; he needed to clean out a bank.,FALSE,0.85,FALSE,0.0,0.85,FALSE,james dirt,0.0,0.0,0,2
+757,A person aims to be a religious individual at a university.,FALSE,0.5,FALSE,0.0,0.5,FALSE,person religious individual university,0.0,0.0,0,4
+775,"They conduct experiments involving combustible mixtures and keep a fire extinguisher there, which is why they place it at a hospital.",FALSE,0.85,FALSE,0.0,0.85,FALSE,experiments combustible mixtures,0.0,0.0,0,3
+1133,People go to the market for buying vegetables.,TRUE,0.5,TRUE,0.0,-0.5,FALSE,people market buying vegetables,0.0,0.0,0,4
+829,Eating lunch may lead to gaining weight.,TRUE,0.5,FALSE,0.0,1.0,FALSE,eating lunch weight,1.0,1.0,1,3
+125,Aliens arrive from outer space.,FALSE,0.5,UNKNOWN,0.5,1.0,TRUE,,0.0,0.0,0,0
+55,Someone can get tired from repeatedly discussing the same topic with the same person.,TRUE,0.5,TRUE,0.0,0.5,TRUE,topic person,0.0,0.0,0,2
+450,"A place has large cables hanging overhead, which identifies it as a substation.",FALSE,0.85,FALSE,0.0,-0.85,TRUE,cables overhead substation,0.0,0.0,0,3
+46,Applying for a job results in employment.,FALSE,0.85,FALSE,0.0,-0.85,TRUE,applying job results employment,0.0,0.0,0,4
+533,A story about World War II is set in the past.,TRUE,0.95,TRUE,0.0,0.95,TRUE,world war ii,0.0,0.0,0,3
+1074,Going to bed with one's spouse for sex can lead to sleepiness.,TRUE,0.5,FALSE,0.0,1.0,FALSE,bed spouse sex sleepiness,1.0,1.0,1,4
+582,"I wanted my resume to end up on the office desk, not in the drawer.",FALSE,0.5,FALSE,0.0,-0.5,TRUE,wanted resume desk drawer,0.0,0.0,0,4
+448,Sage loved communicating and enjoyed exchanging ideas with his peers.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,sage loved communicating enjoyed,0.0,0.0,0,4
+537,A trumpet is often heard along with other instruments made from the same material in a brass band.,TRUE,0.95,TRUE,0.0,0.95,TRUE,trumpet brass band instruments,0.0,0.0,0,4
+531,A hamburger is placed in the mouth.,FALSE,1.0,FALSE,0.0,-1.0,TRUE,hamburger mouth,0.0,0.0,0,2
+754,Stabbing to death a person will likely result in a pool of blood.,TRUE,0.5,TRUE,0.0,-0.5,FALSE,death,0.0,0.0,0,1
+1144,"After opening each gift on his birthday, the child was reminded by his father to exchange them.",FALSE,0.5,FALSE,0.0,0.5,FALSE,birthday child father,0.0,0.0,0,3
+11,Vinyl can be an odd replacement for wallpaper.,FALSE,0.5,FALSE,0.0,-0.4999,TRUE,vinyl wallpaper,0.0,0.0,0,2
+827,He removed a shelf on the liquor cabinet to make room for the especially tall hardcovers.,FALSE,0.5,FALSE,0.0,0.5,FALSE,removed shelf liquor cabinet,0.0,0.0,0,4
+499,A lemur might frolic in the market in India.,FALSE,0.95,FALSE,0.0,-0.95,TRUE,lemur market india,0.0,0.0,0,3
+474,A child learns to dress independently before starting school.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,child learns dress independently,0.0,0.0,0,4
+214,The dad kept his gun in a drawer to protect his house.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,dad gun drawer,0.0,0.0,0,3
+328,"To travel to a star, one heads to outer space.",TRUE,0.95,TRUE,0.0,0.95,TRUE,travel star outer space,0.0,0.0,0,4
+364,A monkey can be found in the West African region of Nigeria on the Gulf of Guinea.,TRUE,0.95,TRUE,0.0,0.95,TRUE,monkey nigeria gulf,0.0,0.0,0,3
+208,A bald eagle is likely to be found working as a painter.,FALSE,1.0,FALSE,0.0,-1.0,TRUE,bald eagle painter,0.0,0.0,0,3
+810,"The dog curled up for a nap, implying it had just been scratching.",FALSE,0.85,FALSE,0.0,0.85,FALSE,dog curled nap scratching,0.0,0.0,0,4
+220,"If one spends all their time buying and not saving, it is likely they will go broke.",TRUE,0.95,TRUE,0.0,0.95,TRUE,broke,0.0,0.0,0,1
+684,"A piece of land in Canada houses marmots, not a cage.",TRUE,0.5,FALSE,0.0,1.0,FALSE,land canada marmots,1.0,1.0,1,3
+161,A large dining room with a fancy chandelier can be found in a mansion.,TRUE,0.95,TRUE,0.0,0.95,TRUE,dining room chandelier mansion,0.0,0.0,0,4
+845,"If you cannot find the stapler, it might be at an office supply store.",TRUE,0.85,FALSE,0.0,1.0,FALSE,stapler office supply store,1.0,1.0,1,4
+40,A doormat is typically placed in front of a front door.,TRUE,0.95,TRUE,0.0,0.95,TRUE,doormat placed typically,0.0,0.0,0,3
+808,"Despite the large crowds, the depressed man felt alone.",TRUE,0.5,TRUE,0.0,-0.5,FALSE,crowds depressed man alone,0.0,0.0,0,4
+1158,A fruit that is easily broken into sections is called an orchestra.,FALSE,1.0,FALSE,0.0,1.0,FALSE,fruit orchestra,0.0,0.0,0,2
+224,They call trash 'dustbin' in Australia.,FALSE,0.5,FALSE,0.0,-0.4999,TRUE,trash dustbin australia,0.0,0.0,0,3
+670,A pond surrounded by trees is likely found in the countryside.,TRUE,0.95,TRUE,0.0,-0.95,FALSE,pond trees countryside,0.0,0.0,0,3
+915,"Before lifting weights, he liked to warm up on the squash court, indicating he really enjoyed the facilities of a country club.",TRUE,0.85,FALSE,0.0,1.0,FALSE,lifting squash,1.0,1.0,1,2
+920,"A person (James) may resort to using an expensive venue when there are no public toilets available, and such venues might be games-related establishments.",FALSE,0.85,FALSE,0.0,0.85,FALSE,james toilets venues,0.0,0.0,0,3
+835,"The child was unaware of his mother's troubles, he only had a balloon for her.",FALSE,0.85,FALSE,0.0,0.85,FALSE,child mother troubles balloon,0.0,0.0,0,4
+914,"To behave with proper aplomb, one should avoid incomplete manners.",FALSE,0.5,FALSE,0.0,0.5,FALSE,aplomb manners incomplete,0.0,0.0,0,3
+182,The most amount of leaves can be found in a forest.,TRUE,0.5,FALSE,0.0,1.0,TRUE,leaves forest,1.0,1.0,1,2
+413,"If one has curiosity despite being blind and paralyzed, they analyze.",FALSE,0.85,UNKNOWN,0.5,1.0,TRUE,,0.0,0.0,0,0
+343,"Pens, computers, text books, and paper clips are commonly found at a university.",TRUE,0.95,TRUE,0.0,0.95,TRUE,pens computers text books,0.0,0.0,0,4
+427,People visit a mall when they want to purchase clothing.,TRUE,0.5,TRUE,0.0,0.5,TRUE,people mall purchase clothing,0.0,0.0,0,4
+849,A finely crafted writing instrument can be purchased at an office supply store.,TRUE,0.95,TRUE,0.0,-0.95,FALSE,writing instrument,0.0,0.0,0,2
+948,A child's patience in waiting for dessert was rewarded due to his boredom.,FALSE,0.5,FALSE,0.0,0.5,FALSE,child boredom dessert patience,0.0,0.0,0,4
+546,"If you believe in God, you will go to heaven when you die.",FALSE,0.85,FALSE,0.0,-0.85,TRUE,believe god heaven die,0.0,0.0,0,4
+556,She was concerned about experiencing heartburn at the picnic because she forgot her chewables.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,concerned experiencing heartburn picnic,0.0,0.0,0,4
+273,Printing on a printer can get expensive because it uses paper.,TRUE,0.5,FALSE,0.0,1.0,TRUE,printing paper printer,1.0,1.0,1,3
+1220,"Setting up framing, truss and beam are some of the first steps in constructing a ceiling.",FALSE,0.85,FALSE,0.0,0.85,FALSE,setting framing truss,0.0,0.0,0,3
+1132,A kosher deli can be found alongside various eating options in Los Angeles.,TRUE,0.95,TRUE,0.0,-0.9499,FALSE,kosher deli los angeles,0.0,0.0,0,4
+90,They planned on spending a long time making love since it was James's 5th Anniversary and they wanted to go to bed early.,FALSE,0.5,UNKNOWN,0.5,1.0,TRUE,,0.0,0.0,0,0
+497,Bus stops are more common in urban areas.,TRUE,0.95,TRUE,0.0,0.95,TRUE,bus stops urban areas,0.0,0.0,0,4
+383,Dan kept only one heifer for milk and didn't think he'd find good farmland in a place as cold as Michigan.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,kept heifer milk cold,0.0,0.0,0,4
+1110,"Apples form on an apple tree, not on the trunk.",TRUE,1.0,TRUE,0.0,-1.0,FALSE,apples form tree,0.0,0.0,0,3
+482,The man started to learn jogging with the aim of getting in shape.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,man jogging shape,0.0,0.0,0,3
+1072,A triangle has three sharp (or pointed) parts.,TRUE,0.5,TRUE,0.0,-0.5,FALSE,triangle,0.0,0.0,0,1
+168,A snake can be found in a cage at a pet store.,TRUE,0.5,TRUE,0.0,0.5,TRUE,snake cage pet store,0.0,0.0,0,4
+804,"When getting in shape, a period of recovery does wonders.",TRUE,0.5,TRUE,0.0,-0.5,FALSE,getting shape period recovery,0.0,0.0,0,4
+131,"Playing baseball shares similarities with other sports, as there is always a risk of injury.",TRUE,0.5,TRUE,0.0,0.5,TRUE,playing baseball injury sports,0.0,0.0,0,4
+867,A person is at the worst place in a ticket office when they are located at the top.,FALSE,0.85,FALSE,0.0,0.85,FALSE,worst place ticket office,0.0,0.0,0,4
+1065,Stroking a dog's fur provides it with attention.,FALSE,0.5,FALSE,0.0,0.5,FALSE,stroking dog fur attention,0.0,0.0,0,4
+975,"After the weight cut, he was concerned about his energy levels, but this was an aspect of participating in sports.",TRUE,0.5,FALSE,0.0,1.0,FALSE,weight cut energy,1.0,1.0,1,3
+109,James marveled at the sheer number and size of the universe.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,james universe number size,0.0,0.0,0,4
+155,A person at the gym aims to build muscle on the human body.,TRUE,0.5,TRUE,0.0,0.5,TRUE,person gym build muscle,0.0,0.0,0,4
+105,"Police brutality, often justified as obstructing justice, can result in people getting hurt.",TRUE,0.95,TRUE,0.0,0.95,TRUE,police brutality,0.0,0.0,0,2
+4,A hamburger is likely to be found in a fast food restaurant.,TRUE,0.95,TRUE,0.0,0.95,TRUE,restaurant fast food,0.0,0.0,0,3
+1041,It was agreed by Steve that it was impossible.,FALSE,0.5,UNKNOWN,0.5,1.0,FALSE,,0.0,0.0,0,0
+842,"Metal is obtained from ores, which are extracted from the ground.",TRUE,0.95,TRUE,0.0,-0.95,FALSE,metal ores,0.0,0.0,0,2
+203,Prolonged kissing may lead to shortness of breath.,TRUE,0.5,TRUE,0.0,0.5,TRUE,prolonged kissing lead shortness,0.0,0.0,0,4
+905,Airplane engines that cut off and are unable to be restarted in flight begin to melt.,FALSE,0.5,UNKNOWN,0.5,1.0,FALSE,,0.0,0.0,0,0
+24,A toilet in an apartment can be accessible only by friends.,FALSE,0.95,FALSE,0.0,-0.95,TRUE,toilet apartment accessible,0.0,0.0,0,3
+158,A pit can be gotten from a peach.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,pit peach,0.0,0.0,0,2
+958,A group observes a play in an auditorium.,FALSE,0.5,FALSE,0.0,0.5,FALSE,group observes play,0.0,0.0,0,3
+270,"He was exhibiting difficulties in healthy self-expression, indicating mental suffering.",FALSE,0.5,FALSE,0.0,-0.5,TRUE,exhibiting difficulties self expression,0.0,0.0,0,4
+667,A telephone book is found in nearly every room in a bedsit.,FALSE,0.85,FALSE,0.0,0.85,FALSE,telephone book bedsit,0.0,0.0,0,3
+304,"John's participation in planning games with Joe, and Joe's subsequent fall after being hit by a ball, suggests that Joe might have sustained an injury.",TRUE,0.5,FALSE,0.0,1.0,TRUE,participation planning sustained,1.0,1.0,1,3
+928,"A republic, like the USA, is not part of a dictatorship.",FALSE,0.85,FALSE,0.0,0.85,FALSE,republic usa dictatorship,0.0,0.0,0,3
+536,Children can listen to music while traveling in a car.,TRUE,0.5,TRUE,0.0,0.5,TRUE,children music traveling car,0.0,0.0,0,4
+529,Many humans enjoy fishing and relax by drinking beer simultaneously.,TRUE,0.5,FALSE,0.0,1.0,TRUE,humans fishing beer,1.0,1.0,1,3
+57,"The freeway has no traffic and few buildings, indicating it's located in the countryside.",FALSE,0.85,FALSE,0.0,-0.85,TRUE,freeway traffic buildings countryside,0.0,0.0,0,4
+627,A journey out of the planet results in travel to a galaxy.,FALSE,0.95,FALSE,0.0,0.95,FALSE,journey planet travel galaxy,0.0,0.0,0,4
+177,An actor seeks other opportunities when they become tired of their roles (branching out).,TRUE,0.5,TRUE,0.0,0.5,TRUE,actor seeks branching,0.0,0.0,0,3
+59,"If a place is hot and arid, it could be considered lifeless.",FALSE,0.85,FALSE,0.0,-0.85,TRUE,hot arid,0.0,0.0,0,2
+263,The forest underwent a cold winter and it is located in the temperate zone.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,forest winter cold temperate,0.0,0.0,0,4
+984,"Nature can be good and bad for a person who walks, one potential issue being getting lost.",TRUE,0.5,TRUE,0.0,-0.5,FALSE,nature person getting lost,0.0,0.0,0,4
+549,The man is likely catching draining motor oil in a garage at home.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,man likely catching draining,0.0,0.0,0,4
+511,Everybody crying at the holy site is common.,FALSE,0.85,FALSE,0.0,-0.85,TRUE,crying holy site,0.0,0.0,0,3
+854,A lantern is essential for navigation in a street.,FALSE,0.5,FALSE,0.0,0.5,FALSE,lantern navigation street,0.0,0.0,0,3
+863,A picture is displayed on a horizontal surface at an art show.,FALSE,0.5,FALSE,0.0,0.4999,FALSE,picture displayed horizontal surface,0.0,0.0,0,4
+1166,Unions need to demand more money in order to cease the strike.,FALSE,0.5,FALSE,0.0,0.5,FALSE,unions money demand strike,0.0,0.0,0,4
+1046,Parents advise children to go boating on the weekend.,FALSE,0.5,FALSE,0.0,0.5,FALSE,parents children go boating,0.0,0.0,0,4
+773,A person puts writing on paper to prevent a pen from drying out.,FALSE,0.5,FALSE,0.0,0.5,FALSE,person paper drying,0.0,0.0,0,3
+339,"If one partied all night, they may find themselves already feeling tired when starting work.",TRUE,0.95,UNKNOWN,0.5,1.0,TRUE,,0.0,0.0,0,0
+1007,Giving assistance to the needy brings about happiness.,TRUE,0.5,FALSE,0.0,1.0,FALSE,assistance needy happiness,1.0,1.0,1,3
+1017,"You wouldn't find a blowfish on dry land, you'd look for it in sea water.",TRUE,0.95,TRUE,0.0,-0.95,FALSE,blowfish land sea water,0.0,0.0,0,4
+84,One can store pennies in a piggy bank for saving later.,TRUE,1.0,TRUE,0.0,1.0,TRUE,pennies piggy bank,0.0,0.0,0,3
+814,The opposite of an area of elevation is an area of depression.,TRUE,0.95,TRUE,0.0,-0.95,FALSE,opposite area elevation depression,0.0,0.0,0,4
+1020,A salt shaker is most often kept in a kitchen cupboard.,TRUE,0.95,TRUE,0.0,-0.95,FALSE,salt shaker kitchen cupboard,0.0,0.0,0,4
+160,People are skilled at forgetting events when they cannot be recalled.,TRUE,0.5,TRUE,0.0,0.5,TRUE,people skilled forgetting,0.0,0.0,0,3
+802,Billy may have moved from the capital of his country to another city within the same country.,TRUE,0.5,TRUE,0.0,-0.5,FALSE,billy moved capital,0.0,0.0,0,3
+87,You place pans in a backpack if you want to carry them with you.,FALSE,0.95,FALSE,0.0,-0.95,TRUE,pans backpack place,0.0,0.0,0,3
+702,Boredom and hunger led to a waste of time on her trip and a cart full of unhealthy snacks at a place where play cards were involved.,FALSE,0.5,FALSE,0.0,0.5,FALSE,boredom hunger trip snacks,0.0,0.0,0,4
+985,Jim decided to lose weight because he believes exercise is the best way to get rid of fastfood.,FALSE,0.5,FALSE,0.0,0.5,FALSE,decided lose weight exercise,0.0,0.0,0,4
+379,People want to have a lot of coffee at the office.,FALSE,0.5,FALSE,0.0,-0.4999,TRUE,people want coffee office,0.0,0.0,0,4
+1059,"He aims to find a house where every yard is uniform in size and landscaped; therefore, he should look for a house in Michigan.",FALSE,0.85,FALSE,0.0,0.85,FALSE,house yard uniform landscaped,0.0,0.0,0,4
+350,You ask a child to state her name when you first meet her.,TRUE,0.5,FALSE,0.0,1.0,TRUE,child name ask meet,1.0,1.0,1,4
+584,Athletes soak in hot tubs to relieve sore muscles after playing baseball.,TRUE,0.95,TRUE,0.0,0.95,TRUE,athletes soak hot tubs,0.0,0.0,0,4
+817,Performing for the first time is likely to produce a sense of calm.,FALSE,0.85,FALSE,0.0,0.85,FALSE,first time,0.0,0.0,0,2
+386,A person uses a personal key for accessing their own home.,TRUE,0.95,TRUE,0.0,0.95,TRUE,person accessing,0.0,0.0,0,2
+1049,An alien may use a vacuum in a container.,TRUE,0.5,FALSE,0.0,1.0,FALSE,alien vacuum container,1.0,1.0,1,3
+572,Someone aims for procreation as a result of sex.,TRUE,0.5,FALSE,0.0,1.0,TRUE,aims procreation result,1.0,1.0,1,3
+617,A farmer needs to plant seeds to create a maze on his farm in the fall.,FALSE,0.95,FALSE,0.0,0.95,FALSE,farmer seeds maze fall,0.0,0.0,0,4
+1127,"During the winter hunt, one could hear every motion in the woods due to everything being still.",TRUE,0.5,TRUE,0.0,-0.5,FALSE,winter hunt woods,0.0,0.0,0,3
+1073,An automobile may use a garage to get off a freeway.,FALSE,1.0,FALSE,0.0,1.0,FALSE,automobile garage freeway,0.0,0.0,0,3
+411,Brawn opened the curtains to allow the sun to warm the room.,FALSE,0.95,FALSE,0.0,-0.95,TRUE,brawn curtains sun room,0.0,0.0,0,4
+861,A small dog pants when it's hot outside to regulate its body temperature.,TRUE,0.5,TRUE,0.0,-0.5,FALSE,dog pants,0.0,0.0,0,2
+186,Taking a quick rest during the day helps people feel more energetic.,TRUE,0.5,TRUE,0.0,0.5,TRUE,quick rest day energetic,0.0,0.0,0,4
+7,"In a Spanish-speaking North American country, one can get a great cup of coffee at Mexico.",TRUE,0.5,FALSE,0.0,1.0,TRUE,spanish speaking north american,1.0,1.0,1,4
+360,"At an airport, one is usually about to use their plane ticket.",TRUE,0.95,TRUE,0.0,0.95,TRUE,airport plane ticket use,0.0,0.0,0,4
+585,A gambler experiences unhappiness due to losing money.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,gambler losing,0.0,0.0,0,2
+788,"After eating from it, a plate would be put immediately at a flea market.",FALSE,0.85,FALSE,0.0,0.85,FALSE,eating,0.0,0.0,0,1
+769,A person would need to navigate (or find their way) if his or her captain dies at sea.,FALSE,0.85,FALSE,0.0,0.85,FALSE,navigate captain dies,0.0,0.0,0,3
+872,A storey with a panoramic view is typically found in a mall.,FALSE,0.85,FALSE,0.0,0.85,FALSE,storey panoramic mall,0.0,0.0,0,3
+888,A child answering questions and an adult asking them is engaged in a discussion.,FALSE,0.5,FALSE,0.0,0.5,FALSE,child questions adult discussion,0.0,0.0,0,4
+1005,A self-assured person often knows what time.,FALSE,0.5,FALSE,0.0,0.5,FALSE,person often,0.0,0.0,0,2
+646,Nails are stored in a jar when they are already packaged.,FALSE,0.85,FALSE,0.0,0.85,FALSE,nails jar packaged,0.0,0.0,0,3
+440,Christmas time comes after Halloween.,TRUE,0.5,TRUE,0.0,0.5,TRUE,christmas time comes after,0.0,0.0,0,4
+759,"A bus depot serves as a place to buy magazines, newspapers, and gum.",FALSE,0.85,FALSE,0.0,0.85,FALSE,bus depot magazines,0.0,0.0,0,3
+286,"While knitting, one can listen to music using a radio.",TRUE,0.5,FALSE,0.0,1.0,TRUE,knitting music radio,1.0,1.0,1,3
+1112,"Machines can function when humans cannot (i.e., they do not fail to work).",FALSE,0.95,FALSE,0.0,0.95,FALSE,machines function humans fail,0.0,0.0,0,4
+685,"The surgeon's clients had begun to reduce, it seemed girls no longer aim to gain weight.",FALSE,0.85,UNKNOWN,0.5,1.0,FALSE,,0.0,0.0,0,0
+1091,Starting to kill people will likely result in a terrible outcome.,TRUE,0.5,UNKNOWN,0.5,1.0,FALSE,,0.0,0.0,0,0
+874,People who are dying receive social security payments because they no longer exist in the workforce.,FALSE,0.95,UNKNOWN,0.5,1.0,FALSE,,0.0,0.0,0,0
+230,A very large table might be used for a conference.,TRUE,0.5,TRUE,0.0,0.5,TRUE,table conference large,0.0,0.0,0,3
+913,"If a fried egg is runny and there's no toast to sop it up, after the meal, there will be a messy spill.",TRUE,0.5,FALSE,0.0,1.0,FALSE,fried egg messy spill,1.0,1.0,1,4
+904,"The family sought adoption for enviro-ethical reasons, they abhorred fostering a child.",FALSE,0.5,FALSE,0.0,0.5,FALSE,sought adoption enviro ethical,0.0,0.0,0,4
+674,"A showroom features washers and refrigerators; therefore, it is located at an electronics store.",FALSE,0.85,FALSE,0.0,0.85,FALSE,showroom refrigerators electronics,0.0,0.0,0,3
+1185,A knight is always portrayed as a hero in a castle.,FALSE,0.5,FALSE,0.0,0.5,FALSE,knight hero castle,0.0,0.0,0,3
+107,Seafood restaurants are located in coastal cities to attract tourists.,FALSE,0.85,FALSE,0.0,-0.8499,TRUE,seafood restaurants coastal cities,0.0,0.0,0,4
+806,A large container is stored at a place called juice (where 'juice' denotes the storage location).,FALSE,0.95,FALSE,0.0,0.95,FALSE,container stored place juice,0.0,0.0,0,4
+320,People play chess on the weekends to have fun.,TRUE,0.5,FALSE,0.0,1.0,TRUE,play chess weekends fun,1.0,1.0,1,4
+850,The detective finds information from witnesses for the purpose of amusement.,FALSE,0.95,FALSE,0.0,0.95,FALSE,detective witnesses information purpose,0.0,0.0,0,4
+1097,Doing something and having fun suggests it's something you do spontaneously.,TRUE,0.5,FALSE,0.0,1.0,FALSE,doing,1.0,1.0,1,1
+434,It's safer to keep pet birds confined in a cage.,TRUE,0.5,FALSE,0.0,1.0,TRUE,pet birds cage,1.0,1.0,1,3
+363,"Batman, lacking bottles, had to settle for cans (for beer).",FALSE,1.0,FALSE,0.0,-1.0,TRUE,batman bottles cans,0.0,0.0,0,3
+971,An animal tries to feel pain,FALSE,0.5,FALSE,0.0,0.5,FALSE,animal tries pain,0.0,0.0,0,3
+677,There are likely to be a variety of flats to choose from at an apartment complex.,TRUE,0.95,FALSE,0.0,1.0,FALSE,flats apartment complex,1.0,1.0,1,3
+338,"A toll road meandered from Maine to New Hampshire, it was located in New England.",TRUE,0.95,FALSE,0.0,1.0,TRUE,toll road maine,1.0,1.0,1,3
+62,A computer user typically uses their own computer at home.,TRUE,0.5,FALSE,0.0,1.0,TRUE,computer user typically uses,1.0,1.0,1,4
+725,Not being well-rested on a rainy day may lead to making bread.,FALSE,0.95,FALSE,0.0,0.95,FALSE,not well rested,0.0,0.0,0,3
+382,"The car's steering seems quite loose, but he still considered purchasing it because he needed something small and compact.",FALSE,0.5,FALSE,0.0,-0.5,TRUE,car steering,0.0,0.0,0,2
+99,A person who has too much greed would be unable to make friends.,FALSE,0.85,UNKNOWN,0.5,1.0,TRUE,,0.0,0.0,0,0
+443,A fountain pen is used for writing with ink.,TRUE,0.95,TRUE,0.0,0.95,TRUE,fountain pen ink writing,0.0,0.0,0,4
+96,"When one illustrates a point, the goal is for the listener/reader to achieve understanding.",TRUE,0.95,TRUE,0.0,0.95,TRUE,illustrates goal understanding,0.0,0.0,0,3
+88,Remembering something is due to one's initial knowledge of it.,FALSE,0.5,UNKNOWN,0.5,1.0,TRUE,,0.0,0.0,0,0
+822,A creek could be located opposite a city called a meadow.,FALSE,0.5,FALSE,0.0,0.5,FALSE,creek city,0.0,0.0,0,2
+69,"A fire extinguisher is an ideal safety measure in a house, but it's not legally mandated.",TRUE,0.95,FALSE,0.0,1.0,TRUE,fire extinguisher safety house,1.0,1.0,1,4
+486,"Though she had a disability, her coach recognized her potential.",TRUE,0.5,FALSE,0.0,1.0,TRUE,disability coach recognized potential,1.0,1.0,1,4
+157,The man aims for relaxation while going fishing instead of work.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,man fishing relaxation work,0.0,0.0,0,4
+881,Watching out for snakes is necessary when floating in African waters with high grass.,FALSE,0.95,FALSE,0.0,0.95,FALSE,snakes floating,0.0,0.0,0,2
+855,A police officer patrols the street.,FALSE,0.5,FALSE,0.0,0.5,FALSE,police officer patrols street,0.0,0.0,0,4
+818,"If someone commits murder, they will likely be sentenced and subsequently imprisoned.",TRUE,0.95,TRUE,0.0,-0.95,FALSE,commits murder sentenced imprisoned,0.0,0.0,0,4
+438,"People remained seated in darkness because it was dangerous to navigate in the absence of light, possibly suggesting they were at an opera.",FALSE,0.85,FALSE,0.0,-0.85,TRUE,darkness opera,0.0,0.0,0,2
+1138,"James, despite loving surfing, often resorted to starting fights when struggling with it.",FALSE,0.85,FALSE,0.0,0.85,FALSE,james surfing struggling,0.0,0.0,0,3
+98,The man in the white suit was unproductive while the man in the blue put in effort and was productive.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,man white suit unproductive,0.0,0.0,0,4
+777,You can obtain a toothpick when you don't have one from chewing gum.,TRUE,0.5,TRUE,0.0,-0.5,FALSE,toothpick gum obtain,0.0,0.0,0,3
+409,Most items in retail stores remain overpriced even when they are on sale.,FALSE,0.7,FALSE,0.0,-0.7,TRUE,items retail stores on,0.0,0.0,0,4
+596,She fetched a bottle of peroxide from the medicine cabinet when her son scraped his knee.,FALSE,0.5,FALSE,0.0,-0.4999,TRUE,fetched bottle peroxide medicine,0.0,0.0,0,4
+348,Death causes organic material to decay.,TRUE,0.95,UNKNOWN,0.5,1.0,TRUE,,0.0,0.0,0,0
+424,"The man's best memories from college were primarily late night at the fraternity house, despite not performing well academically.",FALSE,0.5,FALSE,0.0,-0.4999,TRUE,man memories,0.0,0.0,0,2
+1172,A trickle of water in a river bed revealed a stone.,FALSE,0.5,FALSE,0.0,0.5,FALSE,trickle water river bed,0.0,0.0,0,4
+624,Celebrating with too many cocktails may result in having fun in the morning.,FALSE,0.85,FALSE,0.0,0.85,FALSE,celebrating,0.0,0.0,0,1
+785,A replacement ax handle can be bought at a hardware store.,TRUE,0.95,TRUE,0.0,-0.95,FALSE,replacement ax handle hardware,0.0,0.0,0,4
+221,"Though preferred by a mouse, a house may also be inhabited by them in a garden.",FALSE,0.85,FALSE,0.0,-0.85,TRUE,mouse house garden,0.0,0.0,0,3
+565,The majority of fast food restaurants are in America.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,majority fast food restaurants,0.0,0.0,0,4
+815,Singers need to clear their throats before a show.,TRUE,0.5,FALSE,0.0,1.0,FALSE,singers show,1.0,1.0,1,2
+686,"At a train station, people often read magazines while waiting for an appointment.",FALSE,0.85,FALSE,0.0,0.85,FALSE,train station people magazines,0.0,0.0,0,4
+441,"If someone finds out their brother has a daughter, they need to add a niece node to the family tree.",FALSE,0.5,TRUE,0.0,1.0,TRUE,finds daughter niece family,1.0,1.0,1,4
+1174,"The universe is recognized as real, regardless of the date on it.",TRUE,0.5,TRUE,0.0,-0.5,FALSE,universe recognized real date,0.0,0.0,0,4
+839,"People come to care less about the cost of expensive equipment for playing games that involve much walking and swinging in grass, given their understanding of its value.",FALSE,0.5,FALSE,0.0,0.4999,FALSE,games equipment walking,0.0,0.0,0,3
+302,"Donald, being a prominent figure for the federal government, likely spends a lot of time in Washington D.C.",TRUE,0.95,UNKNOWN,0.5,1.0,TRUE,,0.0,0.0,0,0
+771,A house located outside the center of a community is referred to as a newspaper.,FALSE,1.0,FALSE,0.0,1.0,FALSE,house community center newspaper,0.0,0.0,0,4
+940,"The act of kissing agitates herpes in the head (this is an unconventional interpretation given the provided answer, assuming that 'herpes' refers to a neurological condition affecting the brain, which it does not). However, since the original Question-Answer pair suggests that the object being described is an entity that can be physically agitated or moved, this interpretation might not be accurate. It would be more appropriate to interpret 'herpes' as referring to a virus in this context.
+
+   A revised and more suitable claim statement could therefore be: The act of kissing does not agitate herpes (the virus), but it can potentially transmit the virus if an infected individual is involved.",FALSE,0.5,FALSE,0.0,0.5,FALSE,kissing transmit virus,0.0,0.0,0,3
+886,The student got nervous about neuroepithelium and lost his balance due to a nasal cavity issue.,FALSE,0.85,FALSE,0.0,0.85,FALSE,student nervous neuroepithelium nasal,0.0,0.0,0,4
+1191,"After having food, our bodies are no longer hungry.",FALSE,0.5,FALSE,0.0,0.5,FALSE,food bodies hungry,0.0,0.0,0,3
+600,"If a child gets in trouble for being hyperactive, it may be necessary to teach them how to calm down.",TRUE,0.5,UNKNOWN,0.5,1.0,TRUE,,0.0,0.0,0,0
+820,The planet Mercury is unsuitable for human life due to its presence of mercuric sulfide.,FALSE,0.5,FALSE,0.0,0.5,FALSE,planet mercury unsuitable human,0.0,0.0,0,4
+732,"If you want a license to catch crabs, you would not go to a fancy restaurant. (Note: This statement indicates that getting a license to catch crabs is not related to going to a fancy restaurant.)",TRUE,0.95,TRUE,0.0,-0.95,FALSE,license catch crabs fancy,0.0,0.0,0,4
+68,A single shower curtain is typically found in use within a bathtub.,FALSE,0.95,FALSE,0.0,-0.95,TRUE,shower curtain bathtub,0.0,0.0,0,3
+656,People reside in apartments.,TRUE,0.95,TRUE,0.0,-0.95,FALSE,people reside apartments,0.0,0.0,0,3
+1179,Cooking sheep meat may provoke feelings of being well among wolves.,FALSE,1.0,FALSE,0.0,1.0,FALSE,cooking sheep meat wolves,0.0,0.0,0,4
+925,A corpse is typically covered by a blanket in a bedroom.,FALSE,0.95,FALSE,0.0,0.95,FALSE,corpse typically covered blanket,0.0,0.0,0,4
+846,"Many homes in this country are built around a courtyard, which is a characteristic feature of them.",FALSE,0.85,FALSE,0.0,0.85,FALSE,homes country built courtyard,0.0,0.0,0,4
+690,"Parents, specifically John and Judy in this case, aim to understand their children despite their kids not always being well-behaved.",TRUE,0.5,TRUE,0.0,-0.5,FALSE,parents understand children well,0.0,0.0,0,4
+503,People need to carry books all day in a university.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,people need carry books,0.0,0.0,0,4
+737,"If one were on the surface of the sun, the ocean would be the cause of death first.",FALSE,0.95,FALSE,0.0,0.95,FALSE,surface sun ocean death,0.0,0.0,0,4
+437,A celebrity can gain wide acceptance by going public about a common problem.,FALSE,0.85,FALSE,0.0,-0.85,TRUE,celebrity gain acceptance public,0.0,0.0,0,4
+412,Releasing built-up energy might feel wonderful.,TRUE,0.5,TRUE,0.0,0.5,TRUE,releasing built up energy,0.0,0.0,0,4
+1044,People often feel pain when falling in love.,FALSE,0.5,FALSE,0.0,0.5,FALSE,falling love people pain,0.0,0.0,0,4
+681,A fan for a stove is likely to be found in a dress emporium.,FALSE,0.95,FALSE,0.0,0.95,FALSE,fan stove dress emporium,0.0,0.0,0,4
+32,James may look for an old underground map from the 50s in a library.,FALSE,0.85,FALSE,0.0,-0.85,TRUE,james look old map,0.0,0.0,0,4
+470,"A patriotic guy with a camera, when finding a bald eagle, aims to photograph it.",FALSE,0.85,FALSE,0.0,-0.85,TRUE,patriotic guy camera bald,0.0,0.0,0,4
+309,A self-referential book written by Kramer might be about coffee tables.,FALSE,0.85,FALSE,0.0,-0.85,TRUE,self referential book kramer,0.0,0.0,0,4
+534,Marmots are found in mountainous areas.,TRUE,0.5,TRUE,0.0,0.5,TRUE,marmots mountainous areas,0.0,0.0,0,3
+970,Sally felt a sensation of moving forward while standing in the slow queue.,FALSE,0.95,FALSE,0.0,0.95,FALSE,sally sensation moving queue,0.0,0.0,0,4
+728,Books can be read on a shelf.,TRUE,0.5,FALSE,0.0,1.0,FALSE,books shelf,1.0,1.0,1,2
+516,A dog experiences loss before someone puts up posters of it.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,dog posters,0.0,0.0,0,2
+1157,The sky is most beautifully depicted at a planetarium.,FALSE,0.5,FALSE,0.0,0.5,FALSE,sky planetarium beautifully depicted,0.0,0.0,0,4
+1058,Truth did not free James's mind.,FALSE,0.5,UNKNOWN,0.5,1.0,FALSE,,0.0,0.0,0,0
+608,Store a non-use pillow case is kept in a drawer.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,store drawer pillow case,0.0,0.0,0,4
+526,"The old man requires multiple rest periods each day, and he lies down on the couch to catnap.",FALSE,0.5,FALSE,0.0,-0.5,TRUE,old man requires rest,0.0,0.0,0,4
+371,An orchestra uses a musical instrument.,TRUE,1.0,TRUE,0.0,1.0,TRUE,orchestra musical instrument,0.0,0.0,0,3
+460,A person lives outside the metro area yet has access to good schools in the suburbs.,TRUE,0.5,TRUE,0.0,0.5,TRUE,person metro suburbs schools,0.0,0.0,0,4
+488,"When an object rises, one's location is below it.",FALSE,0.95,FALSE,0.0,-0.95,TRUE,object rises location,0.0,0.0,0,3
+66,A human is likely to go to a restaurant for eating as a result of being hungry.,TRUE,0.5,TRUE,0.0,0.5,TRUE,hungry restaurant human,0.0,0.0,0,3
+117,"Sailors drive many different types of boats, but they drive their namesake in a sail boat.",FALSE,0.5,FALSE,0.0,-0.5,TRUE,sailors sail boats,0.0,0.0,0,3
+1022,A home is likely to have a sideboard on the counter in a room.,FALSE,0.5,FALSE,0.0,0.5,FALSE,home sideboard counter room,0.0,0.0,0,4
+432,"To see a gazelle, you'd have to go to the great outdoors.",FALSE,0.85,FALSE,0.0,-0.85,TRUE,gazelle outdoors,0.0,0.0,0,2
+954,"A device used for putting words on paper uses a ribbon, similarly to a floral arrangement.",FALSE,0.95,FALSE,0.0,0.95,FALSE,device ribbon floral,0.0,0.0,0,3
+54,"A child, when wanting to play, would likely want to play tag.",TRUE,0.5,TRUE,0.0,0.5,TRUE,child play likely tag,0.0,0.0,0,4
+931,A very cold area in the east can have crabs inhabiting its shallow waters.,FALSE,0.95,FALSE,0.0,0.9499,FALSE,cold east crabs waters,0.0,0.0,0,4
+648,"The man should have taken a serious attitude at the funeral, but he acted ridiculous.",FALSE,0.5,FALSE,0.0,0.5,FALSE,man funeral ridiculous,0.0,0.0,0,3
+17,"When drinking booze, one can engage in examining things.",FALSE,0.5,FALSE,0.0,-0.5,TRUE,drinking booze examining,0.0,0.0,0,3
+332,One stores fabric in their own home within the sewing room.,TRUE,0.5,FALSE,0.0,1.0,TRUE,fabric sewing room home,1.0,1.0,1,4
+603,You can store a book while traveling using a suitcase.,TRUE,1.0,TRUE,0.0,1.0,TRUE,store book traveling suitcase,0.0,0.0,0,4
+244,A person gives their dog a treat in the form of a bone.,TRUE,0.5,FALSE,0.0,1.0,TRUE,person dog treat bone,1.0,1.0,1,4
+367,Killing people should not evoke joy.,TRUE,0.5,UNKNOWN,0.5,1.0,TRUE,,0.0,0.0,0,0
+941,Billy placed the balled-up newspaper on the floor at his destination after reading it during his commute.,FALSE,0.5,FALSE,0.0,0.4999,FALSE,balled up newspaper placed,0.0,0.0,0,4
+986,Nature creates more beautiful structures than those that are artificial.,FALSE,0.5,FALSE,0.0,0.5,FALSE,nature creates beautiful structures,0.0,0.0,0,4
+27,A weasel was becoming a problem because it kept getting into chicken eggs kept in the barn.,TRUE,0.5,TRUE,0.0,0.5,TRUE,weasel barn chicken eggs,0.0,0.0,0,4
+113,An unused chess set might be stored in a cupboard.,TRUE,0.95,TRUE,0.0,0.95,TRUE,chess set stored cupboard,0.0,0.0,0,4
+179,People might choose to watch TV instead of doing something else due to laziness.,FALSE,0.85,FALSE,0.0,-0.85,TRUE,people tv,0.0,0.0,0,2
+1069,"A flower grew tall to compete for sunlight, its neighbor responded by growing densely.",FALSE,0.85,FALSE,0.0,0.8499,FALSE,flower grew compete sunlight,0.0,0.0,0,4
+704,"Running leads to breathlessness, which is an unavoidable physiological consequence.",TRUE,0.5,UNKNOWN,0.5,1.0,FALSE,,0.0,0.0,0,0
+1171,An industrialized country is not famous for a superhighway with no speed limit.,FALSE,0.95,UNKNOWN,0.5,1.0,FALSE,,0.0,0.0,0,0
+149,A person going for a jog is likely to wear comfortable clothes.,TRUE,0.5,TRUE,0.0,0.5,TRUE,jog clothes,0.0,0.0,0,2
+284,Horses are judged on appearance at a fair.,TRUE,0.5,FALSE,0.0,1.0,TRUE,horses judged appearance fair,1.0,1.0,1,4
+1003,Someone can die from food poisoning if they eat contaminated hamburger.,TRUE,0.95,TRUE,0.0,-0.95,FALSE,food poisoning hamburger,0.0,0.0,0,3
+611,A teacher typically keeps her clavichord in the music room.,FALSE,0.85,FALSE,0.0,-0.85,TRUE,teacher clavichord,0.0,0.0,0,2
+1168,Recent turns in John's marriage could be described as disenchanted.,FALSE,0.5,FALSE,0.0,0.5,FALSE,recent turns marriage disenchanted,0.0,0.0,0,4
+1135,One experiences smiling when having fun.,TRUE,0.5,TRUE,0.0,-0.5,FALSE,experiences smiling having,0.0,0.0,0,3
+239,A teacher might believe that a ferret can be very mischievous and may not make a suitable pet for a classroom.,TRUE,0.5,TRUE,0.0,0.5,TRUE,teacher ferret mischievous classroom,0.0,0.0,0,4
+222,Performing is a type of acting.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,performing acting,0.0,0.0,0,2
+601,John typically used a brush while painting houses.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,john brush houses,0.0,0.0,0,3
+213,"Before going to the bar on a night out, one typically goes to a restaurant.",TRUE,0.85,FALSE,0.0,1.0,TRUE,goes to restaurant,1.0,1.0,1,3
+568,A potato is likely to be stored in a bushel basket when kept in the cellar.,TRUE,0.95,TRUE,0.0,0.95,TRUE,potato stored bushel basket,0.0,0.0,0,4
+1164,You would obtain a balalaika from an orchestra if you do not have one.,FALSE,0.5,UNKNOWN,0.5,1.0,FALSE,,0.0,0.0,0,0
+1184,"A long cottage, considered haunted due to its overgrown state and remote location, was located far into a painting.",FALSE,0.85,FALSE,0.0,0.85,FALSE,cottage haunted overgrown remote,0.0,0.0,0,4
+579,Terms must be fair to compete against someone.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,fair compete someone terms,0.0,0.0,0,4
+129,A person must hold an item if they want to keep it in their hand.,TRUE,0.85,FALSE,0.0,1.0,TRUE,hold item want keep,1.0,1.0,1,4
+250,"After high tide, one can look for sea anemones in a tide pool.",FALSE,0.85,FALSE,0.0,-0.85,TRUE,tide high,0.0,0.0,0,2
+342,The sky clouds over before it rains.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,sky clouds over rains,0.0,0.0,0,4
+52,Having slurred speech when intoxicated can indicate being drunk.,TRUE,0.5,UNKNOWN,0.5,1.0,TRUE,,0.0,0.0,0,0
+22,"The artist was sitting quietly pondering, then suddenly he began to paint when he was struck by inspiration.",TRUE,0.5,FALSE,0.0,1.0,TRUE,sitting pondering suddenly,1.0,1.0,1,3
+612,A person is in a luggage store if their briefcase is going through an x-ray machine.,FALSE,0.95,FALSE,0.0,0.95,FALSE,person luggage store,0.0,0.0,0,3
+959,Committing murder may result in a trial.,TRUE,0.95,TRUE,0.0,-0.95,FALSE,murder trial result committing,0.0,0.0,0,4
+1078,One buys tickets for seating at an event.,TRUE,0.95,TRUE,0.0,-0.95,FALSE,buys tickets seating event,0.0,0.0,0,4
+218,People go to an office to work.,TRUE,0.5,FALSE,0.0,1.0,TRUE,people office work,1.0,1.0,1,3
+1190,Driving results in a lack of fuel.,FALSE,0.5,FALSE,0.0,0.5,FALSE,driving fuel,0.0,0.0,0,2
+746,One keeps a pizza slice on the table before eating it.,TRUE,0.5,FALSE,0.0,1.0,FALSE,pizza slice table,1.0,1.0,1,3
+126,Hikers experiencing a need for liquid refreshment (were thirsty),TRUE,0.95,FALSE,0.0,1.0,TRUE,hikers thirsty,1.0,1.0,1,2
+803,"Making a schedule was easy, but the major course required certain meetings.",FALSE,0.5,FALSE,0.0,0.5,FALSE,course meetings,0.0,0.0,0,2
+1014,A waterfall can be used to fill a cup and then drunk from it.,FALSE,0.95,FALSE,0.0,0.95,FALSE,waterfall,0.0,0.0,0,1
+927,The trucker arrived at a bus stop after plopping on the bench with a sense of relief.,FALSE,0.85,FALSE,0.0,0.85,FALSE,trucker bus stop relief,0.0,0.0,0,4
+63,Crabs inhabit saltwater environments.,TRUE,0.95,TRUE,0.0,0.95,TRUE,crabs inhabit saltwater environments,0.0,0.0,0,4
+1089,Having a disability can sometimes make academic tasks challenging for a person due to lack of acknowledgment.,FALSE,0.85,FALSE,0.0,0.8499,FALSE,disability academic tasks challenging,0.0,0.0,0,4
+1099,Going jogging generally affects one's self-esteem like the ocean affects shorelines.,FALSE,0.85,FALSE,0.0,0.85,FALSE,jogging affects self esteem,0.0,0.0,0,4
+1106,"The child felt like it was all pretend, he didn't understand what people believe. (Translated into claim format: People's beliefs are not understood by the child)",TRUE,0.5,TRUE,0.0,-0.5,FALSE,child understood people beliefs,0.0,0.0,0,4
+377,Sitting down quickly after eating beans may cause flatulence.,TRUE,0.5,UNKNOWN,0.5,1.0,TRUE,,0.0,0.0,0,0
+1104,Buildings without residential kitchens were intended for large cities.,FALSE,0.5,FALSE,0.0,0.5,FALSE,buildings cities,0.0,0.0,0,2
+1086,One is likely to find poker chips at a supermarket.,FALSE,0.95,FALSE,0.0,0.95,FALSE,supermarket,0.0,0.0,0,1
+242,Joe and Mac play basketball every day in their backyard for fun.,FALSE,0.85,FALSE,0.0,-0.85,TRUE,joe mac play basketball,0.0,0.0,0,4
+456,Reading a newspaper from another country helps one learn about the world.,TRUE,0.95,TRUE,0.0,0.95,TRUE,newspaper country world,0.0,0.0,0,3
+937,Comets tend to have a solid nucleus as their path.,FALSE,0.85,FALSE,0.0,0.85,FALSE,comets solid nucleus path,0.0,0.0,0,4
+223,The car aimed to travel north from Alabama to New York.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,car north alabama new,0.0,0.0,0,4
+706,An auditorium exists where there is only one speaker and no audience.,TRUE,0.95,FALSE,0.0,1.0,FALSE,auditorium speaker audience,1.0,1.0,1,3
+34,A person waits by standing in a line when it's their turn.,TRUE,0.5,FALSE,0.0,1.0,TRUE,waits line turn,1.0,1.0,1,3
+287,You are likely to place papers for working on them at a table.,TRUE,0.95,TRUE,0.0,0.95,TRUE,papers place table,0.0,0.0,0,3
+418,The Empire State Building is located in New York City.,TRUE,0.5,TRUE,0.0,0.5,TRUE,empire state building city,0.0,0.0,0,4
+631,"If one seeks to learn about the world and understand the real reasons behind cultural norms and mores, they have cultivated a sense of intelligence.",FALSE,0.5,FALSE,0.0,0.5,FALSE,understand cultivated,0.0,0.0,0,2
+995,An individual named James looked upwards when he was positioned below a balloon that was ascending.,FALSE,0.95,FALSE,0.0,0.95,FALSE,james upwards positioned balloon,0.0,0.0,0,4
+102,"To cross a canal, one uses a bridge.",FALSE,0.5,FALSE,0.0,-0.5,TRUE,canal bridge cross,0.0,0.0,0,3
+965,You play soccer by throwing a ball at pins on a field.,FALSE,1.0,FALSE,0.0,1.0,FALSE,throwing pins field,0.0,0.0,0,3
+1010,Every person wants not to have a headache.,FALSE,0.5,FALSE,0.0,0.5,FALSE,person headache,0.0,0.0,0,2
+935,"After prolonged cleaning, one may experience tiredness.",TRUE,0.5,TRUE,0.0,-0.5,FALSE,prolonged cleaning tiredness,0.0,0.0,0,3
+843,"When not in use, a bucket is stored in a utility closet.",FALSE,0.85,FALSE,0.0,0.85,FALSE,bucket closet,0.0,0.0,0,2
+430,One keeps musical instruments in a case to prevent them from getting scratched.,TRUE,0.5,TRUE,0.0,0.5,TRUE,case scratched,0.0,0.0,0,2
+554,A round brush is an example of art supplies when it's not used for hair.,TRUE,0.95,TRUE,0.0,0.95,TRUE,round brush art supplies,0.0,0.0,0,4
+687,A hen house contains a fictitious fox.,FALSE,0.95,FALSE,0.0,0.95,FALSE,hen house fictitious fox,0.0,0.0,0,4
+1208,A person observing nesting birds with binoculars might be on a rooftop.,TRUE,0.95,TRUE,0.0,-0.95,FALSE,person nesting birds binoculars,0.0,0.0,0,4
+465,A hen house is an undesirable location for a fox.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,hen house fox undesirable,0.0,0.0,0,4
+1200,"To communicate when far from someone, one resorts to talking.",FALSE,0.95,UNKNOWN,0.5,1.0,FALSE,,0.0,0.0,0,0
+139,Buying presents creates feelings of happiness.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,buying presents creates happiness,0.0,0.0,0,4
+551,You can find a large number of restaurants in a big city.,TRUE,0.95,TRUE,0.0,0.95,TRUE,restaurants large number,0.0,0.0,0,3
+1062,A student learns to play a triangle at music class.,FALSE,0.5,FALSE,0.0,0.4999,FALSE,student learns play triangle,0.0,0.0,0,4
+1013,A recreational center could be present at a tennis court.,TRUE,0.5,FALSE,0.0,1.0,FALSE,recreational center tennis court,1.0,1.0,1,4
+119,A person prefers a large house for its ample space.,TRUE,0.5,FALSE,0.0,1.0,TRUE,person prefers large house,1.0,1.0,1,4
+505,Storing cooked steak involves using a freezer.,FALSE,0.85,FALSE,0.0,-0.85,TRUE,storing cooked steak freezer,0.0,0.0,0,4
+312,Sally's fear was of danger and she ensured safety at all times.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,sally fear danger safety,0.0,0.0,0,4
+39,"A human wants to submerge himself in water, he should use a whirlpool bath.",FALSE,0.85,FALSE,0.0,-0.85,TRUE,human wants submerge water,0.0,0.0,0,4
+47,Someone must obtain money prior to shopping.,TRUE,0.95,FALSE,0.0,1.0,TRUE,obtain money prior shopping,1.0,1.0,1,4
+144,"A small bulb served as Bob's only light source in a space with four walls, if there was a door, he couldn't see it. This indicates that Bob was in a closed room.",TRUE,0.95,TRUE,0.0,0.95,TRUE,small bulb,0.0,0.0,0,2
+120,A cheap book can be found at a discount store.,TRUE,0.5,FALSE,0.0,1.0,TRUE,cheap book discount store,1.0,1.0,1,4
+419,People typically make coffee in the kitchen.,TRUE,0.95,TRUE,0.0,0.95,TRUE,people typically make coffee,0.0,0.0,0,4
+665,"When an elderly person needs help performing daily tasks, they might call someone who lives at their own house.",FALSE,0.5,FALSE,0.0,0.5,FALSE,elderly person daily tasks,0.0,0.0,0,4
+1040,Exercising primarily benefits one by assisting in weight loss.,FALSE,0.5,FALSE,0.0,0.5,FALSE,exercising benefits weight loss,0.0,0.0,0,4
+718,You can obtain knives (or items with sharp edges) if you are planning to take them outside.,TRUE,0.95,FALSE,0.0,1.0,FALSE,obtain knives sharp edges,1.0,1.0,1,4
+476,An apple tree led to the downfall of man according to the Bible.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,apple tree man,0.0,0.0,0,3
+651,"He was attempting procreation with numerous individuals, which led to moaning.",FALSE,0.85,FALSE,0.0,0.85,FALSE,attempting procreation numerous individuals,0.0,0.0,0,4
+65,A place with a bench nestled in trees is a state park.,FALSE,0.85,FALSE,0.0,-0.85,TRUE,bench nestled state,0.0,0.0,0,3
+664,"After working on the car, it ended up moving quickly.",FALSE,0.5,FALSE,0.0,0.5,FALSE,car moving quickly,0.0,0.0,0,3
+227,All animals inhabit the surface of Earth.,FALSE,0.95,FALSE,0.0,-0.95,TRUE,all animals inhabit surface,0.0,0.0,0,4
+868,Exercise leads to faster recovery when followed by energy expenditure.,FALSE,0.5,FALSE,0.0,0.5,FALSE,exercise faster recovery expenditure,0.0,0.0,0,4
+336,A person in physical distress should go to a hospital.,TRUE,0.95,TRUE,0.0,0.95,TRUE,person distress hospital,0.0,0.0,0,3
+575,"The person tried to reduce his weight with a shrink ray, but he got it backwards and only made larger.",FALSE,0.5,FALSE,0.0,-0.5,TRUE,reduce weight shrink ray,0.0,0.0,0,4
+1060,Flasks are used for distilling elements in a laboratory.,FALSE,0.5,FALSE,0.0,0.5,FALSE,flasks distilling elements laboratory,0.0,0.0,0,4
+1183,"Computers have facilitated quick answering of questions for everyone, yet despite an economic boom, there seems to be a decline in intelligence.",FALSE,0.5,FALSE,0.0,0.5,FALSE,computers facilitated answering decline,0.0,0.0,0,4
+483,People generally search for information on their phones using Google.,TRUE,0.5,TRUE,0.0,0.5,TRUE,people generally search information,0.0,0.0,0,4
+974,A person wonders what happened when they feel dirty.,FALSE,0.5,FALSE,0.0,0.5,FALSE,feel dirty wonders happened,0.0,0.0,0,4
+692,The cost status of a gift given for free is not in prison.,FALSE,1.0,UNKNOWN,0.5,1.0,FALSE,,0.0,0.0,0,0
+111,James found the sound relaxing; it was so relaxing that he almost fell asleep despite his efforts.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,james,0.0,0.0,0,1
+381,People planned for relaxation during their slow day when meeting a friend.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,planned relaxation meeting friend,0.0,0.0,0,4
+999,A person puts flowers in a room with dirty gym socks to make it aesthetically pleasing.,TRUE,0.95,FALSE,0.0,1.0,FALSE,flowers room dirty gym,1.0,1.0,1,4
+830,The performer's job was to put on a show from the launch platform.,FALSE,0.85,FALSE,0.0,0.85,FALSE,performer job put show,0.0,0.0,0,4
+1187,"To smoke, you would need a lighter fluid.",FALSE,0.5,FALSE,0.0,0.5,FALSE,smoke lighter fluid,0.0,0.0,0,3
+1050,People purchase condoms at a convenience store.,FALSE,0.5,FALSE,0.0,0.5,FALSE,convenience store condoms,0.0,0.0,0,3
+1001,"A person signs up for home insurance, seeking protection.",TRUE,0.5,TRUE,0.0,-0.5,FALSE,person signs up protection,0.0,0.0,0,4
+689,Billy attempted to avoid a dog and ended up getting stuck on a porch.,FALSE,0.5,FALSE,0.0,0.5,FALSE,billy attempted avoid dog,0.0,0.0,0,4
+1182,Applying for a job and having a good interview may lead to feeling potential income.,TRUE,0.5,FALSE,0.0,1.0,FALSE,applying job interview income,1.0,1.0,1,4
+1198,A shopping center provides a place to eat near local nightlife in an urban area.,TRUE,0.5,TRUE,0.0,-0.5,FALSE,shopping center eat nightlife,0.0,0.0,0,4
+127,"Before beginning work in the morning, one should shower.",FALSE,0.5,UNKNOWN,0.5,1.0,TRUE,,0.0,0.0,0,0
+550,A refrigerator is a type of cold storage found in a house.,TRUE,0.95,TRUE,0.0,0.95,TRUE,refrigerator cold storage house,0.0,0.0,0,4
+271,"When someone is physically competing, their body sweats.",TRUE,0.95,TRUE,0.0,0.95,TRUE,sweats physically competing body,0.0,0.0,0,4
+15,Janet watched the film to be entertained.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,janet watched film entertained,0.0,0.0,0,4
+405,"Sarah opted for musical activities to avoid being sedentary and bored, as she didn't like to play.",FALSE,0.5,FALSE,0.0,-0.5,TRUE,sarah opted musical bored,0.0,0.0,0,4
+781,A store with many sports equipment is a sports store.,TRUE,0.5,FALSE,0.0,1.0,FALSE,store equipment sports,1.0,1.0,1,3
+772,The field general was instructed to send a message instead of writing a letter when the enemy was near.,FALSE,0.5,FALSE,0.0,0.5,FALSE,field general instructed message,0.0,0.0,0,4
+571,People tend to make hasty judgments when they think too quickly.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,hasty judgments quickly tend,0.0,0.0,0,4
+407,"If a date does not show up, one waits.",FALSE,0.95,FALSE,0.0,-0.95,TRUE,date waits,0.0,0.0,0,2
+921,"A heavy metal band requires electricity for their performance setup at a stadium, implying they are playing at a building.",TRUE,0.95,UNKNOWN,0.5,1.0,FALSE,,0.0,0.0,0,0
+742,Children's behavior is a direct reflection of their play.,FALSE,0.5,FALSE,0.0,0.5,FALSE,children behavior direct reflection,0.0,0.0,0,4
+693,Someone flirts with multiple people concurrently to secure romantic or sexual encounters.,FALSE,0.85,FALSE,0.0,0.8499,FALSE,flirts concurrently,0.0,0.0,0,2
+232,A person with an allergy might suddenly be sneezing.,TRUE,0.5,TRUE,0.0,0.5,TRUE,allergy suddenly sneezing,0.0,0.0,0,3
+145,James may dislike ideas involving control models in criminal justice as he perceives it as a system that needs to function correctly.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,james dislike ideas criminal,0.0,0.0,0,4
+78,White mice are typically found in laboratories.,TRUE,0.5,FALSE,0.0,1.0,TRUE,white mice laboratories,1.0,1.0,1,3
+480,"John's observation of a fox running on the beach suggests he was on the east coast; thus, he might have been in South Carolina.",FALSE,0.85,FALSE,0.0,-0.85,TRUE,fox beach east coast,0.0,0.0,0,4
+118,A person can find shelter from the rain at a synagogue.,TRUE,0.5,TRUE,0.0,0.5,TRUE,shelter rain synagogue,0.0,0.0,0,3
+1221,A USB is another name for a storage disk for information.,FALSE,0.5,FALSE,0.0,0.5,FALSE,usb storage,0.0,0.0,0,2
+1155,One can have fun by themselves at a fairground.,TRUE,0.5,TRUE,0.0,-0.5,FALSE,fairground fun,0.0,0.0,0,2
+494,"If a high-quality heifer is available, one might take her to a cattle show.",TRUE,0.95,TRUE,0.0,0.95,TRUE,heifer cattle show quality,0.0,0.0,0,4
+264,One can express anger without causing harm by writing a letter.,TRUE,0.5,TRUE,0.0,0.5,TRUE,express anger without harm,0.0,0.0,0,4
+169,People are likely to become impatient at the end of a line.,TRUE,0.5,TRUE,0.0,0.5,TRUE,line impatient people,0.0,0.0,0,3
+280,"The family finishes dinner, and the child's chore is to place the dirty dishes in the dishwasher.",FALSE,0.5,FALSE,0.0,-0.5,TRUE,family dinner child chore,0.0,0.0,0,4
+514,A person seeks solitude and lives without neighbors in the woods.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,person solitude woods neighbors,0.0,0.0,0,4
+973,A house with a subscription likely has a newspaper delivered daily.,FALSE,0.85,FALSE,0.0,0.85,FALSE,subscription house newspaper delivered,0.0,0.0,0,4
+375,A place far away from one's house where beer consumption can occur is a friend's house.,TRUE,0.5,FALSE,0.0,1.0,TRUE,beer friend house,1.0,1.0,1,3
+553,A statute can be found on a platform in a museum.,FALSE,0.95,FALSE,0.0,-0.95,TRUE,statute platform museum,0.0,0.0,0,3
+136,The tourist was in Kentucky after entering Mammoth cave.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,tourist kentucky mammoth cave,0.0,0.0,0,4
+1201,Trusting friends after chatting may not be advisable if they have fever.,FALSE,0.85,FALSE,0.0,0.85,FALSE,trusting friends chatting fever,0.0,0.0,0,4
+870,A wind instrument is acquired for personal use from a place for individual practice. (Band practice implies a location where individuals can learn and practice playing wind instruments.),FALSE,0.85,FALSE,0.0,0.85,FALSE,wind instrument personal use,0.0,0.0,0,4
+1147,A snowflake forms from a billow.,FALSE,0.95,FALSE,0.0,0.95,FALSE,snowflake forms billow,0.0,0.0,0,3
+766,The duration of a day is defined by the number of hours.,FALSE,0.95,FALSE,0.0,0.95,FALSE,duration day hours,0.0,0.0,0,3
+335,A traveler laments the limited mass transit in his city because he gets soaked at bus stops while waiting.,TRUE,0.5,FALSE,0.0,1.0,TRUE,mass transit,1.0,1.0,1,2
+852,"While on a fan boat, a person expects to see swamps and gators but is surprised to spot a bald eagle in high places.",FALSE,0.5,FALSE,0.0,0.5,FALSE,fan boat bald eagle,0.0,0.0,0,4
+1111,Areas are likely to have many nightclubs where people aim to drink and dance.,TRUE,0.5,TRUE,0.0,-0.5,FALSE,areas nightclubs drink dance,0.0,0.0,0,4
+135,"The runner was making an effort to gain ground, as he thought he might reach second place.",TRUE,0.5,FALSE,0.0,1.0,TRUE,effort gain reach,1.0,1.0,1,3
+750,"If you want a new ottoman, you should go to a furniture store.",FALSE,0.5,FALSE,0.0,0.5,FALSE,new ottoman furniture store,0.0,0.0,0,4
+374,A reception with hotel guests walking by is likely held in a lobby.,TRUE,0.95,TRUE,0.0,0.95,TRUE,reception hotel guests lobby,0.0,0.0,0,4
+997,Seeing new presents at a birthday party could lead to feelings of jealousy.,TRUE,0.5,TRUE,0.0,-0.5,FALSE,birthday party presents jealousy,0.0,0.0,0,4
+35,Helping at the senior center brings her happiness.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,helping senior center happiness,0.0,0.0,0,4
+452,A person might be watching a movie if they see a man with a suitcase full of money.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,watching movie man suitcase,0.0,0.0,0,4
+317,"Joe was thrown from his boat into the water during winter and cried out for help, but his crew couldn't hear him due to a typhoon.",FALSE,0.85,FALSE,0.0,-0.85,TRUE,joe thrown winter,0.0,0.0,0,3
+41,Bob likely resides in a tropical rainforest due to its warm climate and abundant water.,FALSE,0.85,FALSE,0.0,-0.85,TRUE,bob resides tropical,0.0,0.0,0,3
+662,The butt was bare and Sam couldn't stop staring at it. It was very ample. (Claim Statement),FALSE,0.5,FALSE,0.0,0.4999,FALSE,butt staring ample,0.0,0.0,0,3
+643,Fishermen store their rods at a hardware store when on a fishing trip.,FALSE,0.85,FALSE,0.0,0.85,FALSE,fishermen rods,0.0,0.0,0,2
+100,He stayed at a hotel in the city upon arrival due to it being a long trip from the farm.,TRUE,0.5,FALSE,0.0,1.0,TRUE,stayed hotel city arrival,1.0,1.0,1,4
+644,Having fun for Danny is equivalent to experiencing glee while dancing and singing with friends.,FALSE,0.85,FALSE,0.0,0.85,FALSE,having fun glee dancing,0.0,0.0,0,4
+141,Jan observed high current and suspected excessive resistance in the wires.,FALSE,0.5,UNKNOWN,0.5,1.0,TRUE,,0.0,0.0,0,0
+1177,She had an interest in the man and aimed to watch a film with him.,FALSE,0.5,FALSE,0.0,0.5,FALSE,interest film watch,0.0,0.0,0,3
+996,Playing makes John and Tim get hungry.,FALSE,0.5,FALSE,0.0,0.5,FALSE,playing hungry john tim,0.0,0.0,0,4
+1024,"A mall store sells jeans at a decent price. However, it is not an apartment.",TRUE,1.0,TRUE,0.0,-1.0,FALSE,mall store jeans price,0.0,0.0,0,4
+739,"James stores tire chains in a place where he can find them, which is not a jewelry store.",FALSE,0.5,FALSE,0.0,0.5,FALSE,james tire chains,0.0,0.0,0,3
+774,"After climbing mountains, the explored found a cave; the general geography of the region he found it in was desert.",FALSE,0.5,FALSE,0.0,0.5,FALSE,climbing mountains explored cave,0.0,0.0,0,4
+695,A band performs when there are no people nearby to hold a concert.,FALSE,0.95,FALSE,0.0,0.95,FALSE,band people nearby,0.0,0.0,0,3
+838,"The pioneer went to the general store for storage measures, he was looking for buffalo. (Note: This sentence structure is not a typical claim format, but it provides the information in the question-answer pair.)",FALSE,0.5,FALSE,0.0,0.5,FALSE,pioneer general store buffalo,0.0,0.0,0,4
+636,Running errands with screaming kids will likely result in tiredness.,TRUE,0.95,TRUE,0.0,-0.95,FALSE,screaming kids tiredness,0.0,0.0,0,3
+195,Cars are primarily used for moving people.,TRUE,0.5,FALSE,0.0,1.0,TRUE,cars primarily used moving,1.0,1.0,1,4
+652,Playing soccer and winning may lead to anger.,FALSE,0.5,FALSE,0.0,0.5,FALSE,soccer winning anger,0.0,0.0,0,3
+225,Joan aims to cook a potato in boiling water.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,cook potato boiling water,0.0,0.0,0,4
+361,Flowers are often used as a center focal point in arrangements that look good on tables.,TRUE,0.95,TRUE,0.0,0.95,TRUE,flowers,0.0,0.0,0,1
+622,Picking from an apple tree implies being in the woods outside of Fort Wayne.,FALSE,0.85,FALSE,0.0,0.85,FALSE,picking apple tree woods,0.0,0.0,0,4
+1122,Drinking alcohol can result in nausea.,TRUE,0.5,TRUE,0.0,-0.5,FALSE,alcohol nausea,0.0,0.0,0,2
+972,"As they danced, James pressed himself against Holly with force, causing her fatigue.",FALSE,0.5,FALSE,0.0,0.5,FALSE,danced pressed fatigue,0.0,0.0,0,3
+294,You should not be outside during a shark-filled tornado.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,shark tornado outside,0.0,0.0,0,3
+1161,"To stay warm when cold, one should avoid laying on ice.",TRUE,0.95,TRUE,0.0,-0.95,FALSE,stay warm cold avoid,0.0,0.0,0,4
+764,"On a hot day, one can enjoy something cool and sweet by having fresh cake.",FALSE,0.85,FALSE,0.0,0.85,FALSE,hot day fresh cake,0.0,0.0,0,4
+621,"The fresh herbs, flowers, and vegetables will shrivel up if people don't believe in god.",FALSE,0.95,FALSE,0.0,0.95,FALSE,fresh herbs,0.0,0.0,0,2
+51,A human can find clothes that aren't pants at a dress shop.,TRUE,0.5,TRUE,0.0,0.5,TRUE,clothes pants dress shop,0.0,0.0,0,4
+1028,"They all had a passion for the local show, although they were never going to be big actors.",FALSE,0.5,FALSE,0.0,0.5,FALSE,passion local show actors,0.0,0.0,0,4
+797,Ivy plants are likely found on windowsills.,FALSE,0.5,FALSE,0.0,0.5,FALSE,ivy plants windowsills,0.0,0.0,0,3
+703,"They were waiting patiently before closing, as they had been standing in queue for a long time.",FALSE,0.5,FALSE,0.0,0.5,FALSE,waiting patiently closing queue,0.0,0.0,0,4
+1011,A small flying animal picks up a string; they are taking it to a guitar.,FALSE,0.95,FALSE,0.0,0.95,FALSE,flying animal picks up,0.0,0.0,0,4
+9,Reading a newspaper is one way to practice literacy.,TRUE,0.5,TRUE,0.0,0.5,TRUE,newspaper literacy reading,0.0,0.0,0,3
+282,Dad hid the check in his office's desk drawer.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,dad check desk drawer,0.0,0.0,0,4
+1124,The opposite of a little of something is much.,FALSE,0.5,FALSE,0.0,0.5,FALSE,opposite little something much,0.0,0.0,0,4
+675,"The man often makes smart remarks, like that any restaurant is a Mexican restaurant in Spain.",FALSE,0.5,FALSE,0.0,0.5,FALSE,man remarks mexican restaurant,0.0,0.0,0,4
+23,"Though fragile in appearance, the thin film was nearly indestructible for its intended purpose.",TRUE,0.5,FALSE,0.0,1.0,TRUE,fragile indestructible intended purpose,1.0,1.0,1,4
+826,"Despite the sun rising, the pessimist predicted it would lead to sundown.",FALSE,0.95,UNKNOWN,0.5,1.0,FALSE,,0.0,0.0,0,0
+717,The bald eagle flew from Mount St Helen's to the Puget Sound and all over northern California.,FALSE,0.5,FALSE,0.0,0.4999,FALSE,bald eagle flew,0.0,0.0,0,3
+303,"It was no surprise to see more than one beggar asking for change or a ticket, as it was the cheapest way to travel; therefore, it was commonly seen at a bus depot.",TRUE,0.5,FALSE,0.0,1.0,TRUE,bus depot cheapest,1.0,1.0,1,3
+589,The Sun is ultimately responsible for life on Earth.,TRUE,0.5,TRUE,0.0,0.5,TRUE,sun ultimately life,0.0,0.0,0,3
+882,"At the end of the day, he usually doesn't do chores as often as she does.",FALSE,0.5,FALSE,0.0,0.5,FALSE,day chores often,0.0,0.0,0,3
+976,A person aims to prevent headaches to stay healthy.,FALSE,0.5,FALSE,0.0,0.5,FALSE,prevent headaches healthy,0.0,0.0,0,3
+1082,"When a group of people are talking at work, they might be sneezing.",FALSE,0.5,FALSE,0.0,0.5,FALSE,people talking sneezing,0.0,0.0,0,3
+1160,"Billy enjoyed driving cars and excelled at it, but since his father experienced trouble with transportation, he was rattled.",FALSE,0.5,FALSE,0.0,0.5,FALSE,billy driving excelled trouble,0.0,0.0,0,4
+1167,"The landscaper was carefully arching stones together, implying he was creating an elaborate field over the creek.",FALSE,0.85,FALSE,0.0,0.85,FALSE,landscaper,0.0,0.0,0,1
+495,People aim to acquire wealth by opening a business.,TRUE,0.5,TRUE,0.0,0.5,TRUE,acquire wealth business,0.0,0.0,0,3
+394,"A dream caused Sam's inability to return to sleep, it was a nightmare.",FALSE,0.5,FALSE,0.0,-0.5,TRUE,dream inability return sleep,0.0,0.0,0,4
+1148,"All power tools like drills used for fixing cars are found in a noisy workspace, referred to as a tool shed.",FALSE,0.85,FALSE,0.0,0.85,FALSE,power tools drills workspace,0.0,0.0,0,4
+310,"Billy enjoys football, but his concerned mother thinks of it as violent.",FALSE,0.5,FALSE,0.0,-0.5,TRUE,billy football violent,0.0,0.0,0,3
+942,A pail is kept in a house within a wishing well.,FALSE,0.95,FALSE,0.0,0.95,FALSE,pail house wishing well,0.0,0.0,0,4
+257,"After completing cashing in, one could be happy.",FALSE,0.5,FALSE,0.0,-0.4999,TRUE,cashing completing,0.0,0.0,0,2
+707,"To escape from there, one must continuously endure walking, which causes blisters.",FALSE,0.95,FALSE,0.0,0.95,FALSE,escape endure walking blisters,0.0,0.0,0,4
+435,A beaver's building supplies come from a wooded area.,TRUE,0.95,TRUE,0.0,0.95,TRUE,beaver wooded area,0.0,0.0,0,3
+655,An advertisement appearing in the form of a pop-up is found at a store.,FALSE,0.85,FALSE,0.0,0.85,FALSE,advertisement pop store,0.0,0.0,0,3
+889,A person with lactose intolerance will not feel better when eating dinner made of cheese.,FALSE,0.95,FALSE,0.0,0.95,FALSE,lactose intolerance dinner cheese,0.0,0.0,0,4
+998,"A cat that smells something delicious may jump into a living room, causing panic and fear for its owner's life.",FALSE,0.95,FALSE,0.0,0.95,FALSE,cat smells delicious jump,0.0,0.0,0,4
+1029,"A folding chair is used at a school, but not stored there.",FALSE,0.85,FALSE,0.0,0.85,FALSE,folding chair school stored,0.0,0.0,0,4
+453,Eating breakfast in bed while seeing a homeless person shivering outside may cause one to feel guilty.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,eating breakfast bed guilty,0.0,0.0,0,4
+1070,"While driving to work, experiencing a careless maneuver from another car might evoke a sense of frustration.",TRUE,0.95,TRUE,0.0,-0.95,FALSE,driving work maneuver frustration,0.0,0.0,0,4
+162,The extremely large cargo plane can only land at a specialized runway and these are only located at military bases.,FALSE,0.85,FALSE,0.0,-0.85,TRUE,cargo plane land specialized,0.0,0.0,0,4
+1031,The impeachment process for a president indicates a corporation.,FALSE,0.95,FALSE,0.0,0.95,FALSE,impeachment president corporation,0.0,0.0,0,3
+694,James was sailing towards India due to bad reception issues while crossing the Channel from France.,FALSE,1.0,UNKNOWN,0.5,1.0,FALSE,,0.0,0.0,0,0
+1178,A drug is kept in a home bathroom at a pharmacy.,FALSE,0.95,FALSE,0.0,0.95,FALSE,drug pharmacy bathroom,0.0,0.0,0,3
+477,A neighborhood's great sense of community often results in a crowd at the landing of an apartment building.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,community crowd apartment,0.0,0.0,0,3
+824,Traveling clothes are often kept in a dresser.,FALSE,0.5,FALSE,0.0,0.5,FALSE,traveling clothes dresser,0.0,0.0,0,3
+10,People typically sing while playing guitar.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,people typically guitar,0.0,0.0,0,3
+1079,"The merchant aimed to open in a high-traffic space, so he rented space for a business.",FALSE,0.5,FALSE,0.0,0.5,FALSE,merchant traffic space rented,0.0,0.0,0,4
+262,"Billy prefers to use his own toilet when he needs to poop, so he usually goes back home.",FALSE,0.5,FALSE,0.0,-0.5,TRUE,billy prefers toilet poop,0.0,0.0,0,4
+471,You can use a piano in your neighborhood by visiting someone else's house (if they have one).,FALSE,0.5,TRUE,0.0,1.0,TRUE,piano neighborhood visiting someone,1.0,1.0,1,4
+261,"The traveling business man was glad his credit card had perks, it offset the high prices for travel from an airport.",TRUE,0.5,FALSE,0.0,1.0,TRUE,traveling,1.0,1.0,1,1
+654,"If a husband never helps with housework, it may result in a headache.",FALSE,0.85,UNKNOWN,0.5,1.0,FALSE,,0.0,0.0,0,0
+1214,A dog's house cannot be found in a frightening place.,FALSE,0.85,FALSE,0.0,0.85,FALSE,dog house frightening place,0.0,0.0,0,4
+1064,The guys had a regular poker game instead of going to the movies; their activity was losing money.,TRUE,0.5,FALSE,0.0,1.0,FALSE,guys poker game losing,1.0,1.0,1,4
+1121,Someone aims to examine things closely due to their complexity.,TRUE,0.5,FALSE,0.0,1.0,FALSE,examine closely things complexity,1.0,1.0,1,4
+1032,Noble citizens of the Roman empire considered those born with lower status as ignoble.,TRUE,0.85,FALSE,0.0,1.0,FALSE,roman empire noble,1.0,1.0,1,3
+510,California has thousands of miles of shore.,TRUE,0.95,TRUE,0.0,0.95,TRUE,california shore miles,0.0,0.0,0,3
+247,A wet person is likely to catch cold.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,cold wet person,0.0,0.0,0,3
+700,"If you spend a long time running after a ball, you are likely to feel embarrassed.",FALSE,0.85,FALSE,0.0,0.85,FALSE,spend long time embarrassed,0.0,0.0,0,4
+635,"To store ham before cooking, one would put it in the refrigerator.",TRUE,0.95,TRUE,0.0,-0.95,FALSE,store ham refrigerator cooking,0.0,0.0,0,4
+392,A grape is likely to be used for feeding someone in a painting.,FALSE,0.85,FALSE,0.0,-0.85,TRUE,grape feeding painting,0.0,0.0,0,3
+625,Danny discovered an old film in a sealed Disneyland container.,FALSE,0.85,FALSE,0.0,0.85,FALSE,danny film sealed disneyland,0.0,0.0,0,4
+81,"Despite not having a car, George could still walk.",TRUE,0.5,FALSE,0.0,1.0,TRUE,car george walk still,1.0,1.0,1,4
+180,A challenging ability to chew food may indicate a sore mouth.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,challenging ability chew sore,0.0,0.0,0,4
+1162,"Copulating with the wrong partner may be ill-advised, as it can lead to the transmission of various diseases that can cause illness.",TRUE,0.95,UNKNOWN,0.5,1.0,FALSE,,0.0,0.0,0,0
+185,The bald eagle is given protective status.,TRUE,0.5,TRUE,0.0,0.5,TRUE,bald eagle status,0.0,0.0,0,3
+1109,Some people travel to different locations with passports to smoke marijuana.,FALSE,0.5,FALSE,0.0,0.5,FALSE,travel passports smoke marijuana,0.0,0.0,0,4
+699,Someone keeps their nylon leggings in their clothing.,TRUE,0.5,FALSE,0.0,1.0,FALSE,someone leggings nylon clothing,1.0,1.0,1,4
+1129,Billy's view of the world from space appeared square.,FALSE,0.5,FALSE,0.0,0.5,FALSE,billy,0.0,0.0,0,1
+422,Someone can purchase a new saw at a hardware store.,TRUE,0.5,TRUE,0.0,0.5,TRUE,purchase saw hardware store,0.0,0.0,0,4
+544,Stark was playing marbles while having fun and not causing harm to anyone.,FALSE,0.85,FALSE,0.0,-0.85,TRUE,stark playing marbles fun,0.0,0.0,0,4
+251,A driving car could potentially harm a pedestrian.,TRUE,0.5,TRUE,0.0,0.5,TRUE,driving car potentially,0.0,0.0,0,3
+150,The child cannot pretend to read a newspaper without knowing how to read.,TRUE,0.5,FALSE,0.0,1.0,TRUE,child pretend read newspaper,1.0,1.0,1,4
+442,"The criminal insisted on committing crime to the bank teller, but she tried to convince him that it was unnecessary.",FALSE,0.5,FALSE,0.0,-0.5,TRUE,criminal,0.0,0.0,0,1
+384,Alice postpones going to bed on Friday night with the intention of sleeping later on Saturday.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,alice postpones going bed,0.0,0.0,0,4
+1196,The lion took a defensive attitude when he sensed his competitor was timid.,FALSE,0.85,FALSE,0.0,0.85,FALSE,lion sensed timid,0.0,0.0,0,3
+301,"When traveling, one should have money in case of unexpected costs.",TRUE,0.95,TRUE,0.0,0.95,TRUE,money unexpected,0.0,0.0,0,2
+58,One goes to a friend's house for fun with a few people.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,house friend people,0.0,0.0,0,3
+816,"When a person with mental illness receives medication and therapy, their symptoms may recur.",TRUE,0.95,TRUE,0.0,-0.95,FALSE,mental illness therapy,0.0,0.0,0,3
+333,Companies aim to avoid oversupply in relation to demand.,TRUE,0.5,TRUE,0.0,0.5,TRUE,companies oversupply demand,0.0,0.0,0,3
+48,"John, being first violin, needed to bring a violin case to work daily.",FALSE,0.85,FALSE,0.0,-0.8499,TRUE,john violin,0.0,0.0,0,2
+30,Committing perjury is a serious crime.,TRUE,0.5,TRUE,0.0,0.5,TRUE,committing perjury serious crime,0.0,0.0,0,4
+307,Joe owes both back taxes and current taxes.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,joe owes,0.0,0.0,0,2
+711,Joe and Jill might limit their children's time spent playing with toys due to not wanting them to be sedentary.,FALSE,0.5,FALSE,0.0,0.4999,FALSE,joe jill toys,0.0,0.0,0,3
+171,John prioritized function over style.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,prioritized function style,0.0,0.0,0,3
+455,"If somebody is working at a reception desk, they are located at the front entrance of the building.",TRUE,0.85,FALSE,0.0,1.0,TRUE,entrance building,1.0,1.0,1,2
+945,"The terrace had Kanji written on it, suggesting that it was made in a garden.",FALSE,0.85,FALSE,0.0,0.85,FALSE,kanji,0.0,0.0,0,1
+911,A projectile ball can't hit anything if it isn't in the ocean (while trying to reach a target).,FALSE,0.95,FALSE,0.0,0.95,FALSE,projectile ball ocean,0.0,0.0,0,3
+1219,The music affected the man positively or negatively as he closed his eyes while listening.,TRUE,0.95,TRUE,0.0,-0.95,FALSE,music affected positively negatively,0.0,0.0,0,4
+649,The teacher recommended that the student go home when the pencil sharpener was broken in the classroom.,FALSE,0.5,FALSE,0.0,0.5,FALSE,teacher recommended student,0.0,0.0,0,3
+779,"The man working in the attic swatted away a bee, but soon the single bee was an entire swarm.",FALSE,0.85,FALSE,0.0,0.8499,FALSE,man attic swarm,0.0,0.0,0,3
+101,"Not being a rich person, I did not need a servant.",TRUE,0.85,FALSE,0.0,1.0,TRUE,not being rich servant,1.0,1.0,1,4
+445,"He doesn't typically engage in hugging; instead, he performs a handshake when meeting friends.",FALSE,0.5,FALSE,0.0,-0.5,TRUE,he doesn typically engage,0.0,0.0,0,4
+93,Anybody hired in the kitchen is required to wash dishes.,TRUE,0.5,FALSE,0.0,1.0,TRUE,kitchen required,1.0,1.0,1,2
+1019,The poker dealer spreads the flop of cards across the table for playing games.,FALSE,0.5,FALSE,0.0,0.5,FALSE,poker dealer spreads flop,0.0,0.0,0,4
+1037,Someone goes about buying beer not with pants.,FALSE,0.5,FALSE,0.0,0.5,FALSE,buying beer pants,0.0,0.0,0,3
+295,Buying products in excess leads to overstocking.,TRUE,0.5,TRUE,0.0,0.5,TRUE,buying products excess overstocking,0.0,0.0,0,4
+701,"When one needs to rest, it's often because they have been doing sleeping.",FALSE,0.85,FALSE,0.0,0.85,FALSE,rest sleeping,0.0,0.0,0,2
+1211,A person with a role likely feels important.,FALSE,0.5,FALSE,0.0,0.5,FALSE,person role important,0.0,0.0,0,3
+1035,"If one has a condo in a city known for beer in Wisconsin, they are in a city.",FALSE,0.5,FALSE,0.0,0.4999,FALSE,city condo wisconsin,0.0,0.0,0,3
+71,Reading a lengthy and dry book may make one bored.,TRUE,0.5,TRUE,0.0,0.5,TRUE,reading lengthy,0.0,0.0,0,2
+633,A person would join a trade school for acquiring information related to a degree.,FALSE,0.85,FALSE,0.0,0.85,FALSE,person trade school degree,0.0,0.0,0,4
+37,A police officer is likely to work for a city.,TRUE,0.5,FALSE,0.0,1.0,TRUE,police officer city,1.0,1.0,1,3
+1217,A person would let a rock fall when climbing up a cliff.,FALSE,0.95,FALSE,0.0,0.95,FALSE,rock,0.0,0.0,0,1
+894,Someone operating a vehicle while inebriated is likely to be accused of an arrest.,FALSE,0.5,FALSE,0.0,0.5,FALSE,inebriated vehicle,0.0,0.0,0,2
+1027,"John's transportation reached an expansive flat area that eventually ended at the ocean, indicating he might have been on a gorge.",FALSE,0.85,FALSE,0.0,0.85,FALSE,transportation expansive gorge,0.0,0.0,0,3
+778,A structure designed for a troublesome pet would be a cat condo.,FALSE,0.85,FALSE,0.0,0.85,FALSE,cat condo,0.0,0.0,0,2
+909,A person seeks accommodation (lodging) at the destination of their vacation in order to be already present where they need to be for it.,FALSE,0.5,FALSE,0.0,0.5,FALSE,person accommodation destination,0.0,0.0,0,3
+736,"The program kept getting errors, so the amateur end user became angry.",FALSE,0.5,FALSE,0.0,0.5,FALSE,program errors angry end,0.0,0.0,0,4
+642,A toy car is typically found in a house.,TRUE,0.5,TRUE,0.0,-0.5,FALSE,toy car typically house,0.0,0.0,0,4
+1043,A tactic used to interfere with learning about science is not increasing one's knowledge.,FALSE,0.5,FALSE,0.0,0.5,FALSE,tactic interfere science knowledge,0.0,0.0,0,4
+390,Animals who have hair and don't lay eggs are mammals.,TRUE,0.5,TRUE,0.0,0.5,TRUE,hair eggs don mammals,0.0,0.0,0,4
+1051,Meadow animals are known for being followers.,FALSE,0.85,FALSE,0.0,0.85,FALSE,meadow animals followers,0.0,0.0,0,3
+880,A squirrel lives outside of a city in a park.,FALSE,0.5,FALSE,0.0,0.5,FALSE,squirrel lives park,0.0,0.0,0,3
+691,Playing the violin results in troubling something.,FALSE,0.5,FALSE,0.0,0.5,FALSE,playing violin results troubling,0.0,0.0,0,4
+924,He aims to achieve a nice home by doing housework at his messy house.,FALSE,0.5,FALSE,0.0,0.5,FALSE,aims achieve home housework,0.0,0.0,0,4
+337,"The cancer patient, expecting to die, wrote a will.",FALSE,0.5,FALSE,0.0,-0.4999,TRUE,patient wrote will,0.0,0.0,0,3
+873,Lettuce arrives at a farmer's market by large trucks.,FALSE,0.85,FALSE,0.0,0.8499,FALSE,lettuce trucks farmer market,0.0,0.0,0,4
+1092,"If someone laughs after surprising them, they have a good sense of humor.",FALSE,0.5,UNKNOWN,0.5,1.0,FALSE,,0.0,0.0,0,0
+666,People drink beer while watching sticks and pucks at a hockey rink.,FALSE,0.5,FALSE,0.0,0.4999,FALSE,beer watching sticks pucks,0.0,0.0,0,4
+408,Adult dressed themselves before the job interview.,TRUE,0.5,FALSE,0.0,1.0,TRUE,dressed themselves job interview,1.0,1.0,1,4
+710,A person begins reproducing through genetic mutation.,FALSE,0.95,FALSE,0.0,0.95,FALSE,person genetic mutation,0.0,0.0,0,3
+639,A wildlife group has a leader.,TRUE,0.5,TRUE,0.0,-0.5,FALSE,wildlife group leader,0.0,0.0,0,3
+347,A person stands alone if they do not have any friends.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,stands alone friends,0.0,0.0,0,3
+272,Information for a deaf person can be expressed by writing it down.,TRUE,0.5,TRUE,0.0,0.5,TRUE,information deaf person,0.0,0.0,0,3
+801,"If someone is not losing weight, it may impact their perceived beauty.",TRUE,0.5,TRUE,0.0,-0.5,FALSE,losing impact perceived beauty,0.0,0.0,0,4
+481,One would not want to find mice in an attic.,TRUE,0.5,TRUE,0.0,0.5,TRUE,mice attic,0.0,0.0,0,2
+77,A wild bird usually lives in the countryside.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,wild bird countryside,0.0,0.0,0,3
+159,The man had difficulty keeping track of conversations when he did not initiate them.,FALSE,0.5,FALSE,0.0,-0.4999,TRUE,man conversations,0.0,0.0,0,2
+671,Blowfish require water to live.,TRUE,0.5,TRUE,0.0,-0.5,FALSE,blowfish require water,0.0,0.0,0,3
+892,The main purpose of taking a bath is for exfoliation.,FALSE,0.5,FALSE,0.0,0.5,FALSE,bath purpose exfoliation,0.0,0.0,0,3
+420,A deceased individual's body serves in the context of a funeral service.,TRUE,0.95,TRUE,0.0,0.95,TRUE,deceased individual body funeral,0.0,0.0,0,4
+148,"Some people prefer releasing energy through work, while others prefer to release it through exercise.",TRUE,0.5,TRUE,0.0,0.5,TRUE,people prefer releasing energy,0.0,0.0,0,4
+1197,"John rests in a location where snakes may inhabit, causing him fear due to their ability to slither undetected, which is often characteristic of basements.",FALSE,0.5,FALSE,0.0,0.5,FALSE,john rests snakes inhabit,0.0,0.0,0,4
+16,"In a reception area, one waits alongside with other people.",FALSE,0.85,FALSE,0.0,-0.85,TRUE,reception area waits people,0.0,0.0,0,4
+468,A person can find a restaurant's phone number in the yellow pages.,TRUE,0.5,TRUE,0.0,0.5,TRUE,restaurant phone number yellow,0.0,0.0,0,4
+933,She wanted both a kitten and a puppy but only got a puppy due to waxy reasons.,FALSE,0.5,FALSE,0.0,0.5,FALSE,wanted kitten,0.0,0.0,0,2
+539,A person's death by stabbing can be described as gruesome.,TRUE,0.5,TRUE,0.0,0.5,TRUE,death stabbing gruesome,0.0,0.0,0,3
+949,The man provided assistance to a pan handler in the streets through lawsuits.,TRUE,0.95,FALSE,0.0,1.0,FALSE,man lawsuits assistance,1.0,1.0,1,3
+451,Cars typically travel at very high speeds on a race track.,TRUE,0.5,TRUE,0.0,0.5,TRUE,cars travel speeds race,0.0,0.0,0,4
+866,Vendors deliver goods for sale to the department referred to as the delivery department.,FALSE,0.95,FALSE,0.0,0.9499,FALSE,vendors deliver goods delivery,0.0,0.0,0,4
+896,A philosopher waits for wisdom through his studies.,FALSE,0.5,FALSE,0.0,0.5,FALSE,philosopher waits wisdom studies,0.0,0.0,0,4
+103,"To eliminate preconceived notions when learning about the world and different cultures, an open mind is essential.",TRUE,0.5,TRUE,0.0,0.5,TRUE,eliminate notions open mind,0.0,0.0,0,4
+980,"A place that is expensive, lacks matching drapes and carpet, and was the only available option in town despite being disappointing might be a restaurant.",FALSE,0.85,FALSE,0.0,0.85,FALSE,restaurant disappointing expensive,0.0,0.0,0,3
+1114,"The bedroom requires repainting in a lighter color due to insufficient lighting, as it only has one overhead light.",TRUE,0.5,FALSE,0.0,1.0,FALSE,bedroom repainting lighting insufficient,1.0,1.0,1,4
+605,"Competing can lead to great highs, but also great lows when experiencing defeat.",TRUE,0.95,TRUE,0.0,0.95,TRUE,competing lead great defeat,0.0,0.0,0,4
+1215,"When buying tweed fabric in modern clothing, look for it at clothing stores.",FALSE,0.85,FALSE,0.0,0.85,FALSE,buying tweed stores,0.0,0.0,0,3
+130,Hundreds of thousands of homes can be found in a city or town.,TRUE,0.95,TRUE,0.0,0.95,TRUE,homes,0.0,0.0,0,1
+38,"If you have leftover cake, you store it in the refrigerator.",TRUE,0.5,TRUE,0.0,0.5,TRUE,cake refrigerator,0.0,0.0,0,2
+508,"To obtain pamphlets, one goes to a bookstore.",TRUE,0.5,FALSE,0.0,1.0,TRUE,obtain pamphlets bookstore,1.0,1.0,1,3
+156,Flowers are considered pretty in plants.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,flowers pretty plants,0.0,0.0,0,3
+668,"While driving, one might observe a green field in farmland.",TRUE,0.95,TRUE,0.0,-0.95,FALSE,driving observe green field,0.0,0.0,0,4
+1004,Using a boat does not require navigation skills in a harbor.,FALSE,0.85,FALSE,0.0,0.85,FALSE,boat require navigation harbor,0.0,0.0,0,4
+812,The feathers of birds in the rainforest appear aesthetically pleasing.,TRUE,0.5,FALSE,0.0,1.0,FALSE,feathers birds rainforest aesthetically,1.0,1.0,1,4
+680,"A person from Avalon lives in a house. (Assuming that ""pain"" is a typo and the intended answer is ""house"")",FALSE,0.85,FALSE,0.0,0.85,FALSE,person avalon house,0.0,0.0,0,3
+396,Riding a bike moves by pedaling.,TRUE,0.5,TRUE,0.0,0.5,TRUE,bike riding moves pedaling,0.0,0.0,0,4
+391,Aristocratic fox hunter John might reside in New Hampshire.,FALSE,0.85,FALSE,0.0,-0.85,TRUE,aristocratic fox hunter new,0.0,0.0,0,4
+831,"Eating is part of living, but your body doesn't use it all; you continue the process of chewing the next day (implicitly referring to thinking about or contemplating food).",FALSE,0.5,FALSE,0.0,0.5,FALSE,eating body chewing thinking,0.0,0.0,0,4
+1026,People may stop caring about their problems due to learning from each other.,TRUE,0.5,FALSE,0.0,1.0,FALSE,stop caring,1.0,1.0,1,2
+723,The music was festive and the reason for horses dancing in circles is due to the presence of a ringmaster.,FALSE,0.85,FALSE,0.0,0.85,FALSE,music festive dancing horses,0.0,0.0,0,4
+485,"A non-vegetarian soup likely contains potatoes, specifically clam chowder.",FALSE,0.85,FALSE,0.0,-0.85,TRUE,clam chowder potatoes non,0.0,0.0,0,4
+763,A long book is challenging for a young child due to their limited reading knowledge.,FALSE,0.85,FALSE,0.0,0.85,FALSE,long book young child,0.0,0.0,0,4
+326,Homicide leads to an early death.,FALSE,0.5,UNKNOWN,0.5,1.0,TRUE,,0.0,0.0,0,0
+45,James's act of buying beer for minors violated a law.,TRUE,0.5,FALSE,0.0,1.0,TRUE,beer minors,1.0,1.0,1,2
+421,People moved to cities from their country estates when they wanted to leave.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,people moved cities,0.0,0.0,0,3
+795,Using television that is not interesting may cause you to turn it off.,FALSE,0.5,FALSE,0.0,0.5,FALSE,television interesting cause turn,0.0,0.0,0,4
+877,Enjoying an event occurs in an auditorium when one takes their seat and curtains draw back.,FALSE,0.5,FALSE,0.0,0.5,FALSE,enjoying event auditorium curtains,0.0,0.0,0,4
+240,A creek is found in a valley.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,creek valley,0.0,0.0,0,2
+1207,"Jesse's remembrance of the past provided him understanding, which facilitated nostalgia.",FALSE,0.5,FALSE,0.0,0.5,FALSE,jesse remembrance understanding nostalgia,0.0,0.0,0,4
+586,Eating vegetables is beneficial because they are good for health.,TRUE,0.5,TRUE,0.0,0.5,TRUE,eating vegetables beneficial health,0.0,0.0,0,4
+1210,"If one does not have a rosebush, it would be obtained from the backyard.",FALSE,0.85,FALSE,0.0,0.85,FALSE,rosebush obtained backyard,0.0,0.0,0,3
+715,"Because of his anger, he couldn't clearly explain; he needed to cool off.",TRUE,0.5,FALSE,0.0,1.0,FALSE,anger explain cool off,1.0,1.0,1,4
+194,"Dan was seemingly engrossed in his book on the couch, but he actually fell asleep.",FALSE,0.5,FALSE,0.0,-0.5,TRUE,dan engrossed book asleep,0.0,0.0,0,4
+891,"If you get A's, you are passed.",FALSE,0.5,FALSE,0.0,0.5,FALSE,get,0.0,0.0,0,1
+1076,Pushing harder when competing may result in increased risk.,TRUE,0.5,TRUE,0.0,-0.5,FALSE,pushing,0.0,0.0,0,1
+956,"If watching TV on the couch in a stuffy environment, one might turn on the fan to make the living room more comfortable.",TRUE,0.5,TRUE,0.0,-0.5,FALSE,watching tv fan,0.0,0.0,0,3
+467,Humans bury other humans after death.,TRUE,0.5,TRUE,0.0,0.5,TRUE,bury humans death,0.0,0.0,0,3
+387,The cat kept pestering its owner; it was because it was hungry at that time of the day.,TRUE,0.5,FALSE,0.0,1.0,TRUE,cat,1.0,1.0,1,1
+557,The electrode wouldn't spark because the battery hadn't been connected.,TRUE,0.5,FALSE,0.0,1.0,TRUE,electrode spark battery connected,1.0,1.0,1,4
+782,A businessman promoted recently celebrates by purchasing an expensive wristwatch at a shopping location.,FALSE,0.5,FALSE,0.0,0.5,FALSE,businessman promoted celebrates,0.0,0.0,0,3
+566,"To secure something and prevent it from moving using string, tie it around.",FALSE,0.85,FALSE,0.0,-0.85,TRUE,secure string tie,0.0,0.0,0,3
+341,Someone is typically engaging in listening when someone else is speaking to them.,TRUE,0.5,FALSE,0.0,1.0,TRUE,listening speaking engaging typically,1.0,1.0,1,4
+354,You can store dishes in a dwelling on a shelf.,TRUE,0.5,TRUE,0.0,0.5,TRUE,store dishes shelf,0.0,0.0,0,3
+496,A person who has completed their undergraduate education has graduated.,TRUE,0.5,TRUE,0.0,0.5,TRUE,person completed undergraduate education,0.0,0.0,0,4
+1093,"People played various games in the soccer field, which was their closest equivalent to a beach.",FALSE,0.85,FALSE,0.0,0.85,FALSE,people games soccer field,0.0,0.0,0,4
+458,A person who tends to leave things until the last minute is said to procrastinate.,TRUE,0.95,UNKNOWN,0.5,1.0,TRUE,,0.0,0.0,0,0
+153,A basement in an office building can be accessed with an elevator.,TRUE,0.5,TRUE,0.0,0.5,TRUE,basement elevator office,0.0,0.0,0,3
+887,People engage in activities involving talking at a state park.,TRUE,0.5,TRUE,0.0,-0.5,FALSE,people engage activities talking,0.0,0.0,0,4
+502,Learning about the world instills a desire to travel in many poor college students.,FALSE,0.7,FALSE,0.0,-0.6999,TRUE,world travel students,0.0,0.0,0,3
+1203,Animals play a significant role in cargo transportation.,FALSE,0.5,FALSE,0.0,0.5,FALSE,animals,0.0,0.0,0,1
+594,The president issues a decree concerning banning snakes at the White House.,FALSE,0.95,FALSE,0.0,-0.95,TRUE,president decree banning,0.0,0.0,0,3
+602,"When one wipes feet on a door mat before entering, they enter a living room.",FALSE,0.95,FALSE,0.0,-0.95,TRUE,wipes feet door mat,0.0,0.0,0,4
+858,A classroom consists of people.,TRUE,0.5,TRUE,0.0,-0.5,FALSE,classroom consists people,0.0,0.0,0,3
+1119,One expresses information without a pen or pencil through means other than writing it down.,TRUE,0.5,TRUE,0.0,-0.5,FALSE,expresses information without writing,0.0,0.0,0,4
+744,"John found his old water hose in the car, but it originally was in the garden shed.",FALSE,0.5,FALSE,0.0,0.5,FALSE,john water hose garden,0.0,0.0,0,4
+290,Becoming inebriated has an extremely unlikely side effect of causing paralysis.,FALSE,0.95,FALSE,0.0,-0.95,TRUE,becoming inebriated unlikely,0.0,0.0,0,3
+1061,The man was encouraged to engage in fighting after he expressed his anger violently.,TRUE,0.5,FALSE,0.0,1.0,FALSE,man encouraged fighting violently,1.0,1.0,1,4
+841,"John required a straight wire, but unfortunately, it had been altered and became curved.",FALSE,0.5,FALSE,0.0,0.5,FALSE,john,0.0,0.0,0,1
+274,"God, in religion, will not judge people.",FALSE,0.5,FALSE,0.0,-0.5,TRUE,god,0.0,0.0,0,1
+520,"To buy a gong, one should look at a music store.",FALSE,0.5,FALSE,0.0,-0.5,TRUE,buy gong music store,0.0,0.0,0,4
+807,A person is likely to experience anger after they stop being married to a mean person.,FALSE,0.85,FALSE,0.0,0.85,FALSE,anger married mean person,0.0,0.0,0,4
+957,"While walking, a student stores his writing instrument away in a desk drawer.",FALSE,0.85,FALSE,0.0,0.85,FALSE,student walking writing drawer,0.0,0.0,0,4
+349,Everyone has feelings in relation to other people.,TRUE,0.5,FALSE,0.0,1.0,TRUE,people,1.0,1.0,1,1
+425,"In a horror movie, victims usually trip when running in order to move away from the killer.",FALSE,0.85,FALSE,0.0,-0.85,TRUE,trip killer,0.0,0.0,0,2
+875,Jumping rope aims to induce fatigue.,FALSE,0.5,FALSE,0.0,0.5,FALSE,jumping rope induce,0.0,0.0,0,3
+809,"A maid empties a trash can at home, not a bus stop.",TRUE,0.5,TRUE,0.0,-0.5,FALSE,maid empties trash can,0.0,0.0,0,4
+792,Kite strings originate from toy stores when seen flying in the sky.,FALSE,0.95,FALSE,0.0,0.95,FALSE,kite strings toy stores,0.0,0.0,0,4
+283,"For some reason, she experiences pleasure only through buying products.",FALSE,0.5,FALSE,0.0,-0.5,TRUE,pleasure buying products,0.0,0.0,0,3
+72,"Sally utilizes a clipboard to manage papers while reading names at the beginning of the day, suggesting she works at a school.",TRUE,0.85,FALSE,0.0,1.0,TRUE,clipboard papers reading,1.0,1.0,1,3
+1100,People line up outside for a meeting.,FALSE,0.5,FALSE,0.0,0.5,FALSE,people line up meeting,0.0,0.0,0,4
+140,A marmot is likely to be found in the countryside.,TRUE,0.95,TRUE,0.0,0.95,TRUE,marmot countryside,0.0,0.0,0,2
+901,A large gathering of people from distant locations indicates a public building.,TRUE,0.85,FALSE,0.0,1.0,FALSE,public building,1.0,1.0,1,2
+765,A book contains a last word that is not its foreword.,FALSE,0.5,FALSE,0.0,0.5,FALSE,book last word,0.0,0.0,0,3
+521,Friends gather together when they need mutual assistance.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,friends gather,0.0,0.0,0,2
+614,A person takes a bus to work for the purpose of traveling.,FALSE,0.5,FALSE,0.0,0.5,FALSE,person takes bus work,0.0,0.0,0,4
+944,People are likely to communicate when an unexpected positive outcome occurs.,TRUE,0.5,FALSE,0.0,1.0,FALSE,unexpected outcome,1.0,1.0,1,2
+196,"Alabama is inhabited by diverse people, but they are all United States citizens.",FALSE,0.85,FALSE,0.0,-0.85,TRUE,alabama diverse people citizens,0.0,0.0,0,4
+786,A person who acts like a clown tends to make mistakes.,FALSE,0.5,FALSE,0.0,0.5,FALSE,clown mistakes,0.0,0.0,0,2
+297,"After consuming from it, one places the glass in the dishwasher.",FALSE,0.5,FALSE,0.0,-0.5,TRUE,consuming glass dishwasher,0.0,0.0,0,3
+936,Someone is planning to have fun when scheduling for a party.,FALSE,0.5,FALSE,0.0,0.5,FALSE,planning fun scheduling party,0.0,0.0,0,4
+500,One may place a rug under the furniture.,TRUE,0.5,TRUE,0.0,0.5,TRUE,rug place furniture under,0.0,0.0,0,4
+968,"If a student has been provided with a list of supplies like paper and pencils from class, their parent will have to go to the classroom.",FALSE,0.85,FALSE,0.0,0.85,FALSE,student parent supplies classroom,0.0,0.0,0,4
+989,"During sleep, the body dreams.",FALSE,0.5,FALSE,0.0,0.5,FALSE,body sleep,0.0,0.0,0,2
+851,"Joe keeps his tools in a place where spiders are found, which might be a toolbox.",FALSE,0.85,FALSE,0.0,0.85,FALSE,joe tools spiders toolbox,0.0,0.0,0,4
+560,"The teacher hoped that her students would learn multiplication, having understood division.",FALSE,0.5,FALSE,0.0,-0.5,TRUE,teacher hoped students understood,0.0,0.0,0,4
+598,Exercise is necessary for getting in shape.,TRUE,0.5,TRUE,0.0,0.5,TRUE,exercise necessary getting shape,0.0,0.0,0,4
+1055,Unused soap is likely stored in a bathroom.,FALSE,0.5,FALSE,0.0,0.5,FALSE,unused soap stored bathroom,0.0,0.0,0,4
+316,A structure originally designed with a lowering mechanism for coins was a wishing well.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,coins wishing well mechanism,0.0,0.0,0,4
+241,"If one has a pet bird, it likely lives in a cage.",TRUE,0.85,FALSE,0.0,1.0,TRUE,pet bird cage,1.0,1.0,1,3
+946,"The company utilized recycled cardboard as their packaging material, operating as a box factory.",FALSE,0.5,FALSE,0.0,0.5,FALSE,recycled cardboard packaging material,0.0,0.0,0,4
+233,A ferret is unlikely to be in a classroom.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,ferret classroom,0.0,0.0,0,2
+1120,Everyone perceives monsters differently.,TRUE,0.5,TRUE,0.0,-0.5,FALSE,perceives monsters differently,0.0,0.0,0,3
+191,Having a home with a courtyard means you likely don't have to care for a lawn anymore.,FALSE,0.85,FALSE,0.0,-0.85,TRUE,home courtyard lawn care,0.0,0.0,0,4
+836,"To watch new films, one needs to open their eyes.",FALSE,0.5,UNKNOWN,0.5,1.0,FALSE,,0.0,0.0,0,0
+1194,The fur color of a dog with light-colored fur is also known as 'sun'.,FALSE,0.95,FALSE,0.0,0.95,FALSE,dog fur color sun,0.0,0.0,0,4
+637,"Sam provided incomplete information while speaking truthfully, demonstrating an act of imagination.",FALSE,0.85,FALSE,0.0,0.85,FALSE,incomplete truthfully demonstrating imagination,0.0,0.0,0,4
+325,Candles are useful for illuminating darkness.,TRUE,0.95,UNKNOWN,0.5,1.0,TRUE,,0.0,0.0,0,0
+491,"When slipping from a ladder propped on anything, one will likely fall down.",TRUE,0.95,FALSE,0.0,1.0,TRUE,slipping ladder fall down,1.0,1.0,1,4
+60,Satisfying someone's curiosity is likely through hearing news.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,satisfying someone curiosity hearing,0.0,0.0,0,4
+249,The painter starts edging the room with tape and takes extra care to make the lines clean and crisp when working with an interior.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,painter room care,0.0,0.0,0,3
+993,"After buying a container can, one stores it.",FALSE,0.85,FALSE,0.0,0.85,FALSE,buying container can,0.0,0.0,0,3
+898,Spending a lot of money at thrift stores on knickknacks resulted in a state of poverty.,FALSE,0.85,FALSE,0.0,0.85,FALSE,spending money thrift stores,0.0,0.0,0,4
+590,"Mandy, living in a train station, might imagine going to Europe due to her longing to see distant places.",FALSE,0.85,FALSE,0.0,-0.85,TRUE,mandy train station europe,0.0,0.0,0,4
+269,"The child, despite being barred from the kitchen, can help by setting the table in the dining room.",TRUE,0.95,TRUE,0.0,0.95,TRUE,child kitchen dining room,0.0,0.0,0,4
+547,Eating hamburger can cause immediate indigestion.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,eating hamburger,0.0,0.0,0,2
+417,Clouds float in air.,TRUE,0.5,TRUE,0.0,0.5,TRUE,clouds float air,0.0,0.0,0,3
+1175,"A meteor travels through galaxies, which are a part of the sky.",TRUE,0.5,TRUE,0.0,-0.5,FALSE,meteor galaxies sky,0.0,0.0,0,3
+1088,One can acquire a bass fiddle from a musical group (band).,TRUE,0.5,TRUE,0.0,-0.5,FALSE,bass fiddle acquire musical,0.0,0.0,0,4
+1021,A dollar is stored in a cash drawer before using it to buy something at a store.,FALSE,0.5,FALSE,0.0,0.5,FALSE,dollar stored cash drawer,0.0,0.0,0,4
+741,"Ficus planting creates screened porches in yards, providing relief during summer.",FALSE,0.85,FALSE,0.0,0.85,FALSE,ficus planting screened porches,0.0,0.0,0,4
+385,He needed a navigation tool and handed his passenger the map when his phone was dead and they couldn't find the expressway.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,navigation dead phone expressway,0.0,0.0,0,4
+1189,One uses a staircase to get to some airplanes.,FALSE,0.95,FALSE,0.0,0.95,FALSE,staircase airplanes,0.0,0.0,0,2
+847,"Sean loves to build houses but, in his current state, he cannot stand up.",FALSE,0.5,FALSE,0.0,0.5,FALSE,sean loves build houses,0.0,0.0,0,4
+947,A person may be known as a liar due to a brain tumor.,FALSE,0.95,FALSE,0.0,0.95,FALSE,person liar brain tumor,0.0,0.0,0,4
+3,Magazines are often found alongside other printed works in a bookstore.,TRUE,0.95,TRUE,0.0,0.95,TRUE,magazines bookstore printed,0.0,0.0,0,3
+1054,"The hostess greeted the employees to the program, then led them to their welcome guests.",FALSE,0.5,FALSE,0.0,0.5,FALSE,hostess greeted employees,0.0,0.0,0,3
+828,"If you're watching a comedy film, you would not expect to hear fear from the audience.",FALSE,0.85,UNKNOWN,0.5,1.0,FALSE,,0.0,0.0,0,0
+238,"People attend for live entertainment, and that is shown as a 'show'.",FALSE,0.5,FALSE,0.0,-0.5,TRUE,attend entertainment shown show,0.0,0.0,0,4
+663,Many clothing stores can be found in malls.,TRUE,0.95,TRUE,0.0,-0.95,FALSE,clothing stores malls,0.0,0.0,0,3
+517,The most famous BBQ steakhouses in America are in Texas.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,texas bbq steakhouses,0.0,0.0,0,3
+645,Office workers gossip with their colleagues at a bus stop.,FALSE,0.95,FALSE,0.0,0.95,FALSE,office workers gossip colleagues,0.0,0.0,0,4
+181,All members of the orchestra wore a tuxedo while playing the keyboard instrument.,FALSE,0.85,FALSE,0.0,-0.85,TRUE,members orchestra wore tuxedo,0.0,0.0,0,4
+932,The chef aimed to perfect his craft by preparing food.,TRUE,0.5,TRUE,0.0,-0.5,FALSE,chef,0.0,0.0,0,1
+76,A high level of mental stress or depression may be causing one to awaken multiple times throughout the night.,TRUE,0.95,TRUE,0.0,0.95,TRUE,mental stress depression awaken,0.0,0.0,0,4
+1170,"A ticket booth can be found, and a concert can be seen at an auditorium.",TRUE,0.5,FALSE,0.0,1.0,FALSE,ticket booth concert auditorium,1.0,1.0,1,4
+1130,A good place to have a fireplace is in a big house.,FALSE,0.5,FALSE,0.0,0.5,FALSE,good place fireplace house,0.0,0.0,0,4
+1015,"The two played video games all night in the living room, they enjoyed visiting formal seating.",FALSE,0.85,FALSE,0.0,0.85,FALSE,played video games living,0.0,0.0,0,4
+844,Someone finds time to relax at night.,TRUE,0.5,FALSE,0.0,1.0,FALSE,relax night someone time,1.0,1.0,1,4
+676,"One seeks honey directly from its source, therefore, one should look for it at 'honeyful'.",FALSE,0.85,UNKNOWN,0.5,1.0,FALSE,,0.0,0.0,0,0
+330,Living beings begin the process of aging immediately upon birth.,FALSE,0.95,UNKNOWN,0.5,1.0,TRUE,,0.0,0.0,0,0
+215,A fiddle can express joy when played.,TRUE,0.5,TRUE,0.0,0.5,TRUE,fiddle joy express,0.0,0.0,0,3
+658,"The juror, despite being bored and zoning out, conveyed his attention by writing down.",FALSE,0.85,FALSE,0.0,0.85,FALSE,juror bored zoning writing,0.0,0.0,0,4
+683,"If buying beer for a float trip, one is preparing to spend money.",TRUE,0.95,TRUE,0.0,-0.95,FALSE,buying beer float trip,0.0,0.0,0,4
+1136,"If crumbs are frequently found under one's table, placing something from the neighbor's house under it may help prevent it.",FALSE,0.95,FALSE,0.0,0.95,FALSE,crumbs frequently neighbor,0.0,0.0,0,3
+713,"A cup is typically taken from its location when getting a drink, often it's not from a toilet.",TRUE,0.5,TRUE,0.0,-0.5,FALSE,cup location drink toilet,0.0,0.0,0,4
+1188,Competing could result in losing if James decides to compete.,TRUE,0.5,FALSE,0.0,1.0,FALSE,competing losing,1.0,1.0,1,2
+187,Running could be suddenly halted by falling down.,TRUE,0.5,TRUE,0.0,0.5,TRUE,falling running,0.0,0.0,0,2
+1169,The presence of darkness impedes one's ability to finish homework.,FALSE,0.85,FALSE,0.0,0.85,FALSE,presence darkness homework,0.0,0.0,0,3
+893,A ballgame was being played where the ball could be hit over a boundary and potentially strike an audience member.,TRUE,0.5,FALSE,0.0,1.0,FALSE,ballgame,1.0,1.0,1,1
+372,Affair resulted in marriage upon discovery by the husband.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,affair marriage discovery husband,0.0,0.0,0,4
+570,You can store spare linens near your socks in dresser drawers.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,store spare,0.0,0.0,0,2
+906,Concerns about cavities are found at a dentist's office.,TRUE,0.95,TRUE,0.0,-0.95,FALSE,concerns cavities dentist office,0.0,0.0,0,4
+1063,"To utilize a television that is already turned on, you need to plug it in.",FALSE,0.95,FALSE,0.0,0.95,FALSE,plug in turned,0.0,0.0,0,3
+964,Professors primarily wear wrinkled tweed jackets.,FALSE,0.5,FALSE,0.0,0.5,FALSE,professors tweed jackets,0.0,0.0,0,3
+359,A toy soldier is often found in the possession of a child.,TRUE,0.5,TRUE,0.0,0.5,TRUE,toy child,0.0,0.0,0,2
+83,Farmers aim to supply food.,TRUE,0.5,TRUE,0.0,0.5,TRUE,farmers supply food,0.0,0.0,0,3
+552,The pitcher was located on the baseball diamond when he stepped on the mound ready to throw.,TRUE,1.0,TRUE,0.0,1.0,TRUE,pitcher located diamond mound,0.0,0.0,0,4
+43,"He needed more information to fix it, so he consulted the manual for help.",TRUE,0.95,TRUE,0.0,0.95,TRUE,needed consulted manual,0.0,0.0,0,3
+469,Coins are inserted into a water fountain to make it function.,FALSE,0.95,FALSE,0.0,-0.95,TRUE,coins fountain function,0.0,0.0,0,3
+188,A monkey can be found in the wild in Thailand.,TRUE,0.5,TRUE,0.0,0.5,TRUE,monkey thailand,0.0,0.0,0,2
+53,A person builds momentum when starting work.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,person builds momentum,0.0,0.0,0,3
+513,A public monument is likely to be erected by a city in a municipal park.,TRUE,0.5,FALSE,0.0,1.0,TRUE,public monument erected city,1.0,1.0,1,4
+661,"If someone rules the universe, they are in charge of a classroom.",FALSE,0.95,FALSE,0.0,0.95,FALSE,universe classroom,0.0,0.0,0,2
+885,"People find themselves making friends at the new comic store, it's nice to meet people with smiles.",FALSE,0.5,FALSE,0.0,0.5,FALSE,comic store friends smiles,0.0,0.0,0,4
+82,A crane uses many steel cables when working at a construction site.,TRUE,0.95,TRUE,0.0,0.95,TRUE,crane steel cables construction,0.0,0.0,0,4
+165,Someone purchases an upright piano at a music store.,TRUE,0.5,FALSE,0.0,1.0,TRUE,purchases upright piano music,1.0,1.0,1,4
+897,Young boys knit on the ice during winter.,TRUE,0.5,FALSE,0.0,1.0,FALSE,boys knit winter ice,1.0,1.0,1,4
+1012,A person who has no issue committing perjury believes they can avoid going to jail.,FALSE,0.85,FALSE,0.0,0.85,FALSE,person committing perjury jail,0.0,0.0,0,4
+1025,A bath towel can be borrowed from a cupboard.,TRUE,0.5,FALSE,0.0,1.0,FALSE,borrowed cupboard,1.0,1.0,1,2
+558,Government should work for the country.,TRUE,0.5,FALSE,0.0,1.0,TRUE,government work country,1.0,1.0,1,3
+825,"If one needs the bathroom and has no key, they must buy something from a school.",FALSE,0.95,FALSE,0.0,0.95,FALSE,bathroom school,0.0,0.0,0,2
+1163,Audiences clap during movies.,FALSE,0.95,FALSE,0.0,0.95,FALSE,audiences clap,0.0,0.0,0,2
+960,A place to get new soap is at a sink.,FALSE,0.85,FALSE,0.0,0.85,FALSE,sink soap new,0.0,0.0,0,3
+255,A frying pan is used to cook meat on top of it.,TRUE,0.5,TRUE,0.0,0.5,TRUE,frying pan cook meat,0.0,0.0,0,4
+900,A computer's use for talking to a granddaughter might lead to a headache for the person.,FALSE,0.85,FALSE,0.0,0.85,FALSE,computer granddaughter headache,0.0,0.0,0,3
+592,A personal ficus can live in the front yard.,TRUE,0.5,TRUE,0.0,0.5,TRUE,personal ficus yard,0.0,0.0,0,3
+630,"A person wasn't bothered by the weather, she had remembered to bring her extra rice.",FALSE,0.85,FALSE,0.0,0.85,FALSE,person wasn bothered,0.0,0.0,0,3
+340,"The cat carefully navigates the area, aiming to avoid getting wet.",FALSE,0.5,FALSE,0.0,-0.5,TRUE,cat avoid wet,0.0,0.0,0,3
+123,Professors collaborate with school students.,TRUE,0.5,TRUE,0.0,0.4999,TRUE,collaborate students,0.0,0.0,0,2
+147,"To play sports professionally, one must frequently practice.",TRUE,0.95,TRUE,0.0,0.95,TRUE,practice sports professionally,0.0,0.0,0,3
+292,"If not in a stream but in a market, you will find fish in a refrigerator.",FALSE,0.5,FALSE,0.0,-0.5,TRUE,fish refrigerator market,0.0,0.0,0,3
+545,The church was giving assistance with the aim of helping others.,TRUE,0.5,TRUE,0.0,0.5,TRUE,church assistance,0.0,0.0,0,2
+1165,"Clouds were overrated, disappointing everyone hoping for a beautiful day.",FALSE,0.5,FALSE,0.0,0.5,FALSE,clouds disappointing,0.0,0.0,0,2
+461,Jane spends a lot of time at the Capitol Building since she works for the government as a senator.,TRUE,0.95,TRUE,0.0,0.95,TRUE,jane capitol government senator,0.0,0.0,0,4
+1116,A mouse is often found in a place where cooking occurs.,TRUE,0.5,TRUE,0.0,-0.5,FALSE,mouse cooking occurs,0.0,0.0,0,3
+236,The lady eats excessively due to mental issues and then makes herself vomit.,FALSE,0.5,FALSE,0.0,-0.4999,TRUE,eats excessively mental issues,0.0,0.0,0,4
+871,A person lights alcohol on fire to observe the reaction at a bar.,FALSE,0.95,FALSE,0.0,0.95,FALSE,alcohol fire person bar,0.0,0.0,0,4
+406,Joe's finding of spiders might indicate a mail box.,FALSE,0.85,FALSE,0.0,-0.85,TRUE,joe spiders,0.0,0.0,0,2
+1145,Bob is in a desert surrounded by trees and nature.,FALSE,1.0,FALSE,0.0,1.0,FALSE,bob desert trees nature,0.0,0.0,0,4
+479,A person aims to earn money at work.,TRUE,0.5,FALSE,0.0,1.0,TRUE,earn money aims work,1.0,1.0,1,4
+146,"With the card slot lit up, one knows how to start finding their balance using an automated teller.",FALSE,0.5,UNKNOWN,0.5,1.0,TRUE,,0.0,0.0,0,0
+1218,He went to the garage because his compressor needed a new hose.,FALSE,0.5,FALSE,0.0,0.5,FALSE,he garage compressor hose,0.0,0.0,0,4
+1202,"He came from old money and had a fortune, but he made new money making shrewd trades in the stock market.",FALSE,0.5,FALSE,0.0,0.4999,FALSE,old money fortune trades,0.0,0.0,0,4
+591,"Joe, being a squirrel and an animal, probably resides in a woodland.",FALSE,0.85,FALSE,0.0,-0.85,TRUE,squirrel woodland,0.0,0.0,0,2
+475,"When talking to an interviewer during a job interview, one should make eye contact.",TRUE,0.95,TRUE,0.0,0.95,TRUE,talking interviewer during job,0.0,0.0,0,4
+67,He was beginning to regret taking the fight when he saw how confident his opponent was.,FALSE,0.85,FALSE,0.0,-0.85,TRUE,regret taking fight opponent,0.0,0.0,0,4
+597,A dictionary is often found alongside other writings that can be borrowed in a library.,TRUE,0.95,TRUE,0.0,0.95,TRUE,dictionary library borrowed writings,0.0,0.0,0,4
+963,They had to know where to go; they got on the national highway after consulting a map of Canada.,FALSE,0.85,FALSE,0.0,0.8499,FALSE,national highway consulting map,0.0,0.0,0,4
+1154,Someone stores a reusable shopping bag at home.,TRUE,0.5,TRUE,0.0,-0.5,FALSE,stores reusable shopping bag,0.0,0.0,0,4
+837,Contemplating alone for a long time can lead to a headache.,FALSE,0.85,FALSE,0.0,0.85,FALSE,contemplating alone long time,0.0,0.0,0,4
+6,Ferrets are popular in Great Britain.,TRUE,0.5,UNKNOWN,0.5,1.0,TRUE,,0.0,0.0,0,0
+321,People require energy to play sports in gym class.,TRUE,0.95,TRUE,0.0,0.95,TRUE,people require energy,0.0,0.0,0,3
+154,"To learn to program from another person, one can enroll in a class.",TRUE,0.95,TRUE,0.0,0.95,TRUE,learn program enroll class,0.0,0.0,0,4
+1131,"If you own a cat, you don't want to find it in trouble.",FALSE,0.85,FALSE,0.0,0.85,FALSE,own cat trouble,0.0,0.0,0,3
+356,Someone is reading if their eyes are moving while sitting quietly.,TRUE,0.5,FALSE,0.0,1.0,TRUE,reading eyes moving sitting,1.0,1.0,1,4
+492,People shop when they need to get food.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,shop need food,0.0,0.0,0,3
+322,Sarah dropped the marble in order to play a game.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,dropped marble game,0.0,0.0,0,3
+167,Diving into backyard pools can be very dangerous and may lead to serious head and spinal injuries.,TRUE,0.5,TRUE,0.0,0.5,TRUE,diving backyard pools injuries,0.0,0.0,0,4
+542,A market is a great place to buy fresh fruit.,TRUE,0.5,TRUE,0.0,0.5,TRUE,market fruit,0.0,0.0,0,2
+433,Running involves going quickly.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,running involves going quickly,0.0,0.0,0,4
+426,The coach made a lineup change due to team's stagnation.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,coach lineup stagnation,0.0,0.0,0,3
+204,"If one has a modern light source in their living room, it is likely to be a lamp.",FALSE,0.5,FALSE,0.0,-0.5,TRUE,modern light source lamp,0.0,0.0,0,4
+124,Colorful anemone resemble flower beds found on window sills.,FALSE,0.85,FALSE,0.0,-0.85,TRUE,colorful anemone flower beds,0.0,0.0,0,4
+626,A crime scene often has much more than a drop of blood on the floor.,TRUE,0.95,TRUE,0.0,-0.95,FALSE,crime scene drop blood,0.0,0.0,0,4
+879,The ideal location for a post office is in a business district.,FALSE,0.5,FALSE,0.0,0.5,FALSE,ideal location post office,0.0,0.0,0,4
+609,"If the kitten aims to grow up and exhibit mousing abilities like its mother, it should spend most of its time at a farmhouse.",FALSE,0.85,FALSE,0.0,-0.85,TRUE,kitten exhibit mother,0.0,0.0,0,3
+907,Human beings learn about current events from newspapers.,TRUE,0.5,FALSE,0.0,1.0,FALSE,human beings learn newspapers,1.0,1.0,1,4
+923,"If someone was making breakfast, they'd probably put two slices of bread in the toaster.",FALSE,0.5,FALSE,0.0,0.5,FALSE,slices bread toaster breakfast,0.0,0.0,0,4
+780,People require clothing suitable for physical exertion when hiking.,TRUE,0.95,TRUE,0.0,-0.95,FALSE,clothing hiking exertion,0.0,0.0,0,3
+1071,Food that makes someone sick is not necessary to live.,TRUE,0.5,TRUE,0.0,-0.5,FALSE,food sick necessary live,0.0,0.0,0,4
+463,Policemen responded by helping when they heard a cry from a distance.,TRUE,0.5,FALSE,0.0,1.0,TRUE,policemen cry,1.0,1.0,1,2
+853,A supermarket is a location where one typically purchases food for their family.,TRUE,0.95,TRUE,0.0,-0.95,FALSE,supermarket purchases food family,0.0,0.0,0,4
+1143,Buying products others do not want you to may result in displeasure.,TRUE,0.5,UNKNOWN,0.5,1.0,FALSE,,0.0,0.0,0,0
+243,A person is characterized as a nomad if they have no permanent home.,TRUE,0.5,TRUE,0.0,0.5,TRUE,person characterized nomad permanent,0.0,0.0,0,4
+509,People cheer during a sporting event when a goal is scored.,TRUE,0.5,TRUE,0.0,0.5,TRUE,cheer sporting event goal,0.0,0.0,0,4
+175,"To serve food at a party, a spoon will be required.",FALSE,0.5,FALSE,0.0,-0.5,TRUE,food party spoon,0.0,0.0,0,3
+623,"The janitor never had much to clean after services, but there was still always a paper or two to pick up on the front porch.",FALSE,0.5,FALSE,0.0,0.5,FALSE,janitor,0.0,0.0,0,1
+1153,Turkey only has a small northern part located in Asia Minor.,FALSE,0.5,FALSE,0.0,0.5,FALSE,turkey asia minor,0.0,0.0,0,3
+306,People write letters using the English alphabet in America.,TRUE,0.5,TRUE,0.0,0.5,TRUE,people letters english alphabet,0.0,0.0,0,4
+311,Many parking structures are likely found in Chicago.,TRUE,0.5,TRUE,0.0,0.5,TRUE,parking structures chicago,0.0,0.0,0,3
+110,Someone may be motivated to persist in playing tennis due to achieving victory.,TRUE,0.95,TRUE,0.0,0.95,TRUE,motivated persist playing tennis,0.0,0.0,0,4
+152,Someone might believe in maintaining sanitation when cleaning clothes.,TRUE,0.5,FALSE,0.0,1.0,TRUE,maintaining sanitation cleaning clothes,1.0,1.0,1,4
+1008,"Paul aims to get carrots without needing to drive, which he obtains from a dryer.",FALSE,0.95,FALSE,0.0,0.95,FALSE,paul carrots dryer,0.0,0.0,0,3
+821,"Seeing an idea become reality was her long-term dream, but when it came time to get on stage, she had more fear.",FALSE,0.5,FALSE,0.0,0.5,FALSE,seeing idea reality dream,0.0,0.0,0,4
+134,A successful dog grooming session is likely to make an owner feel satisfied.,TRUE,0.5,TRUE,0.0,0.5,TRUE,successful dog grooming satisfied,0.0,0.0,0,4
+234,"If you jump in an ocean, you will get wet.",TRUE,0.5,TRUE,0.0,0.5,TRUE,jump ocean wet,0.0,0.0,0,3
+979,An office supply store can serve as a place to keep a letter opener when it is likely to be needed soon.,TRUE,0.95,TRUE,0.0,-0.95,FALSE,office supply store letter,0.0,0.0,0,4
+518,He was the only person not called into a conference while he kept plugging away in his cubicle.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,person called conference cubicle,0.0,0.0,0,4
+106,"While washing clothes, they became torn when caught on a sharp object.",FALSE,0.5,FALSE,0.0,-0.5,TRUE,washing clothes torn caught,0.0,0.0,0,4
+378,"John, being my neighbor, was approachable, not distant.",FALSE,0.5,FALSE,0.0,-0.5,TRUE,john neighbor approachable distant,0.0,0.0,0,4
+698,"If you have a large satchel with you when you fly, you will be asked to store it in a clothing store.",FALSE,0.95,FALSE,0.0,0.95,FALSE,satchel fly store clothing,0.0,0.0,0,4
+903,"Trash cans are often found on sidewalks in many towns and cities, much like hospitals.",FALSE,0.95,FALSE,0.0,0.95,FALSE,trash cans sidewalks towns,0.0,0.0,0,4
+981,People need to become disillusioned to change their lives.,FALSE,0.5,FALSE,0.0,0.5,FALSE,people disillusioned change,0.0,0.0,0,3
+962,There were many bottles to choose from behind the cashier at a grocery store.,FALSE,0.85,FALSE,0.0,0.85,FALSE,bottles cashier grocery store,0.0,0.0,0,4
+583,Injecting water into oneself may result in thinning of the blood.,FALSE,0.85,FALSE,0.0,-0.85,TRUE,water thinning blood,0.0,0.0,0,3
+1176,A person who is known as a bully is not typically known for having a brain tumor.,TRUE,0.5,UNKNOWN,0.5,1.0,FALSE,,0.0,0.0,0,0
+26,"When wildlife reproduce, what comes out is referred to as offspring.",TRUE,0.95,TRUE,0.0,0.95,TRUE,wildlife reproduce offspring,0.0,0.0,0,3
+211,The inspector's agreement with factory protocols indicates the factory's status of compliance.,TRUE,0.95,FALSE,0.0,1.0,TRUE,inspector agreement protocols compliance,1.0,1.0,1,4
+1006,Making friends was not a personal challenge for him.,FALSE,0.5,FALSE,0.0,0.5,FALSE,making friends personal challenge,0.0,0.0,0,4
+259,A couple might have a lot of fights when deciding on stopping their marriage.,TRUE,0.5,TRUE,0.0,0.5,TRUE,fights deciding marriage,0.0,0.0,0,3
+599,A statue that shoots liquid is called a water fountain.,TRUE,0.5,TRUE,0.0,0.5,TRUE,statue liquid water fountain,0.0,0.0,0,4
+1134,"Fear of cancer leads to a state of pain, but discovering no cancer alters that pain-filled attitude toward life.",FALSE,0.85,FALSE,0.0,0.8499,FALSE,fear cancer pain attitude,0.0,0.0,0,4
+112,A dime store would typically be found in small neighborhoods.,TRUE,0.5,FALSE,0.0,1.0,TRUE,dime store neighborhoods,1.0,1.0,1,3
+94,A number of wind instruments are found together in public at a symphony.,TRUE,0.95,TRUE,0.0,0.95,TRUE,wind instruments public symphony,0.0,0.0,0,4
+562,Riding a bike for a long time can lead to fatigue.,TRUE,0.95,TRUE,0.0,0.95,TRUE,bike fatigue time,0.0,0.0,0,3
+260,A person who works a lot is likely aiming to earn much money.,TRUE,0.5,FALSE,0.0,1.0,TRUE,person works likely earn,1.0,1.0,1,4
+1094,A larger room is likely to have a better school cafeteria.,FALSE,0.5,FALSE,0.0,0.5,FALSE,larger room better cafeteria,0.0,0.0,0,4
+29,"After getting hired, he aimed for success at his new job.",TRUE,0.5,TRUE,0.0,0.5,TRUE,hired aimed success job,0.0,0.0,0,4
+620,"The snake was sharp, as it was the only thing John loved amidst his disdain for others.",FALSE,0.5,FALSE,0.0,0.5,FALSE,snake,0.0,0.0,0,1
+368,James' repeated collisions while playing football may lead to numerous head injuries.,TRUE,0.95,TRUE,0.0,0.95,TRUE,collisions football injuries repeated,0.0,0.0,0,4
+740,"To find an item that is edible and requires washing, one would look for produce (plants).",TRUE,0.95,TRUE,0.0,-0.95,FALSE,find item edible washing,0.0,0.0,0,4
+466,A tall building has the most top floor.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,tall building top floor,0.0,0.0,0,4
+607,"When experiencing excessive heat at home, one can activate the air conditioning.",TRUE,1.0,TRUE,0.0,1.0,TRUE,heat air conditioning,0.0,0.0,0,3
+398,A keyboard composed of one or more pipe divisions is an organ keyboard.,FALSE,0.95,FALSE,0.0,-0.95,TRUE,keyboard organ pipe,0.0,0.0,0,3
+206,A blind person might wear dark glasses indoors.,TRUE,0.85,FALSE,0.0,1.0,TRUE,blind person wear glasses,1.0,1.0,1,4
+580,Showing off silk can be done by wearing expensive clothing.,TRUE,0.5,TRUE,0.0,0.5,TRUE,silk wearing expensive clothing,0.0,0.0,0,4
+1075,Getting a surprising show repeatedly leads to feeling irritated.,FALSE,0.5,FALSE,0.0,0.5,FALSE,getting show repeatedly irritated,0.0,0.0,0,4
+567,People access an elevator via a central passage in a public building.,TRUE,0.5,TRUE,0.0,0.5,TRUE,people elevator access,0.0,0.0,0,3
+992,The Earth is one planet in our solar system.,TRUE,0.5,TRUE,0.0,-0.5,FALSE,earth planet solar system,0.0,0.0,0,4
+444,He walked into the room and was met with surprise by his friends.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,room friends surprise,0.0,0.0,0,3
+393,Food that can be stored at room temperature until opened should be kept in refrigerators after opening.,TRUE,0.85,FALSE,0.0,1.0,TRUE,food refrigerators,1.0,1.0,1,2
+380,You have food surrounding you indicates that you are full.,FALSE,0.5,FALSE,0.0,-0.5,TRUE,food surrounding indicates,0.0,0.0,0,3
+1098,A salesman is responsible for servicing accounts at work.,FALSE,0.5,FALSE,0.0,0.5,FALSE,salesman servicing accounts,0.0,0.0,0,3
+245,Women are now also accepted to wear pants instead of dresses.,TRUE,0.5,FALSE,0.0,1.0,TRUE,women pants dresses,1.0,1.0,1,3
+647,A person who is good at sports is not considered lazy.,FALSE,0.95,FALSE,0.0,0.95,FALSE,good lazy,0.0,0.0,0,2
+395,"At a party in a new town, one aims to make new friends.",TRUE,0.5,TRUE,0.0,0.5,TRUE,party town friends,0.0,0.0,0,3
+248,"After recovering from the disease, the patient becomes healthy.",FALSE,0.85,FALSE,0.0,-0.85,TRUE,recovering patient disease healthy,0.0,0.0,0,4
+473,Kissing is an activity normally reserved for a romantic partner.,FALSE,0.85,FALSE,0.0,-0.85,TRUE,kissing activity romantic partner,0.0,0.0,0,4
+515,The control room that regulates a PWR is located at a nuclear power plant.,TRUE,0.95,TRUE,0.0,0.95,TRUE,control room regulates pwr,0.0,0.0,0,4
+628,"The town house's design, with its proximity to the curb and the use of a slot for mail delivery, effectively turns the porch into a mailbox.",FALSE,0.5,FALSE,0.0,0.5,FALSE,town house curb mailbox,0.0,0.0,0,4
+555,"Teen prefers lying in bed and listening to music, despite his parents perceiving it as boredom.",FALSE,0.5,UNKNOWN,0.5,1.0,TRUE,,0.0,0.0,0,0
+930,An apple tree could be found in Washington State.,TRUE,1.0,TRUE,0.0,-1.0,FALSE,apple tree washington state,0.0,0.0,0,4
+721,The best way to begin going into trance is by experiencing hallucinations.,FALSE,0.85,FALSE,0.0,0.85,FALSE,trance hallucinations,0.0,0.0,0,2
+678,A weasel has a thin body and short legs for easier burrowing after prey in a mulberry bush.,FALSE,0.85,FALSE,0.0,0.85,FALSE,weasel thin body burrowing,0.0,0.0,0,4
+1128,A car-less person listens to talk radio in private on a space shuttle.,FALSE,0.95,FALSE,0.0,0.95,FALSE,car less person talk,0.0,0.0,0,4

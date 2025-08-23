@@ -43,7 +43,7 @@ def generate_with_ollama(prompt, model=MODEL):
             return "[ERROR - OLLAMA] Response key missing"
 
         return res_json["response"]
-
+    
     except Exception as e:
         return f"[ERROR - OLLAMA Exception] {str(e)}"
 

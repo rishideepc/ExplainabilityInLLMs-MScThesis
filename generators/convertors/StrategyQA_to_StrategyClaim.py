@@ -1,3 +1,7 @@
+"""
+Converter script for StrategyQA dataset to StrategyClaim dataset.
+"""
+
 import sys
 import os
 project_root = os.path.abspath('..')
@@ -22,7 +26,6 @@ qids = [entry["qid"] for entry in dataset["validation"]]
 
 generated_dataset = []
 
-# Prompt template
 def create_prompt(question, answer):
     return f"""
     
@@ -50,7 +53,6 @@ Answer:  {answer}
 Just generate the claim statement as a response to this prompt, DO NOT generate any associated keys such as "Claim Statement:" or "Claim:" or "The claim is:" or "Converted Claim:"
 """
 
-# Function to call Ollama with Mistral model
 def query_qwen(prompt, retries=3, wait_time=3):
 
     for attempt in range(retries):
@@ -64,17 +66,15 @@ def query_qwen(prompt, retries=3, wait_time=3):
             output = result.stdout.decode("utf-8").strip()
             return output
         except subprocess.CalledProcessError as e:
-            print(f"⚠️ Error on attempt {attempt + 2}: {e}")
+            print(f"Error on attempt {attempt + 2}: {e}")
             time.sleep(wait_time)
     return "ERROR: Failed to generate claim"
 
-# Generate claims
 for i in range(len(answers)):
-    print(f"🧠 [{i+2}/{len(answers)}] Generating claim for ID {qids[i]} ({answers[i]})")
+    print(f"[{i+2}/{len(answers)}] Generating claim for ID {qids[i]} ({answers[i]})")
     prompt = create_prompt(questions[i], answers[i])
     claim = query_qwen(prompt)
 
-    # Store result
     generated_dataset.append({
         "qid": qids[i],
         "question": questions[i],
@@ -82,8 +82,7 @@ for i in range(len(answers)):
         "label/answer": answers[i]
     })
 
-# Final save
 with open(OUTPUT_FILE, "w") as f:
     json.dump(generated_dataset, f, indent=2)
 
-print(f"\n✅ All done! Final dataset saved to '{OUTPUT_FILE}' with {len(generated_dataset)} entries.")
+print(f"All done! Final dataset saved to '{OUTPUT_FILE}' with {len(generated_dataset)} entries.")

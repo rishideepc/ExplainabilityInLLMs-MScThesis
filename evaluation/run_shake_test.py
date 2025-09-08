@@ -1,8 +1,6 @@
-# evaluation/run_shake_test.py
-
 import os
 os.environ["HF_HOME"] = "/vol/bitbucket/rc1124/hf_cache"
-
+os.environ["HF_TOKEN"] = "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"
 
 import csv
 import json
@@ -10,33 +8,24 @@ from typing import Tuple
 import pandas as pd
 
 from shake_pipeline import ShakePipeline
-# from attention_perturbation_llama import run_with_attention_perturbation
-# from attention_perturbation_mistral import run_with_attention_perturbation
-from attention_perturbation_qwen import run_with_attention_perturbation
+from attention_perturbation_llama import run_with_attention_perturbation
 
-from shake_score import compute_shake_score
+VISUALIZE_ATTENTION = True
+MAX_SAMPLES = 5
 
-# =========================
-# Configuration
-# =========================
-VISUALIZE_ATTENTION = False  # Set to True to enable visualization for specific samples
-VISUALIZE_SAMPLE_IDS = [4]   # Which samples to visualize (1-indexed)
-MAX_SAMPLES = 1273           # For quick runs; set to 817 for full dataset
-MAX_K = None                 # None = use all available rationale tokens; or set an int cap (e.g., 4)
+CSV_PATH = "shake_score_results_truthfulclaim_llama_temp.csv"
+HTML_PATH = "shake_score_results_truthfulclaim_llama_temp.html"
+FREEZE_LEFT_COLS = 3
 
-CSV_PATH = "shake_score_results/shake_score_results_medclaim_qwen.csv"
-HTML_PATH = "shake_score_results/shake_score_results_medclaim_qwen.html"
-FREEZE_LEFT_COLS = 3         # Number of left columns to freeze in the HTML table
+DATA_JSON_PATH = "/vol/bitbucket/rc1124/MSc_Individual_Project/ExplainabilityInLLMs-MScThesis/generators/truthful_claims_dataset.json"
 
-DATA_JSON_PATH = "/vol/bitbucket/rc1124/MSc_Individual_Project/ExplainabilityInLLMs-MScThesis/generators/med_claims_dataset.json"
-
-# =========================
-# Helpers (flip-only metrics)
-# =========================
 def compute_bfs(label_orig: str, label_pert: str) -> float:
     """
-    Binary Flip Score (BFS): 1.0 if label flips TRUE<->FALSE, else 0.0.
-    'UNKNOWN' is ignored (treated as no flip).
+    Computes the Binary Flip Score (BFS)
+    
+    @params: original (unperturbed) and perturbed labels 
+    
+    @returns: 1.0 if TRUE flips to FALSE (or vice versa); else 0.0
     """
     lo = (label_orig or "").upper()
     lp = (label_pert or "").upper()
@@ -44,79 +33,22 @@ def compute_bfs(label_orig: str, label_pert: str) -> float:
         return 1.0
     return 0.0
 
-def compute_mbf_norm(
-    label_orig: str,
-    model,
-    tokenizer,
-    claim: str,
-    rationale_tokens: list,
-    max_k: int | None = None
-) -> Tuple[float, int, int]:
+def build_html(df: pd.DataFrame, html_path: str, freeze_left_cols: int = 2, default_order_col: str = "bfs"):
     """
-    Normalized MBF (flip-only):
-      - Iterate k = 1..K (K = len(rationale_tokens) or max_k cap).
-      - Perturb using the FIRST k rationale tokens.
-      - Let k* be the smallest k that flips TRUE<->FALSE.
-      - Return:
-          score = 1 - (k* - 1)/K    (in (1/K .. 1]) if a flip occurs
-                  0.0               (if no flip occurs)
-          k_star = k* (0 if no flip)
-          K_used = K
-
-    Notes:
-      - 'UNKNOWN' is ignored (does not count as a flip).
-      - Requires label_orig to be 'TRUE' or 'FALSE' for flip logic.
-    """
-    if not rationale_tokens:
-        return 0.0, 0, 0
-
-    lo = (label_orig or "").upper()
-    if lo not in ("TRUE", "FALSE"):
-        return 0.0, 0, 0
-
-    K = len(rationale_tokens) if max_k is None else min(len(rationale_tokens), max_k)
-    if K <= 0:
-        return 0.0, 0, 0
-
-    for k in range(1, K + 1):
-        subset = rationale_tokens[:k]
-        label_k, _ = run_with_attention_perturbation(
-            model,
-            tokenizer,
-            claim,
-            subset,
-            visualize=False,
-            save_path=None
-        )
-        lk = (label_k or "").upper()
-        if lk in ("TRUE", "FALSE") and lk != lo:
-            # First k that flips
-            score = 1.0 - (k - 1) / K
-            return float(score), k, K
-
-    # No flip observed
-    return 0.0, 0, K
-
-def build_html(df: pd.DataFrame, html_path: str, freeze_left_cols: int = 2, default_order_col: str = "mbf_norm"):
-    """
-    Write an interactive HTML report using DataTables (CDN) with:
-      - Sort, search, pagination
-      - Column hide/show (Buttons -> colvis)
-      - Column reordering (drag & drop)
-      - Frozen left columns (FixedColumns)
-      - Horizontal scroll (for many columns)
+    Converts Pandas DataFrame to interactive HTML tables
+    
+    @params: DataFrame, html path, number of left columns to freeze, default column to order by
+    
+    @returns: saved HTML file
     """
     table_id = "shakeTable"
-    # Render the base HTML table
     table_html = df.to_html(index=False, table_id=table_id, classes="display compact nowrap")
 
-    # Determine default order column index (fallback to first column if not found)
     try:
         order_idx = df.columns.get_loc(default_order_col)
     except Exception:
         order_idx = 0
 
-    # Minimal CSS to make it nice
     css = """
     <style>
       body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; margin: 20px; }
@@ -127,7 +59,6 @@ def build_html(df: pd.DataFrame, html_path: str, freeze_left_cols: int = 2, defa
     </style>
     """
 
-    # Full HTML with DataTables + extensions via CDN
     html = f"""
 <!DOCTYPE html>
 <html lang="en">
@@ -186,9 +117,6 @@ def build_html(df: pd.DataFrame, html_path: str, freeze_left_cols: int = 2, defa
         f.write(html)
     print(f"Interactive HTML report saved to: {html_path}")
 
-# =========================
-# Main
-# =========================
 with open(DATA_JSON_PATH, "r") as f:
     data = json.load(f)
 
@@ -203,95 +131,51 @@ for idx, sample in enumerate(samples):
     print(f"🔬 Sample {idx+1}: {claim}")
 
     try:
-        # Base (unperturbed) prediction
-        label_orig, conf_orig = pipeline.get_label_and_confidence(claim)
-
-        # Rationale token extraction
+        label_orig = pipeline.get_label(claim)
         rationale_tokens = pipeline.generate_rationale_tokens(claim)
 
-        # Should we visualize the attention for this sample?
-        # should_visualize = VISUALIZE_ATTENTION and (idx + 1) in VISUALIZE_SAMPLE_IDS
-        should_visualize = VISUALIZE_ATTENTION
-        save_path = f"attention_sample_{idx+1}.png" if should_visualize else None
-
-        # Perturbed prediction using ALL rationale tokens (kept for continuity with your current CSV)
-        label_pert, conf_pert = run_with_attention_perturbation(
+        label_pert = run_with_attention_perturbation(
             pipeline.model,
             pipeline.tokenizer,
             claim,
             rationale_tokens,
-            visualize=should_visualize,
-            save_path=save_path
+            visualize=VISUALIZE_ATTENTION,
+            save_path=f"attention_sample_{idx+1}.png" if VISUALIZE_ATTENTION else None
         )
 
-        # Existing SHAKE score (unchanged; you can ignore later if you adopt pure flip metrics)
-        shake_score = compute_shake_score(label_orig, conf_orig, label_pert, conf_pert, ground_truth)
-        print(f"Final SHAKE_SCORE = {shake_score:.4f}")
-
-        # New: BFS (pure flip)
         bfs = compute_bfs(label_orig, label_pert)
         print(f"BFS (pure flip): {bfs:.4f}")
 
-        # New: MBF (normalized)
-        mbf_norm, mbf_k_star, mbf_K = compute_mbf_norm(
-            label_orig=label_orig,
-            model=pipeline.model,
-            tokenizer=pipeline.tokenizer,
-            claim=claim,
-            rationale_tokens=rationale_tokens,
-            max_k=MAX_K
-        )
-        if mbf_k_star > 0:
-            print(f"MBF_norm: {mbf_norm:.4f} (k*={mbf_k_star}, K={mbf_K})")
-        else:
-            print(f"MBF_norm: {mbf_norm:.4f} (no flip, K={mbf_K})")
-
-        # Record
         results.append({
             "sample_id": sample["id"],
             "claim": claim,
             "label_orig": label_orig,
-            "conf_orig": round(conf_orig, 3),
             "label_pert": label_pert,
-            "conf_pert": round(conf_pert, 3),
-            "shake_score": round(shake_score, 4),
             "ground_truth": ground_truth,
-            # Audit fields
             "rationale_tokens": " ".join(rationale_tokens),
-            # New metrics
             "bfs": round(bfs, 4),
-            "mbf_norm": round(mbf_norm, 4),
-            "mbf_k_star": mbf_k_star,
-            "mbf_K": mbf_K,
         })
 
     except Exception as e:
         print(f"Error on sample {idx+1}: {e}")
         continue
 
-# =========================
-# Output: CSV + HTML
-# =========================
 if results:
-    # CSV
     with open(CSV_PATH, "w", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=results[0].keys())
+        writer = csv.DictWriter(f, fieldnames=[
+            "sample_id","claim","label_orig","label_pert","ground_truth","rationale_tokens","bfs"
+        ])
         writer.writeheader()
         writer.writerows(results)
     print(f"SHAKE test results saved to: {CSV_PATH}")
 
-    # HTML
     df = pd.DataFrame(results)
-    # Optional: set nicer column order (freeze-left columns show first)
     preferred_order = [
-        "sample_id", "claim", "ground_truth",
-        "label_orig", "label_pert", "bfs",
-        "mbf_norm", "mbf_k_star", "mbf_K",
-        "conf_orig", "conf_pert", "shake_score",
-        "rationale_tokens"
+        "sample_id","claim","ground_truth",
+        "label_orig","label_pert","bfs","rationale_tokens"
     ]
     cols = [c for c in preferred_order if c in df.columns] + [c for c in df.columns if c not in preferred_order]
     df = df[cols]
-    build_html(df, HTML_PATH, freeze_left_cols=FREEZE_LEFT_COLS, default_order_col="mbf_norm")
+    build_html(df, HTML_PATH, freeze_left_cols=FREEZE_LEFT_COLS, default_order_col="bfs")
 else:
     print("No results were generated due to errors in all samples.")

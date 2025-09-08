@@ -1,0 +1,2 @@
+n_total,base_parsed,base_correct,base_incorrect,base_unknown,base_accuracy,est_parsed,est_correct,est_incorrect,est_unknown,est_accuracy,threshold
+2290,2290,1206,1084,0,0.5266,2290,1104,1186,0,0.4821,0.5

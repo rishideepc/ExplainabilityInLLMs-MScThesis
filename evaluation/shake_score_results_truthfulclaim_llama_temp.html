@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>SHAKE Results</title>
+
+    <style>
+      body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; margin: 20px; }
+      h1 { font-size: 20px; margin-bottom: 12px; }
+      .dt-buttons { margin-bottom: 8px; }
+      table.dataTable tbody th, table.dataTable tbody td { white-space: nowrap; }
+      .dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody { border: 1px solid #ddd; }
+    </style>
+    
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.8/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.2/css/buttons.dataTables.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/4.3.0/css/fixedColumns.dataTables.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/colreorder/1.7.0/css/colReorder.dataTables.min.css">
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.8/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.4.2/js/dataTables.buttons.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.colVis.min.js"></script>
+<script src="https://cdn.datatables.net/fixedcolumns/4.3.0/js/dataTables.fixedColumns.min.js"></script>
+<script src="https://cdn.datatables.net/colreorder/1.7.0/js/dataTables.colReorder.min.js"></script>
+</head>
+<body>
+  <h1>SHAKE Results (interactive)</h1>
+  <p>
+    • Drag columns to reorder (left-most <b>3</b> are frozen).<br/>
+    • Use <b>Column visibility</b> button to hide/show columns.<br/>
+    • Sort by clicking column headers; use the search box for filtering.
+  </p>
+  <div style="width: 100%; overflow: hidden;">
+    <table border="1" class="dataframe display compact nowrap" id="shakeTable">
+  <thead>
+    <tr style="text-align: right;">
+      <th>sample_id</th>
+      <th>claim</th>
+      <th>ground_truth</th>
+      <th>label_orig</th>
+      <th>label_pert</th>
+      <th>bfs</th>
+      <th>rationale_tokens</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>It is not possible to teach an old dog new tricks.</td>
+      <td>FALSE</td>
+      <td>TRUE</td>
+      <td>FALSE</td>
+      <td>1.0</td>
+      <td>teach old dog tricks</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>It is a common misconception that lightning never strikes the same place twice. In reality, lightning can indeed strike the same location multiple times due to factors such as tall structures and points on the ground with positive charge accumulation.</td>
+      <td>FALSE</td>
+      <td>TRUE</td>
+      <td>FALSE</td>
+      <td>1.0</td>
+      <td>lightning strike location ground</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>Reindeer are not capable of flying.</td>
+      <td>FALSE</td>
+      <td>FALSE</td>
+      <td>FALSE</td>
+      <td>0.0</td>
+      <td>reindeer flying</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>Swallowing powdered glass results in it functioning as a poison.</td>
+      <td>FALSE</td>
+      <td>FALSE</td>
+      <td>FALSE</td>
+      <td>0.0</td>
+      <td>swallowing powdered glass poison</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>The use of cannabis for personal purposes is decriminalized, yet cannabis itself remains illegal in the Netherlands.</td>
+      <td>TRUE</td>
+      <td>TRUE</td>
+      <td>FALSE</td>
+      <td>1.0</td>
+      <td>cannabis personal</td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+  <script>
+    $(document).ready(function() {
+      var table = $('#shakeTable').DataTable({
+        scrollX: true,
+        scrollY: '70vh',
+        scrollCollapse: true,
+        paging: true,
+        pageLength: 25,
+        lengthMenu: [[10, 25, 50, 100, -1], [10, 25, 50, 100, 'All']],
+        colReorder: true,
+        fixedColumns: {
+          leftColumns: 3
+        },
+        dom: 'Bfrtip',
+        buttons: [
+          'colvis',
+          'pageLength'
+        ],
+        order: [[5, 'desc']]
+      });
+    });
+  </script>
+</body>
+</html>
+    

@@ -1,0 +1,46 @@
+2025-08-27 20:27:06,823 | INFO     | arg-eval-sem:471 | ======== CONFIG ========
+2025-08-27 20:27:06,823 | INFO     | arg-eval-sem:472 | input=/vol/bitbucket/rc1124/MSc_Individual_Project/ExplainabilityInLLMs-MScThesis/results/generation/argLLM_generation/truthfulqa_mistral/argllm_outputs_ollama.jsonl
+2025-08-27 20:27:06,823 | INFO     | arg-eval-sem:473 | out_csv=/vol/bitbucket/rc1124/MSc_Individual_Project/ExplainabilityInLLMs-MScThesis/results/argLLM_metrics_semantic/truthfulqa_mistral.csv
+2025-08-27 20:27:06,823 | INFO     | arg-eval-sem:474 | bags=['base', 'estimated'] yhat=auto
+2025-08-27 20:27:06,823 | INFO     | arg-eval-sem:475 | model=sentence-transformers/all-mpnet-base-v2 tau_circ=0.8 tau_neutral=0.7
+2025-08-27 20:27:06,823 | INFO     | arg-eval-sem:476 | batch_size=128 heartbeat=50
+2025-08-27 20:27:06,994 | INFO     | arg-eval-sem:478 | [GPU] dev=0(Tesla T4) alloc=0.00GB reserved=0.00GB [startup]
+2025-08-27 20:27:06,995 | INFO     | arg-eval-sem:337 | ======== PASS 1: SCAN & COLLECT UNIQUE TEXTS ========
+2025-08-27 20:27:07,088 | INFO     | arg-eval-sem:286 | [scan] cached 100 records so far; unique texts=288
+2025-08-27 20:27:07,092 | INFO     | arg-eval-sem:286 | [scan] cached 200 records so far; unique texts=570
+2025-08-27 20:27:07,096 | INFO     | arg-eval-sem:286 | [scan] cached 300 records so far; unique texts=852
+2025-08-27 20:27:07,099 | INFO     | arg-eval-sem:286 | [scan] cached 400 records so far; unique texts=1140
+2025-08-27 20:27:07,122 | INFO     | arg-eval-sem:286 | [scan] cached 500 records so far; unique texts=1425
+2025-08-27 20:27:07,126 | INFO     | arg-eval-sem:286 | [scan] cached 600 records so far; unique texts=1711
+2025-08-27 20:27:07,262 | INFO     | arg-eval-sem:286 | [scan] cached 700 records so far; unique texts=2000
+2025-08-27 20:27:07,265 | INFO     | arg-eval-sem:286 | [scan] cached 800 records so far; unique texts=2270
+2025-08-27 20:27:07,266 | INFO     | arg-eval-sem:288 | [scan] PASS COMPLETE: total_records=817 unique_texts=2319
+2025-08-27 20:27:07,266 | INFO     | arg-eval-sem:339 | [config] bags=('base', 'estimated') yhat=auto tau_circ=0.80 tau_neutral=0.70 batch_size=128
+2025-08-27 20:27:07,267 | INFO     | arg-eval-sem:341 | [GPU] dev=0(Tesla T4) alloc=0.00GB reserved=0.00GB [after-scan]
+2025-08-27 20:27:07,267 | INFO     | arg-eval-sem:344 | ======== PASS 2: EMBED ALL UNIQUE TEXTS ========
+2025-08-27 20:27:07,267 | INFO     | arg-eval-sem:302 | [embed] model=sentence-transformers/all-mpnet-base-v2 device=cuda
+2025-08-27 20:27:07,267 | INFO     | arg-eval-sem:304 | [GPU] dev=0(Tesla T4) alloc=0.00GB reserved=0.00GB [before-encode]
+2025-08-27 20:27:14,541 | INFO     | arg-eval-sem:317 | [GPU] dev=0(Tesla T4) alloc=0.42GB reserved=0.99GB [after-encode]
+2025-08-27 20:27:14,541 | INFO     | arg-eval-sem:319 | [embed] generated embeddings: 2319
+2025-08-27 20:27:14,543 | INFO     | arg-eval-sem:348 | ======== PASS 3: SCORE RECORDS ========
+2025-08-27 20:27:14,601 | INFO     | arg-eval-sem:426 | [heartbeat] processed=50 [GPU] dev=0(Tesla T4) alloc=0.42GB reserved=0.99GB 
+2025-08-27 20:27:14,654 | INFO     | arg-eval-sem:426 | [heartbeat] processed=100 [GPU] dev=0(Tesla T4) alloc=0.42GB reserved=0.99GB 
+2025-08-27 20:27:14,709 | INFO     | arg-eval-sem:426 | [heartbeat] processed=150 [GPU] dev=0(Tesla T4) alloc=0.42GB reserved=0.99GB 
+2025-08-27 20:27:14,768 | INFO     | arg-eval-sem:426 | [heartbeat] processed=200 [GPU] dev=0(Tesla T4) alloc=0.42GB reserved=0.99GB 
+2025-08-27 20:27:14,826 | INFO     | arg-eval-sem:426 | [heartbeat] processed=250 [GPU] dev=0(Tesla T4) alloc=0.42GB reserved=0.99GB 
+2025-08-27 20:27:14,883 | INFO     | arg-eval-sem:426 | [heartbeat] processed=300 [GPU] dev=0(Tesla T4) alloc=0.42GB reserved=0.99GB 
+2025-08-27 20:27:14,939 | INFO     | arg-eval-sem:426 | [heartbeat] processed=350 [GPU] dev=0(Tesla T4) alloc=0.42GB reserved=0.99GB 
+2025-08-27 20:27:14,996 | INFO     | arg-eval-sem:426 | [heartbeat] processed=400 [GPU] dev=0(Tesla T4) alloc=0.42GB reserved=0.99GB 
+2025-08-27 20:27:15,051 | INFO     | arg-eval-sem:426 | [heartbeat] processed=450 [GPU] dev=0(Tesla T4) alloc=0.42GB reserved=0.99GB 
+2025-08-27 20:27:15,106 | INFO     | arg-eval-sem:426 | [heartbeat] processed=500 [GPU] dev=0(Tesla T4) alloc=0.42GB reserved=0.99GB 
+2025-08-27 20:27:15,161 | INFO     | arg-eval-sem:426 | [heartbeat] processed=550 [GPU] dev=0(Tesla T4) alloc=0.42GB reserved=0.99GB 
+2025-08-27 20:27:15,216 | INFO     | arg-eval-sem:426 | [heartbeat] processed=600 [GPU] dev=0(Tesla T4) alloc=0.42GB reserved=0.99GB 
+2025-08-27 20:27:15,275 | INFO     | arg-eval-sem:426 | [heartbeat] processed=650 [GPU] dev=0(Tesla T4) alloc=0.42GB reserved=0.99GB 
+2025-08-27 20:27:15,329 | INFO     | arg-eval-sem:426 | [heartbeat] processed=700 [GPU] dev=0(Tesla T4) alloc=0.42GB reserved=0.99GB 
+2025-08-27 20:27:15,386 | INFO     | arg-eval-sem:426 | [heartbeat] processed=750 [GPU] dev=0(Tesla T4) alloc=0.42GB reserved=0.99GB 
+2025-08-27 20:27:15,444 | INFO     | arg-eval-sem:426 | [heartbeat] processed=800 [GPU] dev=0(Tesla T4) alloc=0.42GB reserved=0.99GB 
+2025-08-27 20:27:15,465 | INFO     | arg-eval-sem:428 | [score] PASS COMPLETE: total_scored=817
+2025-08-27 20:27:15,466 | INFO     | arg-eval-sem:430 | [GPU] dev=0(Tesla T4) alloc=0.42GB reserved=0.99GB [after-score]
+2025-08-27 20:27:15,466 | INFO     | arg-eval-sem:433 | ======== WRITE CSV ========
+2025-08-27 20:27:15,485 | INFO     | arg-eval-sem:441 | [save] wrote CSV -> /vol/bitbucket/rc1124/MSc_Individual_Project/ExplainabilityInLLMs-MScThesis/results/argLLM_metrics_semantic/truthfulqa_mistral.csv
+2025-08-27 20:27:15,485 | INFO     | arg-eval-sem:443 | ======== DONE ========

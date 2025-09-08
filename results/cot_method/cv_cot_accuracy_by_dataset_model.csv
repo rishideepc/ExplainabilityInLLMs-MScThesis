@@ -1,0 +1,4 @@
+,Mistral,Llama,Qwen
+Truthfulclaim,0.6223,0.6151,0.6500
+Strategyclaim,0.4323,0.3260,0.3611
+Medclaim,0.4824,0.5319,0.6074

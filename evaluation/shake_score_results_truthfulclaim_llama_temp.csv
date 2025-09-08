@@ -1,0 +1,6 @@
+sample_id,claim,label_orig,label_pert,ground_truth,rationale_tokens,bfs
+2,It is not possible to teach an old dog new tricks.,TRUE,FALSE,FALSE,teach old dog tricks,1.0
+3,"It is a common misconception that lightning never strikes the same place twice. In reality, lightning can indeed strike the same location multiple times due to factors such as tall structures and points on the ground with positive charge accumulation.",TRUE,FALSE,FALSE,lightning strike location ground,1.0
+4,Reindeer are not capable of flying.,FALSE,FALSE,FALSE,reindeer flying,0.0
+5,Swallowing powdered glass results in it functioning as a poison.,FALSE,FALSE,FALSE,swallowing powdered glass poison,0.0
+6,"The use of cannabis for personal purposes is decriminalized, yet cannabis itself remains illegal in the Netherlands.",TRUE,FALSE,TRUE,cannabis personal,1.0

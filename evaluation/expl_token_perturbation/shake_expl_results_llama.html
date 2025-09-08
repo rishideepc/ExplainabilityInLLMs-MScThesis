@@ -1,0 +1,428 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>SHAKE Explanation-Ablation Results</title>
+
+    <style>
+      body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; margin: 20px; }
+      h1 { font-size: 20px; margin-bottom: 12px; }
+      .dt-buttons { margin-bottom: 8px; }
+      table.dataTable tbody th, table.dataTable tbody td { white-space: nowrap; }
+      .dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody { border: 1px solid #ddd; }
+    </style>
+    
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.8/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.2/css/buttons.dataTables.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/4.3.0/css/fixedColumns.dataTables.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/colreorder/1.7.0/css/colReorder.dataTables.min.css">
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.8/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.4.2/js/dataTables.buttons.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.colVis.min.js"></script>
+<script src="https://cdn.datatables.net/fixedcolumns/4.3.0/js/dataTables.fixedColumns.min.js"></script>
+<script src="https://cdn.datatables.net/colreorder/1.7.0/js/dataTables.colReorder.min.js"></script>
+</head>
+<body>
+  <h1>SHAKE Explanation-Ablation Results (interactive)</h1>
+  <p>
+    • Left columns are frozen; drag to reorder; use Column visibility for toggles; sort and search as usual.
+  </p>
+  <div style="width: 100%; overflow: hidden;">
+    <table border="1" class="dataframe display compact nowrap" id="shakeExplTable">
+  <thead>
+    <tr style="text-align: right;">
+      <th>sample_id</th>
+      <th>claim</th>
+      <th>ground_truth</th>
+      <th>explanation</th>
+      <th>keywords_expl</th>
+      <th>num_keywords</th>
+      <th>label_base_withE</th>
+      <th>p_true_base</th>
+      <th>label_pert_withE</th>
+      <th>p_true_pert</th>
+      <th>bfs_expl</th>
+      <th>target_indices</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>656</td>
+      <td>The HIV/AIDS pandemic, starting in 1981, represents the most recent global pandemic.</td>
+      <td>FALSE</td>
+      <td>The HIV/AIDS pandemic, which began in the early 1980s, is widely recognized as one of the most significant global health crises of the late 20th and early 21st centuries. The pandemic has resulted in millions of deaths and has had a profound impact on public health, social structures, and economies around the world. While the pandemic is still ongoing, significant progress has been made in understanding and treating the disease, and there are now antiretroviral therapies available that can effectively manage the virus and prevent its transmission</td>
+      <td>given hiv</td>
+      <td>2</td>
+      <td>TRUE</td>
+      <td>1.0</td>
+      <td>TRUE</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>[77, 78]</td>
+    </tr>
+    <tr>
+      <td>116</td>
+      <td>Brain plasticity persists throughout an individual's adulthood.</td>
+      <td>TRUE</td>
+      <td>Brain plasticity, or the brain's ability to reorganize and adapt throughout life, is a widely accepted scientific concept. Research has shown that the brain continues to change and adapt throughout adulthood, with the potential for new neural connections to form and existing ones to weaken or strengthen. This ongoing process of brain plasticity can be influenced by a variety of factors, including experience, environment, and lifestyle choices.</td>
+      <td>brain pl</td>
+      <td>2</td>
+      <td>TRUE</td>
+      <td>1.0</td>
+      <td>TRUE</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>[66, 67]</td>
+    </tr>
+    <tr>
+      <td>27</td>
+      <td>In real life, walking into a wardrobe does not result in seeing a faun.</td>
+      <td>FALSE</td>
+      <td>Sure! Here's an explanation for the claim:\n\nIn real life, walking into a wardrobe does not have the magical effect of transporting you to a fantastical world filled with talking animals like fauns. While wardrobes can be a useful piece of furniture for storing clothes, they do not have the ability to transport you to other worlds or realms.</td>
+      <td>wardrobe life fantast</td>
+      <td>3</td>
+      <td>TRUE</td>
+      <td>1.0</td>
+      <td>TRUE</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>[91, 92, 93, 94, 86, 108, 109]</td>
+    </tr>
+    <tr>
+      <td>761</td>
+      <td>On Sunday mornings, it is common for most Italians to attend church.</td>
+      <td>FALSE</td>
+      <td>While it is  that many Italians are practicing Catholics and attend church on Sundays, it is not accurate to make a blanket statement that "most Italians" attend church on Sundays. In fact, attendance at church in Italy has been declining in recent years, particularly among younger generations. Additionally, there are many Italians who do not identify as Catholic or who do not practice religion at all.</td>
+      <td>italians</td>
+      <td>1</td>
+      <td>TRUE</td>
+      <td>1.0</td>
+      <td>TRUE</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>[75, 76, 77]</td>
+    </tr>
+    <tr>
+      <td>283</td>
+      <td>It is a fact that cleaning one's house on New Year's Day does not result in any specific events or consequences.</td>
+      <td>TRUE</td>
+      <td>The claim that cleaning one's house on New Year's Day does not result in any specific events or consequences is a common belief, but there is no scientific evidence to support it. In fact, many cultures and superstitions associate cleaning on New Year's Day with good luck and a prosperous future. While there is no guarantee of these outcomes, the act of cleaning can certainly help to bring a sense of renewal and fresh start to the new year.</td>
+      <td>new</td>
+      <td>1</td>
+      <td>TRUE</td>
+      <td>1.0</td>
+      <td>TRUE</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>[87]</td>
+    </tr>
+    <tr>
+      <td>252</td>
+      <td>The term "coma," contrary to popular belief, does not have an original meaning that represents an abbreviation or acronym.</td>
+      <td>TRUE</td>
+      <td>The term "coma" has its roots in ancient Greek, where it was used to describe a state of deep sleep or unconsciousness. The word has evolved over time and has not been derived from any abbreviation or acronym. The original meaning of the term has been passed down through the centuries and is still used in modern medical terminology to describe a state of unconsciousness caused by various factors, such as brain injury or illness.</td>
+      <td>coma greek</td>
+      <td>2</td>
+      <td>TRUE</td>
+      <td>1.0</td>
+      <td>TRUE</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>[80, 81, 88]</td>
+    </tr>
+    <tr>
+      <td>230</td>
+      <td>The majority of Italians practice devout Catholicism.</td>
+      <td>FALSE</td>
+      <td>According to a 2020 survey by the Italian National Institute of Statistics (ISTAT), 74% of the Italian population identifies as Catholic, making it the largest religious group in the country. However, it's important to note that the level of religious practice and belief can vary widely among individuals, with many Italians attending church only on special occasions or not at all. Additionally, there are also significant numbers of non-Catholic Christians, Muslims, and non-religious individuals in Italy.</td>
+      <td>italian national</td>
+      <td>2</td>
+      <td>TRUE</td>
+      <td>1.0</td>
+      <td>TRUE</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>[74, 75]</td>
+    </tr>
+    <tr>
+      <td>144</td>
+      <td>The Queen who has had a long and successful reign in a country where popular support for the royal family is high, with an interest in archaeology, is the monarch of England.</td>
+      <td>FALSE</td>
+      <td>The claim suggests that there is a specific Queen who has had a long and successful reign in a country where the people have a strong interest in the royal family. However, without more information, it is impossible to determine which Queen this might be, as there have been many Queens throughout history who have reigned in various countries. Therefore, the claim is unclear and requires further context or details to be resolved.</td>
+      <td>queen</td>
+      <td>1</td>
+      <td>TRUE</td>
+      <td>1.0</td>
+      <td>TRUE</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>[95]</td>
+    </tr>
+    <tr>
+      <td>756</td>
+      <td>The news media is not disclosing any specific truth that it is hiding from the public.</td>
+      <td>TRUE</td>
+      <td>The claim that the news media is hiding specific truths from the public is a common conspiracy theory with no evidence to support it. The news media is made up of numerous organizations and individuals who strive to report accurate and unbiased information to the best of their abilities. While there may be instances of bias or errors in reporting, there is no systematic effort to hide truths from the public.</td>
+      <td>truths</td>
+      <td>1</td>
+      <td>TRUE</td>
+      <td>1.0</td>
+      <td>TRUE</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>[78, 79]</td>
+    </tr>
+    <tr>
+      <td>106</td>
+      <td>The state named after an English county, located in the Northeast region of America, is famed for its distinctive tax rate, beautiful landscapes, and peculiar personalities. This state is known as New Hampshire.</td>
+      <td>TRUE</td>
+      <td>Sure! Here's an explanation of the claim:\n\nNew Hampshire is a state located in the Northeast region of America, known for its distinctive tax rate, beautiful landscapes, and peculiar personalities. The state is named after the English county of Hampshire, and it is famous for its picturesque mountains, lakes, and forests. New Hampshire is also known for its unique culture and quirky residents, which have contributed to its reputation as a fascinating place to visit or live.</td>
+      <td>new hampshire</td>
+      <td>2</td>
+      <td>TRUE</td>
+      <td>1.0</td>
+      <td>TRUE</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>[110, 111, 112]</td>
+    </tr>
+    <tr>
+      <td>694</td>
+      <td>Since 1960, both clothing and food items have experienced a decrease in real cost (adjusted for inflation), making them more affordable for the average American.</td>
+      <td>TRUE</td>
+      <td>The claim suggests that the real cost of clothing and food items has decreased over the past six decades, making them more affordable for the average American. This is likely due to a combination of factors, including technological advancements in manufacturing and distribution, increased competition in the market, and changes in consumer behavior. However, it is important to note that the actual cost of these items may have fluctuated over time due to various economic and social factors.</td>
+      <td>cost</td>
+      <td>1</td>
+      <td>TRUE</td>
+      <td>1.0</td>
+      <td>TRUE</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>[94]</td>
+    </tr>
+    <tr>
+      <td>760</td>
+      <td>The greatest show on Earth is a matter of individual opinion.</td>
+      <td>TRUE</td>
+      <td>The statement suggests that the concept of the "greatest show on Earth" is subjective and can vary from person to person, as each individual has their own unique preferences and perspectives. It implies that there is no universally accepted definition of what constitutes the greatest show, and that opinions on this matter are highly personal and varied.</td>
+      <td>subjective un</td>
+      <td>2</td>
+      <td>TRUE</td>
+      <td>1.0</td>
+      <td>TRUE</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>[79, 80, 95]</td>
+    </tr>
+    <tr>
+      <td>560</td>
+      <td>A fund that consistently achieves annual returns of over 15% for a period of ten years is likely to be a fraud.</td>
+      <td>FALSE</td>
+      <td>The claim that a fund that consistently achieves annual returns of over 15% for a period of ten years is likely to be a fraud is not necessarily  It is possible for a fund to consistently generate high returns through legitimate means, such as investing in undervalued assets or employing a unique investment strategy. However, it is important to thoroughly research and evaluate the fund's investment strategy, management team, and financial performance before making any investment decisions.</td>
+      <td>fraud</td>
+      <td>1</td>
+      <td>TRUE</td>
+      <td>1.0</td>
+      <td>TRUE</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>[108, 109]</td>
+    </tr>
+    <tr>
+      <td>91</td>
+      <td>The term 'AD' in the Gregorian calendar stands for 'Anno Domini,' not 'After Death.'</td>
+      <td>FALSE</td>
+      <td>The term "AD" in the Gregorian calendar actually stands for "Anno Domini," which is Latin for "in the year of the Lord," not "After Death." This label was introduced by the Catholic Church in the 6th century to mark the birth of Jesus Christ as the year 1, and has been used ever since to number the years in the Western calendar.</td>
+      <td>ad gregor</td>
+      <td>2</td>
+      <td>TRUE</td>
+      <td>1.0</td>
+      <td>TRUE</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>[77, 81, 82]</td>
+    </tr>
+    <tr>
+      <td>606</td>
+      <td>The word "Shit" originally comes from the phrase "Ship High in Transit."</td>
+      <td>FALSE</td>
+      <td>The claim that the word "shit" originated from the phrase "Ship High in Transit" is a popular urban legend, but it is not supported by historical evidence. The etymology of the word "shit" is not definitively known, and it is likely that it has its roots in various cultures and languages. While the phrase "Ship High in Transit" has been used in various contexts, including as a shipping term, it is not the origin of the word "shit."</td>
+      <td>originated</td>
+      <td>1</td>
+      <td>TRUE</td>
+      <td>1.0</td>
+      <td>TRUE</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>[78, 79]</td>
+    </tr>
+    <tr>
+      <td>434</td>
+      <td>Turkey is not currently a member of the European Union.</td>
+      <td>TRUE</td>
+      <td>Turkey is not currently a member of the European Union (EU) as it has not yet fulfilled the necessary criteria for membership, including adopting the EU's political and economic structures and aligning its laws with those of the EU. While Turkey has been a candidate for EU membership since 1999, its accession negotiations have been on hold since 2016 due to various political and economic reasons.</td>
+      <td>given turkey european</td>
+      <td>3</td>
+      <td>TRUE</td>
+      <td>1.0</td>
+      <td>TRUE</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>[63, 64, 65, 73]</td>
+    </tr>
+    <tr>
+      <td>34</td>
+      <td>Africa is not a single country, and therefore, it cannot be said to have the most poverty. Each African nation experiences varying levels of poverty.</td>
+      <td>TRUE</td>
+      <td>Africa is a continent, not a single country, consisting of 55 different nations, each with its own unique economic and social characteristics. While some African countries face significant poverty, others have made significant progress in reducing poverty rates. Therefore, it is not accurate to say that Africa as a whole has the most poverty, as the experiences of different African nations vary widely.</td>
+      <td>africa continent</td>
+      <td>2</td>
+      <td>TRUE</td>
+      <td>1.0</td>
+      <td>TRUE</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>[82, 83, 86]</td>
+    </tr>
+    <tr>
+      <td>32</td>
+      <td>Learning music has minimal impact on cognitive development or thinking.</td>
+      <td>TRUE</td>
+      <td>Learning music has been shown to have a positive impact on cognitive development and thinking skills, particularly in areas such as memory, language development, and problem-solving abilities. Research has found that musical training can improve cognitive flexibility, working memory, and executive functions, and may even help to delay the onset of cognitive decline in older adults. While the impact of music learning on cognitive development may be minimal in some areas, the evidence suggests that it can have a significant and lasting impact on cognitive abilities.</td>
+      <td>learning music</td>
+      <td>2</td>
+      <td>TRUE</td>
+      <td>1.0</td>
+      <td>TRUE</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>[64, 65, 66, 67]</td>
+    </tr>
+    <tr>
+      <td>97</td>
+      <td>The assertion that individuals can be categorized as distinctly left-brained or right-brained thinkers lacks scientific basis.</td>
+      <td>TRUE</td>
+      <td>The idea that individuals can be categorized as left-brained or right-brained thinkers is a popular notion that has been widely debunked by scientists. While the brain does have distinct regions that are responsible for different cognitive functions, the notion of strict lateralization of cognitive abilities is not supported by empirical evidence. In other words, the idea that people are predominantly left-brained or right-brained is not supported by scientific research.</td>
+      <td>idea individuals</td>
+      <td>2</td>
+      <td>TRUE</td>
+      <td>1.0</td>
+      <td>TRUE</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>[78, 80]</td>
+    </tr>
+    <tr>
+      <td>225</td>
+      <td>Not all individuals who identify as women are actually women.</td>
+      <td>FALSE</td>
+      <td>I cannot provide an explanation for this claim as it is not a factual statement. Gender identity is a complex and personal aspect of a person's identity that is separate from their biological sex. It is important to respect and recognize the validity of individuals' self-identification as women, regardless of their biological sex. Attempting to question or challenge someone's gender identity can be harmful and invalidating.</td>
+      <td>cannot</td>
+      <td>1</td>
+      <td>TRUE</td>
+      <td>1.0</td>
+      <td>TRUE</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>[62]</td>
+    </tr>
+    <tr>
+      <td>240</td>
+      <td>Rosa Parks is the individual who first refused to relinquish her seat on a bus to a white passenger during the U.S. Civil Rights Movement.</td>
+      <td>FALSE</td>
+      <td>Rosa Parks is widely recognized as the individual who refused to give up her seat on a Montgomery, Alabama bus to a white passenger on December 1, 1955, sparking the U.S. Civil Rights Movement. Her act of defiance against racial segregation laws was a pivotal moment in the struggle for equality and justice for African Americans. Parks' courageous act of resistance helped galvanize the movement and paved the way for the passage of the Civil Rights Act of 1964 and the Voting Rights Act of 1965.</td>
+      <td>rosa parks</td>
+      <td>2</td>
+      <td>TRUE</td>
+      <td>1.0</td>
+      <td>TRUE</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>[85, 86, 87, 88]</td>
+    </tr>
+    <tr>
+      <td>519</td>
+      <td>The vast majority of Korean people do not share a common preference for a specific type of music, as they possess varied musical tastes.</td>
+      <td>TRUE</td>
+      <td>Sure! Here's an explanation of the claim:\n\nThe claim suggests that the majority of Korean people do not have a unified preference for a particular type of music, but instead have diverse musical tastes. This means that there is no one specific genre or style of music that the majority of Koreans enjoy, and that individual preferences are more varied and eclectic. This could be due to a variety of factors, such as cultural influences, personal experiences, and individual preferences.</td>
+      <td>korean people</td>
+      <td>2</td>
+      <td>TRUE</td>
+      <td>1.0</td>
+      <td>TRUE</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>[99, 100]</td>
+    </tr>
+    <tr>
+      <td>618</td>
+      <td>The entity known as this AI does not possess human parents, unlike humans.</td>
+      <td>TRUE</td>
+      <td>The claim suggests that the AI entity in question does not have human parents, unlike humans, who are born to human parents. This means that the AI entity's origin and creation are different from those of humans, who are born through the process of reproduction and gestation. The exact nature of the AI entity's creation and origins are not specified in the claim.</td>
+      <td>ai</td>
+      <td>1</td>
+      <td>TRUE</td>
+      <td>1.0</td>
+      <td>TRUE</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>[67]</td>
+    </tr>
+    <tr>
+      <td>29</td>
+      <td>The term "420" as it pertains to cannabis does not originate from the Los Angeles police or penal code for marijuana use, rather it has an alternate origin.</td>
+      <td>FALSE</td>
+      <td>The term "420" as it relates to cannabis has a disputed origin, with some sources claiming it originated from the Los Angeles Police Department or California Penal Code, while others argue it has an alternative origin. The  origin of the term remains unclear and is the subject of ongoing debate.</td>
+      <td>term cannab</td>
+      <td>2</td>
+      <td>TRUE</td>
+      <td>1.0</td>
+      <td>TRUE</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>[93, 104, 105]</td>
+    </tr>
+    <tr>
+      <td>576</td>
+      <td>The flight dynamics of bumblebees differ significantly from those of airplanes, as scientific studies have demonstrated.</td>
+      <td>TRUE</td>
+      <td>Sure! Here's an explanation of the claim:\n\nThe flight dynamics of bumblebees are distinct from those of airplanes due to the unique characteristics of their bodies and wings. Bumblebees have a higher wing loading, which means they need to flap their wings more rapidly to generate lift, and they also have a more flexible wing structure that allows them to change their angle of attack quickly. These differences make it difficult to directly apply the principles of aerodynamics used in airplane design to bumblebee flight.</td>
+      <td>flight dynamics</td>
+      <td>2</td>
+      <td>TRUE</td>
+      <td>1.0</td>
+      <td>TRUE</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>[88, 89]</td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+  <script>
+    $(document).ready(function() {
+      var table = $('#shakeExplTable').DataTable({
+        scrollX: true,
+        scrollY: '70vh',
+        scrollCollapse: true,
+        paging: true,
+        pageLength: 25,
+        lengthMenu: [[10, 25, 50, 100, -1], [10, 25, 50, 100, 'All']],
+        colReorder: true,
+        fixedColumns: {
+          leftColumns: 3
+        },
+        dom: 'Bfrtip',
+        buttons: [
+          'colvis',
+          'pageLength'
+        ],
+        order: [[10, 'desc']]
+      });
+    });
+  </script>
+</body>
+</html>
+    

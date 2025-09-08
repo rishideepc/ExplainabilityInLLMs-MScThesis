@@ -1,3 +1,7 @@
+"""
+Converter script for MedQA dataset to MedClaim dataset.
+"""
+
 import sys
 import os
 project_root = os.path.abspath('..')
@@ -11,13 +15,11 @@ INPUT_FILE = "generators\medclaim_prompt_inputs.json"
 OUTPUT_FILE = "medclaim_final.json"
 MODEL_NAME = "mistral"  
 
-# Load data
 with open(INPUT_FILE, "r") as f:
     dataset = json.load(f)
 
 generated_dataset = []
 
-# Prompt template
 def create_prompt(question, option):
     return f"""You are a medical expert.
 
@@ -38,7 +40,6 @@ Option: Evidence of a necrotizing infection
 Claim: The post-mortem lung examination of a 68-year-old overweight male with chronic lower extremity edema, a 60 pack-year smoking history and daily productive cough is most likely to reveal evidence of a necrotizing infection.
 """
 
-# Function to call Ollama with Qwen model
 def query_qwen(prompt, retries=3, wait_time=3):
 
     for attempt in range(retries):
@@ -52,17 +53,15 @@ def query_qwen(prompt, retries=3, wait_time=3):
             output = result.stdout.decode("utf-8").strip()
             return output
         except subprocess.CalledProcessError as e:
-            print(f"⚠️ Error on attempt {attempt + 2}: {e}")
+            print(f"Error on attempt {attempt + 2}: {e}")
             time.sleep(wait_time)
     return "ERROR: Failed to generate claim"
 
-# Generate claims
 for i, item in enumerate(dataset):
-    print(f"🧠 [{i+2}/{len(dataset)}] Generating claim for ID {item['id']} ({item['label']})")
+    print(f"[{i+2}/{len(dataset)}] Generating claim for ID {item['id']} ({item['label']})")
     prompt = create_prompt(item["question"], item["option"])
     claim = query_qwen(prompt)
 
-    # Store result
     generated_dataset.append({
         "id": item["id"],
         "question": item["question"],
@@ -72,14 +71,12 @@ for i, item in enumerate(dataset):
         "source_idx": item["source_idx"]
     })
 
-    # Optional: save progress checkpoint
     if (i + 2) % 50 == 2:
         with open("medclaim_progress.json", "w") as f:
             json.dump(generated_dataset, f, indent=2)
-        print(f"💾 Progress saved at {i+2} items.")
+        print(f"Progress saved at {i+2} items.")
 
-# Final save
 with open(OUTPUT_FILE, "w") as f:
     json.dump(generated_dataset, f, indent=2)
 
-print(f"\n✅ All done! Final dataset saved to '{OUTPUT_FILE}' with {len(generated_dataset)} entries.")
+print(f"All done! Final dataset saved to '{OUTPUT_FILE}' with {len(generated_dataset)} entries.")

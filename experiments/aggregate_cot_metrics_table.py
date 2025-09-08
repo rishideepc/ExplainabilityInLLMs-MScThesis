@@ -1,17 +1,20 @@
+"""
+CoT metrics aggregation script for all datasets and models; 
+evaluates each JSONL file to compile the average metrics into a summary table;
+saves results to CSV and interactive HTML files.
+"""
+
 import os
 import sys
 import json
 from collections import defaultdict
 import pandas as pd
 
-# Set project root
 project_root = os.path.abspath("...")
 sys.path.append(project_root)
 
-# Import evaluation logic
 from evaluation.explanation_evaluation_calc import evaluate_all_cot
 
-# === Configuration ===
 datasets = ["truthfulqa", "strategyqa", "medqa", "commonsenseqa"]
 models = ["mistral", "llama", "qwen"]
 metric_keys = ["redundancy", "weak_relevance", "strong_relevance"]
@@ -20,7 +23,6 @@ base_path = os.path.join(project_root, "results", "generation")
 output_csv = os.path.join(project_root, "results", "cot_metrics_summary.csv")
 output_html = os.path.join(project_root, "results", "cot_metrics_summary.html")
 
-# === Collect results ===
 summary = defaultdict(dict)
 
 for dataset in datasets:
@@ -37,7 +39,6 @@ for dataset in datasets:
             print(f"[WARNING] No .jsonl files in {folder_path}")
             continue
 
-        # Assume only one file per folder
         filepath = os.path.join(folder_path, jsonl_files[0])
         print(f"Processing: {filepath}")
 
@@ -51,7 +52,6 @@ for dataset in datasets:
             print(f"[WARNING] No results in file: {filepath}")
             continue
 
-        # Compute average metrics
         for metric in metric_keys:
             try:
                 avg = sum(entry[metric] for entry in results) / len(results)
@@ -60,27 +60,22 @@ for dataset in datasets:
                 print(f"[ERROR] {metric} failed for {dataset}_{model}: {e}")
                 summary[dataset][f"{model}_{metric}"] = "N/A"
 
-# === Convert to DataFrame ===
 df = pd.DataFrame.from_dict(summary, orient="index")
 df.index.name = "Dataset"
 df = df.reset_index()
 
-# Reorder columns
 ordered_cols = ["Dataset"]
 for model in models:
     for metric in metric_keys:
         ordered_cols.append(f"{model}_{metric}")
 df = df[ordered_cols]
 
-# === Display clean table ===
 print("\n=== CoT Explanation Evaluation Summary ===\n")
 print(df.to_string(index=False))
 
-# === Save as CSV ===
 df.to_csv(output_csv, index=False)
 print(f"\n[✓] Saved summary CSV to: {output_csv}")
 
-# === Save as interactive HTML ===
 with open(output_html, "w") as f:
     f.write("""
 <html>

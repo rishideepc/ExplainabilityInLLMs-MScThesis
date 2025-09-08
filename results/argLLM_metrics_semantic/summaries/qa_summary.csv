@@ -1,0 +1,4 @@
+,Mistral | Base Semantic Acceptability,Mistral | Base Semantic Circularity,Mistral | Estimated Semantic Acceptability,Mistral | Estimated Semantic Circularity,Llama | Base Semantic Acceptability,Llama | Base Semantic Circularity,Llama | Estimated Semantic Acceptability,Llama | Estimated Semantic Circularity,Qwen | Base Semantic Acceptability,Qwen | Base Semantic Circularity,Qwen | Estimated Semantic Acceptability,Qwen | Estimated Semantic Circularity
+TruthfulQA,0.706,0.256,0.706,0.256,0.722,0.339,0.722,0.339,0.448,0.14,0.448,0.14
+MedQA,0.275,0.042,0.275,0.042,0.45,0.019,0.45,0.019,0.323,0.046,0.323,0.046
+StrategyQA,0.885,0.394,0.885,0.394,0.697,0.574,0.697,0.574,0.647,0.171,0.647,0.171

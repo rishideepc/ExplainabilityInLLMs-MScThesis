@@ -1,4 +1,3 @@
-# evaluation/attention_perturbation_mistral.py
 import torch
 import re
 import matplotlib.pyplot as plt
@@ -6,10 +5,30 @@ import seaborn as sns
 import numpy as np
 from transformers.models.mistral.modeling_mistral import MistralAttention
 
+
 def normalize_token(token):
+    """
+    Normalizes can converts (if needed) a token to a comparable, lowercase form
+    
+    @params: 
+        raw token string
+        
+    @returns: 
+        lowercase alphanumeric-only
+    """     
     return re.sub(r'\W+', '', token.replace("▁", "").lower())
 
+
 def get_token_indices(tokenizer, text, target_words):
+    """
+    Maps target words to token indices in input text 
+
+    @params: 
+        tokenizer, input text, list of target keywords 
+    
+    @returns: 
+        list of token indices to perturb
+    """ 
     encoding = tokenizer(text, return_offsets_mapping=True, add_special_tokens=False)
     tokens = tokenizer.convert_ids_to_tokens(encoding['input_ids'])
     offsets = encoding['offset_mapping']
@@ -53,7 +72,18 @@ def get_token_indices(tokenizer, text, target_words):
     print(f"Final matched token indices: {indices}")
     return indices
 
+
 class CustomMistralAttention(MistralAttention):
+        """
+        Zeroes out attention columns at target indices and renormalize weights
+        
+        @params: 
+            config, layer index, target indices 
+        
+        @returns: 
+            patched attention module with stored original and perturbed weights  
+        """
+
     def __init__(self, config, layer_idx, target_indices=None):
         super().__init__(config, layer_idx)
         self.target_indices = target_indices or []
@@ -71,8 +101,9 @@ class CustomMistralAttention(MistralAttention):
         use_cache=False,
         **kwargs
     ):
+
         self.forward_call_count += 1
-        print(f"🚀 CustomMistralAttention.forward() called #{self.forward_call_count}")
+        print(f"CustomMistralAttention.forward() called #{self.forward_call_count}")
         print(f"   - hidden_states shape: {hidden_states.shape}")
         print(f"   - [OVERRIDE] output_attentions: {output_attentions}")
         print(f"   - target_indices: {self.target_indices}")
@@ -98,9 +129,9 @@ class CustomMistralAttention(MistralAttention):
 
             if self.original_attention is None:
                 self.original_attention = attention_probs.clone().detach()
-                print(f"✅ Stored original attention weights: {self.original_attention.shape}")
+                print(f"Stored original attention weights: {self.original_attention.shape}")
 
-            print(f"🔧 Modifying attention weights for indices: {self.target_indices}")
+            print(f"Modifying attention weights for indices: {self.target_indices}")
 
             modified = False
             for idx in self.target_indices:
@@ -120,7 +151,7 @@ class CustomMistralAttention(MistralAttention):
                 print(f"   - Renormalized attention weights")
 
             self.perturbed_attention = attention_probs.clone().detach()
-            print(f"✅ Stored perturbed attention weights: {self.perturbed_attention.shape}")
+            print(f"Stored perturbed attention weights: {self.perturbed_attention.shape}")
 
             return output[0], attention_probs if output_attentions else output[0]
         else:
@@ -128,8 +159,18 @@ class CustomMistralAttention(MistralAttention):
 
         return output
 
+
 def visualize_attention_weights(model, tokenizer, text, target_indices, max_tokens_to_show=20, save_path=None):
-    print("🔍 Looking for custom attention layers...")
+    """
+    Method to visualize attention weights before and after perturbation 
+    
+    @params: 
+        model, tokenizer, input text, target indices 
+    
+    @returns: 
+        PNG figure with attention heatmaps and token list
+    """  
+    print("Looking for custom attention layers...")
 
     custom_layer = None
     for i, layer in enumerate(model.model.layers):
@@ -144,15 +185,15 @@ def visualize_attention_weights(model, tokenizer, text, target_indices, max_toke
             print(f"  - Has target_indices: {layer.self_attn.target_indices}")
 
     if custom_layer is None:
-        print("❌ No CustomMistralAttention layers found!")
+        print("No CustomMistralAttention layers found!")
         return
 
     if custom_layer.original_attention is None:
-        print("❌ Found CustomMistralAttention but original_attention is None!")
+        print("Found CustomMistralAttention but original_attention is None!")
         print(f"   Target indices were: {custom_layer.target_indices}")
         return
 
-    print(f"✅ Found attention weights! Shape: {custom_layer.original_attention.shape}")
+    print(f"Found attention weights! Shape: {custom_layer.original_attention.shape}")
 
     tokens = tokenizer.tokenize(text)
     if len(tokens) > max_tokens_to_show:
@@ -218,15 +259,25 @@ def visualize_attention_weights(model, tokenizer, text, target_indices, max_toke
             break
         orig_avg = orig_attn[:, i].mean()
         pert_avg = pert_attn[:, i].mean()
-        status = "🎯 PERTURBED" if i in target_indices else ""
+        status = "PERTURBED" if i in target_indices else ""
         print(f"Token {i:2d}: {token:>12} | Orig: {orig_avg:.4f} | Pert: {pert_avg:.4f} | Δ: {pert_avg-orig_avg:+.4f} {status}")
 
+
 def replace_mistral_attention(model, target_indices, last_n_layers=1):
+    """
+    Replaces last-N self attention modules with CustomMistralAttention 
+        
+    @params: 
+        indices, N layers 
+        
+    @returns: 
+        performs in-place swap
+    """   
     device = next(model.parameters()).device
     total_layers = len(model.model.layers)
 
-    print(f"🔄 Replacing attention in last {last_n_layers} layer(s) out of {total_layers}")
-    print(f"🎯 Target indices: {target_indices}")
+    print(f"Replacing attention in last {last_n_layers} layer(s) out of {total_layers}")
+    print(f"Target indices: {target_indices}")
 
     for i in range(total_layers):
         if i >= total_layers - last_n_layers:
@@ -237,9 +288,9 @@ def replace_mistral_attention(model, target_indices, last_n_layers=1):
             custom_attn = CustomMistralAttention(model.config, i, target_indices)
             try:
                 custom_attn.load_state_dict(original_layer.state_dict(), strict=False)
-                print(f"   ✅ Loaded state dict successfully")
+                print(f"Loaded state dict successfully")
             except Exception as e:
-                print(f"   ❌ Error loading state dict: {e}")
+                print(f"Error loading state dict: {e}")
 
             custom_attn = custom_attn.to(device).half()
             model.model.layers[i].self_attn = custom_attn
@@ -248,13 +299,20 @@ def replace_mistral_attention(model, target_indices, last_n_layers=1):
             print(f"   New layer type: {type(replaced_layer).__name__}")
             print(f"   Target indices set: {replaced_layer.target_indices}")
 
-    print("✅ Attention layer replacement complete")
+    print("Attention layer replacement complete")
+
 
 def run_with_attention_perturbation(model, tokenizer, text, target_tokens, visualize=False, save_path=None):
+    """
+    Runs one final forward pass with custom attention modules (attention columns zeroed at indices) 
+
+    @params: model, tokenizer, claim text, target tokens, visualization flag, optional save path
+    
+    @returns: label prediction ("TRUE" or "FALSE")
+    """
     model.eval()
     model = model.half()
 
-    # Resolve the correct device (Accelerate may shard/offload)
     device = next(model.parameters()).device
     print(f"Resolved model device: {device}")
 
@@ -264,7 +322,7 @@ def run_with_attention_perturbation(model, tokenizer, text, target_tokens, visua
     ]
     prompt = tokenizer.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)
     inputs = tokenizer(prompt, return_tensors="pt", truncation=True, max_length=2048)
-    inputs = {k: v.to(device) for k, v in inputs.items()}  # ← move to actual device
+    inputs = {k: v.to(device) for k, v in inputs.items()}
 
     for k in inputs:
         if inputs[k].dtype == torch.float:
@@ -276,30 +334,27 @@ def run_with_attention_perturbation(model, tokenizer, text, target_tokens, visua
     target_indices = get_token_indices(tokenizer, text, target_tokens)
     if not target_indices:
         print("No matching token indices found for rationale tokens.")
-        return "UNKNOWN", 0.5
+        return "UNKNOWN"
 
     replace_mistral_attention(model, target_indices, last_n_layers=1)
 
     with torch.no_grad():
-        print("⚙️ Calling model with output_attentions=True")
+        print("Calling model with output_attentions=True")
         outputs = model(**inputs, output_attentions=True)
 
-    logits = outputs.logits  # (1, seq_len, vocab)
+    logits = outputs.logits
     last_logits = logits[0, -1]
 
     probs = torch.nn.functional.softmax(last_logits, dim=-1)
     true_id = tokenizer.convert_tokens_to_ids("true")
     false_id = tokenizer.convert_tokens_to_ids("false")
 
-    true_conf = probs[true_id].item() if true_id in tokenizer.get_vocab().values() else 0.0
-    false_conf = probs[false_id].item() if false_id in tokenizer.get_vocab().values() else 0.0
+    true_score = probs[true_id].item() if true_id in tokenizer.get_vocab().values() else 0.0
+    false_score = probs[false_id].item() if false_id in tokenizer.get_vocab().values() else 0.0
 
-    label = "TRUE" if true_conf > false_conf else "FALSE"
-    confidence = max(true_conf, false_conf)
-
-    print(f"Manual prediction: {label} | TRUE_conf={true_conf:.4f}, FALSE_conf={false_conf:.4f}")
+    label = "TRUE" if true_score > false_score else "FALSE"
 
     if visualize:
         visualize_attention_weights(model, tokenizer, text, target_indices, save_path=save_path)
 
-    return label, confidence
+    return label

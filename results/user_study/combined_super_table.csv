@@ -1,0 +1,61 @@
+participant,participant_bg,ds,model,method,buy,conv,clar
+Participant 1,Immunology,TruthfulClaim,Mistral,CoT,Yes,4,4
+Participant 1,Immunology,MedQA,Qwen,CoT,Yes,5,4
+Participant 1,Immunology,TruthfulClaim,Llama,argLLM,No,2,2
+Participant 1,Immunology,MedQA,Mistral,argLLM,No,2,2
+Participant 1,Immunology,StrategyQA,Llama,CoT,Yes,4,4
+Participant 1,Immunology,StrategyClaim,Qwen,argLLM,No,3,3
+Participant 2,"Biotechnology, chemistry, zoology",TruthfulClaim,Mistral,CoT,Yes,5,5
+Participant 2,"Biotechnology, chemistry, zoology",MedQA,Qwen,CoT,Yes,4,3
+Participant 2,"Biotechnology, chemistry, zoology",TruthfulClaim,Llama,argLLM,Yes,4,4
+Participant 2,"Biotechnology, chemistry, zoology",MedQA,Mistral,argLLM,Yes,4,4
+Participant 2,"Biotechnology, chemistry, zoology",StrategyQA,Llama,CoT,Unsure,3,3
+Participant 2,"Biotechnology, chemistry, zoology",StrategyClaim,Qwen,argLLM,Yes,4,4
+Participant 3,Biotechnology,TruthfulClaim,Mistral,CoT,Yes,4,4
+Participant 3,Biotechnology,MedQA,Qwen,CoT,Unsure,2,3
+Participant 3,Biotechnology,TruthfulClaim,Llama,argLLM,No,3,2
+Participant 3,Biotechnology,MedQA,Mistral,argLLM,Yes,4,3
+Participant 3,Biotechnology,StrategyQA,Llama,CoT,Yes,5,5
+Participant 3,Biotechnology,StrategyClaim,Qwen,argLLM,Yes,3,2
+Participant 4,Chemical Engineer,TruthfulClaim,Mistral,CoT,Yes,5,5
+Participant 4,Chemical Engineer,MedQA,Qwen,CoT,Unsure,1,3
+Participant 4,Chemical Engineer,TruthfulClaim,Llama,argLLM,Yes,3,5
+Participant 4,Chemical Engineer,MedQA,Mistral,argLLM,Unsure,1,1
+Participant 4,Chemical Engineer,StrategyQA,Llama,CoT,Yes,3,3
+Participant 4,Chemical Engineer,StrategyClaim,Qwen,argLLM,Yes,4,4
+Participant 5,Biotechnology,TruthfulClaim,Mistral,CoT,Unsure,3,3
+Participant 5,Biotechnology,MedQA,Qwen,CoT,No,2,2
+Participant 5,Biotechnology,TruthfulClaim,Llama,argLLM,Unsure,3,3
+Participant 5,Biotechnology,MedQA,Mistral,argLLM,Unsure,3,2
+Participant 5,Biotechnology,StrategyQA,Llama,CoT,Yes,4,3
+Participant 5,Biotechnology,StrategyClaim,Qwen,argLLM,Yes,4,3
+Participant 6,Engineering,TruthfulClaim,Mistral,CoT,Yes,3,3
+Participant 6,Engineering,MedQA,Qwen,CoT,Unsure,2,3
+Participant 6,Engineering,TruthfulClaim,Llama,argLLM,Yes,4,3
+Participant 6,Engineering,MedQA,Mistral,argLLM,Yes,4,4
+Participant 6,Engineering,StrategyQA,Llama,CoT,Unsure,4,4
+Participant 6,Engineering,StrategyClaim,Qwen,argLLM,No,3,2
+Participant 7,Chemical Engineering,TruthfulClaim,Mistral,CoT,Yes,4,4
+Participant 7,Chemical Engineering,MedQA,Qwen,CoT,Unsure,2,1
+Participant 7,Chemical Engineering,TruthfulClaim,Llama,argLLM,Yes,4,4
+Participant 7,Chemical Engineering,MedQA,Mistral,argLLM,Unsure,2,4
+Participant 7,Chemical Engineering,StrategyQA,Llama,CoT,Yes,4,4
+Participant 7,Chemical Engineering,StrategyClaim,Qwen,argLLM,Yes,4,4
+Participant 8,Computer Science,TruthfulClaim,Mistral,CoT,Yes,4,3
+Participant 8,Computer Science,MedQA,Qwen,CoT,No,2,1
+Participant 8,Computer Science,TruthfulClaim,Llama,argLLM,Unsure,3,2
+Participant 8,Computer Science,MedQA,Mistral,argLLM,Yes,4,4
+Participant 8,Computer Science,StrategyQA,Llama,CoT,Yes,5,5
+Participant 8,Computer Science,StrategyClaim,Qwen,argLLM,Yes,4,5
+Participant 9,Public Health,TruthfulClaim,Mistral,CoT,Yes,4,4
+Participant 9,Public Health,MedQA,Qwen,CoT,Unsure,3,4
+Participant 9,Public Health,TruthfulClaim,Llama,argLLM,No,2,2
+Participant 9,Public Health,MedQA,Mistral,argLLM,Unsure,2,2
+Participant 9,Public Health,StrategyQA,Llama,CoT,Yes,4,4
+Participant 9,Public Health,StrategyClaim,Qwen,argLLM,Unsure,2,4
+Participant 10,Design,TruthfulClaim,Mistral,CoT,Yes,4,3
+Participant 10,Design,MedQA,Qwen,CoT,No,2,2
+Participant 10,Design,TruthfulClaim,Llama,argLLM,Unsure,3,3
+Participant 10,Design,MedQA,Mistral,argLLM,Yes,3,2
+Participant 10,Design,StrategyQA,Llama,CoT,Yes,4,4
+Participant 10,Design,StrategyClaim,Qwen,argLLM,No,2,1

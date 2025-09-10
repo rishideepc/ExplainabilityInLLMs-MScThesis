@@ -1,0 +1,11 @@
+participant,participant_bg,n_items,buy_yes_rate,buy_yes_cnt,buy_no_cnt,buy_unsure_cnt,mean_conv,mean_clar,majority_buy
+Participant 1,Immunology,6,0.5,3,3,0,3.33,3.17,Tie
+Participant 2,"Biotechnology, chemistry, zoology",6,0.833,5,0,1,4.0,3.83,Yes
+Participant 3,Biotechnology,6,0.667,4,1,1,3.5,3.17,Yes
+Participant 4,Chemical Engineer,6,0.667,4,0,2,2.83,3.5,Yes
+Participant 5,Biotechnology,6,0.333,2,1,3,3.17,2.67,Unsure
+Participant 6,Engineering,6,0.5,3,1,2,3.33,3.17,Yes
+Participant 7,Chemical Engineering,6,0.667,4,0,2,3.33,3.5,Yes
+Participant 8,Computer Science,6,0.667,4,1,1,3.67,3.33,Yes
+Participant 9,Public Health,6,0.333,2,1,3,2.83,3.33,Unsure
+Participant 10,Design,6,0.5,3,2,1,3.0,2.5,Yes

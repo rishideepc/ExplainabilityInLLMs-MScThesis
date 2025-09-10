@@ -1,6 +1,5 @@
 import os
 os.environ["HF_HOME"] = "/vol/bitbucket/rc1124/hf_cache"
-os.environ["HF_TOKEN"] = "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"
 
 import json
 import csv

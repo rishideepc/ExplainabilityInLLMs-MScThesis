@@ -1,6 +1,5 @@
 import os
 os.environ["HF_HOME"] = "/vol/bitbucket/rc1124/hf_cache"
-os.environ["HF_TOKEN"] = "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"
 
 import csv
 import json
@@ -13,8 +12,8 @@ from attention_perturbation_llama import run_with_attention_perturbation
 VISUALIZE_ATTENTION = True
 MAX_SAMPLES = 5
 
-CSV_PATH = "shake_score_results_truthfulclaim_llama_temp.csv"
-HTML_PATH = "shake_score_results_truthfulclaim_llama_temp.html"
+CSV_PATH = "shake_score_results_truthfulclaim_llama.csv"
+HTML_PATH = "shake_score_results_truthfulclaim_llama.html"
 FREEZE_LEFT_COLS = 3
 
 DATA_JSON_PATH = "/vol/bitbucket/rc1124/MSc_Individual_Project/ExplainabilityInLLMs-MScThesis/generators/truthful_claims_dataset.json"
